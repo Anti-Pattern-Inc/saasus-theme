@@ -1,93 +1,95 @@
 import { styled } from '@mui/material/styles'
-import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import { FC, ReactNode } from 'react'
 
-interface TextProps {
+interface LabelProps {
   className?: string
   color?:
     | 'primary'
+    | 'black'
     | 'secondary'
     | 'error'
     | 'warning'
     | 'success'
     | 'info'
-    | 'black'
-  flex?: boolean
   children?: ReactNode
 }
 
-const TextWrapper = styled('span')(
+const LabelWrapper = styled('span')(
   ({ theme }) => `
-      display: inline-block;
+      background-color: ${theme.colors.alpha.black[5]};
+      padding: ${theme.spacing(0.5, 1)};
+      font-size: ${theme.typography.pxToRem(13)};
+      border-radius: ${theme.general.borderRadius};
+      display: inline-flex;
       align-items: center;
-
-      &.flexItem {
-        display: inline-flex;
-      }
+      justify-content: center;
+      max-height: ${theme.spacing(3)};
       
-      &.MuiText {
-
-        &-black {
-          color: ${theme.palette.common.black}
+      &.MuiLabel {
+        &-primary {
+          background-color: ${theme.colors.primary.lighter};
+          color: ${theme.palette.primary.main}
         }
 
-        &-primary {
-          color: ${theme.palette.primary.main}
+        &-black {
+          background-color: ${theme.colors.alpha.black[100]};
+          color: ${theme.colors.alpha.white[100]};
         }
         
         &-secondary {
+          background-color: ${theme.colors.secondary.lighter};
           color: ${theme.palette.secondary.main}
         }
         
         &-success {
+          background-color: ${theme.colors.success.lighter};
           color: ${theme.palette.success.main}
         }
         
         &-warning {
+          background-color: ${theme.colors.warning.lighter};
           color: ${theme.palette.warning.main}
         }
               
         &-error {
+          background-color: ${theme.colors.error.lighter};
           color: ${theme.palette.error.main}
         }
         
         &-info {
+          background-color: ${theme.colors.info.lighter};
           color: ${theme.palette.info.main}
         }
       }
 `,
 )
 
-const Text: FC<TextProps> = ({
+const Label: FC<LabelProps> = ({
   className,
   color = 'secondary',
-  flex,
   children,
   ...rest
 }) => {
   return (
-    <TextWrapper
-      className={clsx('MuiText-' + color, { flexItem: flex })}
-      {...rest}
-    >
+    <LabelWrapper className={'MuiLabel-' + color} {...rest}>
       {children}
-    </TextWrapper>
+    </LabelWrapper>
   )
 }
 
-Text.propTypes = {
+Label.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   color: PropTypes.oneOf([
     'primary',
+    'black',
     'secondary',
     'error',
     'warning',
     'success',
     'info',
-    'black',
   ]),
 }
 
-export default Text
+export default Label
