@@ -1,3 +1,4 @@
+import { ThemeContext } from '@anti-pattern-inc/saasus-theme'
 import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone'
 import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone'
 import UnfoldMoreTwoToneIcon from '@mui/icons-material/UnfoldMoreTwoTone'
@@ -16,7 +17,6 @@ import {
 import Fab from '@mui/material/Fab'
 import Link from 'components/Link'
 import { FC, MouseEvent, useContext, useEffect, useRef, useState } from 'react'
-import { ThemeContext } from 'theme/ThemeProvider'
 
 const ThemeSettingsButton = styled(Box)(
   ({ theme }) => `
@@ -207,7 +207,7 @@ const ThemeSettings: FC = () => {
     setOpen(false)
   }
 
-  const setThemeName = useContext(ThemeContext)
+  const { setThemeName } = useContext(ThemeContext)
 
   useEffect(() => {
     const curThemeName =
