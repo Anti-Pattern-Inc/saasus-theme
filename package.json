@@ -27,8 +27,6 @@
     "build": "tsc -p .",
     "type-check": "tsc -p . --noEmit",
     "dev": "yarn build && tsc -p . --watch",
-    "lint": "eslint src",
-    "lint-fix": "eslint --fix src",
     "clean": "rimraf dist"
   },
   "bugs": {
