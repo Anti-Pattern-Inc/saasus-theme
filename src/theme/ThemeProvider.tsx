@@ -12,7 +12,7 @@ interface ThemeContextType {
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: null,
-  setThemeName: (_themeName: string): void => {},
+  setThemeName: (_themeName: string): void => { },
 })
 
 const ThemeProviderWrapper: FC = (props) => {
