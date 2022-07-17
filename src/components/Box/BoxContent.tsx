@@ -98,7 +98,7 @@ const BoxContent: VFC<Props> = ({
             ...boxInnerSx,
           }}
         >
-          {addTitle ? (
+          {addTitle && (
             <TitleSet
               // 見出しフォントサイズ htmlElement設定 サブタイトル
               headingText={headingText}
@@ -118,8 +118,6 @@ const BoxContent: VFC<Props> = ({
               divider={divider}
               dividerSx={dividerSx}
             />
-          ) : (
-            ''
           )}
           {/*下線がある時は追加 */}
           {children}
