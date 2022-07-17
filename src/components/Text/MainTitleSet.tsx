@@ -1,6 +1,5 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material'
 import { SxProps } from '@mui/system'
-import PageTitleWrapper from '../PageTitleWrapper'
 import { ElementType, VFC } from 'react'
 
 /**
@@ -11,8 +10,8 @@ import { ElementType, VFC } from 'react'
  * @param headingText 見出しの文字列
  * @param variantSubTitle 見出し下のサブタイトルバリエーション 未指定時:subtitle2
  * @param subtitleText サブタイトル本文
- * @param additionalProps 右端に追加するコンポーネントが必要な時に設置(例: ボタン。基本無くても良い）
- * @param TitleWrapNone 見出しを囲む要素を無くす。
+ * @param AdditionalProps 右端に追加するコンポーネントが必要な時に設置(例: ボタン。基本無くても良い）
+//  * @param TitleWrapNone 見出しを囲む要素を無くす。
  * @param sxHeader 見出しの追加スタイル
  * @param sxSubTitle サブタイトルの追加スタイル
  *
@@ -32,8 +31,8 @@ type MainTitleSetProps = Partial<{
     | 'caption'
     | 'overline'
     | 'inherit'
-  additionalProps: JSX.Element
-  TitleWrapNone: boolean
+  AdditionalProps: JSX.Element
+  // TitleWrapNone: boolean
   sxHeader: SxProps
   sxSubTitle: SxProps
   gutterBottom: boolean
@@ -46,8 +45,8 @@ const MainTitleSet: VFC<MainTitleSetProps> = ({
   headingText,
   variantSubTitle,
   subtitleText,
-  additionalProps,
-  TitleWrapNone,
+  AdditionalProps,
+  // TitleWrapNone,
   sxHeader,
   sxSubTitle,
   gutterBottom,
@@ -58,50 +57,38 @@ const MainTitleSet: VFC<MainTitleSetProps> = ({
       <Box
         sx={[
           {
-            '.MuiPageTitle-wrapper': {
-              p: theme.spacing(2, 4),
-              mb: theme.spacing(3),
-            },
-          },
-          // 背景の装飾が不要な場合
-          TitleWrapNone && {
-            '.MuiPageTitle-wrapper': {
-              mb: theme.spacing(3),
-              background: 'transparent',
-              boxShadow: 'none',
-            },
+            p: theme.spacing(3, 4),
+            mb: theme.spacing(2),
           },
         ]}
       >
-        <PageTitleWrapper>
-          <Grid container justifyContent="space-between" alignItems="center">
-            <Grid item>
-              {/* 見出し */}
-              <Typography
-                variant={variant ? variant : 'h1'}
-                component={component ? component : 'h1'}
-                sx={sxHeader}
-                gutterBottom={gutterBottom}
-                style={{ lineHeight: 1.4 }}
-              >
-                {headingText}
-              </Typography>
+        <Grid container justifyContent="space-between" alignItems="center">
+          <Grid item>
+            {/* 見出し */}
+            <Typography
+              variant={variant ? variant : 'h1'}
+              component={component ? component : 'h1'}
+              sx={sxHeader}
+              gutterBottom={gutterBottom}
+              style={{ lineHeight: 1.4 }}
+            >
+              {headingText}
+            </Typography>
 
-              {/* サブタイトル */}
-              <Typography
-                variant={variantSubTitle ? variantSubTitle : 'subtitle1'}
-                sx={sxSubTitle}
-                style={{ lineHeight: 1.4 }}
-              >
-                {subtitleText}
-              </Typography>
-            </Grid>
-            {/* 見出しと同じ階層内の右端に、ボタンなどのコンポーネントを置く時用
-                Example: additionalProps={<Button>Action</Button>}
-            */}
-            <Grid item>{additionalProps}</Grid>
+            {/* サブタイトル */}
+            <Typography
+              variant={variantSubTitle ? variantSubTitle : 'subtitle1'}
+              sx={sxSubTitle}
+              style={{ lineHeight: 1.4 }}
+            >
+              {subtitleText}
+            </Typography>
           </Grid>
-        </PageTitleWrapper>
+          {/* 見出しと同じ階層内の右端に、ボタンなどのコンポーネントを置く時用
+                Example: AdditionalProps={<Button>Action</Button>}
+            */}
+          <Grid item>{AdditionalProps}</Grid>
+        </Grid>
       </Box>
     </>
   )
