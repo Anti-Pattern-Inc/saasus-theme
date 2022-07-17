@@ -1,4 +1,3 @@
-// @ts-nocheck
 import '@mui/lab/themeAugmentation'
 
 import { alpha, createTheme, darken, lighten } from '@mui/material'
