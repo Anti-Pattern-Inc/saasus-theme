@@ -1,11 +1,3 @@
-# `design-system`
+# SaaSus Theme
 
-> TODO: description
-
-## Usage
-
-```
-const designSystem = require('design-system');
-
-// TODO: DEMONSTRATE API
-```
+SaaSusの共有UIライブラリ

@@ -6,8 +6,8 @@ import { createContext, FC, useEffect, useState } from 'react'
 import { themeCreator } from './base'
 
 interface ThemeContextType {
-  theme: Theme,
-  setThemeName: (_themeName: string) => void,
+  theme: Theme
+  setThemeName: (_themeName: string) => void
 }
 
 export const ThemeContext = createContext<ThemeContextType>({
