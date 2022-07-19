@@ -6,13 +6,14 @@ import { createContext, FC, useEffect, useState } from 'react'
 import { themeCreator } from './base'
 
 interface ThemeContextType {
-  theme: Theme,
-  setThemeName: (_themeName: string) => void,
+  theme: Theme
+  setThemeName: (_themeName: string) => void
 }
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: null,
-  setThemeName: (_themeName: string): void => { },
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setThemeName: (_themeName: string): void => {},
 })
 
 const ThemeProviderWrapper: FC = (props) => {
