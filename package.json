@@ -25,7 +25,7 @@
     "url": "git+https://github.com/Anti-Pattern-Inc/saasus-shared.git"
   },
   "scripts": {
-    "build": "yarn clean && rollup -c",
+    "build": "rollup -c",
     "dev": "rollup -cw",
     "clean": "rimraf dist"
   },
