@@ -1,6 +1,6 @@
 import { jsx, Fragment, jsxs } from 'react/jsx-runtime';
 import { styled } from '@mui/material/styles';
-import { useTheme, Box, Grid, Typography, styled as styled$1, Tooltip, Button, Divider, darken, alpha, createTheme, lighten, ThemeProvider } from '@mui/material';
+import { useTheme, Box, Grid, Typography, styled as styled$1, Tooltip, Button, Divider, Paper, darken, alpha, createTheme, lighten, ThemeProvider } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import '@mui/lab/themeAugmentation';
 import { StylesProvider } from '@mui/styles';
@@ -1342,6 +1342,43 @@ divider, dividerSx, }) => {
                                                         minWidth: 'fit-content',
                                                     },
                                                 }, children: jsx(HelpOutlineIcon, { fontSize: "small" }) }) }))] }), jsx(Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4 }, children: subtitleText })] }), jsx(Grid, { item: true, children: AdditionalProps })] }), divider && jsx(Divider, { sx: dividerSx })] }) }));
+};
+
+const BoxInner = styled$1(Paper)(({ theme }) => ({
+    marginBottom: theme.spacing(4),
+}));
+const BoxWrap = ({ 
+// 見出し
+addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, 
+// 下線
+divider, 
+// コンテンツ
+children, boxInnerSx, 
+// 下マージン
+noMargin, mbSmall, mbLarge, 
+// ヘルプアイコンとツールチップ
+TooltipTitleIconComponent, 
+// 右端オプション
+AdditionalProps, }) => {
+    const theme = useTheme();
+    return (jsx(Fragment, { children: jsx(Box, { children: jsxs(BoxInner, { elevation: 1, sx: {
+                    padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
+                    ...boxInnerSx,
+                }, children: [addTitle && (jsx(TitleSet
+                    // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
+                    , { 
+                        // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
+                        headingText: headingText, variant: variant ? variant : 'h3', component: component ? component : 'div', subtitleText: subtitleText, variantSubTitle: variantSubTitle ? variantSubTitle : 'subtitle2', 
+                        // 見出し直下の余白具合
+                        noMargin: noMargin, mbSmall: mbSmall, mbLarge: mbLarge, 
+                        // カスタムCSSがあれば設置
+                        sx: titleSx, 
+                        // ヘルプアイコンとツールチップ
+                        TooltipTitleIconComponent: TooltipTitleIconComponent, AdditionalProps: AdditionalProps, 
+                        // 下線
+                        divider: divider, 
+                        // 下線がある時は見出し内の余白をタイトにする。横幅を合わせる
+                        dividerSx: { my: 1.5, mx: -3 } })), children] }) }) }));
 };
 
 // import i18n from 'i18n/i18n';
@@ -9971,4 +10008,4 @@ const ThemeProviderWrapper = (props) => {
     return (jsx(StylesProvider, { injectFirst: true, children: jsx(ThemeContext.Provider, { value: { theme, setThemeName }, children: jsx(ThemeProvider, { theme: theme, children: props.children }) }) }));
 };
 
-export { MainTitleSet, ThemeProviderWrapper as SaaSusThemeProvider, Text, ThemeContext, TitleSet, themeCreator };
+export { BoxWrap, MainTitleSet, ThemeProviderWrapper as SaaSusThemeProvider, Text, ThemeContext, TitleSet, themeCreator };

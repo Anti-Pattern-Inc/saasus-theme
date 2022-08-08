@@ -1352,6 +1352,43 @@ divider, dividerSx, }) => {
                                                 }, children: jsxRuntime.jsx(HelpOutlineIcon__default["default"], { fontSize: "small" }) }) }))] }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4 }, children: subtitleText })] }), jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps })] }), divider && jsxRuntime.jsx(material.Divider, { sx: dividerSx })] }) }));
 };
 
+const BoxInner = material.styled(material.Paper)(({ theme }) => ({
+    marginBottom: theme.spacing(4),
+}));
+const BoxWrap = ({ 
+// 見出し
+addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, 
+// 下線
+divider, 
+// コンテンツ
+children, boxInnerSx, 
+// 下マージン
+noMargin, mbSmall, mbLarge, 
+// ヘルプアイコンとツールチップ
+TooltipTitleIconComponent, 
+// 右端オプション
+AdditionalProps, }) => {
+    const theme = material.useTheme();
+    return (jsxRuntime.jsx(jsxRuntime.Fragment, { children: jsxRuntime.jsx(material.Box, { children: jsxRuntime.jsxs(BoxInner, { elevation: 1, sx: {
+                    padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
+                    ...boxInnerSx,
+                }, children: [addTitle && (jsxRuntime.jsx(TitleSet
+                    // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
+                    , { 
+                        // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
+                        headingText: headingText, variant: variant ? variant : 'h3', component: component ? component : 'div', subtitleText: subtitleText, variantSubTitle: variantSubTitle ? variantSubTitle : 'subtitle2', 
+                        // 見出し直下の余白具合
+                        noMargin: noMargin, mbSmall: mbSmall, mbLarge: mbLarge, 
+                        // カスタムCSSがあれば設置
+                        sx: titleSx, 
+                        // ヘルプアイコンとツールチップ
+                        TooltipTitleIconComponent: TooltipTitleIconComponent, AdditionalProps: AdditionalProps, 
+                        // 下線
+                        divider: divider, 
+                        // 下線がある時は見出し内の余白をタイトにする。横幅を合わせる
+                        dividerSx: { my: 1.5, mx: -3 } })), children] }) }) }));
+};
+
 // import i18n from 'i18n/i18n';
 const themeColors$6 = {
     primary: '#CB3C1D',
@@ -9979,6 +10016,7 @@ const ThemeProviderWrapper = (props) => {
     return (jsxRuntime.jsx(styles$1.StylesProvider, { injectFirst: true, children: jsxRuntime.jsx(ThemeContext.Provider, { value: { theme, setThemeName }, children: jsxRuntime.jsx(material.ThemeProvider, { theme: theme, children: props.children }) }) }));
 };
 
+exports.BoxWrap = BoxWrap;
 exports.MainTitleSet = MainTitleSet;
 exports.SaaSusThemeProvider = ThemeProviderWrapper;
 exports.Text = Text;
