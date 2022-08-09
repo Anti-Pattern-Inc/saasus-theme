@@ -1,5 +1,5 @@
-import { Theme } from '@mui/material/styles'
-import { StylesProvider, ThemeProvider } from '@mui/styles'
+import { Theme, ThemeProvider } from '@mui/material/styles'
+import { StylesProvider } from '@mui/styles'
 import { createContext, FC, useEffect, useState } from 'react'
 
 import { themeCreator } from './base'
