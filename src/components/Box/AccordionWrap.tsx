@@ -97,7 +97,7 @@ type SetProps = {
   TooltipComponent?: ReactNode
 }
 
-const AccordionWrap = ({
+export const AccordionWrap = ({
   // 見出し
   AccordionTitle,
   variant,
@@ -193,5 +193,3 @@ const AccordionWrap = ({
     </>
   )
 }
-
-export default AccordionWrap

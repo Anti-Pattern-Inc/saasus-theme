@@ -25,7 +25,7 @@ type Props = {
   onClick?: (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void //汎用的なクリックイベント
 }
 
-const CustomButton = ({
+export const CustomButton = ({
   color,
   variant,
   size,
@@ -55,5 +55,3 @@ const CustomButton = ({
     </>
   )
 }
-
-export default CustomButton

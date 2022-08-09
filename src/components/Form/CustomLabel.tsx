@@ -19,7 +19,7 @@ const Label = styled(InputLabel)(() => ({
   minHeight: '1.85em',
 }))
 
-const CustomLabel = ({
+export const CustomLabel = ({
   id,
   TooltipTitleIconComponent,
   TooltipComponent,
@@ -37,5 +37,3 @@ const CustomLabel = ({
     </>
   )
 }
-
-export default CustomLabel

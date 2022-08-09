@@ -23,7 +23,7 @@ const StackButtonWrap = styled(Stack)(() => ({
   },
 }))
 
-const ButtonWrap = ({ sx, children, justifyContent }: Props) => {
+export const ButtonWrap = ({ sx, children, justifyContent }: Props) => {
   return (
     <>
       <StackButtonWrap
@@ -35,5 +35,3 @@ const ButtonWrap = ({ sx, children, justifyContent }: Props) => {
     </>
   )
 }
-
-export default ButtonWrap
