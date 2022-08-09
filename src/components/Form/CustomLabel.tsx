@@ -1,6 +1,6 @@
 import { InputLabel, styled } from '@mui/material'
 import { CustomTooltip } from 'components/Tooltip/CustomTooltip'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 // Types
 type Props = {
@@ -19,7 +19,7 @@ const Label = styled(InputLabel)(() => ({
   minHeight: '1.85em',
 }))
 
-export const CustomLabel = ({
+const CustomLabel = ({
   id,
   TooltipTitleIconComponent,
   TooltipComponent,
@@ -37,3 +37,5 @@ export const CustomLabel = ({
     </>
   )
 }
+
+export default CustomLabel

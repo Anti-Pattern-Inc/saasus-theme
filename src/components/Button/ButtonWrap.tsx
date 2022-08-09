@@ -1,6 +1,6 @@
 import { Stack, styled } from '@mui/material'
 import { SxProps } from '@mui/system'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 type Props = Partial<{
   justifyContent: 'center' | 'flex-end' | 'flex-start' // 左右位置 default: 右付け
@@ -23,7 +23,7 @@ const StackButtonWrap = styled(Stack)(() => ({
   },
 }))
 
-export const ButtonWrap = ({ sx, children, justifyContent }: Props) => {
+const ButtonWrap = ({ sx, children, justifyContent }: Props) => {
   return (
     <>
       <StackButtonWrap
@@ -35,3 +35,5 @@ export const ButtonWrap = ({ sx, children, justifyContent }: Props) => {
     </>
   )
 }
+
+export default ButtonWrap
