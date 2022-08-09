@@ -1,6 +1,5 @@
 import { ThemeProvider } from '@mui/material'
 import { Theme } from '@mui/material/styles'
-import { StylesProvider } from '@mui/styles'
 import { createContext, FC, useEffect, useState } from 'react'
 
 import { themeCreator } from './base'
@@ -31,11 +30,9 @@ const ThemeProviderWrapper: FC = (props) => {
   }
 
   return (
-    <StylesProvider injectFirst>
-      <ThemeContext.Provider value={{ theme, setThemeName }}>
-        <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-      </ThemeContext.Provider>
-    </StylesProvider>
+    <ThemeContext.Provider value={{ theme, setThemeName }}>
+      <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+    </ThemeContext.Provider>
   )
 }
 
