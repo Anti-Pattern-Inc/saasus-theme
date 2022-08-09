@@ -1,7 +1,7 @@
 import { Box, Paper, styled, useTheme } from '@mui/material'
 import { SxProps } from '@mui/system'
 import TitleSet from 'components/Text/TitleSet'
-import { ElementType, ReactNode, VFC } from 'react'
+import { ElementType, ReactNode } from 'react'
 
 /**
  * BoxWrap Option:
@@ -19,6 +19,7 @@ import { ElementType, ReactNode, VFC } from 'react'
  * @param mbSmall コンテンツの下マージンを小さく
  * @param mbLarge コンテンツの下マージンを大きく
  * @param TooltipTitleIconComponent 見出し右横に表示するツールチップとアイコン
+ * @param TooltipComponent デフォルトのアイコン以外のTooltipを設置する時
  * @param AdditionalProps 見出し右横に設置する追加のコンポーネント
  */
 
@@ -42,15 +43,18 @@ type Props = Partial<{
   mbLarge: boolean
   // ヘルプアイコンとツールチップ
   TooltipTitleIconComponent?: ReactNode
+  TooltipComponent?: ReactNode
   // 右端オプション
   AdditionalProps: JSX.Element
+  // 全体sx
+  sx: SxProps
 }>
 
 const BoxInner = styled(Paper)(({ theme }) => ({
   marginBottom: theme.spacing(4),
 }))
 
-const BoxWrap: VFC<Props> = ({
+const BoxWrap = ({
   // 見出し
   addTitle,
   variant,
@@ -70,13 +74,16 @@ const BoxWrap: VFC<Props> = ({
   mbLarge,
   // ヘルプアイコンとツールチップ
   TooltipTitleIconComponent,
+  TooltipComponent,
   // 右端オプション
   AdditionalProps,
-}) => {
+  // 全体sx
+  sx,
+}: Props) => {
   const theme = useTheme()
   return (
     <>
-      <Box>
+      <Box sx={sx}>
         <BoxInner
           elevation={1}
           sx={{
@@ -100,6 +107,7 @@ const BoxWrap: VFC<Props> = ({
               sx={titleSx}
               // ヘルプアイコンとツールチップ
               TooltipTitleIconComponent={TooltipTitleIconComponent}
+              TooltipComponent={TooltipComponent}
               AdditionalProps={AdditionalProps}
               // 下線
               divider={divider}

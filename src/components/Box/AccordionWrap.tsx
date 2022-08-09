@@ -1,7 +1,6 @@
 // https://mui.com/material-ui/react-accordion/
 // Icon
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 // MUI
 import {
   Accordion,
@@ -10,22 +9,13 @@ import {
   AccordionSummary,
   AccordionSummaryProps,
   Box,
-  Button,
   Paper,
   styled,
-  Tooltip,
   Typography,
 } from '@mui/material'
 import { SxProps } from '@mui/system'
+import { CustomTooltip } from 'components/Tooltip/CustomTooltip'
 import { ElementType, ReactNode, useState } from 'react'
-
-const AddToolTip = styled(Tooltip)(
-  () => `
-  .MuiTooltip-popper{
-    max-width: calc(125em + 16px);
-  }
-`,
-)
 
 // Stylings アコーディオン全体
 const Item = styled(Paper)(({ theme }) => ({
@@ -104,6 +94,7 @@ type SetProps = {
   AdditionalProps?: JSX.Element
   // ヘルプアイコンとツールチップ
   TooltipTitleIconComponent?: ReactNode
+  TooltipComponent?: ReactNode
 }
 
 export const AccordionWrap = ({
@@ -128,6 +119,7 @@ export const AccordionWrap = ({
   disabled,
   // ヘルプアイコンとツールチップ
   TooltipTitleIconComponent,
+  TooltipComponent,
 }: SetProps) => {
   const [expanded, setExpanded] = useState<string | boolean>(`${InitOpen}`)
 
@@ -176,25 +168,10 @@ export const AccordionWrap = ({
                     {AccordionTitle}
                   </Typography>
                   {/* ツールチップ */}
-                  {TooltipTitleIconComponent && (
-                    <AddToolTip
-                      title={TooltipTitleIconComponent}
-                      arrow
-                      placement="top-start"
-                    >
-                      <Button
-                        sx={{
-                          margin: '0 0 .2em 0',
-                          '&.MuiButton-root': {
-                            padding: '6px',
-                            minWidth: 'fit-content',
-                          },
-                        }}
-                      >
-                        <HelpOutlineIcon fontSize="small" />
-                      </Button>
-                    </AddToolTip>
-                  )}
+                  <CustomTooltip
+                    TooltipTitleIconComponent={TooltipTitleIconComponent}
+                    TooltipComponent={TooltipComponent}
+                  />
                 </Box>
 
                 <Box>
