@@ -4,9 +4,9 @@
   "description": "Design system for SaaSus app",
   "author": "tamanyan <tamanyan@users.noreply.github.com>",
   "homepage": "https://github.com/Anti-Pattern-Inc/saasus-shared#readme",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./lib/esm/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "source": "./src/index.ts",
   "private": false,
   "publishConfig": {
@@ -20,6 +20,7 @@
   "files": [
     "dist"
   ],
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Anti-Pattern-Inc/saasus-shared.git"
