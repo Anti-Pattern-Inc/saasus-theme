@@ -1,5 +1,4 @@
-import { ThemeProvider } from '@mui/material'
-import { Theme } from '@mui/material/styles'
+import { Theme, ThemeProvider } from '@mui/material/styles'
 import { StylesProvider } from '@mui/styles'
 import { createContext, FC, useEffect, useState } from 'react'
 
@@ -12,8 +11,7 @@ interface ThemeContextType {
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: null,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setThemeName: (_themeName: string): void => {},
+  setThemeName: null,
 })
 
 const ThemeProviderWrapper: FC = (props) => {

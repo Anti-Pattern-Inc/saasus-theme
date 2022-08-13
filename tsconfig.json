@@ -4,7 +4,11 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
-    "lib": ["esnext", "dom", "dom.iterable"],
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noUnusedLocals": true,

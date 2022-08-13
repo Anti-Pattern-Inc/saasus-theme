@@ -2,8 +2,7 @@
 import { Box, styled } from '@mui/material'
 import { SxProps } from '@mui/system'
 import TitleSet from 'components/Text/TitleSet'
-import { ElementType, ReactNode, VFC } from 'react'
-
+import { ElementType, ReactNode } from 'react'
 /**
  * BoxContent Option:
  * @param addTitle 見出しをがある時は追加
@@ -21,6 +20,7 @@ import { ElementType, ReactNode, VFC } from 'react'
  * @param divider 見出しの下線がある時は追加
  * @param dividerSx 下線にカスタムスタイルを追加
  * @param TooltipTitleIconComponent 見出し右横に表示するツールチップとアイコン
+ * @param TooltipComponent デフォルトのアイコン以外のTooltipを設置する時
  * @param AdditionalProps 見出し右横に設置する追加のコンポーネント
  */
 
@@ -42,11 +42,14 @@ type Props = Partial<{
   mbLarge: boolean
   // ヘルプアイコンとツールチップ
   TooltipTitleIconComponent?: ReactNode
+  TooltipComponent?: ReactNode
   // 右端オプション
   AdditionalProps: JSX.Element
   // 下線
   divider: boolean
   dividerSx: SxProps
+  // 全体sx
+  sx: SxProps
 }>
 
 const BoxOuter = styled(Box)(
@@ -65,7 +68,7 @@ const BoxInner = styled(Box)(
     `,
 )
 
-const BoxContent: VFC<Props> = ({
+const BoxContent = ({
   // 見出し
   addTitle,
   variant,
@@ -86,19 +89,22 @@ const BoxContent: VFC<Props> = ({
   mbLarge,
   // ヘルプアイコンとツールチップ
   TooltipTitleIconComponent,
+  TooltipComponent,
   // 右端オプション
   AdditionalProps,
-}) => {
+  // 全体sx
+  sx,
+}: Props) => {
   // const theme = useTheme()
   return (
     <>
-      <BoxOuter>
+      <BoxOuter sx={sx}>
         <BoxInner
           sx={{
             ...boxInnerSx,
           }}
         >
-          {addTitle && (
+          {addTitle ? (
             <TitleSet
               // 見出しフォントサイズ htmlElement設定 サブタイトル
               headingText={headingText}
@@ -114,10 +120,13 @@ const BoxContent: VFC<Props> = ({
               sx={titleSx}
               // ヘルプアイコンとツールチップ
               TooltipTitleIconComponent={TooltipTitleIconComponent}
+              TooltipComponent={TooltipComponent}
               AdditionalProps={AdditionalProps}
               divider={divider}
               dividerSx={dividerSx}
             />
+          ) : (
+            ''
           )}
           {/*下線がある時は追加 */}
           {children}

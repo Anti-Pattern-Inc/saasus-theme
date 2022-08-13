@@ -1,6 +1,6 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material'
 import { SxProps } from '@mui/system'
-import { ElementType, VFC } from 'react'
+import { ElementType } from 'react'
 
 /**
  * 大見出しとサブタイトルをまとめて表示するコンポーネントです
@@ -23,14 +23,14 @@ type MainTitleSetProps = Partial<{
   headingText: string
   subtitleText: string
   variantSubTitle:
-    | 'subtitle1'
-    | 'subtitle2'
-    | 'body1'
-    | 'body2'
-    | 'button'
-    | 'caption'
-    | 'overline'
-    | 'inherit'
+  | 'subtitle1'
+  | 'subtitle2'
+  | 'body1'
+  | 'body2'
+  | 'button'
+  | 'caption'
+  | 'overline'
+  | 'inherit'
   AdditionalProps: JSX.Element
   // TitleWrapNone: boolean
   sxHeader: SxProps
@@ -39,7 +39,7 @@ type MainTitleSetProps = Partial<{
 }>
 
 // 大見出しとサブタイトル
-const MainTitleSet: VFC<MainTitleSetProps> = ({
+const MainTitleSet = ({
   variant,
   component,
   headingText,
@@ -50,7 +50,7 @@ const MainTitleSet: VFC<MainTitleSetProps> = ({
   sxHeader,
   sxSubTitle,
   gutterBottom,
-}) => {
+}: MainTitleSetProps) => {
   const theme = useTheme()
   return (
     <>
@@ -62,8 +62,13 @@ const MainTitleSet: VFC<MainTitleSetProps> = ({
           },
         ]}
       >
-        <Grid container justifyContent="space-between" alignItems="center">
-          <Grid item>
+        <Grid
+          container
+          justifyContent="space-between"
+          alignItems="center"
+          columnSpacing={2}
+        >
+          <Grid item flex={1}>
             {/* 見出し */}
             <Typography
               variant={variant ? variant : 'h1'}
@@ -79,7 +84,7 @@ const MainTitleSet: VFC<MainTitleSetProps> = ({
             <Typography
               variant={variantSubTitle ? variantSubTitle : 'subtitle1'}
               sx={sxSubTitle}
-              style={{ lineHeight: 1.4 }}
+              style={{ lineHeight: 1.4, textAlign: 'justify' }}
             >
               {subtitleText}
             </Typography>
@@ -87,7 +92,7 @@ const MainTitleSet: VFC<MainTitleSetProps> = ({
           {/* 見出しと同じ階層内の右端に、ボタンなどのコンポーネントを置く時用
                 Example: AdditionalProps={<Button>Action</Button>}
             */}
-          <Grid item>{AdditionalProps}</Grid>
+          {AdditionalProps && <Grid item>{AdditionalProps}</Grid>}
         </Grid>
       </Box>
     </>
