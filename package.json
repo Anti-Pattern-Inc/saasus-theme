@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anti-Pattern-Inc/saasus-shared.git"
+    "url": "git+https://github.com/Anti-Pattern-Inc/saasus-theme.git"
   },
   "scripts": {
     "build": "rollup -c",
