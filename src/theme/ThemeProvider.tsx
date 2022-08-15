@@ -15,11 +15,10 @@ export const ThemeContext = createContext<ThemeContextType>({
 })
 
 const ThemeProviderWrapper: FC = (props) => {
-  const [themeName, _setThemeName] = useState('PureLightTheme')
+  const [themeName, _setThemeName] = useState('SaaSusTheme')
 
   useEffect(() => {
-    const curThemeName =
-      window.localStorage.getItem('appTheme') || 'PureLightTheme'
+    const curThemeName = 'SaaSusTheme'
     _setThemeName(curThemeName)
   }, [])
 

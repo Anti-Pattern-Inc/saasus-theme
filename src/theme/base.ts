@@ -103,6 +103,16 @@ declare module '@mui/material/styles' {
         main: string
         dark: string
       }
+      turquoise?: {
+        light: string
+        main: string
+        dark: string
+      }
+      coral?: {
+        light: string
+        main: string
+        dark: string
+      }
     }
     general: {
       reactFrameworkColor: React.CSSProperties['color']
@@ -218,6 +228,16 @@ declare module '@mui/material/styles' {
       }
       info: {
         lighter: string
+        light: string
+        main: string
+        dark: string
+      }
+      turquoise?: {
+        light: string
+        main: string
+        dark: string
+      }
+      coral?: {
         light: string
         main: string
         dark: string

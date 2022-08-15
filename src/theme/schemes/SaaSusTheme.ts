@@ -260,6 +260,16 @@ export const SaaSusTheme = createTheme({
       main: themeColors.info,
       dark: darken(themeColors.info, 0.2),
     },
+    turquoise: {
+      main: '#00838f',
+      dark: '#005662',
+      light: '#76C4CB',
+    },
+    coral: {
+      main: '#FF8052',
+      dark: '#BF603E',
+      light: '#FBC2AD',
+    },
   },
   general: {
     reactFrameworkColor: '#00D8FF',
@@ -281,7 +291,7 @@ export const SaaSusTheme = createTheme({
     menuItemHeadingColor: colors.layout.sidebar.menuItemHeadingColor,
     boxShadow:
       '2px 0 3px rgba(159, 162, 191, .18), 1px 0 1px rgba(159, 162, 191, 0.32)',
-    width: '200px',
+    width: '180px',
   },
   header: {
     height: 'auto',
@@ -658,6 +668,16 @@ export const SaaSusTheme = createTheme({
           textTransform: 'none',
           paddingLeft: 16,
           paddingRight: 16,
+          minWidth: 160, // 最小横幅サイズの確保
+          maxWidth: '100%',
+          whiteSpace: 'nowrap', // ボタン内折返し禁止
+          overflow: 'hidden', // 文字数が極端に多い時ははみ出し分非表示
+
+          '&.MuiButton-contained.MuiButton-containedPrimary': {
+            '&:not(.Mui-disabled)': {
+              boxShadow: '0 2px 4px rgba(180, 180, 180, 0.5)',
+            },
+          },
 
           '.MuiSvgIcon-root': {
             transition: 'all .2s',
