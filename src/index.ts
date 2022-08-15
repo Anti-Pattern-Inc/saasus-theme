@@ -13,4 +13,3 @@ export {
   default as SaaSusThemeProvider,
   ThemeContext,
 } from './theme/ThemeProvider'
-export { default as Link } from './components/Link'
