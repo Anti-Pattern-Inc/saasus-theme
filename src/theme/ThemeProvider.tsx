@@ -23,6 +23,7 @@ const ThemeProviderWrapper: FC = (props) => {
   }, [])
 
   const theme = themeCreator(themeName)
+
   const setThemeName = (themeName: string): void => {
     window.localStorage.setItem('appTheme', themeName)
     _setThemeName(themeName)
