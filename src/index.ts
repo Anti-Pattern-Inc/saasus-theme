@@ -1,4 +1,5 @@
 export { AccordionWrap } from './components/Box/AccordionWrap'
+export { CustomAlert } from './components/Alert/CustomAlert'
 export { default as BoxContent } from './components/Box/BoxContent'
 export { default as BoxWrap } from './components/Box/BoxWrap'
 export { ButtonWrap } from './components/Button/ButtonWrap'
