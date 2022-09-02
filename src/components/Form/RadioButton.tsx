@@ -77,7 +77,7 @@ const ButtonlUI = styled(Button)(
           background-color: ${theme.colors.primary.lighter};
           border: 2px solid ${theme.colors.primary.main};
           height: 100%;
-          border-radius: 8px;
+          border-radius: 9px;
           overflow: hidden;
 
           &:after{
