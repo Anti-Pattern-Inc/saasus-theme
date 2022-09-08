@@ -1,3 +1,4 @@
+export { CustomTableContainer } from './components/Table/CustomTableContainer'
 export { BasicTable } from './components/Table/BasicTable'
 export { AccordionWrap } from './components/Box/AccordionWrap'
 export { CustomAlert } from './components/Alert/CustomAlert'
