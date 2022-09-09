@@ -1,7 +1,8 @@
 import { TableContainer, Paper } from '@mui/material'
 import { ReactNode, TableHTMLAttributes } from 'react'
 
-type ElementProps = TableHTMLAttributes<HTMLTableElement>
+// type ElementProps = TableHTMLAttributes<HTMLTableElement>
+type ElementProps = Omit<TableHTMLAttributes<HTMLTableElement>, keyof Props>
 
 type Props = {
   children: ReactNode
