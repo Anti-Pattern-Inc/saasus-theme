@@ -1,4 +1,6 @@
+export { CustomTable } from './components/Table'
 export { CustomTableRow } from './components/Table/CustomTableRow'
+export { CustomTableCell } from './components/Table/CustomTableCell'
 export { BasicTable } from './components/Table/BasicTable'
 export { AccordionWrap } from './components/Box/AccordionWrap'
 export { CustomAlert } from './components/Alert/CustomAlert'

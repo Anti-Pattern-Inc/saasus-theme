@@ -1,7 +1,10 @@
+// import { TableHTMLAttributes } from 'react'
+
 type Props = {
-  Cell?: JSX.Element
+  Columns?: JSX.Element
+  // Columns?: TableHTMLAttributes<HTMLTableElement>
 }
 
-export const CustomTableRow = ({ Cell }: Props) => {
-  return <>{Cell}</>
+export const CustomTableRow = ({ Columns }: Props) => {
+  return <>{Columns}</>
 }

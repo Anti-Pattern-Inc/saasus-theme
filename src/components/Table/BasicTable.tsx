@@ -9,7 +9,7 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material'
-import { CustomTableRow } from './CustomTableRow'
+import { CustomTableRow, CustomTableCell } from '@anti-pattern-inc/saasus-theme'
 
 // ----- Design -----
 // INFO: https://mui.com/material-ui/react-table/#basic-table
@@ -83,7 +83,7 @@ export const BasicTable = () => {
         <Table stickyHeader aria-label="table name">
           <TableHead>
             <CustomTableRow
-              Cell={
+              Columns={
                 <>
                   {columns.map((column) => (
                     <StyledTableCell
@@ -94,12 +94,13 @@ export const BasicTable = () => {
                       {column.label}
                     </StyledTableCell>
                   ))}
-                  <StyledTableCell
+                  {/* <StyledTableCell
                     align="left"
                     style={{ top: 0, minWidth: CommonMinWidth }}
                   >
                     アクション
-                  </StyledTableCell>
+                  </StyledTableCell> */}
+                  <CustomTableCell>アクション</CustomTableCell>
                 </>
               }
             />
