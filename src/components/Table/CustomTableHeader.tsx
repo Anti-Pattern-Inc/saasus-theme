@@ -1,25 +1,29 @@
 // TableHeadTypeMap,
 import { TableHead, TableRow } from '@mui/material'
-// import { OverridableComponent } from '@mui/material/OverridableComponent'
 import { ReactNode } from 'react'
+// import { OverridableComponent } from '@mui/material/OverridableComponent'
 
 // type ElementProps = Omit<TableHTMLAttributes<HTMLTableElement>, keyof Props>
 // type ElementProps = OverridableComponent<TableHeadTypeMap>
 
 type Props = {
   children: ReactNode
+  wrap?: boolean
 }
 
-export const CustomTableHeader = ({ children, ...props }: Props) => {
+export const CustomTableHeader = ({ children, wrap, ...props }: Props) => {
   return (
     <>
       <TableHead
         {...props}
-        style={{
-          whiteSpace: 'nowrap',
-          paddingTop: '1.5em',
-          paddingBottom: '1.5em',
-        }}
+        sx={[
+          {
+            whiteSpace: 'nowrap',
+            paddingTop: '1.5em',
+            paddingBottom: '1.5em',
+          },
+          wrap && { whiteSpace: 'normal' },
+        ]}
       >
         <TableRow>{children}</TableRow>
       </TableHead>
