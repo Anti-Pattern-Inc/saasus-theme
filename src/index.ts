@@ -1,7 +1,5 @@
 export { CustomTable } from './components/Table'
-export { CustomTableRow } from './components/Table/CustomTableRow'
-export { CustomTableCell } from './components/Table/CustomTableCell'
-export { BasicTable } from './components/Table/BasicTable'
+export { CustomTableContainer } from './components/Table/CustomTableContainer'
 export { AccordionWrap } from './components/Box/AccordionWrap'
 export { CustomAlert } from './components/Alert/CustomAlert'
 export { default as BoxContent } from './components/Box/BoxContent'

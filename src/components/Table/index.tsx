@@ -1,20 +1,19 @@
-import { Table, TableContainer, Paper } from '@mui/material'
+import { Table } from '@mui/material'
 import { ReactNode, TableHTMLAttributes } from 'react'
 
+type ElementProps = TableHTMLAttributes<HTMLTableElement>
+
 type Props = {
-  fixedHead?: boolean
   children?: ReactNode
+  ariaLabel?: string
 }
-type ElementProps = Omit<TableHTMLAttributes<HTMLTableElement>, keyof Props>
 
 export const CustomTable = ({ children, ...props }: Props & ElementProps) => {
   return (
     <>
-      <TableContainer component={Paper} sx={{ maxHeight: 640 }}>
-        <Table stickyHeader {...props}>
-          {children}
-        </Table>
-      </TableContainer>
+      <Table stickyHeader {...props}>
+        {children}
+      </Table>
     </>
   )
 }
