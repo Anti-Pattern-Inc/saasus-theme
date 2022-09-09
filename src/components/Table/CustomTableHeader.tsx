@@ -13,7 +13,14 @@ type Props = {
 export const CustomTableHeader = ({ children, ...props }: Props) => {
   return (
     <>
-      <TableHead {...props}>
+      <TableHead
+        {...props}
+        style={{
+          whiteSpace: 'nowrap',
+          paddingTop: '1.5em',
+          paddingBottom: '1.5em',
+        }}
+      >
         <TableRow>{children}</TableRow>
       </TableHead>
     </>
