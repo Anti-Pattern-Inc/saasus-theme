@@ -13,6 +13,8 @@ type ElementProps = TableCellProps
 type Props = {
   children: ReactNode
   minWidthValue?: number
+  maxWidthValue?: number
+  noWrap?: boolean
 }
 
 // ----- Design -----
@@ -33,6 +35,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 export const CustomTableCell = ({
   children,
   minWidthValue,
+  maxWidthValue,
+  noWrap,
   ...props
 }: Props & ElementProps) => {
   return (
@@ -40,7 +44,13 @@ export const CustomTableCell = ({
       {/* <StyledTableCell {...props}>{children}</StyledTableCell> */}
       <StyledTableCell
         {...props}
-        sx={{ top: 0, minWidth: minWidthValue ? minWidthValue : 80 }}
+        sx={{
+          whiteSpace: 'normal',
+          top: 0,
+          wordBreak: noWrap ? 'keep-all' : 'break-word',
+          minWidth: minWidthValue ? minWidthValue : 80,
+          maxWidth: maxWidthValue ? maxWidthValue : 200,
+        }}
       >
         {children}
       </StyledTableCell>
@@ -52,14 +62,14 @@ export const CustomTableCell = ({
 const StyledTableCellAction = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     position: `sticky`,
-    // top:0,
+    // top: 0,
     right: 0,
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
     position: `sticky`,
-    top: -12,
+    // top: 0,
     right: 0,
     borderColor: theme.colors.alpha.black[5],
   },

@@ -6,7 +6,7 @@ type ElementProps = Omit<TableHTMLAttributes<HTMLTableElement>, keyof Props>
 
 type Props = {
   children: ReactNode
-  maxHeightValue?: number
+  maxHeightValue?: number | string
 }
 
 export const CustomTableContainer = ({
