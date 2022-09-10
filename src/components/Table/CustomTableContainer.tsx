@@ -12,6 +12,7 @@ type Props = {
 export const CustomTableContainer = ({
   children,
   maxHeightValue,
+
   ...props
 }: Props & ElementProps) => {
   return (
