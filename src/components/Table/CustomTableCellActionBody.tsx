@@ -26,14 +26,14 @@ type Props = {
 const StyledTableCellAction = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     position: `sticky`,
-    // top: 0,
+    top: 0,
     right: 0,
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
     position: `sticky`,
-    // top: 0,
+    top: -49,
     right: 0,
     borderColor: theme.colors.alpha.black[5],
   },

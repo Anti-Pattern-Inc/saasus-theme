@@ -1,4 +1,4 @@
-export { CustomTable } from './components/Table'
+export { CustomTable } from './components/Table/CustomTable'
 export { CustomTableContainer } from './components/Table/CustomTableContainer'
 export { CustomTableHeader } from './components/Table/CustomTableHeader'
 export { CustomTableCell } from './components/Table/CustomTableCell'
