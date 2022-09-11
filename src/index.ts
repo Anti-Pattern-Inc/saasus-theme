@@ -1,6 +1,7 @@
 export { CustomTable } from './components/Table/CustomTable'
 export { CustomTableContainer } from './components/Table/CustomTableContainer'
 export { CustomTableHeader } from './components/Table/CustomTableHeader'
+export { CustomTableRow } from './components/Table/CustomTableRow'
 export { CustomTableCell } from './components/Table/CustomTableCell'
 export { CustomTableCellAction } from './components/Table/CustomTableCell'
 export { CustomTableCellActionBody } from './components/Table/CustomTableCellActionBody'
