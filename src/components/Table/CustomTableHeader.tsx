@@ -33,7 +33,7 @@ const StyledTableHead = styled(TableHead)(
 export const CustomTableHeader = ({
   children,
   // wrap,
-  // maxWidthValue,
+  // maxWidthValue
   ...props
 }: Props) => {
   return (

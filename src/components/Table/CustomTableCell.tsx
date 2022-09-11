@@ -58,7 +58,7 @@ export const CustomTableCell = ({
   )
 }
 
-// ----- Action for Edit/Remove Other-----
+// ----- Action Header for Edit/Remove Other-----
 const StyledTableCellAction = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     position: `sticky`,
