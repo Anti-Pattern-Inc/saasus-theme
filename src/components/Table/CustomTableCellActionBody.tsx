@@ -51,7 +51,6 @@ const IconButtonUI = styled(IconButton)(
 )
 
 export const CustomTableCellActionBody = ({
-  // onClick,
   onClickEdit,
   onClickDelete,
   ...props

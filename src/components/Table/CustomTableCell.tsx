@@ -6,8 +6,6 @@ import {
 } from '@mui/material'
 import { ReactNode } from 'react'
 
-// type ElementProps = TableHTMLAttributes<HTMLTableElement>
-// function TableCell(props: TableCellProps): JSX.Element
 type ElementProps = TableCellProps
 
 type Props = {
@@ -32,6 +30,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }))
 
+// デフォルトのTableCell
 export const CustomTableCell = ({
   children,
   minWidthValue,
@@ -41,7 +40,6 @@ export const CustomTableCell = ({
 }: Props & ElementProps) => {
   return (
     <>
-      {/* <StyledTableCell {...props}>{children}</StyledTableCell> */}
       <StyledTableCell
         {...props}
         sx={{
@@ -57,8 +55,7 @@ export const CustomTableCell = ({
     </>
   )
 }
-
-// ----- Action Header for Edit/Remove Other-----
+// 編集機能がある時のTableCell
 const StyledTableCellAction = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     position: `sticky`,
