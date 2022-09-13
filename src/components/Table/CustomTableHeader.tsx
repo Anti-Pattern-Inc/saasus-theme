@@ -1,20 +1,8 @@
-// TableHeadTypeMap,
-import {
-  styled,
-  // TableCell,
-  // tableCellClasses,
-  TableHead,
-  TableRow,
-} from '@mui/material'
+import { styled, TableHead, TableRow } from '@mui/material'
 import { ReactNode } from 'react'
-
-// type ElementProps = Omit<TableHTMLAttributes<HTMLTableElement>, keyof Props>
-// type ElementProps = OverridableComponent<TableHeadTypeMap>
 
 type Props = {
   children: ReactNode
-  // maxWidthValue?: number
-  // wrap?: boolean
 }
 
 // ----- テーブルの見出し折返し防止をグローバルに設置 -----
@@ -30,12 +18,7 @@ const StyledTableHead = styled(TableHead)(
   `,
 )
 
-export const CustomTableHeader = ({
-  children,
-  // wrap,
-  // maxWidthValue
-  ...props
-}: Props) => {
+export const CustomTableHeader = ({ children, ...props }: Props) => {
   return (
     <>
       <StyledTableHead
@@ -44,7 +27,6 @@ export const CustomTableHeader = ({
           {
             paddingTop: '1.5em',
             paddingBottom: '1.5em',
-            // maxWidth: maxWidthValue ? maxWidthValue : 120,
           },
         ]}
       >
