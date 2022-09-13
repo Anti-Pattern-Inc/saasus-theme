@@ -11,7 +11,7 @@ export const TableHeightSwitch = ({ checked, onChange }: Props) => {
     <>
       <FormControlLabel
         control={<Switch checked={checked} onChange={onChange} />}
-        label="Full Height"
+        label="高さ変更"
         labelPlacement="end"
         sx={{
           display: 'flex',
