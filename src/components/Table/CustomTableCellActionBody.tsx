@@ -20,6 +20,8 @@ type Props = {
   onClickDelete?: (
     _event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => void
+  hasEdit?: boolean
+  hasDelete?: boolean
 }
 
 // ----- Action Header for Edit/Remove Other-----
@@ -51,6 +53,8 @@ const IconButtonUI = styled(IconButton)(
 )
 
 export const CustomTableCellActionBody = ({
+  hasEdit,
+  hasDelete,
   onClickEdit,
   onClickDelete,
   ...props
@@ -59,16 +63,20 @@ export const CustomTableCellActionBody = ({
     <>
       <StyledTableCellAction align="center" sx={{ top: 0 }} {...props}>
         <Typography noWrap>
-          <Tooltip title={'編集'} arrow>
-            <IconButtonUI onClick={onClickEdit} color="primary">
-              <EditTwoToneIcon fontSize="small" />
-            </IconButtonUI>
-          </Tooltip>
-          <Tooltip title={'削除'} arrow>
-            <IconButtonUI onClick={onClickDelete} color="error">
-              <DeleteTwoToneIcon fontSize="small" />
-            </IconButtonUI>
-          </Tooltip>
+          {hasEdit && (
+            <Tooltip title={'編集'} arrow>
+              <IconButtonUI onClick={onClickEdit} color="primary">
+                <EditTwoToneIcon fontSize="small" />
+              </IconButtonUI>
+            </Tooltip>
+          )}
+          {hasDelete && (
+            <Tooltip title={'削除'} arrow>
+              <IconButtonUI onClick={onClickDelete} color="error">
+                <DeleteTwoToneIcon fontSize="small" />
+              </IconButtonUI>
+            </Tooltip>
+          )}
         </Typography>
       </StyledTableCellAction>
     </>
