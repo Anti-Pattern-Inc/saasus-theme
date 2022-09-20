@@ -23,14 +23,14 @@ type MainTitleSetProps = Partial<{
   headingText: string
   subtitleText: string
   variantSubTitle:
-  | 'subtitle1'
-  | 'subtitle2'
-  | 'body1'
-  | 'body2'
-  | 'button'
-  | 'caption'
-  | 'overline'
-  | 'inherit'
+    | 'subtitle1'
+    | 'subtitle2'
+    | 'body1'
+    | 'body2'
+    | 'button'
+    | 'caption'
+    | 'overline'
+    | 'inherit'
   AdditionalProps: JSX.Element
   // TitleWrapNone: boolean
   sxHeader: SxProps

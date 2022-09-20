@@ -3,6 +3,8 @@ import { ReactNode } from 'react'
 
 type Props = {
   children: ReactNode
+  defailtMinWidth?: number
+  defailtMaxWidth?: number
 }
 
 // ----- テーブルの見出し折返し防止をグローバルに設置 -----
