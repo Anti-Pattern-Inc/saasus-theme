@@ -3,8 +3,6 @@ import { ReactNode } from 'react'
 
 type Props = {
   children: ReactNode
-  defailtMinWidth?: number
-  defailtMaxWidth?: number
 }
 
 // ----- テーブルの見出し折返し防止をグローバルに設置 -----
@@ -23,15 +21,7 @@ const StyledTableHead = styled(TableHead)(
 export const CustomTableHeader = ({ children, ...props }: Props) => {
   return (
     <>
-      <StyledTableHead
-        {...props}
-        sx={[
-          {
-            paddingTop: '1.5em',
-            paddingBottom: '1.5em',
-          },
-        ]}
-      >
+      <StyledTableHead {...props}>
         <TableRow>{children}</TableRow>
       </StyledTableHead>
     </>

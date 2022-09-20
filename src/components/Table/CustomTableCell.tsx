@@ -46,8 +46,8 @@ export const CustomTableCell = ({
           whiteSpace: 'normal',
           top: 0,
           wordBreak: noWrap ? 'keep-all' : 'break-word',
-          minWidth: minWidthValue ? minWidthValue : 80,
-          maxWidth: maxWidthValue ? maxWidthValue : 200,
+          minWidth: minWidthValue ? minWidthValue : 60,
+          maxWidth: maxWidthValue ? maxWidthValue : 240,
         }}
       >
         {children}
@@ -72,6 +72,7 @@ const StyledTableCellAction = styled(TableCell)(({ theme }) => ({
   },
 }))
 
+// アクションがある場合は見出しのmapとは別に並列で設置する
 export const CustomTableCellAction = ({
   children,
   ...props
