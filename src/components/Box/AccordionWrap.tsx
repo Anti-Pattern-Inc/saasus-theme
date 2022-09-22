@@ -15,7 +15,36 @@ import {
 } from '@mui/material'
 import { SxProps } from '@mui/system'
 import { CustomTooltip } from 'components/Tooltip/CustomTooltip'
-import { ElementType, ReactNode, useState } from 'react'
+import { ElementType, ReactNode } from 'react'
+
+type Props = {
+  // 見出し ※必須
+  accordionTitle: string
+  component?: ElementType
+  variant?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | undefined
+  accordionSubTitle?: string
+  variantSubTitle?: 'subtitle1' | 'subtitle2' | 'caption' | 'overline'
+  // アコーディオン開閉ステータス
+  expanded?: boolean
+  // Expanded用の型？↓
+  // onChange?: (event: React.SyntheticEvent, isExpanded: boolean) => void
+  onChange?: (_event: React.MouseEvent<HTMLElement, MouseEvent>) => void //汎用的なクリックイベント
+  // 一意の値が必要であれば、id関連をこの値に兼用させる
+  id?: string
+  // 追加スタイリング
+  AccordionSx?: SxProps
+  AccordionSummarySx?: SxProps
+  DetailsSx?: SxProps
+  BorderNone?: boolean
+  // コンテンツ
+  children?: ReactNode
+  disabled?: boolean
+  // 右端オプション
+  AdditionalProps?: JSX.Element
+  // ヘルプアイコンとツールチップ
+  TooltipTitleIconComponent?: ReactNode
+  TooltipComponent?: ReactNode
+}
 
 // Stylings アコーディオン全体
 const Item = styled(Paper)(({ theme }) => ({
@@ -34,12 +63,16 @@ const AccordionStyle = styled((props: AccordionProps) => (
   '&:before': {
     display: 'none',
   },
+
+  // 重複border非表示
+  '.MuiAccordionDetails-root': { border: 'none !important' },
 }))
 
 // Stylings アコーディオン見出し、トリガー部分
 const AccordionSummaryStyle = styled((props: AccordionSummaryProps) => (
   <AccordionSummary {...props} />
 ))(({ theme }) => ({
+  padding: '8px 16px',
   borderRadius: 10,
   marginBottom: -1,
   // TODO: DarkMode Color設定
@@ -71,77 +104,50 @@ const AccordionDetailsStyle = styled(AccordionDetails)(({ theme }) => ({
   borderRadius: '0 0 10px 10px',
 }))
 
-type SetProps = {
-  // 見出し ※必須
-  AccordionTitle: string
-  component?: ElementType
-  variant?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-  AccordionSubTitle?: string
-  variantSubTitle?: 'subtitle1' | 'subtitle2' | 'caption' | 'overline'
-  // アコーディオントリガー
-  ExpandedName?: string
-  id?: string
-  // 読み込み時のオープンクローズ
-  InitOpen?: string
-  // 追加スタイリング
-  AccordionSx?: SxProps
-  SummarySx?: SxProps
-  DetailsSx?: SxProps
-  // コンテンツ
-  children?: ReactNode
-  disabled?: boolean
-  // 右端オプション
-  AdditionalProps?: JSX.Element
-  // ヘルプアイコンとツールチップ
-  TooltipTitleIconComponent?: ReactNode
-  TooltipComponent?: ReactNode
-}
-
 export const AccordionWrap = ({
   // 見出し
-  AccordionTitle,
+  accordionTitle,
   variant,
   component,
-  AccordionSubTitle,
+  accordionSubTitle,
   variantSubTitle,
-  // アコーディオントリガー
-  // id,
-  ExpandedName, // 一意の値、id関連をこの値に兼用させる
-  // 読み込み時のオープンクローズ
-  InitOpen,
-  // 追加スタイリング
+  // アコーディオン開閉ステータス
+  expanded,
+  onChange,
+  // 一意の値が必要であれば、id関連をこの値に兼用させる
+  id,
+  // Style
   AccordionSx,
-  SummarySx,
+  AccordionSummarySx,
   DetailsSx,
+  BorderNone,
   // コンテンツ
   children,
-  AdditionalProps,
   disabled,
+  AdditionalProps,
   // ヘルプアイコンとツールチップ
   TooltipTitleIconComponent,
   TooltipComponent,
-}: SetProps) => {
-  const [expanded, setExpanded] = useState<string | boolean>(`${InitOpen}`)
-
-  const handleChange =
-    (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false)
-    }
-
+}: Props) => {
+  // const theme = useTheme();
   return (
     <>
       <Item>
         <AccordionStyle
-          expanded={expanded === `${ExpandedName}`}
-          onChange={handleChange(`${ExpandedName}`)}
+          expanded={expanded}
+          onChange={onChange}
           sx={AccordionSx}
         >
           <AccordionSummaryStyle
             expandIcon={<ExpandMoreIcon />}
-            aria-controls={`${ExpandedName}-content`}
-            id={`${ExpandedName}-content`}
-            sx={SummarySx}
+            aria-controls={id}
+            id={id}
             disabled={disabled}
+            sx={AccordionSummarySx}
+            style={{
+              border: BorderNone && 'none',
+              background: BorderNone && 'none',
+            }}
           >
             <Box
               sx={{
@@ -165,7 +171,7 @@ export const AccordionWrap = ({
                     variant={variant ? variant : 'h3'}
                     component={component ? component : 'div'}
                   >
-                    {AccordionTitle}
+                    {accordionTitle}
                   </Typography>
                   {/* ツールチップ */}
                   <CustomTooltip
@@ -178,14 +184,19 @@ export const AccordionWrap = ({
                   <Typography
                     variant={variantSubTitle ? variantSubTitle : 'subtitle2'}
                   >
-                    {AccordionSubTitle}
+                    {accordionSubTitle}
                   </Typography>
                 </Box>
               </Box>
               <Box>{AdditionalProps}</Box>
             </Box>
           </AccordionSummaryStyle>
-          <AccordionDetailsStyle sx={DetailsSx}>
+          <AccordionDetailsStyle
+            sx={DetailsSx}
+            style={{
+              marginTop: BorderNone ? '-16px' : '',
+            }}
+          >
             {children}
           </AccordionDetailsStyle>
         </AccordionStyle>
