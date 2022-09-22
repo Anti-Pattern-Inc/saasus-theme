@@ -27,8 +27,6 @@ type Props = {
   // アコーディオン開閉ステータス
   defaultExpanded?: boolean
   expanded?: boolean
-  // Expanded用の型？↓
-  // onChange?: (event: React.SyntheticEvent, isExpanded: boolean) => void
   onChange?: (_event: React.MouseEvent<HTMLElement, MouseEvent>) => void //汎用的なクリックイベント
   // 一意の値が必要であれば、id関連をこの値に兼用させる
   id?: string
@@ -37,6 +35,8 @@ type Props = {
   AccordionSummarySx?: SxProps
   DetailsSx?: SxProps
   BorderNone?: boolean
+  // AccordionWrap同士の余白
+  spacing?: number
   // コンテンツ
   children?: ReactNode
   disabled?: boolean
@@ -47,18 +47,11 @@ type Props = {
   TooltipComponent?: ReactNode
 }
 
-// Stylings アコーディオン全体
-const Item = styled(Paper)(({ theme }) => ({
-  marginBottom: theme.spacing(4),
-  padding: 0,
-}))
-
 const AccordionStyle = styled((props: AccordionProps) => (
   <Accordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
   borderRadius: 10,
-  marginBottom: 40,
   transition: '0ms',
 
   '&:before': {
@@ -123,6 +116,7 @@ export const AccordionWrap = ({
   AccordionSummarySx,
   DetailsSx,
   BorderNone,
+  spacing,
   // コンテンツ
   children,
   disabled,
@@ -131,10 +125,9 @@ export const AccordionWrap = ({
   TooltipTitleIconComponent,
   TooltipComponent,
 }: Props) => {
-  // const theme = useTheme();
   return (
     <>
-      <Item>
+      <Paper sx={{ p: 0, mb: spacing ? spacing : 4 }}>
         <AccordionStyle
           expanded={expanded}
           onChange={onChange}
@@ -203,7 +196,7 @@ export const AccordionWrap = ({
             {children}
           </AccordionDetailsStyle>
         </AccordionStyle>
-      </Item>
+      </Paper>
     </>
   )
 }
