@@ -25,6 +25,7 @@ type Props = {
   accordionSubTitle?: string
   variantSubTitle?: 'subtitle1' | 'subtitle2' | 'caption' | 'overline'
   // アコーディオン開閉ステータス
+  defaultExpanded?: boolean
   expanded?: boolean
   // Expanded用の型？↓
   // onChange?: (event: React.SyntheticEvent, isExpanded: boolean) => void
@@ -112,6 +113,7 @@ export const AccordionWrap = ({
   accordionSubTitle,
   variantSubTitle,
   // アコーディオン開閉ステータス
+  defaultExpanded,
   expanded,
   onChange,
   // 一意の値が必要であれば、id関連をこの値に兼用させる
@@ -137,6 +139,7 @@ export const AccordionWrap = ({
           expanded={expanded}
           onChange={onChange}
           sx={AccordionSx}
+          defaultExpanded={defaultExpanded}
         >
           <AccordionSummaryStyle
             expandIcon={<ExpandMoreIcon />}
