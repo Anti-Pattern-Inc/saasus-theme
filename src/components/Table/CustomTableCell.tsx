@@ -39,20 +39,18 @@ export const CustomTableCell = ({
   ...props
 }: Props & ElementProps) => {
   return (
-    <>
-      <StyledTableCell
-        {...props}
-        sx={{
-          whiteSpace: 'normal',
-          top: 0,
-          wordBreak: noWrap ? 'keep-all' : 'break-word',
-          minWidth: minWidthValue ? minWidthValue : 60,
-          maxWidth: maxWidthValue ? maxWidthValue : 240,
-        }}
-      >
-        {children}
-      </StyledTableCell>
-    </>
+    <StyledTableCell
+      {...props}
+      sx={{
+        whiteSpace: 'normal',
+        top: 0,
+        wordBreak: noWrap ? 'keep-all' : 'break-word',
+        minWidth: minWidthValue ? minWidthValue : 60,
+        maxWidth: maxWidthValue ? maxWidthValue : 240,
+      }}
+    >
+      {children}
+    </StyledTableCell>
   )
 }
 // 編集機能がある時のTableCell
