@@ -78,10 +78,8 @@ export const CustomTableCellAction = ({
   ...props
 }: Props & ElementProps) => {
   return (
-    <>
-      <StyledTableCellAction align="center" sx={{ top: 0 }} {...props}>
-        {children}
-      </StyledTableCellAction>
-    </>
+    <StyledTableCellAction align="center" sx={{ top: 0 }} {...props}>
+      {children}
+    </StyledTableCellAction>
   )
 }

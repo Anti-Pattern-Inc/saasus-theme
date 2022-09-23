@@ -16,15 +16,13 @@ export const CustomTableContainer = ({
   ...props
 }: Props & ElementProps) => {
   return (
-    <>
-      <TableContainer
-        component={Paper}
-        style={{ maxHeight: maxHeightValue }}
-        sx={sx}
-        {...props}
-      >
-        {children}
-      </TableContainer>
-    </>
+    <TableContainer
+      component={Paper}
+      style={{ maxHeight: maxHeightValue }}
+      sx={sx}
+      {...props}
+    >
+      {children}
+    </TableContainer>
   )
 }

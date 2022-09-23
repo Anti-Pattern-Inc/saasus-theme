@@ -13,16 +13,16 @@ import {
 
 type ElementProps = TableCellProps
 
-type Props = {
-  onClickEdit?: (
+type Props = Partial<{
+  onClickEdit: (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onClickDelete: (
     _event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => void
-  onClickDelete?: (
-    _event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => void
-  hasEdit?: boolean
-  hasDelete?: boolean
-}
+  hasEdit: boolean
+  editTitle: string
+  hasDelete: boolean
+  deleteTitle: string
+}>
 
 // ----- Action Header for Edit/Remove Other-----
 const StyledTableCellAction = styled(TableCell)(({ theme }) => ({
@@ -54,31 +54,31 @@ const IconButtonUI = styled(IconButton)(
 
 export const CustomTableCellActionBody = ({
   hasEdit,
+  editTitle,
   hasDelete,
+  deleteTitle,
   onClickEdit,
   onClickDelete,
   ...props
 }: Props & ElementProps) => {
   return (
-    <>
-      <StyledTableCellAction align="center" sx={{ top: 0 }} {...props}>
-        <Typography noWrap>
-          {hasEdit && (
-            <Tooltip title={'編集'} arrow>
-              <IconButtonUI onClick={onClickEdit} color="primary">
-                <EditTwoToneIcon fontSize="small" />
-              </IconButtonUI>
-            </Tooltip>
-          )}
-          {hasDelete && (
-            <Tooltip title={'削除'} arrow>
-              <IconButtonUI onClick={onClickDelete} color="error">
-                <DeleteTwoToneIcon fontSize="small" />
-              </IconButtonUI>
-            </Tooltip>
-          )}
-        </Typography>
-      </StyledTableCellAction>
-    </>
+    <StyledTableCellAction align="center" sx={{ top: 0 }} {...props}>
+      <Typography noWrap>
+        {hasEdit && (
+          <Tooltip title={editTitle} arrow>
+            <IconButtonUI onClick={onClickEdit} color="primary">
+              <EditTwoToneIcon fontSize="small" />
+            </IconButtonUI>
+          </Tooltip>
+        )}
+        {hasDelete && (
+          <Tooltip title={deleteTitle} arrow>
+            <IconButtonUI onClick={onClickDelete} color="error">
+              <DeleteTwoToneIcon fontSize="small" />
+            </IconButtonUI>
+          </Tooltip>
+        )}
+      </Typography>
+    </StyledTableCellAction>
   )
 }

@@ -10,7 +10,6 @@ type ElementProps = Omit<TableHTMLAttributes<HTMLTableElement>, keyof Props>
  */
 type Props = {
   children?: ReactNode
-  ariaLabel?: string
   caption?: string
   sx?: SxProps
 }
@@ -22,11 +21,9 @@ export const CustomTable = ({
   ...props
 }: Props & ElementProps) => {
   return (
-    <>
-      <Table stickyHeader {...props} sx={sx}>
-        {caption && <caption>{caption}</caption>}
-        {children}
-      </Table>
-    </>
+    <Table stickyHeader {...props} sx={sx}>
+      {caption && <caption>{caption}</caption>}
+      {children}
+    </Table>
   )
 }

@@ -20,10 +20,8 @@ const StyledTableHead = styled(TableHead)(
 
 export const CustomTableHeader = ({ children, ...props }: Props) => {
   return (
-    <>
-      <StyledTableHead {...props}>
-        <TableRow>{children}</TableRow>
-      </StyledTableHead>
-    </>
+    <StyledTableHead {...props}>
+      <TableRow>{children}</TableRow>
+    </StyledTableHead>
   )
 }
