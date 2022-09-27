@@ -1,4 +1,5 @@
 import { Box, Container, styled } from "@mui/material"
+import { CSSProperties } from "@mui/styles"
 import { SxProps } from "@mui/system"
 import { ReactNode } from "react"
 
@@ -13,11 +14,12 @@ type Props = {
   maxWidth?: "xs" | "sm" | "md" | "lg" | "xl" | false
   // widthをブレイクポイントに追従
   fixed?: boolean
-  sx?: SxProps
   // Side Pagging
   addGutter?: boolean
   // margin bottom
-  mb?: number
+  mb?: number | string
+  sx?: SxProps
+  style?: CSSProperties
 }
 
 // ----- extentd Container -----
@@ -34,19 +36,22 @@ export const CustomContainer = ({
   sx,
   addGutter,
   mb,
+  style,
 }: Props) => {
   return (
-    <>
-      <Box sx={{ mb: mb || 0 }}>
-        <StyledContainer
-          maxWidth={maxWidth}
-          fixed={fixed}
-          sx={sx}
-          disableGutters={addGutter ? false : true}
-        >
-          {children}
-        </StyledContainer>
-      </Box>
-    </>
+    // margin-bottom or デフォルトmargin-bottom
+    <Box sx={(mb && { mb: mb }) || { mb: 4 }}>
+      <StyledContainer
+        maxWidth={maxWidth}
+        sx={sx}
+        style={style}
+        // 段階的な横幅指定
+        fixed={fixed}
+        // 両横の溝=paddingの有無 defaultは無しに指定
+        disableGutters={addGutter ? false : true}
+      >
+        {children}
+      </StyledContainer>
+    </Box>
   )
 }

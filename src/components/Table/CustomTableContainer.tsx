@@ -2,6 +2,8 @@ import { Paper, TableContainer } from '@mui/material'
 import { SxProps } from '@mui/system'
 import { ReactNode, TableHTMLAttributes } from 'react'
 
+
+
 type ElementProps = Omit<TableHTMLAttributes<HTMLTableElement>, keyof Props>
 type Props = {
   children: ReactNode
