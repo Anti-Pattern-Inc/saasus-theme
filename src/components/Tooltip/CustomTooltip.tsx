@@ -12,6 +12,11 @@ export const CustomTooltip = ({
   TooltipTitleIconComponent,
   TooltipComponent,
 }: Props) => {
+  // TODO: localization
+  // TooltipComponentが定義されていない場合、
+  // スクリーンリーダーにButtonと読まれてしまうのでaria-labelを設定
+  const toolTipAriaLabel = TooltipComponent ? undefined : 'ヘルプ'
+
   return (
     <>
       {TooltipTitleIconComponent && (
@@ -32,6 +37,7 @@ export const CustomTooltip = ({
                 borderRadius: '6px',
               },
             }}
+            aria-label={toolTipAriaLabel}
           >
             {TooltipComponent ? (
               TooltipComponent
