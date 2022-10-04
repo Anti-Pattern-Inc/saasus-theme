@@ -9,7 +9,7 @@ type Props = {
   TooltipTitleIconComponent?: ReactNode // ツールチップに表示するアイコンとセット。ツールチップ内にテキストかコンポーネントを設置可能。
   TooltipComponent?: ReactNode // トリガーをアイコンでなくテキストを設定する場合はtrue default: false
   children: ReactNode
-  OptionalRequired?: ReactNode
+  OptionalChip?: ReactNode
   chipLabel?: string
   size?: 'medium' | 'small'
   color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'
@@ -31,7 +31,7 @@ export const CustomLabel = ({
   TooltipTitleIconComponent,
   TooltipComponent,
   children,
-  OptionalRequired,
+  OptionalChip,
   chipLabel,
   color,
   size,
@@ -46,7 +46,7 @@ export const CustomLabel = ({
           TooltipTitleIconComponent={TooltipTitleIconComponent}
           TooltipComponent={TooltipComponent}
         />
-        {OptionalRequired && (
+        {OptionalChip && (
           <Chip
             size={size ? size : 'small'}
             color={color}
