@@ -1,6 +1,7 @@
-import { Chip, InputLabel, styled } from "@mui/material"
-import { CustomTooltip } from "components/Tooltip/CustomTooltip"
-import { ReactNode } from "react"
+import { Chip, InputLabel, styled } from '@mui/material'
+import { CustomTooltip } from 'components/Tooltip/CustomTooltip'
+import { ReactNode } from 'react'
+import { SxProps } from '@mui/system'
 
 // Types
 type Props = {
@@ -10,15 +11,19 @@ type Props = {
   children: ReactNode
   OptionalRequired?: ReactNode
   chipLabel?: string
+  size?: 'medium' | 'small'
+  color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'
+  variant?: 'filled' | 'outlined'
+  sx?: SxProps
 }
 
 const Label = styled(InputLabel)(() => ({
   marginTop: 24,
-  fontSize: "14px",
-  position: "initial",
-  textAlign: "left",
-  transform: "none",
-  minHeight: "1.85em",
+  fontcolor: '14px',
+  position: 'initial',
+  textAlign: 'left',
+  transform: 'none',
+  minHeight: '1.85em',
 }))
 
 export const CustomLabel = ({
@@ -28,6 +33,10 @@ export const CustomLabel = ({
   children,
   OptionalRequired,
   chipLabel,
+  color,
+  size,
+  sx,
+  variant,
 }: Props) => {
   return (
     <>
@@ -39,9 +48,16 @@ export const CustomLabel = ({
         />
         {OptionalRequired && (
           <Chip
-            size='small'
-            label={chipLabel ? chipLabel : "任意"}
-            style={{ borderRadius: 4, marginBottom: 1 }}
+            size={size ? size : 'small'}
+            color={color}
+            variant={variant}
+            label={chipLabel ? chipLabel : '任意'}
+            sx={sx}
+            style={{
+              borderRadius: 4,
+              margin: `0px 4px 4px`,
+              padding: `1px 8px 0`,
+            }}
           />
         )}
       </Label>
