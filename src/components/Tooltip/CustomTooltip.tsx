@@ -17,26 +17,26 @@ export const CustomTooltip = ({
       {TooltipTitleIconComponent && (
         <Tooltip
           title={
-            <Box sx={{ textAlign: 'justify' }}>{TooltipTitleIconComponent}</Box>
+            <Box sx={{ textAlign: "justify" }}>{TooltipTitleIconComponent}</Box>
           }
           arrow
-          placement="top-start"
+          placement='top-start'
         >
           <Button
             sx={{
-              margin: '0 0 .2em 0',
-              '&.MuiButton-root': {
-                margin: '0 2px 2px',
-                minWidth: 'fit-content',
-                padding: '3px 6px 3px',
-                borderRadius: '6px',
+              margin: "0 0 .2em 0",
+              "&.MuiButton-root": {
+                margin: "0 2px 4px",
+                minWidth: "fit-content",
+                padding: "2px 4px",
+                borderRadius: "6px",
               },
             }}
           >
             {TooltipComponent ? (
               TooltipComponent
             ) : (
-              <HelpOutlineIcon fontSize="small" />
+              <HelpOutlineIcon fontSize='small' />
             )}
           </Button>
         </Tooltip>
