@@ -22,6 +22,7 @@ type Props = Partial<{
   editTitle: string
   hasDelete: boolean
   deleteTitle: string
+  testItem: string
 }>
 
 // ----- Action Header for Edit/Remove Other-----
@@ -59,6 +60,7 @@ export const CustomTableCellActionBody = ({
   deleteTitle,
   onClickEdit,
   onClickDelete,
+  testItem,
   ...props
 }: Props & ElementProps) => {
   return (
@@ -67,14 +69,20 @@ export const CustomTableCellActionBody = ({
         {hasEdit && (
           <Tooltip title={editTitle} arrow>
             <IconButtonUI onClick={onClickEdit} color="primary">
-              <EditTwoToneIcon fontSize="small" />
+              <EditTwoToneIcon
+                fontSize="small"
+                data-testid={testItem && `updating:${testItem}`}
+              />
             </IconButtonUI>
           </Tooltip>
         )}
         {hasDelete && (
           <Tooltip title={deleteTitle} arrow>
             <IconButtonUI onClick={onClickDelete} color="error">
-              <DeleteTwoToneIcon fontSize="small" />
+              <DeleteTwoToneIcon
+                fontSize="small"
+                data-testid={testItem && `deleting:${testItem}`}
+              />
             </IconButtonUI>
           </Tooltip>
         )}
