@@ -1,7 +1,7 @@
-import { Box, Container, styled } from "@mui/material"
-import { CSSProperties } from "@mui/styles"
-import { SxProps } from "@mui/system"
-import { ReactNode } from "react"
+import { Box, Container, styled } from '@mui/material'
+import { CSSProperties } from '@mui/styles'
+import { SxProps } from '@mui/system'
+import { ReactNode } from 'react'
 
 /**
  * BreakPoint: setting from theme/schemes/SaaSusTheme.ts
@@ -11,7 +11,7 @@ import { ReactNode } from "react"
 type Props = {
   children: ReactNode
   // Themeで設定した幅
-  maxWidth?: "xs" | "sm" | "md" | "lg" | "xl" | false
+  maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false
   // widthをブレイクポイントに追従
   fixed?: boolean
   // Side Pagging
@@ -22,11 +22,11 @@ type Props = {
   style?: CSSProperties
 }
 
-// ----- extentd Container -----
+// ----- extend Container -----
 const StyledContainer = styled(Container)(
   ({ theme }) => `
     padding: ${theme.spacing(0, 0, 0, 0)};
-  `
+  `,
 )
 
 export const CustomContainer = ({
