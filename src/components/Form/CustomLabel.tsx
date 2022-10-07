@@ -24,6 +24,10 @@ const Label = styled(InputLabel)(() => ({
   textAlign: 'left',
   transform: 'none',
   minHeight: '1.85em',
+
+  '&.MuiFormLabel-root.MuiInputLabel-root': {
+    fontSize: 14,
+  },
 }))
 
 export const CustomLabel = ({
