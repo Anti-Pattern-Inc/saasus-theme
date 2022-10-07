@@ -19,7 +19,7 @@ type Props = {
 
 const Label = styled(InputLabel)(() => ({
   marginTop: 24,
-  fontcolor: '14px',
+  fontSize: '14px',
   position: 'initial',
   textAlign: 'left',
   transform: 'none',
