@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 type LogoProps = {
   width: number
-  alt?: string
+  alt: string
 }
 
 const LogoBox = styled(Box)(
