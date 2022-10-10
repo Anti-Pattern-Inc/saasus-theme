@@ -8,6 +8,7 @@ export { CustomTableCellActionBody } from './components/Table/CustomTableCellAct
 export { TableHeightSwitch } from './components/Table/TableHeightSwitch'
 export { AccordionWrap } from './components/Box/AccordionWrap'
 export { CustomAlert } from './components/Alert/CustomAlert'
+export { CustomContainer } from './components/Container/CustomContainer'
 export { default as BoxContent } from './components/Box/BoxContent'
 export { default as BoxWrap } from './components/Box/BoxWrap'
 export { ButtonWrap } from './components/Button/ButtonWrap'

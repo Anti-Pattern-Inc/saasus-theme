@@ -16,29 +16,29 @@ import { ElementType, ReactNode } from 'react'
 // INFO: *variantのh1はMainTitleSetでのみ設置可能としたいです
 type TitleSetProps = Partial<{
   variant:
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'body1'
-  | 'body2'
-  | 'button'
-  | 'caption'
-  | 'overline'
-  | 'inherit'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'body1'
+    | 'body2'
+    | 'button'
+    | 'caption'
+    | 'overline'
+    | 'inherit'
   component: ElementType
   headingText: string
   subtitleText: string
   variantSubTitle:
-  | 'subtitle1'
-  | 'subtitle2'
-  | 'body1'
-  | 'body2'
-  | 'button'
-  | 'caption'
-  | 'overline'
-  | 'inherit'
+    | 'subtitle1'
+    | 'subtitle2'
+    | 'body1'
+    | 'body2'
+    | 'button'
+    | 'caption'
+    | 'overline'
+    | 'inherit'
   AdditionalProps: JSX.Element
   sxHeader: SxProps
   sxSubTitle: SxProps
@@ -88,10 +88,10 @@ const TitleSet = ({
           margin: noMargin
             ? theme.spacing(0)
             : mbSmall
-              ? theme.spacing(0, 0, 1, 0)
-              : mbLarge
-                ? theme.spacing(0, 0, 5, 0)
-                : theme.spacing(0, 0, 3, 0),
+            ? theme.spacing(0, 0, 1, 0)
+            : mbLarge
+            ? theme.spacing(0, 0, 5, 0)
+            : theme.spacing(0, 0, 3, 0),
           '.MuiPageTitle-wrapper': {
             m: theme.spacing(0),
             p: theme.spacing(0),
