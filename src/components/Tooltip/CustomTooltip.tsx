@@ -26,9 +26,9 @@ export const CustomTooltip = ({
             sx={{
               margin: '0 0 .2em 0',
               '&.MuiButton-root': {
-                margin: '0 2px 2px',
+                margin: '0 2px 4px',
                 minWidth: 'fit-content',
-                padding: '3px 6px 3px',
+                padding: '2px 4px',
                 borderRadius: '6px',
               },
             }}

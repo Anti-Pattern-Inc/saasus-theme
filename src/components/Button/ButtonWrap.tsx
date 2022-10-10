@@ -27,7 +27,7 @@ export const ButtonWrap = ({ sx, children, justifyContent }: Props) => {
   return (
     <>
       <StackButtonWrap
-        justifyContent={justifyContent ? justifyContent : 'flex-end'}
+        justifyContent={justifyContent ? justifyContent : 'flex-start'}
         sx={sx}
       >
         {children}
