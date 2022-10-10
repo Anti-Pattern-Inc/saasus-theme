@@ -1,5 +1,4 @@
 import { Theme, ThemeProvider } from '@mui/material/styles'
-import { I18nextProvider } from 'react-i18next'
 import { StylesProvider } from '@mui/styles'
 import { createContext, useEffect, useState } from 'react'
 
@@ -45,13 +44,11 @@ const ThemeProviderWrapper = ({
   }
 
   return (
-    <I18nextProvider i18n={i18n}>
-      <StylesProvider injectFirst>
-        <ThemeContext.Provider value={{ theme, setThemeName }}>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </ThemeContext.Provider>
-      </StylesProvider>
-    </I18nextProvider>
+    <StylesProvider injectFirst>
+      <ThemeContext.Provider value={{ theme, setThemeName }}>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </ThemeContext.Provider>
+    </StylesProvider>
   )
 }
 

@@ -1,6 +1,6 @@
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import { Box, Button, Tooltip } from '@mui/material'
-import { i18nNamespace } from 'i18n'
+import i18n, { i18nNamespace } from 'i18n'
 import { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -14,7 +14,7 @@ export const CustomTooltip = ({
   TooltipTitleIconComponent,
   TooltipComponent,
 }: Props) => {
-  const { t } = useTranslation(i18nNamespace)
+  const { t } = useTranslation(i18nNamespace, { i18n })
   // TooltipComponentが定義されていない場合、
   // スクリーンリーダーにButtonと読まれてしまうのでaria-labelを設定
   const toolTipAriaLabel = TooltipComponent ? undefined : t('help')
