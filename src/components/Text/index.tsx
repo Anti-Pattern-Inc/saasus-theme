@@ -25,7 +25,7 @@ const TextWrapper = styled('span')(
       &.flexItem {
         display: inline-flex;
       }
-      
+
       &.MuiText {
 
         &-black {
@@ -35,23 +35,23 @@ const TextWrapper = styled('span')(
         &-primary {
           color: ${theme.palette.primary.main}
         }
-        
+
         &-secondary {
           color: ${theme.palette.secondary.main}
         }
-        
+
         &-success {
           color: ${theme.palette.success.main}
         }
-        
+
         &-warning {
           color: ${theme.palette.warning.main}
         }
-              
+
         &-error {
           color: ${theme.palette.error.main}
         }
-        
+
         &-info {
           color: ${theme.palette.info.main}
         }
@@ -60,6 +60,7 @@ const TextWrapper = styled('span')(
 )
 
 const Text: FC<TextProps> = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
   color = 'secondary',
   flex,

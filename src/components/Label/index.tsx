@@ -25,7 +25,7 @@ const LabelWrapper = styled('span')(
       align-items: center;
       justify-content: center;
       max-height: ${theme.spacing(3)};
-      
+
       &.MuiLabel {
         &-primary {
           background-color: ${theme.colors.primary.lighter};
@@ -36,27 +36,27 @@ const LabelWrapper = styled('span')(
           background-color: ${theme.colors.alpha.black[100]};
           color: ${theme.colors.alpha.white[100]};
         }
-        
+
         &-secondary {
           background-color: ${theme.colors.secondary.lighter};
           color: ${theme.palette.secondary.main}
         }
-        
+
         &-success {
           background-color: ${theme.colors.success.lighter};
           color: ${theme.palette.success.main}
         }
-        
+
         &-warning {
           background-color: ${theme.colors.warning.lighter};
           color: ${theme.palette.warning.main}
         }
-              
+
         &-error {
           background-color: ${theme.colors.error.lighter};
           color: ${theme.palette.error.main}
         }
-        
+
         &-info {
           background-color: ${theme.colors.info.lighter};
           color: ${theme.palette.info.main}
@@ -66,6 +66,7 @@ const LabelWrapper = styled('span')(
 )
 
 const Label: FC<LabelProps> = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
   color = 'secondary',
   children,

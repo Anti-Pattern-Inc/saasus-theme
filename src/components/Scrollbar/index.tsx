@@ -4,11 +4,10 @@ import { FC, ReactNode } from 'react'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 
 interface ScrollbarProps {
-  className?: string
   children?: ReactNode
 }
 
-const Scrollbar: FC<ScrollbarProps> = ({ className, children, ...rest }) => {
+const Scrollbar: FC<ScrollbarProps> = ({ children, ...rest }) => {
   const theme = useTheme()
 
   return (
@@ -40,7 +39,6 @@ const Scrollbar: FC<ScrollbarProps> = ({ className, children, ...rest }) => {
 
 Scrollbar.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.string,
 }
 
 export default Scrollbar

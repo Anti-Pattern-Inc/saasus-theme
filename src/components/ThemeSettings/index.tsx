@@ -196,6 +196,7 @@ const ThemeSettings: FC = () => {
   // TODO 必要に応じて翻訳対応を行う
   const t = (t: string) => t
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ref = useRef<any>(null)
   const [isOpen, setOpen] = useState<boolean>(false)
 
