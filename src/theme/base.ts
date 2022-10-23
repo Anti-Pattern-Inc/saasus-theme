@@ -1,7 +1,7 @@
 import { Theme } from '@mui/material'
 import React from 'react'
 
-import { GreenFieldsTheme } from './schemes/GreenFieldsTheme'
+import { SaaSusDarkThemeHighContrast } from './schemes/SaaSusDarkThemeHighContrast'
 import { SaaSusDarkTheme } from './schemes/SaaSusDarkTheme'
 import { SaaSusTheme } from './schemes/SaaSusTheme'
 
@@ -273,5 +273,5 @@ declare module '@mui/material/styles' {
 const themeMap: { [key: string]: Theme } = {
   SaaSusTheme,
   SaaSusDarkTheme,
-  GreenFieldsTheme,
+  SaaSusDarkThemeHighContrast,
 }

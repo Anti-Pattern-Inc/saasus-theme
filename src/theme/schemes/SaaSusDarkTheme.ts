@@ -2,7 +2,38 @@ import '@mui/lab/themeAugmentation'
 
 import { alpha, createTheme, darken } from '@mui/material'
 
-// import i18n from 'i18n/i18n';
+/***
+ * lighter設置のための型拡張
+ *  @see: https://mui.com/material-ui/customization/palette/
+ */
+declare module '@mui/material/styles' {
+  interface PaletteColor {
+    lighter?: string
+  }
+  interface SimplePaletteColorOptions {
+    lighter?: string
+  }
+  // font
+  interface FontStyle {
+    info?: string
+  }
+}
+
+/***
+ * @param fontPxToRem pxからrem変換計算用
+ *  ユーザーのブラウザ設定に応じ、基準サイズをユーザーが意図した表示サイズに追従させ得るための対応
+ *  例：fontPxToRem(24) -> fontSize:1.5rem 見た目上24pxのrem
+ * @param fontPxToRemMinim レスポンシブ対応の縮小サイズ用 現在85%
+ *  モバイルファースト設計で先にこちらが優先され、ブレイクポイント（現在960px）以上の画面幅になれば100%になる仕様です
+ *  レスポンシブ設計は必要応じてアップデートを見込んでいます。
+ */
+const fontPxToRem = (px: number) => {
+  return px / 16 + 'rem'
+}
+// レスポンシブ対応の縮小サイズ用
+const fontPxToRemMinim = (px: number) => {
+  return (px / 16) * 0.85 + 'rem'
+}
 
 const themeColors = {
   primary: '#8C7CF0',
@@ -242,15 +273,15 @@ export const SaaSusDarkTheme = createTheme({
     menuItemIconColorActive: colors.layout.sidebar.menuItemIconColorActive,
     menuItemHeadingColor: colors.layout.sidebar.menuItemHeadingColor,
     boxShadow: '1px 0 0 #272C48',
-    width: '290px',
+    width: '180px',
   },
   header: {
-    height: '80px',
+    height: 'auto',
     background: themeColors.primaryAlt,
     boxShadow: '0px 1px 0px #272C48',
     textColor: colors.secondary.main,
   },
-  spacing: 9,
+  spacing: 8,
   palette: {
     common: {
       black: colors.alpha.black[100],
@@ -314,15 +345,6 @@ export const SaaSusDarkTheme = createTheme({
       activatedOpacity: 0.12,
     },
   },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1840,
-    },
-  },
   components: {
     MuiBackdrop: {
       styleOverrides: {
@@ -366,6 +388,9 @@ export const SaaSusDarkTheme = createTheme({
           minHeight: '100%',
           width: '100%',
           flex: 1,
+          breakWord: 'break-word',
+          // FIXME! 定義
+          lineHeight: 1.75,
         },
         '#__next': {
           width: '100%',
@@ -380,6 +405,10 @@ export const SaaSusDarkTheme = createTheme({
           width: '100%',
           MozOsxFontSmoothing: 'grayscale',
           WebkitFontSmoothing: 'antialiased',
+        },
+        summary: {
+          cursor: 'pointer',
+          color: colors.primary.main,
         },
         '.child-popover .MuiPaper-root .MuiList-root': {
           flexDirection: 'column',
@@ -406,10 +435,23 @@ export const SaaSusDarkTheme = createTheme({
           colorScheme: 'dark',
         },
         code: {
-          background: colors.info.lighter,
-          color: colors.alpha.black[100],
+          fontFamily: 'Inter',
+          fontWeight: 500,
+          fontSize: `${fontPxToRemMinim(14)}`,
+          '@media (min-width: 960px)': {
+            fontSize: `${fontPxToRem(14)}`,
+          },
+          lineHeight: 1.5,
+          margin: '0 0.1ch',
+          paddingLeft: 6,
+          paddingRight: 6,
+          paddingTop: 1,
+          paddingBottom: 2,
           borderRadius: 4,
-          padding: 4,
+          // TODO: Set Color
+          background: 'transparent',
+          border: `1px solid ${colors.info.light}`,
+          color: colors.info.dark,
         },
         '@keyframes pulse': {
           '0%': {
@@ -479,9 +521,9 @@ export const SaaSusDarkTheme = createTheme({
     MuiListSubheader: {
       styleOverrides: {
         colorPrimary: {
-          fontWeight: 'bold',
+          fontWeight: '700',
           lineHeight: '40px',
-          fontSize: 13,
+          fontSize: '0.8125rem',
           background: colors.alpha.black[5],
           color: colors.alpha.black[70],
         },
@@ -1171,63 +1213,135 @@ export const SaaSusDarkTheme = createTheme({
   shape: {
     borderRadius: 10,
   },
+  /***
+   * @param breakpoints ブレイクポイントの設定
+   * 現状md:960をフォントサイズ用途で利用中
+   * TODO:どこかで値を正式に決める
+   * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
+   */
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1840,
+    },
+  },
   typography: {
     fontFamily:
-      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    // 見出し用
     h1: {
       fontWeight: 700,
-      fontSize: 35,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(24)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(24)}`,
+      },
     },
     h2: {
       fontWeight: 700,
-      fontSize: 30,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(22)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(22)}`,
+      },
     },
     h3: {
       fontWeight: 700,
-      fontSize: 25,
-      lineHeight: 1.4,
-      color: colors.alpha.black[100],
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(20)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(20)}`,
+      },
     },
     h4: {
       fontWeight: 700,
-      fontSize: 16,
+      fontSize: `${fontPxToRemMinim(18)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(18)}`,
+      },
     },
     h5: {
       fontWeight: 700,
-      fontSize: 14,
+      fontSize: `${fontPxToRemMinim(16)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(16)}`,
+      },
     },
     h6: {
-      fontSize: 15,
+      fontWeight: 700,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(15)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(15)}`,
+      },
     },
+    // Text本文 Utility用
     body1: {
-      fontSize: 14,
+      fontWeight: 400,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(15)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(15)}`,
+      },
     },
     body2: {
-      fontSize: 14,
+      fontWeight: 400,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(14)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(14)}`,
+      },
     },
-    button: {
-      fontWeight: 600,
-    },
-    caption: {
-      fontSize: 13,
-      textTransform: 'uppercase',
-      color: colors.alpha.black[50],
-    },
+    // サブタイトル用
     subtitle1: {
-      fontSize: 14,
+      fontWeight: 400,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(14)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(14)}`,
+      },
       color: colors.alpha.black[70],
     },
     subtitle2: {
       fontWeight: 400,
-      fontSize: 15,
-      color: colors.alpha.black[50],
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(13)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(13)}`,
+      },
+      color: colors.alpha.black[70],
+    },
+    // Text Utility用
+    caption: {
+      fontWeigt: 400,
+      fontSize: `${fontPxToRemMinim(12)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(12)}`,
+      },
+      color: colors.alpha.black[70],
     },
     overline: {
-      fontSize: 13,
-      fontWeight: 700,
-      textTransform: 'uppercase',
+      fontWeight: 400,
+      fontSize: `${fontPxToRemMinim(13)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(13)}`,
+      },
+      textTransform: 'none',
+    },
+    // TODO:用途のリサーチ/ボタン用？
+    button: {
+      fontWeigt: 500,
+      fontSize: `${fontPxToRemMinim(14)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(14)}`,
+      },
+      textTransform: 'none',
     },
   },
+  // シャドーの初期化？ TODO: 何の配列なのかリサーチ
   shadows: [
     'none',
     'none',
