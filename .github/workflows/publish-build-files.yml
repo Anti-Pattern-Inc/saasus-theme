@@ -36,7 +36,8 @@ jobs:
 
       - name: Commit files
         run: |
+          git checkout feature/dist
           git add dist
-          git commit -m "update dist" -a
+          git commit -a -m "update dist"
           git pull
-          git push origin master
+          git push origin feature/dist
