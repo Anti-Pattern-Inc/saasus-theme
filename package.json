@@ -27,8 +27,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -cw",
-    "clean": "rimraf dist",
-    "postinstall": "yarn build"
+    "clean": "rimraf dist"
   },
   "bugs": {
     "url": "https://github.com/Anti-Pattern-Inc/saasus-shared/issues"
