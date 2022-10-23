@@ -3,7 +3,7 @@ name: Publish build files
 on:
   push:
     branches:
-      - feature/dist
+      - develop
   workflow_dispatch:
 
 jobs:
@@ -36,8 +36,8 @@ jobs:
 
       - name: Commit files
         run: |
-          git checkout feature/dist
+          git checkout main
           git add dist
           git commit -a -m "update dist"
           git pull
-          git push origin feature/dist
+          git push origin main
