@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 type LogoProps = {
   width: number
+  alt: string
 }
 
 const LogoBox = styled(Box)(
@@ -17,11 +18,15 @@ const LogoBox = styled(Box)(
 `,
 )
 
-function SaaSusLogo({ width }: LogoProps) {
+function SaaSusLogo({ width, alt }: LogoProps) {
   return (
     <LogoBox>
       <Link href="/">
-        <img width={width} src="/static/images/logo/saasus_logo.svg" />
+        <img
+          width={width}
+          src="/static/images/logo/saasus_logo.svg"
+          alt={alt}
+        />
       </Link>
     </LogoBox>
   )
