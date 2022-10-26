@@ -65,13 +65,7 @@ const LabelWrapper = styled('span')(
 `,
 )
 
-const Label: FC<LabelProps> = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  className,
-  color = 'secondary',
-  children,
-  ...rest
-}) => {
+const Label: FC<LabelProps> = ({ color = 'secondary', children, ...rest }) => {
   return (
     <LabelWrapper className={'MuiLabel-' + color} {...rest}>
       {children}

@@ -11,5 +11,4 @@ export interface NextLinkComposedProps
     Props {
   to: NextLinkProps['href']
   linkAs?: NextLinkProps['as']
-  href?: NextLinkProps['href']
 }

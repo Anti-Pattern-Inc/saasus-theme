@@ -13,18 +13,8 @@ export const NextLinkComposed = React.forwardRef<
   HTMLAnchorElement,
   NextLinkComposedProps
 >(function NextLinkComposed(props, ref) {
-  const {
-    to,
-    linkAs,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    href,
-    replace,
-    scroll,
-    shallow,
-    prefetch,
-    locale,
-    ...other
-  } = props
+  const { to, linkAs, replace, scroll, shallow, prefetch, locale, ...other } =
+    props
 
   return (
     <NextLink

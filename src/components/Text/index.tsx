@@ -60,8 +60,6 @@ const TextWrapper = styled('span')(
 )
 
 const Text: FC<TextProps> = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  className,
   color = 'secondary',
   flex,
   children,
