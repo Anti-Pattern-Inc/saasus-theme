@@ -4,17 +4,38 @@ import clsx from 'clsx'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
-import { NextLinkComposedProps } from './NextLinkComposedProps'
 
 // Add support for the sx prop for consistency with the other branches.
 const Anchor = styled('a')({})
+
+export type Props = Omit<
+  NextLinkProps,
+  'href' | 'as' | 'onClick' | 'onMouseEnter'
+>
+
+export interface NextLinkComposedProps
+  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>,
+    Props {
+  to: NextLinkProps['href']
+  linkAs?: NextLinkProps['as']
+  href?: NextLinkProps['href']
+}
 
 export const NextLinkComposed = React.forwardRef<
   HTMLAnchorElement,
   NextLinkComposedProps
 >(function NextLinkComposed(props, ref) {
-  const { to, linkAs, replace, scroll, shallow, prefetch, locale, ...other } =
-    props
+  const {
+    to,
+    linkAs,
+    href,
+    replace,
+    scroll,
+    shallow,
+    prefetch,
+    locale,
+    ...other
+  } = props
 
   return (
     <NextLink
@@ -53,7 +74,6 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(
     className: classNameProps,
     href,
     noLinkStyle,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     role, // Link don't have roles.
     ...other
   } = props
