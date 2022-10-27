@@ -65,12 +65,7 @@ const LabelWrapper = styled('span')(
 `,
 )
 
-const Label: FC<LabelProps> = ({
-  className,
-  color = 'secondary',
-  children,
-  ...rest
-}) => {
+const Label: FC<LabelProps> = ({ color = 'secondary', children, ...rest }) => {
   return (
     <LabelWrapper className={'MuiLabel-' + color} {...rest}>
       {children}
