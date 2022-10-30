@@ -175,24 +175,22 @@ export const RadioButton: FC<Props> = ({
   checked,
 }) => {
   return (
-    <>
-      <WrapButtonlUI>
-        <ButtonlUI variant="outlined" disabled={disabled} onClick={onClick}>
-          <FormControlUI
-            control={<Radio />}
-            label={label}
-            value={value}
-            checked={checked}
-          />
-          <Typography>
-            <OptionComponent>{AdditionalProps}</OptionComponent>
-          </Typography>
-          <Typography>{helperText}</Typography>
-        </ButtonlUI>
-        {/* <FormHelperText style={{ margin: '-4px 12px 12px 12px' }}>
+    <WrapButtonlUI>
+      <ButtonlUI variant="outlined" disabled={disabled} onClick={onClick}>
+        <FormControlUI
+          control={<Radio />}
+          label={label}
+          value={value}
+          checked={checked}
+        />
+        <Typography>
+          <OptionComponent>{AdditionalProps}</OptionComponent>
+        </Typography>
+        <Typography>{helperText}</Typography>
+      </ButtonlUI>
+      {/* <FormHelperText style={{ margin: '-4px 12px 12px 12px' }}>
             {helperText}
           </FormHelperText> */}
-      </WrapButtonlUI>
-    </>
+    </WrapButtonlUI>
   )
 }
