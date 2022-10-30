@@ -82,43 +82,41 @@ const BoxWrap = ({
 }: Props) => {
   const theme = useTheme()
   return (
-    <>
-      <Box sx={sx}>
-        <BoxInner
-          elevation={1}
-          sx={{
-            padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
-            ...boxInnerSx,
-          }}
-        >
-          {addTitle && (
-            <TitleSet
-              // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
-              headingText={headingText}
-              variant={variant ? variant : 'h3'}
-              component={component ? component : 'div'}
-              subtitleText={subtitleText}
-              variantSubTitle={variantSubTitle ? variantSubTitle : 'subtitle2'}
-              // 見出し直下の余白具合
-              noMargin={noMargin}
-              mbSmall={mbSmall}
-              mbLarge={mbLarge}
-              // カスタムCSSがあれば設置
-              sx={titleSx}
-              // ヘルプアイコンとツールチップ
-              TooltipTitleIconComponent={TooltipTitleIconComponent}
-              TooltipComponent={TooltipComponent}
-              AdditionalProps={AdditionalProps}
-              // 下線
-              divider={divider}
-              // 下線がある時は見出し内の余白をタイトにする。横幅を合わせる
-              dividerSx={{ my: 1.5, mx: -3 }}
-            />
-          )}
-          {children}
-        </BoxInner>
-      </Box>
-    </>
+    <Box sx={sx}>
+      <BoxInner
+        elevation={1}
+        sx={{
+          padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
+          ...boxInnerSx,
+        }}
+      >
+        {addTitle && (
+          <TitleSet
+            // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
+            headingText={headingText}
+            variant={variant ? variant : 'h3'}
+            component={component ? component : 'div'}
+            subtitleText={subtitleText}
+            variantSubTitle={variantSubTitle ? variantSubTitle : 'subtitle2'}
+            // 見出し直下の余白具合
+            noMargin={noMargin}
+            mbSmall={mbSmall}
+            mbLarge={mbLarge}
+            // カスタムCSSがあれば設置
+            sx={titleSx}
+            // ヘルプアイコンとツールチップ
+            TooltipTitleIconComponent={TooltipTitleIconComponent}
+            TooltipComponent={TooltipComponent}
+            AdditionalProps={AdditionalProps}
+            // 下線
+            divider={divider}
+            // 下線がある時は見出し内の余白をタイトにする。横幅を合わせる
+            dividerSx={{ my: 1.5, mx: -3 }}
+          />
+        )}
+        {children}
+      </BoxInner>
+    </Box>
   )
 }
 

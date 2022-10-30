@@ -15,10 +15,10 @@ type Props = {
   color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'
   variant?: 'filled' | 'outlined'
   sx?: SxProps
+  mb?: number
 }
 
 const Label = styled(InputLabel)(() => ({
-  marginTop: 24,
   fontSize: '14px',
   position: 'initial',
   textAlign: 'left',
@@ -41,30 +41,29 @@ export const CustomLabel = ({
   size,
   sx,
   variant,
+  mb,
 }: Props) => {
   return (
-    <>
-      <Label htmlFor={id}>
-        {children}
-        <CustomTooltip
-          TooltipTitleIconComponent={TooltipTitleIconComponent}
-          TooltipComponent={TooltipComponent}
+    <Label htmlFor={id} sx={{ mb: mb || 3 }}>
+      {children}
+      <CustomTooltip
+        TooltipTitleIconComponent={TooltipTitleIconComponent}
+        TooltipComponent={TooltipComponent}
+      />
+      {OptionalChip && (
+        <Chip
+          size={size ? size : 'small'}
+          color={color}
+          variant={variant}
+          label={chipLabel ? chipLabel : '任意'}
+          sx={sx}
+          style={{
+            borderRadius: 4,
+            margin: `0px 4px 4px`,
+            padding: `1px 8px 0`,
+          }}
         />
-        {OptionalChip && (
-          <Chip
-            size={size ? size : 'small'}
-            color={color}
-            variant={variant}
-            label={chipLabel ? chipLabel : '任意'}
-            sx={sx}
-            style={{
-              borderRadius: 4,
-              margin: `0px 4px 4px`,
-              padding: `1px 8px 0`,
-            }}
-          />
-        )}
-      </Label>
-    </>
+      )}
+    </Label>
   )
 }
