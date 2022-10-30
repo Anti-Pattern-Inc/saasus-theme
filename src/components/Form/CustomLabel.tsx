@@ -15,7 +15,7 @@ type Props = {
   color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'
   variant?: 'filled' | 'outlined'
   sx?: SxProps
-  mb?: number
+  mt?: number
 }
 
 const Label = styled(InputLabel)(() => ({
@@ -41,10 +41,10 @@ export const CustomLabel = ({
   size,
   sx,
   variant,
-  mb,
+  mt,
 }: Props) => {
   return (
-    <Label htmlFor={id} sx={{ mb: mb || 3 }}>
+    <Label htmlFor={id} sx={{ mt: mt || 3 }}>
       {children}
       <CustomTooltip
         TooltipTitleIconComponent={TooltipTitleIconComponent}
