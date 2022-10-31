@@ -82,67 +82,65 @@ const TitleSet = ({
   const theme = useTheme()
 
   return (
-    <>
-      <Box
-        sx={{
-          margin: noMargin
-            ? theme.spacing(0)
-            : mbSmall
-            ? theme.spacing(0, 0, 1, 0)
-            : mbLarge
-            ? theme.spacing(0, 0, 5, 0)
-            : theme.spacing(0, 0, 3, 0),
-          '.MuiPageTitle-wrapper': {
-            m: theme.spacing(0),
-            p: theme.spacing(0),
-            background: 'transparent',
-            boxShadow: 'none',
-          },
-          ...sx,
-        }}
+    <Box
+      sx={{
+        margin: noMargin
+          ? theme.spacing(0)
+          : mbSmall
+          ? theme.spacing(0, 0, 1, 0)
+          : mbLarge
+          ? theme.spacing(0, 0, 5, 0)
+          : theme.spacing(0, 0, 3, 0),
+        '.MuiPageTitle-wrapper': {
+          m: theme.spacing(0),
+          p: theme.spacing(0),
+          background: 'transparent',
+          boxShadow: 'none',
+        },
+        ...sx,
+      }}
+    >
+      <Grid
+        container
+        justifyContent="space-between"
+        alignItems="center"
+        sx={{ mb: noMargin ? 0 : 1 }}
+        columnSpacing={2}
       >
-        <Grid
-          container
-          justifyContent="space-between"
-          alignItems="center"
-          sx={{ mb: noMargin ? 0 : 1 }}
-          columnSpacing={2}
-        >
-          <Grid item sx={style} flex={1}>
-            {/* 見出し */}
-            <Typography
-              variant={variant}
-              component={component ? component : 'div'}
-              sx={sxHeader}
-              gutterBottom={gutterBottom}
-              style={{ lineHeight: 1.5 }}
-            >
-              {headingText}
-              {/* ツールチップ */}
-              <CustomTooltip
-                TooltipTitleIconComponent={TooltipTitleIconComponent}
-                TooltipComponent={TooltipComponent}
-              />
-            </Typography>
+        <Grid item sx={style} flex={1}>
+          {/* 見出し */}
+          <Typography
+            variant={variant}
+            component={component ? component : 'div'}
+            sx={sxHeader}
+            gutterBottom={gutterBottom}
+            style={{ lineHeight: 1.5 }}
+          >
+            {headingText}
+            {/* ツールチップ */}
+            <CustomTooltip
+              TooltipTitleIconComponent={TooltipTitleIconComponent}
+              TooltipComponent={TooltipComponent}
+            />
+          </Typography>
 
-            {/* サブタイトル */}
-            <Typography
-              variant={variantSubTitle ? variantSubTitle : 'subtitle2'}
-              sx={sxSubTitle}
-              style={{ lineHeight: 1.4, textAlign: 'justify' }}
-            >
-              {subtitleText}
-            </Typography>
-          </Grid>
-
-          {/* 見出しと同じ階層内の右端に、ボタンなどのコンポーネントを置く時用 */}
-          {AdditionalProps && <Grid item>{AdditionalProps}</Grid>}
+          {/* サブタイトル */}
+          <Typography
+            variant={variantSubTitle ? variantSubTitle : 'subtitle2'}
+            sx={sxSubTitle}
+            style={{ lineHeight: 1.4, textAlign: 'justify' }}
+          >
+            {subtitleText}
+          </Typography>
         </Grid>
-        {/* </PageTitleWrapper> */}
-        {/*下線がある時は追加 */}
-        {divider && <Divider sx={dividerSx} />}
-      </Box>
-    </>
+
+        {/* 見出しと同じ階層内の右端に、ボタンなどのコンポーネントを置く時用 */}
+        {AdditionalProps && <Grid item>{AdditionalProps}</Grid>}
+      </Grid>
+      {/* </PageTitleWrapper> */}
+      {/*下線がある時は追加 */}
+      {divider && <Divider sx={dividerSx} />}
+    </Box>
   )
 }
 

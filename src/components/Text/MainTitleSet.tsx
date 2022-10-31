@@ -36,6 +36,7 @@ type MainTitleSetProps = Partial<{
   sxHeader: SxProps
   sxSubTitle: SxProps
   gutterBottom: boolean
+  mb: number
 }>
 
 // 大見出しとサブタイトル
@@ -50,52 +51,51 @@ const MainTitleSet = ({
   sxHeader,
   sxSubTitle,
   gutterBottom,
+  mb,
 }: MainTitleSetProps) => {
   const theme = useTheme()
   return (
-    <>
-      <Box
-        sx={[
-          {
-            p: theme.spacing(3, 4),
-            mb: theme.spacing(2),
-          },
-        ]}
+    <Box
+      sx={[
+        {
+          p: theme.spacing(3, 4),
+          mb: mb || theme.spacing(2),
+        },
+      ]}
+    >
+      <Grid
+        container
+        justifyContent="space-between"
+        alignItems="center"
+        columnSpacing={2}
       >
-        <Grid
-          container
-          justifyContent="space-between"
-          alignItems="center"
-          columnSpacing={2}
-        >
-          <Grid item flex={1}>
-            {/* 見出し */}
-            <Typography
-              variant={variant ? variant : 'h1'}
-              component={component ? component : 'h1'}
-              sx={sxHeader}
-              gutterBottom={gutterBottom}
-              style={{ lineHeight: 1.4 }}
-            >
-              {headingText}
-            </Typography>
+        <Grid item flex={1}>
+          {/* 見出し */}
+          <Typography
+            variant={variant ? variant : 'h1'}
+            component={component ? component : 'h1'}
+            sx={sxHeader}
+            gutterBottom={gutterBottom}
+            style={{ lineHeight: 1.4 }}
+          >
+            {headingText}
+          </Typography>
 
-            {/* サブタイトル */}
-            <Typography
-              variant={variantSubTitle ? variantSubTitle : 'subtitle1'}
-              sx={sxSubTitle}
-              style={{ lineHeight: 1.4, textAlign: 'justify' }}
-            >
-              {subtitleText}
-            </Typography>
-          </Grid>
-          {/* 見出しと同じ階層内の右端に、ボタンなどのコンポーネントを置く時用
+          {/* サブタイトル */}
+          <Typography
+            variant={variantSubTitle ? variantSubTitle : 'subtitle1'}
+            sx={sxSubTitle}
+            style={{ lineHeight: 1.4, textAlign: 'justify' }}
+          >
+            {subtitleText}
+          </Typography>
+        </Grid>
+        {/* 見出しと同じ階層内の右端に、ボタンなどのコンポーネントを置く時用
                 Example: AdditionalProps={<Button>Action</Button>}
             */}
-          {AdditionalProps && <Grid item>{AdditionalProps}</Grid>}
-        </Grid>
-      </Box>
-    </>
+        {AdditionalProps && <Grid item>{AdditionalProps}</Grid>}
+      </Grid>
+    </Box>
   )
 }
 
