@@ -31,8 +31,8 @@ jobs:
 
       - name: Git setting
         run: |
-          git config --local user.email "Akihiro YAGASAKI"
-          git config --local user.name "y@anti-pattern.co.jp"
+          git config --local user.email "y@anti-pattern.co.jp"
+          git config --local user.name "Akihiro YAGASAKI"
 
       - name: Commit files
         run: |
