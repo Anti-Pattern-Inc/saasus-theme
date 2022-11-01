@@ -33,13 +33,12 @@ jobs:
         run: |
           git config --local user.email "y@anti-pattern.co.jp"
           git config --local user.name "Akihiro YAGASAKI"
-          git config advice.addIgnoredFile false
 
       - name: Commit files
         run: |
           git fetch origin
           git checkout main
-          git add dist
+          git add -f dist
           git commit -a -m "update dist"
           git pull
           git push origin main
