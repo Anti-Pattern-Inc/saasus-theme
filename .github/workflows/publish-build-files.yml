@@ -36,6 +36,7 @@ jobs:
 
       - name: Commit files
         run: |
+          git fetch origin
           git checkout main
           git add dist
           git commit -a -m "update dist"
