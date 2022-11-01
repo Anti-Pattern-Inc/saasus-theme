@@ -11,7 +11,8 @@ declare type Props = {
     color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
     variant?: 'filled' | 'outlined';
     sx?: SxProps;
+    mt?: number;
 };
-export declare const CustomLabel: ({ id, TooltipTitleIconComponent, TooltipComponent, children, OptionalChip, chipLabel, color, size, sx, variant, }: Props) => JSX.Element;
+export declare const CustomLabel: ({ id, TooltipTitleIconComponent, TooltipComponent, children, OptionalChip, chipLabel, color, size, sx, variant, mt, }: Props) => JSX.Element;
 export {};
 //# sourceMappingURL=CustomLabel.d.ts.map
