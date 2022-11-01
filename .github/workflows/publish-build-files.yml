@@ -1,0 +1,43 @@
+name: Publish build files
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  e2etest:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [16]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          check-latest: true
+
+      - name: Install git
+        run: sudo apt install -y git
+
+      - name: Install packages
+        run: yarn install
+
+      - name: Build library
+        run: yarn build
+
+      - name: Git setting
+        run: |
+          git config --local user.email "y@anti-pattern.co.jp"
+          git config --local user.name "Akihiro YAGASAKI"
+
+      - name: Commit files
+        run: |
+          git checkout main
+          git add dist
+          git commit -a -m "update dist"
+          git pull
+          git push origin main
