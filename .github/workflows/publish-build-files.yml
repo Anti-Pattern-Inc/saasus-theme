@@ -33,6 +33,7 @@ jobs:
         run: |
           git config --local user.email "y@anti-pattern.co.jp"
           git config --local user.name "Akihiro YAGASAKI"
+          git config advice.addIgnoredFile false
 
       - name: Commit files
         run: |
