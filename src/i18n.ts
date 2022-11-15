@@ -33,4 +33,6 @@ i18n
     },
   })
 
+// test for build
+
 export default i18n

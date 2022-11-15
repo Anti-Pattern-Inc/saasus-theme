@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn build; git add ./dist;
-git diff-index --quiet HEAD || git commit -m 'update dist' --allow-empty
+git diff-index --quiet HEAD || git commit -m 'update dist'
