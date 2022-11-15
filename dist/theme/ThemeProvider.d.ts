@@ -1,10 +1,14 @@
+/// <reference types="react" />
 import { Theme } from '@mui/material/styles';
-import { FC } from 'react';
 interface ThemeContextType {
     theme: Theme;
     setThemeName: (_themeName: string) => void;
 }
 export declare const ThemeContext: import("react").Context<ThemeContextType>;
-declare const ThemeProviderWrapper: FC;
+interface ThemeProviderProps {
+    lang?: 'en' | 'ja';
+    children: React.ReactNode;
+}
+declare const ThemeProviderWrapper: ({ lang, children, }: ThemeProviderProps) => JSX.Element;
 export default ThemeProviderWrapper;
 //# sourceMappingURL=ThemeProvider.d.ts.map
