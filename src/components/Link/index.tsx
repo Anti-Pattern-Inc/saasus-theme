@@ -8,9 +8,14 @@ import * as React from 'react'
 // Add support for the sx prop for consistency with the other branches.
 const Anchor = styled('a')({})
 
-interface NextLinkComposedProps
+export type Props = Omit<
+  NextLinkProps,
+  'href' | 'as' | 'onClick' | 'onMouseEnter'
+>
+
+export interface NextLinkComposedProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>,
-    Omit<NextLinkProps, 'href' | 'as'> {
+    Props {
   to: NextLinkProps['href']
   linkAs?: NextLinkProps['as']
   href?: NextLinkProps['href']

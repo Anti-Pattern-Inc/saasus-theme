@@ -40,7 +40,7 @@ export const CustomContainer = ({
 }: Props) => {
   return (
     // margin-bottom or デフォルトmargin-bottom
-    <Box sx={(mb && { mb: mb }) || { mb: 4 }}>
+    <Box sx={{ mb: mb || 4 }}>
       <StyledContainer
         maxWidth={maxWidth}
         sx={sx}

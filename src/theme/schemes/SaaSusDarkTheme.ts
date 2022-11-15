@@ -1,19 +1,51 @@
 import '@mui/lab/themeAugmentation'
 
-import { alpha, createTheme, darken, lighten } from '@mui/material'
+import { alpha, createTheme, darken } from '@mui/material'
 
-// import i18n from 'i18n/i18n';
+/***
+ * lighter設置のための型拡張
+ *  @see: https://mui.com/material-ui/customization/palette/
+ */
+declare module '@mui/material/styles' {
+  interface PaletteColor {
+    lighter?: string
+  }
+  interface SimplePaletteColorOptions {
+    lighter?: string
+  }
+  // font
+  interface FontStyle {
+    info?: string
+  }
+}
+
+/***
+ * @param fontPxToRem pxからrem変換計算用
+ *  ユーザーのブラウザ設定に応じ、基準サイズをユーザーが意図した表示サイズに追従させ得るための対応
+ *  例：fontPxToRem(24) -> fontSize:1.5rem 見た目上24pxのrem
+ * @param fontPxToRemMinim レスポンシブ対応の縮小サイズ用 現在85%
+ *  モバイルファースト設計で先にこちらが優先され、ブレイクポイント（現在960px）以上の画面幅になれば100%になる仕様です
+ *  レスポンシブ設計は必要応じてアップデートを見込んでいます。
+ */
+const fontPxToRem = (px: number) => {
+  return px / 16 + 'rem'
+}
+// レスポンシブ対応の縮小サイズ用
+const fontPxToRemMinim = (px: number) => {
+  return (px / 16) * 0.85 + 'rem'
+}
 
 const themeColors = {
-  primary: '#9b52e1',
-  secondary: '#000',
+  primary: '#8C7CF0',
+  secondary: '#9EA4C1',
   success: '#57CA22',
   warning: '#FFA319',
   error: '#FF1943',
   info: '#33C2FF',
-  black: '#223354',
-  white: '#ffffff',
-  primaryAlt: '#000C57',
+  black: '#CBCCD2',
+  white: '#111633',
+  primaryAlt: '#111633',
+  trueWhite: '#ffffff',
 }
 
 const colors = {
@@ -42,29 +74,29 @@ const colors = {
       '0px 1px 4px rgba(255, 25, 67, 0.25), 0px 3px 12px 2px rgba(255, 25, 67, 0.35)',
     info: '0px 1px 4px rgba(51, 194, 255, 0.25), 0px 3px 12px 2px rgba(51, 194, 255, 0.35)',
     primary:
-      '0px 1px 4px rgba(85, 105, 255, 0.25), 0px 3px 12px 2px rgba(85, 105, 255, 0.35)',
+      '0px 1px 4px rgba(112, 99, 192, 0.25), 0px 3px 12px 2px rgba(112, 99, 192, 0.35)',
     warning:
       '0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35)',
-    card: '0px 0px 1px 1px #d5d0d6',
-    cardSm: '0px 0px 1px 1px #d5d0d6',
+    card: '0px 0px 2px #6A7199',
+    cardSm: '0px 0px 2px #6A7199',
     cardLg:
-      '0 5rem 14rem 0 rgb(255 255 255 / 30%), 0 0.8rem 2.3rem rgb(0 0 0 / 60%), 0 0.2rem 0.3rem rgb(0 0 0 / 45%)',
+      '0 0rem 14rem 0 rgb(255 255 255 / 20%), 0 0.8rem 2.3rem rgb(111 130 156 / 3%), 0 0.2rem 0.7rem rgb(17 29 57 / 15%)',
   },
   layout: {
     general: {
-      bodyBg: '#fff',
+      bodyBg: '#070C27',
     },
     sidebar: {
-      background: '#fcfbfc',
+      background: themeColors.primaryAlt,
       textColor: themeColors.secondary,
-      dividerBg: '#f2f5f9',
-      menuItemColor: themeColors.black,
-      menuItemColorActive: '#00b795',
-      menuItemBg: '#fff',
-      menuItemBgActive: '#f2fbfa',
-      menuItemIconColor: lighten(themeColors.secondary, 0.5),
-      menuItemIconColorActive: '#00b795',
-      menuItemHeadingColor: themeColors.black,
+      dividerBg: '#272C48',
+      menuItemColor: '#9EA4C1',
+      menuItemColorActive: '#ffffff',
+      menuItemBg: themeColors.primaryAlt,
+      menuItemBgActive: 'rgba(43, 48, 77, .6)',
+      menuItemIconColor: '#444A6B',
+      menuItemIconColorActive: '#ffffff',
+      menuItemHeadingColor: darken(themeColors.secondary, 0.3),
     },
   },
   alpha: {
@@ -77,12 +109,12 @@ const colors = {
       100: themeColors.white,
     },
     trueWhite: {
-      5: alpha(themeColors.white, 0.02),
-      10: alpha(themeColors.white, 0.1),
-      30: alpha(themeColors.white, 0.3),
-      50: alpha(themeColors.white, 0.5),
-      70: alpha(themeColors.white, 0.7),
-      100: themeColors.white,
+      5: alpha(themeColors.trueWhite, 0.02),
+      10: alpha(themeColors.trueWhite, 0.1),
+      30: alpha(themeColors.trueWhite, 0.3),
+      50: alpha(themeColors.trueWhite, 0.5),
+      70: alpha(themeColors.trueWhite, 0.7),
+      100: themeColors.trueWhite,
     },
     black: {
       5: alpha(themeColors.black, 0.02),
@@ -94,44 +126,44 @@ const colors = {
     },
   },
   secondary: {
-    lighter: lighten(themeColors.secondary, 0.85),
-    light: lighten(themeColors.secondary, 0.25),
+    lighter: alpha(themeColors.secondary, 0.85),
+    light: alpha(themeColors.secondary, 0.6),
     main: themeColors.secondary,
     dark: darken(themeColors.secondary, 0.2),
   },
   primary: {
-    lighter: lighten(themeColors.primary, 0.85),
-    light: lighten(themeColors.primary, 0.3),
+    lighter: alpha(themeColors.primary, 0.85),
+    light: alpha(themeColors.primary, 0.3),
     main: themeColors.primary,
     dark: darken(themeColors.primary, 0.2),
   },
   success: {
-    lighter: lighten(themeColors.success, 0.85),
-    light: lighten(themeColors.success, 0.3),
+    lighter: alpha(themeColors.success, 0.85),
+    light: alpha(themeColors.success, 0.3),
     main: themeColors.success,
     dark: darken(themeColors.success, 0.2),
   },
   warning: {
-    lighter: lighten(themeColors.warning, 0.85),
-    light: lighten(themeColors.warning, 0.3),
+    lighter: alpha(themeColors.warning, 0.85),
+    light: alpha(themeColors.warning, 0.3),
     main: themeColors.warning,
     dark: darken(themeColors.warning, 0.2),
   },
   error: {
-    lighter: lighten(themeColors.error, 0.85),
-    light: lighten(themeColors.error, 0.3),
+    lighter: alpha(themeColors.error, 0.85),
+    light: alpha(themeColors.error, 0.3),
     main: themeColors.error,
     dark: darken(themeColors.error, 0.2),
   },
   info: {
-    lighter: lighten(themeColors.info, 0.85),
-    light: lighten(themeColors.info, 0.3),
+    lighter: alpha(themeColors.info, 0.85),
+    light: alpha(themeColors.info, 0.3),
     main: themeColors.info,
     dark: darken(themeColors.info, 0.2),
   },
 }
 
-export const PurpleFlowTheme = createTheme({
+export const SaaSusDarkTheme = createTheme({
   // direction: i18n.dir(),
   colors: {
     gradients: {
@@ -169,12 +201,12 @@ export const PurpleFlowTheme = createTheme({
         100: themeColors.white,
       },
       trueWhite: {
-        5: alpha(themeColors.white, 0.02),
-        10: alpha(themeColors.white, 0.1),
-        30: alpha(themeColors.white, 0.3),
-        50: alpha(themeColors.white, 0.5),
-        70: alpha(themeColors.white, 0.7),
-        100: themeColors.white,
+        5: alpha(themeColors.trueWhite, 0.02),
+        10: alpha(themeColors.trueWhite, 0.1),
+        30: alpha(themeColors.trueWhite, 0.3),
+        50: alpha(themeColors.trueWhite, 0.5),
+        70: alpha(themeColors.trueWhite, 0.7),
+        100: themeColors.trueWhite,
       },
       black: {
         5: alpha(themeColors.black, 0.02),
@@ -187,50 +219,50 @@ export const PurpleFlowTheme = createTheme({
     },
     secondary: {
       lighter: alpha(themeColors.secondary, 0.1),
-      light: lighten(themeColors.secondary, 0.3),
+      light: alpha(themeColors.secondary, 0.3),
       main: themeColors.secondary,
       dark: darken(themeColors.secondary, 0.2),
     },
     primary: {
       lighter: alpha(themeColors.primary, 0.1),
-      light: lighten(themeColors.primary, 0.3),
+      light: alpha(themeColors.primary, 0.3),
       main: themeColors.primary,
       dark: darken(themeColors.primary, 0.2),
     },
     success: {
       lighter: alpha(themeColors.success, 0.1),
-      light: lighten(themeColors.success, 0.3),
+      light: alpha(themeColors.success, 0.3),
       main: themeColors.success,
       dark: darken(themeColors.success, 0.2),
     },
     warning: {
       lighter: alpha(themeColors.warning, 0.1),
-      light: lighten(themeColors.warning, 0.3),
+      light: alpha(themeColors.warning, 0.3),
       main: themeColors.warning,
       dark: darken(themeColors.warning, 0.2),
     },
     error: {
       lighter: alpha(themeColors.error, 0.1),
-      light: lighten(themeColors.error, 0.3),
+      light: alpha(themeColors.error, 0.3),
       main: themeColors.error,
       dark: darken(themeColors.error, 0.2),
     },
     info: {
       lighter: alpha(themeColors.info, 0.1),
-      light: lighten(themeColors.info, 0.3),
+      light: alpha(themeColors.info, 0.3),
       main: themeColors.info,
       dark: darken(themeColors.info, 0.2),
     },
   },
   general: {
     reactFrameworkColor: '#00D8FF',
-    borderRadiusSm: '4px',
-    borderRadius: '6px',
-    borderRadiusLg: '10px',
-    borderRadiusXl: '18px',
+    borderRadiusSm: '6px',
+    borderRadius: '10px',
+    borderRadiusLg: '12px',
+    borderRadiusXl: '16px',
   },
   sidebar: {
-    background: '#fff',
+    background: colors.layout.sidebar.background,
     textColor: colors.layout.sidebar.textColor,
     dividerBg: colors.layout.sidebar.dividerBg,
     menuItemColor: colors.layout.sidebar.menuItemColor,
@@ -240,22 +272,22 @@ export const PurpleFlowTheme = createTheme({
     menuItemIconColor: colors.layout.sidebar.menuItemIconColor,
     menuItemIconColorActive: colors.layout.sidebar.menuItemIconColorActive,
     menuItemHeadingColor: colors.layout.sidebar.menuItemHeadingColor,
-    boxShadow: '1px 1px 1px 0 #e0e0e0',
-    width: '290px',
+    boxShadow: '1px 0 0 #272C48',
+    width: '180px',
   },
   header: {
-    height: '80px',
-    background: '#fbf9fb',
-    boxShadow: '0 1px 1px #e0e0e0',
-    textColor: themeColors.black,
+    height: 'auto',
+    background: themeColors.primaryAlt,
+    boxShadow: '0px 1px 0px #272C48',
+    textColor: colors.secondary.main,
   },
-  spacing: 9,
+  spacing: 8,
   palette: {
     common: {
       black: colors.alpha.black[100],
       white: colors.alpha.white[100],
     },
-    mode: 'light',
+    mode: 'dark',
     primary: {
       light: colors.primary.light,
       main: colors.primary.main,
@@ -270,25 +302,25 @@ export const PurpleFlowTheme = createTheme({
       light: colors.error.light,
       main: colors.error.main,
       dark: colors.error.dark,
-      contrastText: colors.alpha.white[100],
+      contrastText: themeColors.trueWhite,
     },
     success: {
       light: colors.success.light,
       main: colors.success.main,
       dark: colors.success.dark,
-      contrastText: colors.alpha.white[100],
+      contrastText: themeColors.trueWhite,
     },
     info: {
       light: colors.info.light,
       main: colors.info.main,
       dark: colors.info.dark,
-      contrastText: colors.alpha.white[100],
+      contrastText: themeColors.trueWhite,
     },
     warning: {
       light: colors.warning.light,
       main: colors.warning.main,
       dark: colors.warning.dark,
-      contrastText: colors.alpha.white[100],
+      contrastText: themeColors.trueWhite,
     },
     text: {
       primary: colors.alpha.black[100],
@@ -312,22 +344,12 @@ export const PurpleFlowTheme = createTheme({
       focusOpacity: 0.05,
       activatedOpacity: 0.12,
     },
-    tonalOffset: 0.5,
-  },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1840,
-    },
   },
   components: {
     MuiBackdrop: {
       styleOverrides: {
         root: {
-          backgroundColor: alpha(darken(themeColors.primaryAlt, 0.4), 0.2),
+          backgroundColor: alpha(darken('#070C27', 0.5), 0.4),
           backdropFilter: 'blur(2px)',
 
           '&.MuiBackdrop-invisible': {
@@ -347,6 +369,13 @@ export const PurpleFlowTheme = createTheme({
         },
       },
     },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: darken(themeColors.primaryAlt, 0.5),
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: {
         'html, body': {
@@ -359,6 +388,9 @@ export const PurpleFlowTheme = createTheme({
           minHeight: '100%',
           width: '100%',
           flex: 1,
+          breakWord: 'break-word',
+          // FIXME! 定義
+          lineHeight: 1.75,
         },
         '#__next': {
           width: '100%',
@@ -373,6 +405,10 @@ export const PurpleFlowTheme = createTheme({
           width: '100%',
           MozOsxFontSmoothing: 'grayscale',
           WebkitFontSmoothing: 'antialiased',
+        },
+        summary: {
+          cursor: 'pointer',
+          color: colors.primary.main,
         },
         '.child-popover .MuiPaper-root .MuiList-root': {
           flexDirection: 'column',
@@ -396,12 +432,26 @@ export const PurpleFlowTheme = createTheme({
         },
         ':root': {
           '--swiper-theme-color': colors.primary.main,
+          colorScheme: 'dark',
         },
         code: {
-          background: colors.info.lighter,
-          color: colors.info.dark,
+          fontFamily: 'Inter',
+          fontWeight: 500,
+          fontSize: `${fontPxToRemMinim(14)}`,
+          '@media (min-width: 960px)': {
+            fontSize: `${fontPxToRem(14)}`,
+          },
+          lineHeight: 1.5,
+          margin: '0 0.1ch',
+          paddingLeft: 6,
+          paddingRight: 6,
+          paddingTop: 1,
+          paddingBottom: 2,
           borderRadius: 4,
-          padding: 4,
+          // TODO: Set Color
+          background: 'transparent',
+          border: `1px solid ${colors.info.light}`,
+          color: colors.info.dark,
         },
         '@keyframes pulse': {
           '0%': {
@@ -471,9 +521,9 @@ export const PurpleFlowTheme = createTheme({
     MuiListSubheader: {
       styleOverrides: {
         colorPrimary: {
-          fontWeight: 'bold',
+          fontWeight: '700',
           lineHeight: '40px',
-          fontSize: 13,
+          fontSize: '0.8125rem',
           background: colors.alpha.black[5],
           color: colors.alpha.black[70],
         },
@@ -508,10 +558,10 @@ export const PurpleFlowTheme = createTheme({
           },
         },
         deleteIcon: {
-          color: colors.error.light,
+          color: colors.alpha.black[50],
 
           '&:hover': {
-            color: colors.error.main,
+            color: colors.alpha.black[70],
           },
         },
       },
@@ -538,7 +588,7 @@ export const PurpleFlowTheme = createTheme({
         },
         colorDefault: {
           background: colors.alpha.black[30],
-          color: colors.alpha.white[100],
+          color: colors.alpha.trueWhite[100],
         },
       },
     },
@@ -589,7 +639,7 @@ export const PurpleFlowTheme = createTheme({
     },
     MuiButton: {
       defaultProps: {
-        disableRipple: false,
+        disableRipple: true,
       },
       styleOverrides: {
         root: {
@@ -651,7 +701,7 @@ export const PurpleFlowTheme = createTheme({
     },
     MuiToggleButton: {
       defaultProps: {
-        disableRipple: false,
+        disableRipple: true,
       },
       styleOverrides: {
         root: {
@@ -660,7 +710,7 @@ export const PurpleFlowTheme = createTheme({
           transition: 'all .2s',
 
           '&:hover, &.Mui-selected, &.Mui-selected:hover': {
-            color: colors.alpha.white[100],
+            color: themeColors.trueWhite,
             background: colors.primary.main,
           },
         },
@@ -669,11 +719,11 @@ export const PurpleFlowTheme = createTheme({
     MuiIconButton: {
       styleOverrides: {
         root: {
-          borderRadius: 6,
-          padding: 6,
+          borderRadius: 8,
+          padding: 8,
 
           '& .MuiTouchRipple-root': {
-            borderRadius: 6,
+            borderRadius: 8,
           },
         },
         sizeSmall: {
@@ -734,6 +784,7 @@ export const PurpleFlowTheme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
+          backgroundImage: 'none',
           padding: 0,
         },
         elevation0: {
@@ -797,10 +848,10 @@ export const PurpleFlowTheme = createTheme({
             },
           },
           '& .MuiListItem-root.MuiButtonBase-root.Mui-selected': {
-            backgroundColor: alpha(colors.primary.lighter, 0.4),
+            backgroundColor: colors.alpha.black[10],
           },
           '& .MuiMenuItem-root.MuiButtonBase-root:active': {
-            backgroundColor: alpha(colors.primary.lighter, 0.4),
+            backgroundColor: alpha(colors.primary.lighter, 0.2),
           },
           '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
             opacity: 0.2,
@@ -852,11 +903,11 @@ export const PurpleFlowTheme = createTheme({
             marginRight: 4,
           },
           '&.Mui-selected, &.Mui-selected:hover': {
-            color: colors.alpha.white[100],
+            color: colors.alpha.trueWhite[100],
             zIndex: 5,
           },
           '&:hover': {
-            color: colors.alpha.black[100],
+            color: colors.alpha.trueWhite[70],
           },
         },
       },
@@ -882,7 +933,7 @@ export const PurpleFlowTheme = createTheme({
 
             '&:hover, &:active, &.active, &.Mui-selected': {
               color: colors.alpha.black[100],
-              background: alpha(colors.primary.lighter, 0.4),
+              background: alpha(colors.primary.lighter, 0.2),
             },
           },
         },
@@ -896,10 +947,10 @@ export const PurpleFlowTheme = createTheme({
 
           '&:hover, &:active, &.active, &.Mui-selected': {
             color: colors.alpha.black[100],
-            background: alpha(colors.primary.lighter, 0.4),
+            background: alpha(colors.primary.lighter, 0.2),
           },
           '&.Mui-selected:hover': {
-            background: alpha(colors.primary.lighter, 0.4),
+            background: alpha(colors.primary.lighter, 0.2),
           },
         },
       },
@@ -912,7 +963,7 @@ export const PurpleFlowTheme = createTheme({
 
             '&:hover, &:active, &.active, &.Mui-selected': {
               color: colors.alpha.black[100],
-              background: lighten(colors.primary.lighter, 0.5),
+              background: alpha(colors.primary.lighter, 0.2),
             },
           },
         },
@@ -930,21 +981,19 @@ export const PurpleFlowTheme = createTheme({
             },
         },
         clearIndicator: {
-          background: colors.error.lighter,
+          background: alpha(colors.error.lighter, 0.2),
           color: colors.error.main,
           marginRight: 8,
 
           '&:hover': {
-            background: colors.error.lighter,
-            color: colors.error.dark,
+            background: alpha(colors.error.lighter, 0.3),
           },
         },
         popupIndicator: {
-          color: colors.alpha.black[50],
+          color: colors.alpha.black[70],
 
           '&:hover': {
-            background: colors.primary.lighter,
-            color: colors.primary.main,
+            background: alpha(colors.primary.lighter, 0.2),
           },
         },
       },
@@ -980,7 +1029,7 @@ export const PurpleFlowTheme = createTheme({
           transition: 'background-color .2s',
 
           '&.MuiTableRow-hover:hover': {
-            backgroundColor: colors.alpha.black[5],
+            backgroundColor: alpha(colors.alpha.black[5], 0.05),
           },
         },
       },
@@ -1162,65 +1211,137 @@ export const PurpleFlowTheme = createTheme({
     },
   },
   shape: {
-    borderRadius: 6,
+    borderRadius: 10,
+  },
+  /***
+   * @param breakpoints ブレイクポイントの設定
+   * 現状md:960をフォントサイズ用途で利用中
+   * TODO:どこかで値を正式に決める
+   * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
+   */
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1840,
+    },
   },
   typography: {
     fontFamily:
-      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    // 見出し用
     h1: {
       fontWeight: 700,
-      fontSize: 35,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(24)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(24)}`,
+      },
     },
     h2: {
       fontWeight: 700,
-      fontSize: 30,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(22)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(22)}`,
+      },
     },
     h3: {
       fontWeight: 700,
-      fontSize: 25,
-      lineHeight: 1.4,
-      color: colors.alpha.black[100],
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(20)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(20)}`,
+      },
     },
     h4: {
       fontWeight: 700,
-      fontSize: 16,
+      fontSize: `${fontPxToRemMinim(18)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(18)}`,
+      },
     },
     h5: {
       fontWeight: 700,
-      fontSize: 14,
+      fontSize: `${fontPxToRemMinim(16)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(16)}`,
+      },
     },
     h6: {
-      fontSize: 15,
+      fontWeight: 700,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(15)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(15)}`,
+      },
     },
+    // Text本文 Utility用
     body1: {
-      fontSize: 14,
+      fontWeight: 400,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(15)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(15)}`,
+      },
     },
     body2: {
-      fontSize: 14,
+      fontWeight: 400,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(14)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(14)}`,
+      },
     },
-    button: {
-      fontWeight: 600,
-    },
-    caption: {
-      fontSize: 13,
-      textTransform: 'uppercase',
-      color: colors.alpha.black[50],
-    },
+    // サブタイトル用
     subtitle1: {
-      fontSize: 14,
+      fontWeight: 400,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(14)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(14)}`,
+      },
       color: colors.alpha.black[70],
     },
     subtitle2: {
       fontWeight: 400,
-      fontSize: 15,
+      lineHeight: 1.5,
+      fontSize: `${fontPxToRemMinim(13)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(13)}`,
+      },
+      color: colors.alpha.black[70],
+    },
+    // Text Utility用
+    caption: {
+      fontWeigt: 400,
+      fontSize: `${fontPxToRemMinim(12)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(12)}`,
+      },
       color: colors.alpha.black[70],
     },
     overline: {
-      fontSize: 13,
-      fontWeight: 700,
-      textTransform: 'uppercase',
+      fontWeight: 400,
+      fontSize: `${fontPxToRemMinim(13)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(13)}`,
+      },
+      textTransform: 'none',
+    },
+    // TODO:用途のリサーチ/ボタン用？
+    button: {
+      fontWeigt: 500,
+      fontSize: `${fontPxToRemMinim(14)}`,
+      '@media (min-width: 960px)': {
+        fontSize: `${fontPxToRem(14)}`,
+      },
+      textTransform: 'none',
     },
   },
+  // シャドーの初期化？ TODO: 何の配列なのかリサーチ
   shadows: [
     'none',
     'none',

@@ -13,11 +13,7 @@ interface PageTitleWrapperProps {
 }
 
 const PageTitleWrapper = ({ children }: PageTitleWrapperProps) => {
-  return (
-    <>
-      <PageTitle className="MuiPageTitle-wrapper">{children}</PageTitle>
-    </>
-  )
+  return <PageTitle className="MuiPageTitle-wrapper">{children}</PageTitle>
 }
 
 PageTitleWrapper.propTypes = {
