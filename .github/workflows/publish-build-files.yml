@@ -32,6 +32,7 @@ jobs:
         run: |
           git fetch origin
           git checkout main
+          git pull origin develop
 
       - name: Install packages
         run: yarn install
@@ -43,5 +44,4 @@ jobs:
         run: |
           git add -f dist
           git commit -a -m "update dist"
-          git pull
           git push origin main
