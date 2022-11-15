@@ -126,77 +126,75 @@ export const AccordionWrap = ({
   TooltipComponent,
 }: Props) => {
   return (
-    <>
-      <Paper sx={{ p: 0, mb: spacing ? spacing : 4 }}>
-        <AccordionStyle
-          expanded={expanded}
-          onChange={onChange}
-          sx={AccordionSx}
-          defaultExpanded={defaultExpanded}
+    <Paper sx={{ p: 0, mb: spacing ? spacing : 4 }}>
+      <AccordionStyle
+        expanded={expanded}
+        onChange={onChange}
+        sx={AccordionSx}
+        defaultExpanded={defaultExpanded}
+      >
+        <AccordionSummaryStyle
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls={id}
+          id={id}
+          disabled={disabled}
+          sx={AccordionSummarySx}
+          style={{
+            border: BorderNone && 'none',
+            background: BorderNone && 'none',
+          }}
         >
-          <AccordionSummaryStyle
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={id}
-            id={id}
-            disabled={disabled}
-            sx={AccordionSummarySx}
-            style={{
-              border: BorderNone && 'none',
-              background: BorderNone && 'none',
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              width: '100%',
+              pr: 5,
             }}
           >
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                flexWrap: 'wrap',
-                width: '100%',
-                pr: 5,
-              }}
-            >
-              <Box>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'end',
-                  }}
+            <Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'end',
+                }}
+              >
+                <Typography
+                  variant={variant ? variant : 'h3'}
+                  component={component ? component : 'div'}
                 >
-                  <Typography
-                    variant={variant ? variant : 'h3'}
-                    component={component ? component : 'div'}
-                  >
-                    {accordionTitle}
-                  </Typography>
-                  {/* ツールチップ */}
-                  <CustomTooltip
-                    TooltipTitleIconComponent={TooltipTitleIconComponent}
-                    TooltipComponent={TooltipComponent}
-                  />
-                </Box>
-
-                <Box>
-                  <Typography
-                    variant={variantSubTitle ? variantSubTitle : 'subtitle2'}
-                  >
-                    {accordionSubTitle}
-                  </Typography>
-                </Box>
+                  {accordionTitle}
+                </Typography>
+                {/* ツールチップ */}
+                <CustomTooltip
+                  TooltipTitleIconComponent={TooltipTitleIconComponent}
+                  TooltipComponent={TooltipComponent}
+                />
               </Box>
-              <Box>{AdditionalProps}</Box>
+
+              <Box>
+                <Typography
+                  variant={variantSubTitle ? variantSubTitle : 'subtitle2'}
+                >
+                  {accordionSubTitle}
+                </Typography>
+              </Box>
             </Box>
-          </AccordionSummaryStyle>
-          <AccordionDetailsStyle
-            sx={DetailsSx}
-            style={{
-              marginTop: BorderNone ? '-16px' : '',
-            }}
-          >
-            {children}
-          </AccordionDetailsStyle>
-        </AccordionStyle>
-      </Paper>
-    </>
+            <Box>{AdditionalProps}</Box>
+          </Box>
+        </AccordionSummaryStyle>
+        <AccordionDetailsStyle
+          sx={DetailsSx}
+          style={{
+            marginTop: BorderNone ? '-16px' : '',
+          }}
+        >
+          {children}
+        </AccordionDetailsStyle>
+      </AccordionStyle>
+    </Paper>
   )
 }

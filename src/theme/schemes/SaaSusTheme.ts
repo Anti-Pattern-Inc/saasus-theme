@@ -469,8 +469,9 @@ export const SaaSusTheme = createTheme({
           paddingTop: 1,
           paddingBottom: 2,
           borderRadius: 4,
-          background: colors.info.lighter,
-          border: `1px solid ${colors.info.light}`,
+          // background: colors.info.lighter,
+          background: 'transparent',
+          border: `1px solid ${colors.info.dark}`,
           color: colors.info.dark,
         },
         '@keyframes pulse': {
@@ -1259,10 +1260,10 @@ export const SaaSusTheme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 480,
-      md: 768,
-      lg: 1024,
-      xl: 1440,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1840,
     },
   },
   typography: {

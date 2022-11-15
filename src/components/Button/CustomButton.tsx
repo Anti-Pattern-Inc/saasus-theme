@@ -38,20 +38,18 @@ export const CustomButton = ({
   children,
 }: Props) => {
   return (
-    <>
-      <Button
-        color={color}
-        size={size}
-        variant={variant ? variant : 'contained'}
-        type={type ? type : 'submit'}
-        onClick={onClick}
-        startIcon={startIcon}
-        endIcon={endIcon}
-        disabled={disabled}
-        sx={sx}
-      >
-        {children}
-      </Button>
-    </>
+    <Button
+      color={color}
+      size={size}
+      variant={variant ? variant : 'contained'}
+      type={type ? type : 'submit'}
+      onClick={onClick}
+      startIcon={startIcon}
+      endIcon={endIcon}
+      disabled={disabled}
+      sx={sx}
+    >
+      {children}
+    </Button>
   )
 }

@@ -97,42 +97,40 @@ const BoxContent = ({
 }: Props) => {
   // const theme = useTheme()
   return (
-    <>
-      <BoxOuter sx={sx}>
-        <BoxInner
-          sx={{
-            ...boxInnerSx,
-          }}
-        >
-          {addTitle ? (
-            <TitleSet
-              // 見出しフォントサイズ htmlElement設定 サブタイトル
-              headingText={headingText}
-              variant={variant ? variant : 'h4'}
-              component={component ? component : 'div'}
-              subtitleText={subtitleText}
-              variantSubTitle={variantSubTitle ? variantSubTitle : 'subtitle2'}
-              // 見出し直下の余白具合
-              noMargin={noMargin}
-              mbSmall={mbSmall}
-              mbLarge={mbLarge}
-              // カスタムCSSがあれば設置
-              sx={titleSx}
-              // ヘルプアイコンとツールチップ
-              TooltipTitleIconComponent={TooltipTitleIconComponent}
-              TooltipComponent={TooltipComponent}
-              AdditionalProps={AdditionalProps}
-              divider={divider}
-              dividerSx={dividerSx}
-            />
-          ) : (
-            ''
-          )}
-          {/*下線がある時は追加 */}
-          {children}
-        </BoxInner>
-      </BoxOuter>
-    </>
+    <BoxOuter sx={sx}>
+      <BoxInner
+        sx={{
+          ...boxInnerSx,
+        }}
+      >
+        {addTitle ? (
+          <TitleSet
+            // 見出しフォントサイズ htmlElement設定 サブタイトル
+            headingText={headingText}
+            variant={variant ? variant : 'h4'}
+            component={component ? component : 'div'}
+            subtitleText={subtitleText}
+            variantSubTitle={variantSubTitle ? variantSubTitle : 'subtitle2'}
+            // 見出し直下の余白具合
+            noMargin={noMargin}
+            mbSmall={mbSmall}
+            mbLarge={mbLarge}
+            // カスタムCSSがあれば設置
+            sx={titleSx}
+            // ヘルプアイコンとツールチップ
+            TooltipTitleIconComponent={TooltipTitleIconComponent}
+            TooltipComponent={TooltipComponent}
+            AdditionalProps={AdditionalProps}
+            divider={divider}
+            dividerSx={dividerSx}
+          />
+        ) : (
+          ''
+        )}
+        {/*下線がある時は追加 */}
+        {children}
+      </BoxInner>
+    </BoxOuter>
   )
 }
 

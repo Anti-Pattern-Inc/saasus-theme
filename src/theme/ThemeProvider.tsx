@@ -1,8 +1,9 @@
 import { Theme, ThemeProvider } from '@mui/material/styles'
 import { StylesProvider } from '@mui/styles'
-import { createContext, FC, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 import { themeCreator } from './base'
+import i18n from '../i18n'
 
 interface ThemeContextType {
   theme: Theme
@@ -14,13 +15,26 @@ export const ThemeContext = createContext<ThemeContextType>({
   setThemeName: null,
 })
 
-const ThemeProviderWrapper: FC = (props) => {
+interface ThemeProviderProps {
+  lang?: 'en' | 'ja'
+  children: React.ReactNode
+}
+
+const ThemeProviderWrapper = ({
+  lang = 'ja',
+  children,
+}: ThemeProviderProps) => {
   const [themeName, _setThemeName] = useState('SaaSusTheme')
 
   useEffect(() => {
     const curThemeName = 'SaaSusTheme'
     _setThemeName(curThemeName)
   }, [])
+
+  useEffect(() => {
+    // change language
+    i18n.changeLanguage(lang)
+  }, [lang])
 
   const theme = themeCreator(themeName)
 
@@ -32,7 +46,7 @@ const ThemeProviderWrapper: FC = (props) => {
   return (
     <StylesProvider injectFirst>
       <ThemeContext.Provider value={{ theme, setThemeName }}>
-        <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
       </ThemeContext.Provider>
     </StylesProvider>
   )
