@@ -32,7 +32,7 @@ jobs:
         run: |
           git fetch origin
           git checkout main
-          git pull origin develop
+          git pull origin develop --rebase
 
       - name: Install packages
         run: yarn install
