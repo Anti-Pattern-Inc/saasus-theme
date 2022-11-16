@@ -1,7 +1,8 @@
 import { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import { LinkProps as NextLinkProps } from 'next/link';
 import * as React from 'react';
-interface NextLinkComposedProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>, Omit<NextLinkProps, 'href' | 'as'> {
+export declare type Props = Omit<NextLinkProps, 'href' | 'as' | 'onClick' | 'onMouseEnter'>;
+export interface NextLinkComposedProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>, Props {
     to: NextLinkProps['href'];
     linkAs?: NextLinkProps['as'];
     href?: NextLinkProps['href'];

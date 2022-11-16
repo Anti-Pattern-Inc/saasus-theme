@@ -6,7 +6,7 @@ interface PageTitleWrapperProps {
 declare const PageTitleWrapper: {
     ({ children }: PageTitleWrapperProps): JSX.Element;
     propTypes: {
-        children: PropTypes.Validator<NonNullable<PropTypes.ReactNodeLike>>;
+        children: PropTypes.Validator<PropTypes.ReactNodeLike>;
     };
 };
 export default PageTitleWrapper;
