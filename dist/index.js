@@ -2,6 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+<<<<<<< HEAD
 var require$$93 = require('react/jsx-runtime');
 var require$$98 = require('@mui/material');
 var DeleteTwoToneIcon$b = require('@mui/icons-material/DeleteTwoTone');
@@ -338,6 +339,40 @@ var require$$97__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$97);
 var require$$99__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$99);
 var require$$100__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$100);
 var require$$101__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$101);
+=======
+var require$$71 = require('react/jsx-runtime');
+var require$$76 = require('@mui/material');
+var DeleteTwoToneIcon$9 = require('@mui/icons-material/DeleteTwoTone');
+var EditTwoToneIcon$9 = require('@mui/icons-material/EditTwoTone');
+var require$$91 = require('@mui/icons-material/ExpandMore');
+var require$$92 = require('@mui/icons-material/HelpOutline');
+var i18n$9 = require('i18next');
+var require$$94 = require('react-i18next');
+var require$$95 = require('@mui/icons-material/Close');
+var require$$96 = require('@mui/material/styles');
+var require$$97 = require('next/link');
+require('@mui/lab/themeAugmentation');
+var require$$99 = require('@mui/styles');
+var require$$100 = require('react');
+var require$$101 = require('@mui/icons-material/SearchTwoTone');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$71__default = /*#__PURE__*/_interopDefaultLegacy(require$$71);
+var require$$76__default = /*#__PURE__*/_interopDefaultLegacy(require$$76);
+var DeleteTwoToneIcon__default$9 = /*#__PURE__*/_interopDefaultLegacy(DeleteTwoToneIcon$9);
+var EditTwoToneIcon__default$9 = /*#__PURE__*/_interopDefaultLegacy(EditTwoToneIcon$9);
+var require$$91__default = /*#__PURE__*/_interopDefaultLegacy(require$$91);
+var require$$92__default = /*#__PURE__*/_interopDefaultLegacy(require$$92);
+var i18n__default$9 = /*#__PURE__*/_interopDefaultLegacy(i18n$9);
+var require$$94__default = /*#__PURE__*/_interopDefaultLegacy(require$$94);
+var require$$95__default = /*#__PURE__*/_interopDefaultLegacy(require$$95);
+var require$$96__default = /*#__PURE__*/_interopDefaultLegacy(require$$96);
+var require$$97__default = /*#__PURE__*/_interopDefaultLegacy(require$$97);
+var require$$99__default = /*#__PURE__*/_interopDefaultLegacy(require$$99);
+var require$$100__default = /*#__PURE__*/_interopDefaultLegacy(require$$100);
+var require$$101__default = /*#__PURE__*/_interopDefaultLegacy(require$$101);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable$9 = ({ children, caption, sx, ...props }) => {
     return (require$$71.jsxs(require$$76.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$71.jsx("caption", { children: caption }), children] }));
@@ -474,6 +509,7 @@ var require$$88 = require$$99__default["default"];
 var require$$89 = require$$100__default["default"];
 var require$$90 = require$$101__default["default"];
 
+<<<<<<< HEAD
 function _interopDefaultLegacy$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var require$$60__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$60);
@@ -490,6 +526,24 @@ var require$$86__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$86)
 var require$$88__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$88);
 var require$$89__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$89);
 var require$$90__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$90);
+=======
+function _interopDefaultLegacy$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$60__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$60);
+var require$$65__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$65);
+var DeleteTwoToneIcon__default$8 = /*#__PURE__*/_interopDefaultLegacy$1(DeleteTwoToneIcon$8);
+var EditTwoToneIcon__default$8 = /*#__PURE__*/_interopDefaultLegacy$1(EditTwoToneIcon$8);
+var require$$80__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$80);
+var require$$81__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$81);
+var i18n__default$8 = /*#__PURE__*/_interopDefaultLegacy$1(i18n$8);
+var require$$83__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$83);
+var require$$84__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$84);
+var require$$85__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$85);
+var require$$86__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$86);
+var require$$88__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$88);
+var require$$89__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$89);
+var require$$90__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$90);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable$8 = ({ children, caption, sx, ...props }) => {
     return (require$$60.jsxs(require$$65.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$60.jsx("caption", { children: caption }), children] }));
@@ -626,6 +680,7 @@ var require$$77 = require$$88__default["default"];
 var require$$78 = require$$89__default["default"];
 var require$$79 = require$$90__default["default"];
 
+<<<<<<< HEAD
 function _interopDefaultLegacy$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var require$$49__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$49);
@@ -642,6 +697,24 @@ var require$$75__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$7
 var require$$77__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$77);
 var require$$78__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$78);
 var require$$79__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$79);
+=======
+function _interopDefaultLegacy$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$49__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$49);
+var require$$54__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$54);
+var DeleteTwoToneIcon__default$7 = /*#__PURE__*/_interopDefaultLegacy$1$1(DeleteTwoToneIcon$7);
+var EditTwoToneIcon__default$7 = /*#__PURE__*/_interopDefaultLegacy$1$1(EditTwoToneIcon$7);
+var require$$69__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$69);
+var require$$70__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$70);
+var i18n__default$7 = /*#__PURE__*/_interopDefaultLegacy$1$1(i18n$7);
+var require$$72__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$72);
+var require$$73__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$73);
+var require$$74__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$74);
+var require$$75__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$75);
+var require$$77__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$77);
+var require$$78__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$78);
+var require$$79__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$79);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable$7 = ({ children, caption, sx, ...props }) => {
     return (require$$49.jsxs(require$$54.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$49.jsx("caption", { children: caption }), children] }));
@@ -778,6 +851,7 @@ var require$$66 = require$$77__default["default"];
 var require$$67 = require$$78__default["default"];
 var require$$68 = require$$79__default["default"];
 
+<<<<<<< HEAD
 function _interopDefaultLegacy$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var require$$38__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$38);
@@ -794,6 +868,24 @@ var require$$64__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$
 var require$$66__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$66);
 var require$$67__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$67);
 var require$$68__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$68);
+=======
+function _interopDefaultLegacy$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$38__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$38);
+var require$$43__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$43);
+var DeleteTwoToneIcon__default$6 = /*#__PURE__*/_interopDefaultLegacy$1$1$1(DeleteTwoToneIcon$6);
+var EditTwoToneIcon__default$6 = /*#__PURE__*/_interopDefaultLegacy$1$1$1(EditTwoToneIcon$6);
+var require$$58__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$58);
+var require$$59__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$59);
+var i18n__default$6 = /*#__PURE__*/_interopDefaultLegacy$1$1$1(i18n$6);
+var require$$61__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$61);
+var require$$62__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$62);
+var require$$63__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$63);
+var require$$64__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$64);
+var require$$66__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$66);
+var require$$67__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$67);
+var require$$68__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$68);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable$6 = ({ children, caption, sx, ...props }) => {
     return (require$$38.jsxs(require$$43.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$38.jsx("caption", { children: caption }), children] }));
@@ -930,6 +1022,7 @@ var require$$55 = require$$66__default["default"];
 var require$$56 = require$$67__default["default"];
 var require$$57 = require$$68__default["default"];
 
+<<<<<<< HEAD
 function _interopDefaultLegacy$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var require$$27__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$27);
@@ -946,6 +1039,24 @@ var require$$53__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(requir
 var require$$55__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$55);
 var require$$56__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$56);
 var require$$57__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$57);
+=======
+function _interopDefaultLegacy$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$27__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$27);
+var require$$32__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$32);
+var DeleteTwoToneIcon__default$5 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(DeleteTwoToneIcon$5);
+var EditTwoToneIcon__default$5 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(EditTwoToneIcon$5);
+var require$$47__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$47);
+var require$$48__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$48);
+var i18n__default$5 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(i18n$5);
+var require$$50__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$50);
+var require$$51__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$51);
+var require$$52__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$52);
+var require$$53__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$53);
+var require$$55__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$55);
+var require$$56__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$56);
+var require$$57__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$57);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable$5 = ({ children, caption, sx, ...props }) => {
     return (require$$27.jsxs(require$$32.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$27.jsx("caption", { children: caption }), children] }));
@@ -1082,6 +1193,7 @@ var require$$44 = require$$55__default["default"];
 var require$$45 = require$$56__default["default"];
 var require$$46 = require$$57__default["default"];
 
+<<<<<<< HEAD
 function _interopDefaultLegacy$1$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var require$$16__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$16);
@@ -1098,6 +1210,24 @@ var require$$42__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(requ
 var require$$44__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$44);
 var require$$45__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$45);
 var require$$46__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$46);
+=======
+function _interopDefaultLegacy$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$16__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$16);
+var require$$21__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$21);
+var DeleteTwoToneIcon__default$4 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(DeleteTwoToneIcon$4);
+var EditTwoToneIcon__default$4 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(EditTwoToneIcon$4);
+var require$$36__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$36);
+var require$$37__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$37);
+var i18n__default$4 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(i18n$4);
+var require$$39__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$39);
+var require$$40__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$40);
+var require$$41__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$41);
+var require$$42__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$42);
+var require$$44__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$44);
+var require$$45__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$45);
+var require$$46__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$46);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable$4 = ({ children, caption, sx, ...props }) => {
     return (require$$16.jsxs(require$$21.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$16.jsx("caption", { children: caption }), children] }));
@@ -1234,6 +1364,7 @@ var require$$33 = require$$44__default["default"];
 var require$$34 = require$$45__default["default"];
 var require$$35 = require$$46__default["default"];
 
+<<<<<<< HEAD
 function _interopDefaultLegacy$1$1$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var require$$6__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$6);
@@ -1250,6 +1381,24 @@ var require$$31__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(re
 var require$$33__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$33);
 var require$$34__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$34);
 var require$$35__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$35);
+=======
+function _interopDefaultLegacy$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$6__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$6);
+var require$$11__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$11);
+var DeleteTwoToneIcon__default$3 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(DeleteTwoToneIcon$3);
+var EditTwoToneIcon__default$3 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(EditTwoToneIcon$3);
+var require$$25__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$25);
+var require$$26__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$26);
+var i18n__default$3 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(i18n$3);
+var require$$28__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$28);
+var require$$29__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$29);
+var require$$30__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$30);
+var require$$31__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$31);
+var require$$33__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$33);
+var require$$34__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$34);
+var require$$35__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$35);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable$3 = ({ children, caption, sx, ...props }) => {
     return (require$$6.jsxs(require$$11.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$6.jsx("caption", { children: caption }), children] }));
@@ -1386,6 +1535,7 @@ var require$$22 = require$$33__default["default"];
 var require$$23 = require$$34__default["default"];
 var require$$24 = require$$35__default["default"];
 
+<<<<<<< HEAD
 function _interopDefaultLegacy$1$1$1$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var require$$2__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(require$$2);
@@ -1402,6 +1552,24 @@ var require$$20__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(
 var require$$22__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(require$$22);
 var require$$23__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(require$$23);
 var require$$24__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(require$$24);
+=======
+function _interopDefaultLegacy$1$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$2__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$2);
+var require$$3__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$3);
+var DeleteTwoToneIcon__default$2 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(DeleteTwoToneIcon$2);
+var EditTwoToneIcon__default$2 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(EditTwoToneIcon$2);
+var require$$14__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$14);
+var require$$15__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$15);
+var i18n__default$2 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(i18n$2);
+var require$$17__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$17);
+var require$$18__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$18);
+var require$$19__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$19);
+var require$$20__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$20);
+var require$$22__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$22);
+var require$$23__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$23);
+var require$$24__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(require$$24);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable$2 = ({ children, caption, sx, ...props }) => {
     return (require$$2.jsxs(require$$3.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$2.jsx("caption", { children: caption }), children] }));
@@ -1538,6 +1706,7 @@ var require$$12 = require$$22__default["default"];
 var require$$13 = require$$23__default["default"];
 var SearchTwoToneIcon = require$$24__default["default"];
 
+<<<<<<< HEAD
 function _interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var require$$0__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1(require$$0);
@@ -1554,6 +1723,24 @@ var require$$10__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1$
 var require$$12__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1(require$$12);
 var require$$13__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1(require$$13);
 var SearchTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1(SearchTwoToneIcon);
+=======
+function _interopDefaultLegacy$1$1$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$0__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$0);
+var require$$1__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$1);
+var DeleteTwoToneIcon__default$1 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(DeleteTwoToneIcon$1);
+var EditTwoToneIcon__default$1 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(EditTwoToneIcon$1);
+var require$$4__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$4);
+var require$$5__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$5);
+var i18n__default$1 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(i18n$1);
+var require$$7__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$7);
+var require$$8__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$8);
+var require$$9__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$9);
+var require$$10__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$10);
+var require$$12__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$12);
+var require$$13__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(require$$13);
+var SearchTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1(SearchTwoToneIcon);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable$1 = ({ children, caption, sx, ...props }) => {
     return (require$$0.jsxs(require$$1.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$0.jsx("caption", { children: caption }), children] }));
@@ -1689,6 +1876,7 @@ var Link = require$$10__default["default"];
 var styles$1 = require$$12__default["default"];
 var react = require$$13__default["default"];
 
+<<<<<<< HEAD
 function _interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var DeleteTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1$1(DeleteTwoToneIcon);
@@ -1698,6 +1886,17 @@ var HelpOutlineIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$
 var i18n__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1$1(i18n);
 var CloseIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1$1(CloseIcon);
 var Link__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1$1$1(Link);
+=======
+function _interopDefaultLegacy$1$1$1$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var DeleteTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(DeleteTwoToneIcon);
+var EditTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(EditTwoToneIcon);
+var ExpandMoreIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(ExpandMoreIcon);
+var HelpOutlineIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(HelpOutlineIcon);
+var i18n__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(i18n);
+var CloseIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(CloseIcon);
+var Link__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1$1$1(Link);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 
 const CustomTable = ({ children, caption, sx, ...props }) => {
     return (jsxRuntime.jsxs(material.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && jsxRuntime.jsx("caption", { children: caption }), children] }));
@@ -54375,7 +54574,11 @@ dist$8.ThemeContext = ThemeContext$9;
 dist$8.TitleSet = TitleSet$9;
 dist$8.themeCreator = themeCreator$9;
 
+<<<<<<< HEAD
 const CustomTableFilterResult$9 = ({ text }) => {
+=======
+const CustomTableFilterResult = ({ text }) => {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     return (require$$71.jsx(require$$76.TableBody, { children: require$$71.jsx(CustomTableRow_9, { children: require$$71.jsx(CustomTableCell_9, { colSpan: 100, children: require$$71.jsx(require$$76.Box, { sx: {
                         p: 4,
                         whiteSpace: 'nowrap',
@@ -54384,7 +54587,11 @@ const CustomTableFilterResult$9 = ({ text }) => {
                     }, children: require$$71.jsx("b", { children: text || '検索結果はありませんでした' }) }) }) }) }));
 };
 
+<<<<<<< HEAD
 const CustomTableFilter$9 = ({ onChange, placeholder, value }) => {
+=======
+const CustomTableFilter = ({ onChange, placeholder, value }) => {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     return (require$$71.jsx(require$$76.Box, { children: require$$71.jsx(require$$76.TextField, { sx: {
                 mx: 0,
                 my: 2,
@@ -54393,7 +54600,11 @@ const CustomTableFilter$9 = ({ onChange, placeholder, value }) => {
             }, onChange: () => onChange, placeholder: placeholder, value: value, size: "small", fullWidth: true, margin: "normal", variant: "outlined" }) }));
 };
 
+<<<<<<< HEAD
 const TableHeightSwitch$a = ({ checked, onChange, sxStyle, label, ...props }) => {
+=======
+const TableHeightSwitch = ({ checked, onChange, sxStyle, label, ...props }) => {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     return (require$$71.jsx(require$$76.FormControlLabel, { control: require$$71.jsx(require$$76.Switch, { checked: checked, onChange: onChange }), label: label, labelPlacement: "end", sx: sxStyle, style: {
             display: 'flex',
             flexDirection: 'column-reverse',
@@ -54405,6 +54616,7 @@ const TableHeightSwitch$a = ({ checked, onChange, sxStyle, label, ...props }) =>
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
+<<<<<<< HEAD
 const resources$a = {
     ja: {
         saasusTheme: {
@@ -66089,6 +66301,8 @@ const TableHeightSwitch = ({ checked, onChange, sxStyle, label, ...props }) => {
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
+=======
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 const resources = {
     ja: {
         saasusTheme: {
@@ -66102,8 +66316,13 @@ const resources = {
     },
 };
 const i18nNamespace = 'saasusTheme';
+<<<<<<< HEAD
 i18n__default$b["default"]
     .use(require$$116.initReactI18next) // passes i18n down to react-i18next
+=======
+i18n__default$9["default"]
+    .use(require$$94.initReactI18next) // passes i18n down to react-i18next
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     .init({
     defaultNS: i18nNamespace,
     fallbackNS: i18nNamespace,
@@ -66117,11 +66336,19 @@ i18n__default$b["default"]
 });
 
 const CustomTooltip = ({ TooltipTitleIconComponent, TooltipComponent, }) => {
+<<<<<<< HEAD
     const { t } = require$$116.useTranslation(i18nNamespace, { i18n: i18n__default$b["default"] });
     // TooltipComponentが定義されていない場合、
     // スクリーンリーダーにButtonと読まれてしまうのでaria-labelを設定
     const toolTipAriaLabel = TooltipComponent ? undefined : t('help');
     return (require$$93.jsx(require$$93.Fragment, { children: TooltipTitleIconComponent && (require$$93.jsx(require$$98.Tooltip, { title: require$$93.jsx(require$$98.Box, { sx: { textAlign: 'justify' }, children: TooltipTitleIconComponent }), arrow: true, placement: "top-start", children: require$$93.jsx(require$$98.Button, { sx: {
+=======
+    const { t } = require$$94.useTranslation(i18nNamespace, { i18n: i18n__default$9["default"] });
+    // TooltipComponentが定義されていない場合、
+    // スクリーンリーダーにButtonと読まれてしまうのでaria-labelを設定
+    const toolTipAriaLabel = TooltipComponent ? undefined : t('help');
+    return (require$$71.jsx(require$$71.Fragment, { children: TooltipTitleIconComponent && (require$$71.jsx(require$$76.Tooltip, { title: require$$71.jsx(require$$76.Box, { sx: { textAlign: 'justify' }, children: TooltipTitleIconComponent }), arrow: true, placement: "top-start", children: require$$71.jsx(require$$76.Button, { sx: {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     margin: '0 0 .2em 0',
                     '&.MuiButton-root': {
                         margin: '0 2px 4px',
@@ -66129,10 +66356,17 @@ const CustomTooltip = ({ TooltipTitleIconComponent, TooltipComponent, }) => {
                         padding: '2px 4px',
                         borderRadius: '6px',
                     },
+<<<<<<< HEAD
                 }, "aria-label": toolTipAriaLabel, children: TooltipComponent ? (TooltipComponent) : (require$$93.jsx(require$$114__default["default"], { fontSize: "small" })) }) })) }));
 };
 
 const AccordionStyle = require$$98.styled((props) => (require$$93.jsx(require$$98.Accordion, { disableGutters: true, elevation: 0, square: true, ...props })))(({ theme }) => ({
+=======
+                }, "aria-label": toolTipAriaLabel, children: TooltipComponent ? (TooltipComponent) : (require$$71.jsx(require$$92__default["default"], { fontSize: "small" })) }) })) }));
+};
+
+const AccordionStyle = require$$76.styled((props) => (require$$71.jsx(require$$76.Accordion, { disableGutters: true, elevation: 0, square: true, ...props })))(({ theme }) => ({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     border: `1px solid ${theme.palette.divider}`,
     borderRadius: 10,
     transition: '0ms',
@@ -66143,7 +66377,11 @@ const AccordionStyle = require$$98.styled((props) => (require$$93.jsx(require$$9
     '.MuiAccordionDetails-root': { border: 'none !important' },
 }));
 // Stylings アコーディオン見出し、トリガー部分
+<<<<<<< HEAD
 const AccordionSummaryStyle = require$$98.styled((props) => (require$$93.jsx(require$$98.AccordionSummary, { ...props })))(({ theme }) => ({
+=======
+const AccordionSummaryStyle = require$$76.styled((props) => (require$$71.jsx(require$$76.AccordionSummary, { ...props })))(({ theme }) => ({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     padding: '8px 16px',
     borderRadius: 10,
     marginBottom: -1,
@@ -66166,7 +66404,11 @@ const AccordionSummaryStyle = require$$98.styled((props) => (require$$93.jsx(req
     },
 }));
 // Stylings アコーディオン内部、コンテンツ部分
+<<<<<<< HEAD
 const AccordionDetailsStyle = require$$98.styled(require$$98.AccordionDetails)(({ theme }) => ({
+=======
+const AccordionDetailsStyle = require$$76.styled(require$$76.AccordionDetails)(({ theme }) => ({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     padding: theme.spacing(3, 3, 4),
     borderTop: '1px solid rgba(0, 0, 0, .125)',
     borderRadius: '0 0 10px 10px',
@@ -66184,26 +66426,45 @@ AccordionSx, AccordionSummarySx, DetailsSx, BorderNone, spacing,
 children, disabled, AdditionalProps, 
 // ヘルプアイコンとツールチップ
 TooltipTitleIconComponent, TooltipComponent, }) => {
+<<<<<<< HEAD
     return (require$$93.jsx(require$$98.Paper, { sx: { p: 0, mb: spacing ? spacing : 4 }, children: require$$93.jsxs(AccordionStyle, { expanded: expanded, onChange: onChange, sx: AccordionSx, defaultExpanded: defaultExpanded, children: [require$$93.jsx(AccordionSummaryStyle, { expandIcon: require$$93.jsx(require$$113__default["default"], {}), "aria-controls": id, id: id, disabled: disabled, sx: AccordionSummarySx, style: {
                         border: BorderNone && 'none',
                         background: BorderNone && 'none',
                     }, children: require$$93.jsxs(require$$98.Box, { sx: {
+=======
+    return (require$$71.jsx(require$$76.Paper, { sx: { p: 0, mb: spacing ? spacing : 4 }, children: require$$71.jsxs(AccordionStyle, { expanded: expanded, onChange: onChange, sx: AccordionSx, defaultExpanded: defaultExpanded, children: [require$$71.jsx(AccordionSummaryStyle, { expandIcon: require$$71.jsx(require$$91__default["default"], {}), "aria-controls": id, id: id, disabled: disabled, sx: AccordionSummarySx, style: {
+                        border: BorderNone && 'none',
+                        background: BorderNone && 'none',
+                    }, children: require$$71.jsxs(require$$76.Box, { sx: {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
                             flexWrap: 'wrap',
                             width: '100%',
                             pr: 5,
+<<<<<<< HEAD
                         }, children: [require$$93.jsxs(require$$98.Box, { children: [require$$93.jsxs(require$$98.Box, { sx: {
                                             display: 'flex',
                                             justifyContent: 'space-between',
                                             alignItems: 'end',
                                         }, children: [require$$93.jsx(require$$98.Typography, { variant: variant ? variant : 'h3', component: component ? component : 'div', children: accordionTitle }), require$$93.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$93.jsx(require$$98.Box, { children: require$$93.jsx(require$$98.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', children: accordionSubTitle }) })] }), require$$93.jsx(require$$98.Box, { children: AdditionalProps })] }) }), require$$93.jsx(AccordionDetailsStyle, { sx: DetailsSx, style: {
+=======
+                        }, children: [require$$71.jsxs(require$$76.Box, { children: [require$$71.jsxs(require$$76.Box, { sx: {
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'end',
+                                        }, children: [require$$71.jsx(require$$76.Typography, { variant: variant ? variant : 'h3', component: component ? component : 'div', children: accordionTitle }), require$$71.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$71.jsx(require$$76.Box, { children: require$$71.jsx(require$$76.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', children: accordionSubTitle }) })] }), require$$71.jsx(require$$76.Box, { children: AdditionalProps })] }) }), require$$71.jsx(AccordionDetailsStyle, { sx: DetailsSx, style: {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                         marginTop: BorderNone ? '-16px' : '',
                     }, children: children })] }) }));
 };
 
+<<<<<<< HEAD
 const AlertInner = require$$98.styled(require$$98.Alert)(({ theme }) => `
+=======
+const AlertInner = require$$76.styled(require$$76.Alert)(({ theme }) => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     padding: ${theme.spacing(1, 4)};
     box-shadow: 0 2px 4px ${theme.colors.alpha.black[10]};
 
@@ -66236,6 +66497,7 @@ const AlertInner = require$$98.styled(require$$98.Alert)(({ theme }) => `
 
   `);
 const CustomAlert = ({ severity, variant, alertHeadingTitle, children, square, action, sx, }) => {
+<<<<<<< HEAD
     return (require$$93.jsx(require$$98.Stack, { spacing: 4, children: require$$93.jsxs(AlertInner, { severity: severity || 'error', variant: variant || 'standard', style: {
                 borderRadius: square ? 0 : '',
             }, sx: sx, action: action, children: [require$$93.jsx(require$$98.AlertTitle, { children: require$$93.jsx("strong", { children: alertHeadingTitle }) }), children] }) }));
@@ -66243,12 +66505,25 @@ const CustomAlert = ({ severity, variant, alertHeadingTitle, children, square, a
 
 // ----- extend Container -----
 const StyledContainer = require$$98.styled(require$$98.Container)(({ theme }) => `
+=======
+    return (require$$71.jsx(require$$76.Stack, { spacing: 4, children: require$$71.jsxs(AlertInner, { severity: severity || 'error', variant: variant || 'standard', style: {
+                borderRadius: square ? 0 : '',
+            }, sx: sx, action: action, children: [require$$71.jsx(require$$76.AlertTitle, { children: require$$71.jsx("strong", { children: alertHeadingTitle }) }), children] }) }));
+};
+
+// ----- extend Container -----
+const StyledContainer = require$$76.styled(require$$76.Container)(({ theme }) => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     padding: ${theme.spacing(0, 0, 0, 0)};
   `);
 const CustomContainer = ({ children, maxWidth, fixed, sx, addGutter, mb, style, }) => {
     return (
     // margin-bottom or デフォルトmargin-bottom
+<<<<<<< HEAD
     require$$93.jsx(require$$98.Box, { sx: { mb: mb || 4 }, children: require$$93.jsx(StyledContainer, { maxWidth: maxWidth, sx: sx, style: style, 
+=======
+    require$$71.jsx(require$$76.Box, { sx: { mb: mb || 4 }, children: require$$71.jsx(StyledContainer, { maxWidth: maxWidth, sx: sx, style: style, 
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
             // 段階的な横幅指定
             fixed: fixed, 
             // 両横の溝=paddingの有無 defaultは無しに指定
@@ -66261,8 +66536,13 @@ const TitleSet = ({ variant, component, headingText, variantSubTitle, subtitleTe
 TooltipTitleIconComponent, TooltipComponent, 
 // 下線
 divider, dividerSx, }) => {
+<<<<<<< HEAD
     const theme = require$$98.useTheme();
     return (require$$93.jsxs(require$$98.Box, { sx: {
+=======
+    const theme = require$$76.useTheme();
+    return (require$$71.jsxs(require$$76.Box, { sx: {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
             margin: noMargin
                 ? theme.spacing(0)
                 : mbSmall
@@ -66277,17 +66557,28 @@ divider, dividerSx, }) => {
                 boxShadow: 'none',
             },
             ...sx,
+<<<<<<< HEAD
         }, children: [require$$93.jsxs(require$$98.Grid, { container: true, justifyContent: "space-between", alignItems: "center", sx: { mb: noMargin ? 0 : 1 }, columnSpacing: 2, children: [require$$93.jsxs(require$$98.Grid, { item: true, sx: style, flex: 1, children: [require$$93.jsxs(require$$98.Typography, { variant: variant, component: component ? component : 'div', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: [headingText, require$$93.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$93.jsx(require$$98.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$93.jsx(require$$98.Grid, { item: true, children: AdditionalProps })] }), divider && require$$93.jsx(require$$98.Divider, { sx: dividerSx })] }));
 };
 
 const BoxOuter = require$$98.styled(require$$98.Box)(({ theme }) => `
+=======
+        }, children: [require$$71.jsxs(require$$76.Grid, { container: true, justifyContent: "space-between", alignItems: "center", sx: { mb: noMargin ? 0 : 1 }, columnSpacing: 2, children: [require$$71.jsxs(require$$76.Grid, { item: true, sx: style, flex: 1, children: [require$$71.jsxs(require$$76.Typography, { variant: variant, component: component ? component : 'div', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: [headingText, require$$71.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$71.jsx(require$$76.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$71.jsx(require$$76.Grid, { item: true, children: AdditionalProps })] }), divider && require$$71.jsx(require$$76.Divider, { sx: dividerSx })] }));
+};
+
+const BoxOuter = require$$76.styled(require$$76.Box)(({ theme }) => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
   margin-bottom: ${theme.spacing(4)};
 
   &:last-child {
     margin-bottom: 0;
   }
   `);
+<<<<<<< HEAD
 const BoxInner$1 = require$$98.styled(require$$98.Box)(({ theme }) => `
+=======
+const BoxInner$1 = require$$76.styled(require$$76.Box)(({ theme }) => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     padding: ${theme.spacing(0)};
     `);
 const BoxContent = ({ 
@@ -66306,9 +66597,15 @@ AdditionalProps,
 // 全体sx
 sx, }) => {
     // const theme = useTheme()
+<<<<<<< HEAD
     return (require$$93.jsx(BoxOuter, { sx: sx, children: require$$93.jsxs(BoxInner$1, { sx: {
                 ...boxInnerSx,
             }, children: [addTitle ? (require$$93.jsx(TitleSet
+=======
+    return (require$$71.jsx(BoxOuter, { sx: sx, children: require$$71.jsxs(BoxInner$1, { sx: {
+                ...boxInnerSx,
+            }, children: [addTitle ? (require$$71.jsx(TitleSet
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 // 見出しフォントサイズ htmlElement設定 サブタイトル
                 , { 
                     // 見出しフォントサイズ htmlElement設定 サブタイトル
@@ -66321,7 +66618,11 @@ sx, }) => {
                     TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent, AdditionalProps: AdditionalProps, divider: divider, dividerSx: dividerSx })) : (''), children] }) }));
 };
 
+<<<<<<< HEAD
 const BoxInner = require$$98.styled(require$$98.Paper)(({ theme }) => ({
+=======
+const BoxInner = require$$76.styled(require$$76.Paper)(({ theme }) => ({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     marginBottom: theme.spacing(4),
 }));
 const BoxWrap = ({ 
@@ -66339,11 +66640,19 @@ TooltipTitleIconComponent, TooltipComponent,
 AdditionalProps, 
 // 全体sx
 sx, }) => {
+<<<<<<< HEAD
     const theme = require$$98.useTheme();
     return (require$$93.jsx(require$$98.Box, { sx: sx, children: require$$93.jsxs(BoxInner, { elevation: 1, sx: {
                 padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
                 ...boxInnerSx,
             }, children: [addTitle && (require$$93.jsx(TitleSet
+=======
+    const theme = require$$76.useTheme();
+    return (require$$71.jsx(require$$76.Box, { sx: sx, children: require$$71.jsxs(BoxInner, { elevation: 1, sx: {
+                padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
+                ...boxInnerSx,
+            }, children: [addTitle && (require$$71.jsx(TitleSet
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
                 , { 
                     // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
@@ -66361,7 +66670,11 @@ sx, }) => {
 };
 
 // {`theme.breakpoints.up('sm') matches: ${matches}`}
+<<<<<<< HEAD
 const StackButtonWrap = require$$98.styled(require$$98.Stack)(() => ({
+=======
+const StackButtonWrap = require$$76.styled(require$$76.Stack)(() => ({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     display: 'grid',
     gap: 8,
     gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px, 100%), 1fr))',
@@ -66372,7 +66685,11 @@ const StackButtonWrap = require$$98.styled(require$$98.Stack)(() => ({
     },
 }));
 const ButtonWrap = ({ mt, mb, sx, children, justifyContent }) => {
+<<<<<<< HEAD
     return (require$$93.jsx(StackButtonWrap, { justifyContent: justifyContent ? justifyContent : 'flex-start', sx: {
+=======
+    return (require$$71.jsx(StackButtonWrap, { justifyContent: justifyContent ? justifyContent : 'flex-start', sx: {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
             mt: mt || 4,
             mb: mb || 2,
             ...sx,
@@ -66380,15 +66697,26 @@ const ButtonWrap = ({ mt, mb, sx, children, justifyContent }) => {
 };
 
 const CustomButton = ({ color, variant, size, type, startIcon, endIcon, disabled, onClick, sx, children, }) => {
+<<<<<<< HEAD
     return (require$$93.jsx(require$$98.Button, { color: color, size: size, variant: variant ? variant : 'contained', type: type ? type : 'submit', onClick: onClick, startIcon: startIcon, endIcon: endIcon, disabled: disabled, sx: sx, children: children }));
 };
 
 const DialogWrapper = require$$98.styled(require$$98.Dialog)(() => `
+=======
+    return (require$$71.jsx(require$$76.Button, { color: color, size: size, variant: variant ? variant : 'contained', type: type ? type : 'submit', onClick: onClick, startIcon: startIcon, endIcon: endIcon, disabled: disabled, sx: sx, children: children }));
+};
+
+const DialogWrapper = require$$76.styled(require$$76.Dialog)(() => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
       .MuiDialog-paper {
         overflow: visible;
       }
 `);
+<<<<<<< HEAD
 const AvatarError = require$$98.styled(require$$98.Avatar)(({ theme }) => `
+=======
+const AvatarError = require$$76.styled(require$$76.Avatar)(({ theme }) => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     background-color: ${theme.colors.error.lighter};
     color: ${theme.colors.error.main};
     width: ${theme.spacing(12)};
@@ -66398,7 +66726,11 @@ const AvatarError = require$$98.styled(require$$98.Avatar)(({ theme }) => `
       font-size: ${theme.typography.pxToRem(45)};
     }
   `);
+<<<<<<< HEAD
 const ButtonError = require$$98.styled(require$$98.Button)(({ theme }) => `
+=======
+const ButtonError = require$$76.styled(require$$76.Button)(({ theme }) => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     background: ${theme.colors.error.main};
     color: ${theme.palette.error.contrastText};
 
@@ -66407,6 +66739,7 @@ const ButtonError = require$$98.styled(require$$98.Button)(({ theme }) => `
     }
   `);
 const DeleteDialog = ({ open, DeleteItem, handleDeleteCompleted, closeDeleteDialog, }) => {
+<<<<<<< HEAD
     return (require$$93.jsx(DialogWrapper, { open: open, maxWidth: "sm", fullWidth: true, keepMounted: true, onClose: closeDeleteDialog, children: require$$93.jsxs(require$$98.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 5, children: [require$$93.jsx(AvatarError, { children: require$$93.jsx(require$$117__default["default"], {}) }), require$$93.jsxs(require$$98.Typography, { align: "center", sx: {
                         pt: 4,
                     }, variant: "h3", children: [DeleteItem, require$$93.jsx("br", {}), "\u3092\u524A\u9664\u3057\u307E\u3059"] }), require$$93.jsx(require$$98.Typography, { align: "center", sx: {
@@ -66414,12 +66747,25 @@ const DeleteDialog = ({ open, DeleteItem, handleDeleteCompleted, closeDeleteDial
                     }, children: "\u4E00\u5EA6\u524A\u9664\u3059\u308B\u3068\u5143\u306B\u623B\u305B\u307E\u305B\u3093" }), require$$93.jsxs(require$$98.Box, { children: [require$$93.jsx(require$$98.Button, { variant: "text", size: "large", sx: {
                                 mx: 1,
                             }, onClick: closeDeleteDialog, "data-testid": "cancel", children: "\u30AD\u30E3\u30F3\u30BB\u30EB" }), require$$93.jsx(ButtonError, { onClick: handleDeleteCompleted, size: "large", sx: {
+=======
+    return (require$$71.jsx(DialogWrapper, { open: open, maxWidth: "sm", fullWidth: true, keepMounted: true, onClose: closeDeleteDialog, children: require$$71.jsxs(require$$76.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 5, children: [require$$71.jsx(AvatarError, { children: require$$71.jsx(require$$95__default["default"], {}) }), require$$71.jsxs(require$$76.Typography, { align: "center", sx: {
+                        pt: 4,
+                    }, variant: "h3", children: [DeleteItem, require$$71.jsx("br", {}), "\u3092\u524A\u9664\u3057\u307E\u3059"] }), require$$71.jsx(require$$76.Typography, { align: "center", sx: {
+                        py: 4,
+                    }, children: "\u4E00\u5EA6\u524A\u9664\u3059\u308B\u3068\u5143\u306B\u623B\u305B\u307E\u305B\u3093" }), require$$71.jsxs(require$$76.Box, { children: [require$$71.jsx(require$$76.Button, { variant: "text", size: "large", sx: {
+                                mx: 1,
+                            }, onClick: closeDeleteDialog, "data-testid": "cancel", children: "\u30AD\u30E3\u30F3\u30BB\u30EB" }), require$$71.jsx(ButtonError, { onClick: handleDeleteCompleted, size: "large", sx: {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                                 mx: 1,
                                 px: 3,
                             }, variant: "contained", "data-testid": "deleteButton", children: "\u524A\u9664" })] })] }) }));
 };
 
+<<<<<<< HEAD
 const Label = require$$98.styled(require$$98.InputLabel)(() => ({
+=======
+const Label = require$$76.styled(require$$76.InputLabel)(() => ({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     fontSize: '14px',
     position: 'initial',
     textAlign: 'left',
@@ -66430,7 +66776,11 @@ const Label = require$$98.styled(require$$98.InputLabel)(() => ({
     },
 }));
 const CustomLabel = ({ id, TooltipTitleIconComponent, TooltipComponent, children, OptionalChip, chipLabel, color, size, sx, variant, mt, }) => {
+<<<<<<< HEAD
     return (require$$93.jsxs(Label, { htmlFor: id, sx: { mt: mt || 3 }, children: [children, require$$93.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent }), OptionalChip && (require$$93.jsx(require$$98.Chip, { size: size ? size : 'small', color: color, variant: variant, label: chipLabel ? chipLabel : '任意', sx: sx, style: {
+=======
+    return (require$$71.jsxs(Label, { htmlFor: id, sx: { mt: mt || 3 }, children: [children, require$$71.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent }), OptionalChip && (require$$71.jsx(require$$76.Chip, { size: size ? size : 'small', color: color, variant: variant, label: chipLabel ? chipLabel : '任意', sx: sx, style: {
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     borderRadius: 4,
                     margin: `0px 4px 4px`,
                     padding: `1px 8px 0`,
@@ -66438,7 +66788,11 @@ const CustomLabel = ({ id, TooltipTitleIconComponent, TooltipComponent, children
 };
 
 // ヘルパーテキストまで含めたラッピング
+<<<<<<< HEAD
 const WrapButtonlUI = require$$98.styled(require$$98.Stack)(() => `
+=======
+const WrapButtonlUI = require$$76.styled(require$$76.Stack)(() => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
   flexDirectiom: column;
   & + .MuiFormHelperText-root.MuiFormHelperText-contained.MuiFormHelperText-root {
     margin: -4px 12px 4px 12px;
@@ -66454,7 +66808,11 @@ const ClickableElement = `
   overflow: hidden;
   min-width: ${MinWidth};
 `;
+<<<<<<< HEAD
 const ButtonlUI = require$$98.styled(require$$98.Button)(({ theme }) => `
+=======
+const ButtonlUI = require$$76.styled(require$$76.Button)(({ theme }) => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
   margin: ${theme.spacing(1)};
 
   // Button Style
@@ -66554,10 +66912,17 @@ const ButtonlUI = require$$98.styled(require$$98.Button)(({ theme }) => `
     opacity: 0.5;
   }
   `);
+<<<<<<< HEAD
 const FormControlUI = require$$98.styled(require$$98.FormControlLabel)(() => `
     min-width: ${MinWidth}px;
     `);
 const OptionComponent = require$$98.styled(require$$98.Typography)(({ theme }) => `
+=======
+const FormControlUI = require$$76.styled(require$$76.FormControlLabel)(() => `
+    min-width: ${MinWidth}px;
+    `);
+const OptionComponent = require$$76.styled(require$$76.Typography)(({ theme }) => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
       color: ${theme.colors.primary.main};
       font-weight: ${FontWeight};
       position: absolute;
@@ -66567,20 +66932,33 @@ const OptionComponent = require$$98.styled(require$$98.Typography)(({ theme }) =
       text-align: right;
     `);
 const RadioButton = ({ label, value, disabled, AdditionalProps, helperText, onClick, checked, }) => {
+<<<<<<< HEAD
     return (require$$93.jsx(WrapButtonlUI, { children: require$$93.jsxs(ButtonlUI, { variant: "outlined", disabled: disabled, onClick: onClick, children: [require$$93.jsx(FormControlUI, { control: require$$93.jsx(require$$98.Radio, {}), label: label, value: value, checked: checked }), require$$93.jsx(require$$98.Typography, { children: require$$93.jsx(OptionComponent, { children: AdditionalProps }) }), require$$93.jsx(require$$98.Typography, { children: helperText })] }) }));
+=======
+    return (require$$71.jsx(WrapButtonlUI, { children: require$$71.jsxs(ButtonlUI, { variant: "outlined", disabled: disabled, onClick: onClick, children: [require$$71.jsx(FormControlUI, { control: require$$71.jsx(require$$76.Radio, {}), label: label, value: value, checked: checked }), require$$71.jsx(require$$76.Typography, { children: require$$71.jsx(OptionComponent, { children: AdditionalProps }) }), require$$71.jsx(require$$76.Typography, { children: helperText })] }) }));
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 };
 
 // 大見出しとサブタイトル
 const MainTitleSet = ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, 
 // TitleWrapNone,
 sxHeader, sxSubTitle, gutterBottom, mb, }) => {
+<<<<<<< HEAD
     const theme = require$$98.useTheme();
     return (require$$93.jsx(require$$98.Box, { sx: [
+=======
+    const theme = require$$76.useTheme();
+    return (require$$71.jsx(require$$76.Box, { sx: [
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
             {
                 p: theme.spacing(3, 4),
                 mb: mb || theme.spacing(2),
             },
+<<<<<<< HEAD
         ], children: require$$93.jsxs(require$$98.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, children: [require$$93.jsxs(require$$98.Grid, { item: true, flex: 1, children: [require$$93.jsx(require$$98.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.4 }, children: headingText }), require$$93.jsx(require$$98.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$93.jsx(require$$98.Grid, { item: true, children: AdditionalProps })] }) }));
+=======
+        ], children: require$$71.jsxs(require$$76.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, children: [require$$71.jsxs(require$$76.Grid, { item: true, flex: 1, children: [require$$71.jsx(require$$76.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.4 }, children: headingText }), require$$71.jsx(require$$76.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$71.jsx(require$$76.Grid, { item: true, children: AdditionalProps })] }) }));
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 };
 
 function toVal(mix) {
@@ -67806,7 +68184,11 @@ if (process.env.NODE_ENV !== 'production') {
   propTypes.exports = requireFactoryWithThrowingShims()();
 }
 
+<<<<<<< HEAD
 const TextWrapper = require$$118.styled('span')(({ theme }) => `
+=======
+const TextWrapper = require$$96.styled('span')(({ theme }) => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
       display: inline-block;
       align-items: center;
 
@@ -67846,7 +68228,11 @@ const TextWrapper = require$$118.styled('span')(({ theme }) => `
       }
 `);
 const Text = ({ color = 'secondary', flex, children, ...rest }) => {
+<<<<<<< HEAD
     return (require$$93.jsx(TextWrapper, { className: clsx('MuiText-' + color, { flexItem: flex }), ...rest, children: children }));
+=======
+    return (require$$71.jsx(TextWrapper, { className: clsx('MuiText-' + color, { flexItem: flex }), ...rest, children: children }));
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 };
 Text.propTypes = {
     children: propTypes.exports.node,
@@ -67862,7 +68248,11 @@ Text.propTypes = {
     ]),
 };
 
+<<<<<<< HEAD
 const LogoBox = require$$98.styled(require$$98.Box)(() => `
+=======
+const LogoBox = require$$76.styled(require$$76.Box)(() => `
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67872,7 +68262,11 @@ const LogoBox = require$$98.styled(require$$98.Box)(() => `
     }
 `);
 function SaaSusLogo({ width, alt }) {
+<<<<<<< HEAD
     return (require$$93.jsx(LogoBox, { children: require$$93.jsx(require$$119__default["default"], { href: "/", children: require$$93.jsx("img", { width: width, src: "/static/images/logo/saasus_logo.svg", alt: alt }) }) }));
+=======
+    return (require$$71.jsx(LogoBox, { children: require$$71.jsx(require$$97__default["default"], { href: "/", children: require$$71.jsx("img", { width: width, src: "/static/images/logo/saasus_logo.svg", alt: alt }) }) }));
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 }
 
 /***
@@ -67945,11 +68339,16 @@ const colors$2 = {
             menuItemBgActive: themeColors$2.primary,
             menuItemIconColor: '#4a5d69',
             menuItemIconColorActive: '#ffffff',
+<<<<<<< HEAD
             menuItemHeadingColor: require$$98.darken(themeColors$2.secondary, 0.3),
+=======
+            menuItemHeadingColor: require$$76.darken(themeColors$2.secondary, 0.3),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
         },
     },
     alpha: {
         white: {
+<<<<<<< HEAD
             5: require$$98.alpha(themeColors$2.white, 0.02),
             10: require$$98.alpha(themeColors$2.white, 0.1),
             30: require$$98.alpha(themeColors$2.white, 0.3),
@@ -67971,10 +68370,34 @@ const colors$2 = {
             30: require$$98.alpha(themeColors$2.black, 0.3),
             50: require$$98.alpha(themeColors$2.black, 0.5),
             70: require$$98.alpha(themeColors$2.black, 0.7),
+=======
+            5: require$$76.alpha(themeColors$2.white, 0.02),
+            10: require$$76.alpha(themeColors$2.white, 0.1),
+            30: require$$76.alpha(themeColors$2.white, 0.3),
+            50: require$$76.alpha(themeColors$2.white, 0.5),
+            70: require$$76.alpha(themeColors$2.white, 0.7),
+            100: themeColors$2.white,
+        },
+        trueWhite: {
+            5: require$$76.alpha(themeColors$2.trueWhite, 0.02),
+            10: require$$76.alpha(themeColors$2.trueWhite, 0.1),
+            30: require$$76.alpha(themeColors$2.trueWhite, 0.3),
+            50: require$$76.alpha(themeColors$2.trueWhite, 0.5),
+            70: require$$76.alpha(themeColors$2.trueWhite, 0.7),
+            100: themeColors$2.trueWhite,
+        },
+        black: {
+            5: require$$76.alpha(themeColors$2.black, 0.02),
+            10: require$$76.alpha(themeColors$2.black, 0.1),
+            30: require$$76.alpha(themeColors$2.black, 0.3),
+            50: require$$76.alpha(themeColors$2.black, 0.5),
+            70: require$$76.alpha(themeColors$2.black, 0.7),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
             100: themeColors$2.black,
         },
     },
     secondary: {
+<<<<<<< HEAD
         lighter: require$$98.alpha(themeColors$2.secondary, 0.85),
         light: require$$98.alpha(themeColors$2.secondary, 0.6),
         main: themeColors$2.secondary,
@@ -68012,6 +68435,45 @@ const colors$2 = {
     },
 };
 const SaaSusDarkThemeHighContrast = require$$98.createTheme({
+=======
+        lighter: require$$76.alpha(themeColors$2.secondary, 0.85),
+        light: require$$76.alpha(themeColors$2.secondary, 0.6),
+        main: themeColors$2.secondary,
+        dark: require$$76.darken(themeColors$2.secondary, 0.2),
+    },
+    primary: {
+        lighter: require$$76.alpha(themeColors$2.primary, 0.85),
+        light: require$$76.alpha(themeColors$2.primary, 0.3),
+        main: themeColors$2.primary,
+        dark: require$$76.darken(themeColors$2.primary, 0.2),
+    },
+    success: {
+        lighter: require$$76.alpha(themeColors$2.success, 0.85),
+        light: require$$76.alpha(themeColors$2.success, 0.3),
+        main: themeColors$2.success,
+        dark: require$$76.darken(themeColors$2.success, 0.2),
+    },
+    warning: {
+        lighter: require$$76.alpha(themeColors$2.warning, 0.85),
+        light: require$$76.alpha(themeColors$2.warning, 0.3),
+        main: themeColors$2.warning,
+        dark: require$$76.darken(themeColors$2.warning, 0.2),
+    },
+    error: {
+        lighter: require$$76.alpha(themeColors$2.error, 0.85),
+        light: require$$76.alpha(themeColors$2.error, 0.3),
+        main: themeColors$2.error,
+        dark: require$$76.darken(themeColors$2.error, 0.2),
+    },
+    info: {
+        lighter: require$$76.alpha(themeColors$2.info, 0.85),
+        light: require$$76.alpha(themeColors$2.info, 0.3),
+        main: themeColors$2.info,
+        dark: require$$76.darken(themeColors$2.info, 0.2),
+    },
+};
+const SaaSusDarkThemeHighContrast = require$$76.createTheme({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     // direction: i18n.dir(),
     colors: {
         gradients: {
@@ -68041,6 +68503,7 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
         },
         alpha: {
             white: {
+<<<<<<< HEAD
                 5: require$$98.alpha(themeColors$2.white, 0.02),
                 10: require$$98.alpha(themeColors$2.white, 0.1),
                 30: require$$98.alpha(themeColors$2.white, 0.3),
@@ -68062,10 +68525,34 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
                 30: require$$98.alpha(themeColors$2.black, 0.3),
                 50: require$$98.alpha(themeColors$2.black, 0.5),
                 70: require$$98.alpha(themeColors$2.black, 0.7),
+=======
+                5: require$$76.alpha(themeColors$2.white, 0.02),
+                10: require$$76.alpha(themeColors$2.white, 0.1),
+                30: require$$76.alpha(themeColors$2.white, 0.3),
+                50: require$$76.alpha(themeColors$2.white, 0.5),
+                70: require$$76.alpha(themeColors$2.white, 0.7),
+                100: themeColors$2.white,
+            },
+            trueWhite: {
+                5: require$$76.alpha(themeColors$2.trueWhite, 0.02),
+                10: require$$76.alpha(themeColors$2.trueWhite, 0.1),
+                30: require$$76.alpha(themeColors$2.trueWhite, 0.3),
+                50: require$$76.alpha(themeColors$2.trueWhite, 0.5),
+                70: require$$76.alpha(themeColors$2.trueWhite, 0.7),
+                100: themeColors$2.trueWhite,
+            },
+            black: {
+                5: require$$76.alpha(themeColors$2.black, 0.02),
+                10: require$$76.alpha(themeColors$2.black, 0.1),
+                30: require$$76.alpha(themeColors$2.black, 0.3),
+                50: require$$76.alpha(themeColors$2.black, 0.5),
+                70: require$$76.alpha(themeColors$2.black, 0.7),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 100: themeColors$2.black,
             },
         },
         secondary: {
+<<<<<<< HEAD
             lighter: require$$98.alpha(themeColors$2.secondary, 0.1),
             light: require$$98.alpha(themeColors$2.secondary, 0.3),
             main: themeColors$2.secondary,
@@ -68100,6 +68587,42 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
             light: require$$98.alpha(themeColors$2.info, 0.3),
             main: themeColors$2.info,
             dark: require$$98.darken(themeColors$2.info, 0.2),
+=======
+            lighter: require$$76.alpha(themeColors$2.secondary, 0.1),
+            light: require$$76.alpha(themeColors$2.secondary, 0.3),
+            main: themeColors$2.secondary,
+            dark: require$$76.darken(themeColors$2.secondary, 0.2),
+        },
+        primary: {
+            lighter: require$$76.alpha(themeColors$2.primary, 0.1),
+            light: require$$76.alpha(themeColors$2.primary, 0.3),
+            main: themeColors$2.primary,
+            dark: require$$76.darken(themeColors$2.primary, 0.2),
+        },
+        success: {
+            lighter: require$$76.alpha(themeColors$2.success, 0.1),
+            light: require$$76.alpha(themeColors$2.success, 0.3),
+            main: themeColors$2.success,
+            dark: require$$76.darken(themeColors$2.success, 0.2),
+        },
+        warning: {
+            lighter: require$$76.alpha(themeColors$2.warning, 0.1),
+            light: require$$76.alpha(themeColors$2.warning, 0.3),
+            main: themeColors$2.warning,
+            dark: require$$76.darken(themeColors$2.warning, 0.2),
+        },
+        error: {
+            lighter: require$$76.alpha(themeColors$2.error, 0.1),
+            light: require$$76.alpha(themeColors$2.error, 0.3),
+            main: themeColors$2.error,
+            dark: require$$76.darken(themeColors$2.error, 0.2),
+        },
+        info: {
+            lighter: require$$76.alpha(themeColors$2.info, 0.1),
+            light: require$$76.alpha(themeColors$2.info, 0.3),
+            main: themeColors$2.info,
+            dark: require$$76.darken(themeColors$2.info, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
         },
     },
     general: {
@@ -68197,7 +68720,11 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
         MuiBackdrop: {
             styleOverrides: {
                 root: {
+<<<<<<< HEAD
                     backgroundColor: require$$98.alpha(require$$98.darken('#141c23', 0.5), 0.4),
+=======
+                    backgroundColor: require$$76.alpha(require$$76.darken('#141c23', 0.5), 0.4),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     backdropFilter: 'blur(2px)',
                     '&.MuiBackdrop-invisible': {
                         backgroundColor: 'transparent',
@@ -68219,7 +68746,11 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
         MuiDialog: {
             styleOverrides: {
                 paper: {
+<<<<<<< HEAD
                     backgroundColor: require$$98.darken(themeColors$2.primaryAlt, 0.5),
+=======
+                    backgroundColor: require$$76.darken(themeColors$2.primaryAlt, 0.5),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 },
             },
         },
@@ -68685,7 +69216,11 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
                         backgroundColor: colors$2.alpha.black[10],
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root:active': {
+<<<<<<< HEAD
                         backgroundColor: require$$98.alpha(colors$2.primary.lighter, 0.2),
+=======
+                        backgroundColor: require$$76.alpha(colors$2.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
                         opacity: 0.2,
@@ -68762,7 +69297,11 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
                         },
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors$2.alpha.black[100],
+<<<<<<< HEAD
                             background: require$$98.alpha(colors$2.primary.lighter, 0.2),
+=======
+                            background: require$$76.alpha(colors$2.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                         },
                     },
                 },
@@ -68775,10 +69314,17 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
                     transition: 'all .2s',
                     '&:hover, &:active, &.active, &.Mui-selected': {
                         color: colors$2.alpha.black[100],
+<<<<<<< HEAD
                         background: require$$98.alpha(colors$2.primary.lighter, 0.2),
                     },
                     '&.Mui-selected:hover': {
                         background: require$$98.alpha(colors$2.primary.lighter, 0.2),
+=======
+                        background: require$$76.alpha(colors$2.primary.lighter, 0.2),
+                    },
+                    '&.Mui-selected:hover': {
+                        background: require$$76.alpha(colors$2.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                 },
             },
@@ -68790,7 +69336,11 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
                         color: colors$2.secondary.main,
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors$2.alpha.black[100],
+<<<<<<< HEAD
                             background: require$$98.alpha(colors$2.primary.lighter, 0.2),
+=======
+                            background: require$$76.alpha(colors$2.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                         },
                     },
                 },
@@ -68807,17 +69357,29 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
                     },
                 },
                 clearIndicator: {
+<<<<<<< HEAD
                     background: require$$98.alpha(colors$2.error.lighter, 0.2),
                     color: colors$2.error.main,
                     marginRight: 8,
                     '&:hover': {
                         background: require$$98.alpha(colors$2.error.lighter, 0.3),
+=======
+                    background: require$$76.alpha(colors$2.error.lighter, 0.2),
+                    color: colors$2.error.main,
+                    marginRight: 8,
+                    '&:hover': {
+                        background: require$$76.alpha(colors$2.error.lighter, 0.3),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                 },
                 popupIndicator: {
                     color: colors$2.alpha.black[70],
                     '&:hover': {
+<<<<<<< HEAD
                         background: require$$98.alpha(colors$2.primary.lighter, 0.2),
+=======
+                        background: require$$76.alpha(colors$2.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                 },
             },
@@ -68852,7 +69414,11 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
                 root: {
                     transition: 'background-color .2s',
                     '&.MuiTableRow-hover:hover': {
+<<<<<<< HEAD
                         backgroundColor: require$$98.alpha(colors$2.alpha.black[5], 0.05),
+=======
+                        backgroundColor: require$$76.alpha(colors$2.alpha.black[5], 0.05),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                 },
             },
@@ -68935,12 +69501,20 @@ const SaaSusDarkThemeHighContrast = require$$98.createTheme({
         MuiTooltip: {
             styleOverrides: {
                 tooltip: {
+<<<<<<< HEAD
                     backgroundColor: require$$98.alpha(colors$2.alpha.black['100'], 0.95),
+=======
+                    backgroundColor: require$$76.alpha(colors$2.alpha.black['100'], 0.95),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     padding: '8px 16px',
                     fontSize: 13,
                 },
                 arrow: {
+<<<<<<< HEAD
                     color: require$$98.alpha(colors$2.alpha.black['100'], 0.95),
+=======
+                    color: require$$76.alpha(colors$2.alpha.black['100'], 0.95),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 },
             },
         },
@@ -69258,11 +69832,16 @@ const colors$1 = {
             menuItemBgActive: 'rgba(43, 48, 77, .6)',
             menuItemIconColor: '#444A6B',
             menuItemIconColorActive: '#ffffff',
+<<<<<<< HEAD
             menuItemHeadingColor: require$$98.darken(themeColors$1.secondary, 0.3),
+=======
+            menuItemHeadingColor: require$$76.darken(themeColors$1.secondary, 0.3),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
         },
     },
     alpha: {
         white: {
+<<<<<<< HEAD
             5: require$$98.alpha(themeColors$1.white, 0.02),
             10: require$$98.alpha(themeColors$1.white, 0.1),
             30: require$$98.alpha(themeColors$1.white, 0.3),
@@ -69284,10 +69863,34 @@ const colors$1 = {
             30: require$$98.alpha(themeColors$1.black, 0.3),
             50: require$$98.alpha(themeColors$1.black, 0.5),
             70: require$$98.alpha(themeColors$1.black, 0.7),
+=======
+            5: require$$76.alpha(themeColors$1.white, 0.02),
+            10: require$$76.alpha(themeColors$1.white, 0.1),
+            30: require$$76.alpha(themeColors$1.white, 0.3),
+            50: require$$76.alpha(themeColors$1.white, 0.5),
+            70: require$$76.alpha(themeColors$1.white, 0.7),
+            100: themeColors$1.white,
+        },
+        trueWhite: {
+            5: require$$76.alpha(themeColors$1.trueWhite, 0.02),
+            10: require$$76.alpha(themeColors$1.trueWhite, 0.1),
+            30: require$$76.alpha(themeColors$1.trueWhite, 0.3),
+            50: require$$76.alpha(themeColors$1.trueWhite, 0.5),
+            70: require$$76.alpha(themeColors$1.trueWhite, 0.7),
+            100: themeColors$1.trueWhite,
+        },
+        black: {
+            5: require$$76.alpha(themeColors$1.black, 0.02),
+            10: require$$76.alpha(themeColors$1.black, 0.1),
+            30: require$$76.alpha(themeColors$1.black, 0.3),
+            50: require$$76.alpha(themeColors$1.black, 0.5),
+            70: require$$76.alpha(themeColors$1.black, 0.7),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
             100: themeColors$1.black,
         },
     },
     secondary: {
+<<<<<<< HEAD
         lighter: require$$98.alpha(themeColors$1.secondary, 0.85),
         light: require$$98.alpha(themeColors$1.secondary, 0.6),
         main: themeColors$1.secondary,
@@ -69325,6 +69928,45 @@ const colors$1 = {
     },
 };
 const SaaSusDarkTheme = require$$98.createTheme({
+=======
+        lighter: require$$76.alpha(themeColors$1.secondary, 0.85),
+        light: require$$76.alpha(themeColors$1.secondary, 0.6),
+        main: themeColors$1.secondary,
+        dark: require$$76.darken(themeColors$1.secondary, 0.2),
+    },
+    primary: {
+        lighter: require$$76.alpha(themeColors$1.primary, 0.85),
+        light: require$$76.alpha(themeColors$1.primary, 0.3),
+        main: themeColors$1.primary,
+        dark: require$$76.darken(themeColors$1.primary, 0.2),
+    },
+    success: {
+        lighter: require$$76.alpha(themeColors$1.success, 0.85),
+        light: require$$76.alpha(themeColors$1.success, 0.3),
+        main: themeColors$1.success,
+        dark: require$$76.darken(themeColors$1.success, 0.2),
+    },
+    warning: {
+        lighter: require$$76.alpha(themeColors$1.warning, 0.85),
+        light: require$$76.alpha(themeColors$1.warning, 0.3),
+        main: themeColors$1.warning,
+        dark: require$$76.darken(themeColors$1.warning, 0.2),
+    },
+    error: {
+        lighter: require$$76.alpha(themeColors$1.error, 0.85),
+        light: require$$76.alpha(themeColors$1.error, 0.3),
+        main: themeColors$1.error,
+        dark: require$$76.darken(themeColors$1.error, 0.2),
+    },
+    info: {
+        lighter: require$$76.alpha(themeColors$1.info, 0.85),
+        light: require$$76.alpha(themeColors$1.info, 0.3),
+        main: themeColors$1.info,
+        dark: require$$76.darken(themeColors$1.info, 0.2),
+    },
+};
+const SaaSusDarkTheme = require$$76.createTheme({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     // direction: i18n.dir(),
     colors: {
         gradients: {
@@ -69354,6 +69996,7 @@ const SaaSusDarkTheme = require$$98.createTheme({
         },
         alpha: {
             white: {
+<<<<<<< HEAD
                 5: require$$98.alpha(themeColors$1.white, 0.02),
                 10: require$$98.alpha(themeColors$1.white, 0.1),
                 30: require$$98.alpha(themeColors$1.white, 0.3),
@@ -69375,10 +70018,34 @@ const SaaSusDarkTheme = require$$98.createTheme({
                 30: require$$98.alpha(themeColors$1.black, 0.3),
                 50: require$$98.alpha(themeColors$1.black, 0.5),
                 70: require$$98.alpha(themeColors$1.black, 0.7),
+=======
+                5: require$$76.alpha(themeColors$1.white, 0.02),
+                10: require$$76.alpha(themeColors$1.white, 0.1),
+                30: require$$76.alpha(themeColors$1.white, 0.3),
+                50: require$$76.alpha(themeColors$1.white, 0.5),
+                70: require$$76.alpha(themeColors$1.white, 0.7),
+                100: themeColors$1.white,
+            },
+            trueWhite: {
+                5: require$$76.alpha(themeColors$1.trueWhite, 0.02),
+                10: require$$76.alpha(themeColors$1.trueWhite, 0.1),
+                30: require$$76.alpha(themeColors$1.trueWhite, 0.3),
+                50: require$$76.alpha(themeColors$1.trueWhite, 0.5),
+                70: require$$76.alpha(themeColors$1.trueWhite, 0.7),
+                100: themeColors$1.trueWhite,
+            },
+            black: {
+                5: require$$76.alpha(themeColors$1.black, 0.02),
+                10: require$$76.alpha(themeColors$1.black, 0.1),
+                30: require$$76.alpha(themeColors$1.black, 0.3),
+                50: require$$76.alpha(themeColors$1.black, 0.5),
+                70: require$$76.alpha(themeColors$1.black, 0.7),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 100: themeColors$1.black,
             },
         },
         secondary: {
+<<<<<<< HEAD
             lighter: require$$98.alpha(themeColors$1.secondary, 0.1),
             light: require$$98.alpha(themeColors$1.secondary, 0.3),
             main: themeColors$1.secondary,
@@ -69413,6 +70080,42 @@ const SaaSusDarkTheme = require$$98.createTheme({
             light: require$$98.alpha(themeColors$1.info, 0.3),
             main: themeColors$1.info,
             dark: require$$98.darken(themeColors$1.info, 0.2),
+=======
+            lighter: require$$76.alpha(themeColors$1.secondary, 0.1),
+            light: require$$76.alpha(themeColors$1.secondary, 0.3),
+            main: themeColors$1.secondary,
+            dark: require$$76.darken(themeColors$1.secondary, 0.2),
+        },
+        primary: {
+            lighter: require$$76.alpha(themeColors$1.primary, 0.1),
+            light: require$$76.alpha(themeColors$1.primary, 0.3),
+            main: themeColors$1.primary,
+            dark: require$$76.darken(themeColors$1.primary, 0.2),
+        },
+        success: {
+            lighter: require$$76.alpha(themeColors$1.success, 0.1),
+            light: require$$76.alpha(themeColors$1.success, 0.3),
+            main: themeColors$1.success,
+            dark: require$$76.darken(themeColors$1.success, 0.2),
+        },
+        warning: {
+            lighter: require$$76.alpha(themeColors$1.warning, 0.1),
+            light: require$$76.alpha(themeColors$1.warning, 0.3),
+            main: themeColors$1.warning,
+            dark: require$$76.darken(themeColors$1.warning, 0.2),
+        },
+        error: {
+            lighter: require$$76.alpha(themeColors$1.error, 0.1),
+            light: require$$76.alpha(themeColors$1.error, 0.3),
+            main: themeColors$1.error,
+            dark: require$$76.darken(themeColors$1.error, 0.2),
+        },
+        info: {
+            lighter: require$$76.alpha(themeColors$1.info, 0.1),
+            light: require$$76.alpha(themeColors$1.info, 0.3),
+            main: themeColors$1.info,
+            dark: require$$76.darken(themeColors$1.info, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
         },
     },
     general: {
@@ -69510,7 +70213,11 @@ const SaaSusDarkTheme = require$$98.createTheme({
         MuiBackdrop: {
             styleOverrides: {
                 root: {
+<<<<<<< HEAD
                     backgroundColor: require$$98.alpha(require$$98.darken('#070C27', 0.5), 0.4),
+=======
+                    backgroundColor: require$$76.alpha(require$$76.darken('#070C27', 0.5), 0.4),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     backdropFilter: 'blur(2px)',
                     '&.MuiBackdrop-invisible': {
                         backgroundColor: 'transparent',
@@ -69532,7 +70239,11 @@ const SaaSusDarkTheme = require$$98.createTheme({
         MuiDialog: {
             styleOverrides: {
                 paper: {
+<<<<<<< HEAD
                     backgroundColor: require$$98.darken(themeColors$1.primaryAlt, 0.5),
+=======
+                    backgroundColor: require$$76.darken(themeColors$1.primaryAlt, 0.5),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 },
             },
         },
@@ -69998,7 +70709,11 @@ const SaaSusDarkTheme = require$$98.createTheme({
                         backgroundColor: colors$1.alpha.black[10],
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root:active': {
+<<<<<<< HEAD
                         backgroundColor: require$$98.alpha(colors$1.primary.lighter, 0.2),
+=======
+                        backgroundColor: require$$76.alpha(colors$1.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
                         opacity: 0.2,
@@ -70075,7 +70790,11 @@ const SaaSusDarkTheme = require$$98.createTheme({
                         },
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors$1.alpha.black[100],
+<<<<<<< HEAD
                             background: require$$98.alpha(colors$1.primary.lighter, 0.2),
+=======
+                            background: require$$76.alpha(colors$1.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                         },
                     },
                 },
@@ -70088,10 +70807,17 @@ const SaaSusDarkTheme = require$$98.createTheme({
                     transition: 'all .2s',
                     '&:hover, &:active, &.active, &.Mui-selected': {
                         color: colors$1.alpha.black[100],
+<<<<<<< HEAD
                         background: require$$98.alpha(colors$1.primary.lighter, 0.2),
                     },
                     '&.Mui-selected:hover': {
                         background: require$$98.alpha(colors$1.primary.lighter, 0.2),
+=======
+                        background: require$$76.alpha(colors$1.primary.lighter, 0.2),
+                    },
+                    '&.Mui-selected:hover': {
+                        background: require$$76.alpha(colors$1.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                 },
             },
@@ -70103,7 +70829,11 @@ const SaaSusDarkTheme = require$$98.createTheme({
                         color: colors$1.secondary.main,
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors$1.alpha.black[100],
+<<<<<<< HEAD
                             background: require$$98.alpha(colors$1.primary.lighter, 0.2),
+=======
+                            background: require$$76.alpha(colors$1.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                         },
                     },
                 },
@@ -70120,17 +70850,29 @@ const SaaSusDarkTheme = require$$98.createTheme({
                     },
                 },
                 clearIndicator: {
+<<<<<<< HEAD
                     background: require$$98.alpha(colors$1.error.lighter, 0.2),
                     color: colors$1.error.main,
                     marginRight: 8,
                     '&:hover': {
                         background: require$$98.alpha(colors$1.error.lighter, 0.3),
+=======
+                    background: require$$76.alpha(colors$1.error.lighter, 0.2),
+                    color: colors$1.error.main,
+                    marginRight: 8,
+                    '&:hover': {
+                        background: require$$76.alpha(colors$1.error.lighter, 0.3),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                 },
                 popupIndicator: {
                     color: colors$1.alpha.black[70],
                     '&:hover': {
+<<<<<<< HEAD
                         background: require$$98.alpha(colors$1.primary.lighter, 0.2),
+=======
+                        background: require$$76.alpha(colors$1.primary.lighter, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                 },
             },
@@ -70165,7 +70907,11 @@ const SaaSusDarkTheme = require$$98.createTheme({
                 root: {
                     transition: 'background-color .2s',
                     '&.MuiTableRow-hover:hover': {
+<<<<<<< HEAD
                         backgroundColor: require$$98.alpha(colors$1.alpha.black[5], 0.05),
+=======
+                        backgroundColor: require$$76.alpha(colors$1.alpha.black[5], 0.05),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                 },
             },
@@ -70248,12 +70994,20 @@ const SaaSusDarkTheme = require$$98.createTheme({
         MuiTooltip: {
             styleOverrides: {
                 tooltip: {
+<<<<<<< HEAD
                     backgroundColor: require$$98.alpha(colors$1.alpha.black['100'], 0.95),
+=======
+                    backgroundColor: require$$76.alpha(colors$1.alpha.black['100'], 0.95),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     padding: '8px 16px',
                     fontSize: 13,
                 },
                 arrow: {
+<<<<<<< HEAD
                     color: require$$98.alpha(colors$1.alpha.black['100'], 0.95),
+=======
+                    color: require$$76.alpha(colors$1.alpha.black['100'], 0.95),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 },
             },
         },
@@ -70568,13 +71322,20 @@ const colors = {
             menuItemColorActive: themeColors.primary,
             menuItemBg: themeColors.white,
             menuItemBgActive: '#f2f5f9',
+<<<<<<< HEAD
             menuItemIconColor: require$$98.lighten(themeColors.secondary, 0.3),
             menuItemIconColorActive: themeColors.primary,
             menuItemHeadingColor: require$$98.darken(themeColors.secondary, 0.3),
+=======
+            menuItemIconColor: require$$76.lighten(themeColors.secondary, 0.3),
+            menuItemIconColorActive: themeColors.primary,
+            menuItemHeadingColor: require$$76.darken(themeColors.secondary, 0.3),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
         },
     },
     alpha: {
         white: {
+<<<<<<< HEAD
             5: require$$98.alpha(themeColors.white, 0.02),
             10: require$$98.alpha(themeColors.white, 0.1),
             30: require$$98.alpha(themeColors.white, 0.3),
@@ -70596,10 +71357,34 @@ const colors = {
             30: require$$98.alpha(themeColors.black, 0.3),
             50: require$$98.alpha(themeColors.black, 0.5),
             70: require$$98.alpha(themeColors.black, 0.7),
+=======
+            5: require$$76.alpha(themeColors.white, 0.02),
+            10: require$$76.alpha(themeColors.white, 0.1),
+            30: require$$76.alpha(themeColors.white, 0.3),
+            50: require$$76.alpha(themeColors.white, 0.5),
+            70: require$$76.alpha(themeColors.white, 0.7),
+            100: themeColors.white,
+        },
+        trueWhite: {
+            5: require$$76.alpha(themeColors.white, 0.02),
+            10: require$$76.alpha(themeColors.white, 0.1),
+            30: require$$76.alpha(themeColors.white, 0.3),
+            50: require$$76.alpha(themeColors.white, 0.5),
+            70: require$$76.alpha(themeColors.white, 0.7),
+            100: themeColors.white,
+        },
+        black: {
+            5: require$$76.alpha(themeColors.black, 0.02),
+            10: require$$76.alpha(themeColors.black, 0.1),
+            30: require$$76.alpha(themeColors.black, 0.3),
+            50: require$$76.alpha(themeColors.black, 0.5),
+            70: require$$76.alpha(themeColors.black, 0.7),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
             100: themeColors.black,
         },
     },
     secondary: {
+<<<<<<< HEAD
         lighter: require$$98.lighten(themeColors.secondary, 0.85),
         light: require$$98.lighten(themeColors.secondary, 0.25),
         main: themeColors.secondary,
@@ -70637,6 +71422,45 @@ const colors = {
     },
 };
 const SaaSusTheme = require$$98.createTheme({
+=======
+        lighter: require$$76.lighten(themeColors.secondary, 0.85),
+        light: require$$76.lighten(themeColors.secondary, 0.25),
+        main: themeColors.secondary,
+        dark: require$$76.darken(themeColors.secondary, 0.2),
+    },
+    primary: {
+        lighter: require$$76.lighten(themeColors.primary, 0.85),
+        light: require$$76.lighten(themeColors.primary, 0.3),
+        main: themeColors.primary,
+        dark: require$$76.darken(themeColors.primary, 0.2),
+    },
+    success: {
+        lighter: require$$76.lighten(themeColors.success, 0.85),
+        light: require$$76.lighten(themeColors.success, 0.3),
+        main: themeColors.success,
+        dark: require$$76.darken(themeColors.success, 0.2),
+    },
+    warning: {
+        lighter: require$$76.lighten(themeColors.warning, 0.85),
+        light: require$$76.lighten(themeColors.warning, 0.3),
+        main: themeColors.warning,
+        dark: require$$76.darken(themeColors.warning, 0.2),
+    },
+    error: {
+        lighter: require$$76.lighten(themeColors.error, 0.85),
+        light: require$$76.lighten(themeColors.error, 0.3),
+        main: themeColors.error,
+        dark: require$$76.darken(themeColors.error, 0.2),
+    },
+    info: {
+        lighter: require$$76.lighten(themeColors.info, 0.85),
+        light: require$$76.lighten(themeColors.info, 0.3),
+        main: themeColors.info,
+        dark: require$$76.darken(themeColors.info, 0.2),
+    },
+};
+const SaaSusTheme = require$$76.createTheme({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     colors: {
         gradients: {
             blue1: colors.gradients.blue1,
@@ -70665,6 +71489,7 @@ const SaaSusTheme = require$$98.createTheme({
         },
         alpha: {
             white: {
+<<<<<<< HEAD
                 5: require$$98.alpha(themeColors.white, 0.02),
                 10: require$$98.alpha(themeColors.white, 0.1),
                 30: require$$98.alpha(themeColors.white, 0.3),
@@ -70686,10 +71511,34 @@ const SaaSusTheme = require$$98.createTheme({
                 30: require$$98.alpha(themeColors.black, 0.3),
                 50: require$$98.alpha(themeColors.black, 0.5),
                 70: require$$98.alpha(themeColors.black, 0.7),
+=======
+                5: require$$76.alpha(themeColors.white, 0.02),
+                10: require$$76.alpha(themeColors.white, 0.1),
+                30: require$$76.alpha(themeColors.white, 0.3),
+                50: require$$76.alpha(themeColors.white, 0.5),
+                70: require$$76.alpha(themeColors.white, 0.7),
+                100: themeColors.white,
+            },
+            trueWhite: {
+                5: require$$76.alpha(themeColors.white, 0.02),
+                10: require$$76.alpha(themeColors.white, 0.1),
+                30: require$$76.alpha(themeColors.white, 0.3),
+                50: require$$76.alpha(themeColors.white, 0.5),
+                70: require$$76.alpha(themeColors.white, 0.7),
+                100: themeColors.white,
+            },
+            black: {
+                5: require$$76.alpha(themeColors.black, 0.02),
+                10: require$$76.alpha(themeColors.black, 0.1),
+                30: require$$76.alpha(themeColors.black, 0.3),
+                50: require$$76.alpha(themeColors.black, 0.5),
+                70: require$$76.alpha(themeColors.black, 0.7),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 100: themeColors.black,
             },
         },
         secondary: {
+<<<<<<< HEAD
             lighter: require$$98.alpha(themeColors.secondary, 0.1),
             light: require$$98.lighten(themeColors.secondary, 0.3),
             main: themeColors.secondary,
@@ -70724,6 +71573,42 @@ const SaaSusTheme = require$$98.createTheme({
             light: require$$98.lighten(themeColors.info, 0.3),
             main: themeColors.info,
             dark: require$$98.darken(themeColors.info, 0.2),
+=======
+            lighter: require$$76.alpha(themeColors.secondary, 0.1),
+            light: require$$76.lighten(themeColors.secondary, 0.3),
+            main: themeColors.secondary,
+            dark: require$$76.darken(themeColors.secondary, 0.2),
+        },
+        primary: {
+            lighter: require$$76.alpha(themeColors.primary, 0.1),
+            light: require$$76.lighten(themeColors.primary, 0.3),
+            main: themeColors.primary,
+            dark: require$$76.darken(themeColors.primary, 0.2),
+        },
+        success: {
+            lighter: require$$76.alpha(themeColors.success, 0.1),
+            light: require$$76.lighten(themeColors.success, 0.3),
+            main: themeColors.success,
+            dark: require$$76.darken(themeColors.success, 0.2),
+        },
+        warning: {
+            lighter: require$$76.alpha(themeColors.warning, 0.1),
+            light: require$$76.lighten(themeColors.warning, 0.3),
+            main: themeColors.warning,
+            dark: require$$76.darken(themeColors.warning, 0.2),
+        },
+        error: {
+            lighter: require$$76.alpha(themeColors.error, 0.1),
+            light: require$$76.lighten(themeColors.error, 0.3),
+            main: themeColors.error,
+            dark: require$$76.darken(themeColors.error, 0.2),
+        },
+        info: {
+            lighter: require$$76.alpha(themeColors.info, 0.1),
+            light: require$$76.lighten(themeColors.info, 0.3),
+            main: themeColors.info,
+            dark: require$$76.darken(themeColors.info, 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
         },
         turquoise: {
             main: '#00838f',
@@ -70838,7 +71723,11 @@ const SaaSusTheme = require$$98.createTheme({
         MuiBackdrop: {
             styleOverrides: {
                 root: {
+<<<<<<< HEAD
                     backgroundColor: require$$98.alpha(require$$98.darken(themeColors.primaryAlt, 0.4), 0.2),
+=======
+                    backgroundColor: require$$76.alpha(require$$76.darken(themeColors.primaryAlt, 0.4), 0.2),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     backdropFilter: 'blur(2px)',
                     '&.MuiBackdrop-invisible': {
                         backgroundColor: 'transparent',
@@ -71328,10 +72217,17 @@ const SaaSusTheme = require$$98.createTheme({
                         },
                     },
                     '& .MuiListItem-root.MuiButtonBase-root.Mui-selected': {
+<<<<<<< HEAD
                         backgroundColor: require$$98.alpha(colors.primary.lighter, 0.4),
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root:active': {
                         backgroundColor: require$$98.alpha(colors.primary.lighter, 0.4),
+=======
+                        backgroundColor: require$$76.alpha(colors.primary.lighter, 0.4),
+                    },
+                    '& .MuiMenuItem-root.MuiButtonBase-root:active': {
+                        backgroundColor: require$$76.alpha(colors.primary.lighter, 0.4),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
                         opacity: 0.2,
@@ -71408,7 +72304,11 @@ const SaaSusTheme = require$$98.createTheme({
                         },
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors.alpha.black[100],
+<<<<<<< HEAD
                             background: require$$98.alpha(colors.primary.lighter, 0.4),
+=======
+                            background: require$$76.alpha(colors.primary.lighter, 0.4),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                         },
                     },
                 },
@@ -71421,10 +72321,17 @@ const SaaSusTheme = require$$98.createTheme({
                     transition: 'all .2s',
                     '&:hover, &:active, &.active, &.Mui-selected': {
                         color: colors.alpha.black[100],
+<<<<<<< HEAD
                         background: require$$98.alpha(colors.primary.lighter, 0.4),
                     },
                     '&.Mui-selected:hover': {
                         background: require$$98.alpha(colors.primary.lighter, 0.4),
+=======
+                        background: require$$76.alpha(colors.primary.lighter, 0.4),
+                    },
+                    '&.Mui-selected:hover': {
+                        background: require$$76.alpha(colors.primary.lighter, 0.4),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     },
                 },
             },
@@ -71436,7 +72343,11 @@ const SaaSusTheme = require$$98.createTheme({
                         color: colors.secondary.main,
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors.alpha.black[100],
+<<<<<<< HEAD
                             background: require$$98.lighten(colors.primary.lighter, 0.5),
+=======
+                            background: require$$76.lighten(colors.primary.lighter, 0.5),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                         },
                     },
                 },
@@ -71585,12 +72496,20 @@ const SaaSusTheme = require$$98.createTheme({
         MuiTooltip: {
             styleOverrides: {
                 tooltip: {
+<<<<<<< HEAD
                     backgroundColor: require$$98.alpha(colors.alpha.black['100'], 0.95),
+=======
+                    backgroundColor: require$$76.alpha(colors.alpha.black['100'], 0.95),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                     padding: '8px 16px',
                     fontSize: '0.8125rem',
                 },
                 arrow: {
+<<<<<<< HEAD
                     color: require$$98.alpha(colors.alpha.black['100'], 0.95),
+=======
+                    color: require$$76.alpha(colors.alpha.black['100'], 0.95),
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
                 },
             },
         },
@@ -71850,11 +72769,16 @@ const themeMap = {
     SaaSusDarkThemeHighContrast,
 };
 
+<<<<<<< HEAD
 const ThemeContext = require$$122.createContext({
+=======
+const ThemeContext = require$$100.createContext({
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     theme: null,
     setThemeName: null,
 });
 const ThemeProviderWrapper = ({ lang = 'ja', children, }) => {
+<<<<<<< HEAD
     const [themeName, _setThemeName] = require$$122.useState('SaaSusTheme');
     require$$122.useEffect(() => {
         const curThemeName = 'SaaSusTheme';
@@ -71863,13 +72787,27 @@ const ThemeProviderWrapper = ({ lang = 'ja', children, }) => {
     require$$122.useEffect(() => {
         // change language
         i18n__default$b["default"].changeLanguage(lang);
+=======
+    const [themeName, _setThemeName] = require$$100.useState('SaaSusTheme');
+    require$$100.useEffect(() => {
+        const curThemeName = 'SaaSusTheme';
+        _setThemeName(curThemeName);
+    }, []);
+    require$$100.useEffect(() => {
+        // change language
+        i18n__default$9["default"].changeLanguage(lang);
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
     }, [lang]);
     const theme = themeCreator(themeName);
     const setThemeName = (themeName) => {
         window.localStorage.setItem('appTheme', themeName);
         _setThemeName(themeName);
     };
+<<<<<<< HEAD
     return (require$$93.jsx(require$$121.StylesProvider, { injectFirst: true, children: require$$93.jsx(ThemeContext.Provider, { value: { theme, setThemeName }, children: require$$93.jsx(require$$118.ThemeProvider, { theme: theme, children: children }) }) }));
+=======
+    return (require$$71.jsx(require$$99.StylesProvider, { injectFirst: true, children: require$$71.jsx(ThemeContext.Provider, { value: { theme, setThemeName }, children: require$$71.jsx(require$$96.ThemeProvider, { theme: theme, children: children }) }) }));
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 };
 
 exports.AccordionWrap = AccordionWrap;
@@ -71880,6 +72818,7 @@ exports.CustomAlert = CustomAlert;
 exports.CustomButton = CustomButton;
 exports.CustomContainer = CustomContainer;
 exports.CustomLabel = CustomLabel;
+<<<<<<< HEAD
 exports.CustomTable = CustomTable$b;
 exports.CustomTableCell = CustomTableCell$b;
 exports.CustomTableCellAction = CustomTableCellAction$b;
@@ -71889,6 +72828,17 @@ exports.CustomTableFilter = CustomTableFilter;
 exports.CustomTableFilterResult = CustomTableFilterResult;
 exports.CustomTableHeader = CustomTableHeader$b;
 exports.CustomTableRow = CustomTableRow$b;
+=======
+exports.CustomTable = CustomTable$9;
+exports.CustomTableCell = CustomTableCell$9;
+exports.CustomTableCellAction = CustomTableCellAction$9;
+exports.CustomTableCellActionBody = CustomTableCellActionBody$9;
+exports.CustomTableContainer = CustomTableContainer$9;
+exports.CustomTableFilter = CustomTableFilter;
+exports.CustomTableFilterResult = CustomTableFilterResult;
+exports.CustomTableHeader = CustomTableHeader$9;
+exports.CustomTableRow = CustomTableRow$9;
+>>>>>>> aa202ac228fc8ff4ddf4754b6f3f5f298001f70a
 exports.CustomTooltip = CustomTooltip;
 exports.DeleteDialog = DeleteDialog;
 exports.MainTitleSet = MainTitleSet;
