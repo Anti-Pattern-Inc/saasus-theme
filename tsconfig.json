@@ -21,6 +21,7 @@
     "strictNullChecks": false,
     "target": "esnext",
     "outDir": "dist",
+    "rootDir": ".",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
