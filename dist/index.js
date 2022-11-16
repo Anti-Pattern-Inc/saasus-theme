@@ -2,38 +2,190 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var require$$38 = require('react/jsx-runtime');
-var require$$43 = require('@mui/material');
-var DeleteTwoToneIcon$6 = require('@mui/icons-material/DeleteTwoTone');
-var EditTwoToneIcon$6 = require('@mui/icons-material/EditTwoTone');
-var require$$58 = require('@mui/icons-material/ExpandMore');
-var require$$59 = require('@mui/icons-material/HelpOutline');
-var i18n$6 = require('i18next');
-var require$$61 = require('react-i18next');
-var require$$62 = require('@mui/icons-material/Close');
-var require$$63 = require('@mui/material/styles');
-var require$$64 = require('next/link');
+var require$$49 = require('react/jsx-runtime');
+var require$$54 = require('@mui/material');
+var DeleteTwoToneIcon$7 = require('@mui/icons-material/DeleteTwoTone');
+var EditTwoToneIcon$7 = require('@mui/icons-material/EditTwoTone');
+var require$$69 = require('@mui/icons-material/ExpandMore');
+var require$$70 = require('@mui/icons-material/HelpOutline');
+var i18n$7 = require('i18next');
+var require$$72 = require('react-i18next');
+var require$$73 = require('@mui/icons-material/Close');
+var require$$74 = require('@mui/material/styles');
+var require$$75 = require('next/link');
 require('@mui/lab/themeAugmentation');
-var require$$66 = require('@mui/styles');
-var require$$67 = require('react');
-var require$$68 = require('@mui/icons-material/SearchTwoTone');
+var require$$77 = require('@mui/styles');
+var require$$78 = require('react');
+var require$$79 = require('@mui/icons-material/SearchTwoTone');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var require$$38__default = /*#__PURE__*/_interopDefaultLegacy(require$$38);
-var require$$43__default = /*#__PURE__*/_interopDefaultLegacy(require$$43);
-var DeleteTwoToneIcon__default$6 = /*#__PURE__*/_interopDefaultLegacy(DeleteTwoToneIcon$6);
-var EditTwoToneIcon__default$6 = /*#__PURE__*/_interopDefaultLegacy(EditTwoToneIcon$6);
-var require$$58__default = /*#__PURE__*/_interopDefaultLegacy(require$$58);
-var require$$59__default = /*#__PURE__*/_interopDefaultLegacy(require$$59);
-var i18n__default$6 = /*#__PURE__*/_interopDefaultLegacy(i18n$6);
-var require$$61__default = /*#__PURE__*/_interopDefaultLegacy(require$$61);
-var require$$62__default = /*#__PURE__*/_interopDefaultLegacy(require$$62);
-var require$$63__default = /*#__PURE__*/_interopDefaultLegacy(require$$63);
-var require$$64__default = /*#__PURE__*/_interopDefaultLegacy(require$$64);
-var require$$66__default = /*#__PURE__*/_interopDefaultLegacy(require$$66);
-var require$$67__default = /*#__PURE__*/_interopDefaultLegacy(require$$67);
-var require$$68__default = /*#__PURE__*/_interopDefaultLegacy(require$$68);
+var require$$49__default = /*#__PURE__*/_interopDefaultLegacy(require$$49);
+var require$$54__default = /*#__PURE__*/_interopDefaultLegacy(require$$54);
+var DeleteTwoToneIcon__default$7 = /*#__PURE__*/_interopDefaultLegacy(DeleteTwoToneIcon$7);
+var EditTwoToneIcon__default$7 = /*#__PURE__*/_interopDefaultLegacy(EditTwoToneIcon$7);
+var require$$69__default = /*#__PURE__*/_interopDefaultLegacy(require$$69);
+var require$$70__default = /*#__PURE__*/_interopDefaultLegacy(require$$70);
+var i18n__default$7 = /*#__PURE__*/_interopDefaultLegacy(i18n$7);
+var require$$72__default = /*#__PURE__*/_interopDefaultLegacy(require$$72);
+var require$$73__default = /*#__PURE__*/_interopDefaultLegacy(require$$73);
+var require$$74__default = /*#__PURE__*/_interopDefaultLegacy(require$$74);
+var require$$75__default = /*#__PURE__*/_interopDefaultLegacy(require$$75);
+var require$$77__default = /*#__PURE__*/_interopDefaultLegacy(require$$77);
+var require$$78__default = /*#__PURE__*/_interopDefaultLegacy(require$$78);
+var require$$79__default = /*#__PURE__*/_interopDefaultLegacy(require$$79);
+
+const CustomTable$7 = ({ children, caption, sx, ...props }) => {
+    return (require$$49.jsxs(require$$54.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$49.jsx("caption", { children: caption }), children] }));
+};
+
+const CustomTableContainer$7 = ({ children, maxHeightValue, sx, ...props }) => {
+    return (require$$49.jsx(require$$54.TableContainer, { component: require$$54.Paper, style: { maxHeight: maxHeightValue }, sx: sx, ...props, children: children }));
+};
+
+// ----- テーブルの見出し折返し防止をグローバルに設置 -----
+const StyledTableHead$7 = require$$54.styled(require$$54.TableHead)(() => `
+  &.MuiTableHead-root {
+    >.MuiTableRow-head {
+      >.MuiTableCell-head {
+        white-space: nowrap;
+      }
+    }
+  }
+  `);
+const CustomTableHeader$7 = ({ children, ...props }) => {
+    return (require$$49.jsx(StyledTableHead$7, { ...props, children: require$$49.jsx(require$$54.TableRow, { children: children }) }));
+};
+
+const StyledTableRow$7 = require$$54.styled(require$$54.TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+        background: theme.colors.alpha.black[10],
+        '&:hover': {
+            background: theme.colors.primary.lighter,
+        },
+    },
+    '&:nth-of-type(even)': {
+        background: theme.colors.alpha.black[5],
+        '&:hover': {
+            background: theme.colors.primary.lighter,
+        },
+    },
+    '&:last-child td, &:last-child th': {
+        border: 0,
+    },
+}));
+const CustomTableRow$7 = ({ children }) => {
+    return require$$49.jsx(StyledTableRow$7, { children: children });
+};
+
+// ----- Design -----
+// INFO: https://mui.com/material-ui/react-table/#basic-table
+// ----- Cell BasicStyle -----
+const StyledTableCell$7 = require$$54.styled(require$$54.TableCell)(({ theme }) => ({
+    [`&.${require$$54.tableCellClasses.head}`]: {
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white,
+    },
+    [`&.${require$$54.tableCellClasses.body}`]: {
+        fontSize: 14,
+        borderColor: theme.colors.alpha.black[5],
+    },
+}));
+// デフォルトのTableCell
+const CustomTableCell$7 = ({ children, minWidthValue, maxWidthValue, noWrap, ...props }) => {
+    return (require$$49.jsx(StyledTableCell$7, { ...props, sx: {
+            whiteSpace: 'normal',
+            top: 0,
+            wordBreak: noWrap ? 'keep-all' : 'break-word',
+            minWidth: minWidthValue ? minWidthValue : 60,
+            maxWidth: maxWidthValue ? maxWidthValue : 240,
+        }, children: children }));
+};
+// 編集機能がある時のTableCell
+const StyledTableCellAction$f = require$$54.styled(require$$54.TableCell)(({ theme }) => ({
+    [`&.${require$$54.tableCellClasses.head}`]: {
+        position: `sticky`,
+        top: 0,
+        right: 0,
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white,
+    },
+    [`&.${require$$54.tableCellClasses.body}`]: {
+        position: `sticky`,
+        top: 0,
+        right: 0,
+        borderColor: theme.colors.alpha.black[5],
+    },
+}));
+// アクションがある場合は見出しのmapとは別に並列で設置する
+const CustomTableCellAction$7 = ({ children, ...props }) => {
+    return (require$$49.jsx(StyledTableCellAction$f, { align: "center", sx: { top: 0 }, ...props, children: children }));
+};
+
+// ----- Action Header for Edit/Remove Other-----
+const StyledTableCellAction$e = require$$54.styled(require$$54.TableCell)(({ theme }) => ({
+    [`&.${require$$54.tableCellClasses.head}`]: {
+        position: `sticky`,
+        top: 0,
+        right: 0,
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white,
+    },
+    [`&.${require$$54.tableCellClasses.body}`]: {
+        position: `sticky`,
+        top: -49,
+        right: 0,
+        borderColor: theme.colors.alpha.black[5],
+    },
+}));
+// ----- Action Cell for Edit/Remove Other -----
+const IconButtonUI$7 = require$$54.styled(require$$54.IconButton)(({ theme }) => `
+  &.MuiButtonBase-root {
+    &.MuiIconButton-root {
+      background: ${theme.colors.alpha.white[70]};
+      margin: ${theme.spacing(0, 0.5)};
+    }
+  `);
+const CustomTableCellActionBody$7 = ({ hasEdit, editTitle, hasDelete, deleteTitle, onClickEdit, onClickDelete, testItem, ...props }) => {
+    return (require$$49.jsx(StyledTableCellAction$e, { align: "center", sx: { top: 0 }, ...props, children: require$$49.jsxs(require$$54.Typography, { noWrap: true, children: [hasEdit && (require$$49.jsx(require$$54.Tooltip, { title: editTitle, arrow: true, children: require$$49.jsx(IconButtonUI$7, { onClick: onClickEdit, color: "primary", children: require$$49.jsx(EditTwoToneIcon__default$7["default"], { fontSize: "small", "data-testid": testItem && `updating:${testItem}` }) }) })), hasDelete && (require$$49.jsx(require$$54.Tooltip, { title: deleteTitle, arrow: true, children: require$$49.jsx(IconButtonUI$7, { onClick: onClickDelete, color: "error", children: require$$49.jsx(DeleteTwoToneIcon__default$7["default"], { fontSize: "small", "data-testid": testItem && `deleting:${testItem}` }) }) }))] }) }));
+};
+
+var dist$6 = {};
+
+Object.defineProperty(dist$6, '__esModule', { value: true });
+
+var require$$38 = require$$49__default["default"];
+var require$$43 = require$$54__default["default"];
+var DeleteTwoToneIcon$6 = DeleteTwoToneIcon__default$7["default"];
+var EditTwoToneIcon$6 = EditTwoToneIcon__default$7["default"];
+var require$$58 = require$$69__default["default"];
+var require$$59 = require$$70__default["default"];
+var i18n$6 = i18n__default$7["default"];
+var require$$61 = require$$72__default["default"];
+var require$$62 = require$$73__default["default"];
+var require$$63 = require$$74__default["default"];
+var require$$64 = require$$75__default["default"];
+
+var require$$66 = require$$77__default["default"];
+var require$$67 = require$$78__default["default"];
+var require$$68 = require$$79__default["default"];
+
+function _interopDefaultLegacy$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$38__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$38);
+var require$$43__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$43);
+var DeleteTwoToneIcon__default$6 = /*#__PURE__*/_interopDefaultLegacy$1(DeleteTwoToneIcon$6);
+var EditTwoToneIcon__default$6 = /*#__PURE__*/_interopDefaultLegacy$1(EditTwoToneIcon$6);
+var require$$58__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$58);
+var require$$59__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$59);
+var i18n__default$6 = /*#__PURE__*/_interopDefaultLegacy$1(i18n$6);
+var require$$61__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$61);
+var require$$62__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$62);
+var require$$63__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$63);
+var require$$64__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$64);
+var require$$66__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$66);
+var require$$67__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$67);
+var require$$68__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$68);
 
 const CustomTable$6 = ({ children, caption, sx, ...props }) => {
     return (require$$38.jsxs(require$$43.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$38.jsx("caption", { children: caption }), children] }));
@@ -170,22 +322,22 @@ var require$$55 = require$$66__default["default"];
 var require$$56 = require$$67__default["default"];
 var require$$57 = require$$68__default["default"];
 
-function _interopDefaultLegacy$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var require$$27__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$27);
-var require$$32__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$32);
-var DeleteTwoToneIcon__default$5 = /*#__PURE__*/_interopDefaultLegacy$1(DeleteTwoToneIcon$5);
-var EditTwoToneIcon__default$5 = /*#__PURE__*/_interopDefaultLegacy$1(EditTwoToneIcon$5);
-var require$$47__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$47);
-var require$$48__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$48);
-var i18n__default$5 = /*#__PURE__*/_interopDefaultLegacy$1(i18n$5);
-var require$$50__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$50);
-var require$$51__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$51);
-var require$$52__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$52);
-var require$$53__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$53);
-var require$$55__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$55);
-var require$$56__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$56);
-var require$$57__default = /*#__PURE__*/_interopDefaultLegacy$1(require$$57);
+var require$$27__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$27);
+var require$$32__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$32);
+var DeleteTwoToneIcon__default$5 = /*#__PURE__*/_interopDefaultLegacy$1$1(DeleteTwoToneIcon$5);
+var EditTwoToneIcon__default$5 = /*#__PURE__*/_interopDefaultLegacy$1$1(EditTwoToneIcon$5);
+var require$$47__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$47);
+var require$$48__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$48);
+var i18n__default$5 = /*#__PURE__*/_interopDefaultLegacy$1$1(i18n$5);
+var require$$50__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$50);
+var require$$51__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$51);
+var require$$52__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$52);
+var require$$53__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$53);
+var require$$55__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$55);
+var require$$56__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$56);
+var require$$57__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$57);
 
 const CustomTable$5 = ({ children, caption, sx, ...props }) => {
     return (require$$27.jsxs(require$$32.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$27.jsx("caption", { children: caption }), children] }));
@@ -322,22 +474,22 @@ var require$$44 = require$$55__default["default"];
 var require$$45 = require$$56__default["default"];
 var require$$46 = require$$57__default["default"];
 
-function _interopDefaultLegacy$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var require$$16__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$16);
-var require$$21__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$21);
-var DeleteTwoToneIcon__default$4 = /*#__PURE__*/_interopDefaultLegacy$1$1(DeleteTwoToneIcon$4);
-var EditTwoToneIcon__default$4 = /*#__PURE__*/_interopDefaultLegacy$1$1(EditTwoToneIcon$4);
-var require$$36__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$36);
-var require$$37__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$37);
-var i18n__default$4 = /*#__PURE__*/_interopDefaultLegacy$1$1(i18n$4);
-var require$$39__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$39);
-var require$$40__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$40);
-var require$$41__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$41);
-var require$$42__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$42);
-var require$$44__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$44);
-var require$$45__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$45);
-var require$$46__default = /*#__PURE__*/_interopDefaultLegacy$1$1(require$$46);
+var require$$16__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$16);
+var require$$21__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$21);
+var DeleteTwoToneIcon__default$4 = /*#__PURE__*/_interopDefaultLegacy$1$1$1(DeleteTwoToneIcon$4);
+var EditTwoToneIcon__default$4 = /*#__PURE__*/_interopDefaultLegacy$1$1$1(EditTwoToneIcon$4);
+var require$$36__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$36);
+var require$$37__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$37);
+var i18n__default$4 = /*#__PURE__*/_interopDefaultLegacy$1$1$1(i18n$4);
+var require$$39__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$39);
+var require$$40__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$40);
+var require$$41__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$41);
+var require$$42__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$42);
+var require$$44__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$44);
+var require$$45__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$45);
+var require$$46__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$46);
 
 const CustomTable$4 = ({ children, caption, sx, ...props }) => {
     return (require$$16.jsxs(require$$21.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$16.jsx("caption", { children: caption }), children] }));
@@ -474,22 +626,22 @@ var require$$33 = require$$44__default["default"];
 var require$$34 = require$$45__default["default"];
 var require$$35 = require$$46__default["default"];
 
-function _interopDefaultLegacy$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var require$$6__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$6);
-var require$$11__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$11);
-var DeleteTwoToneIcon__default$3 = /*#__PURE__*/_interopDefaultLegacy$1$1$1(DeleteTwoToneIcon$3);
-var EditTwoToneIcon__default$3 = /*#__PURE__*/_interopDefaultLegacy$1$1$1(EditTwoToneIcon$3);
-var require$$25__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$25);
-var require$$26__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$26);
-var i18n__default$3 = /*#__PURE__*/_interopDefaultLegacy$1$1$1(i18n$3);
-var require$$28__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$28);
-var require$$29__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$29);
-var require$$30__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$30);
-var require$$31__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$31);
-var require$$33__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$33);
-var require$$34__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$34);
-var require$$35__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1(require$$35);
+var require$$6__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$6);
+var require$$11__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$11);
+var DeleteTwoToneIcon__default$3 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(DeleteTwoToneIcon$3);
+var EditTwoToneIcon__default$3 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(EditTwoToneIcon$3);
+var require$$25__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$25);
+var require$$26__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$26);
+var i18n__default$3 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(i18n$3);
+var require$$28__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$28);
+var require$$29__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$29);
+var require$$30__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$30);
+var require$$31__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$31);
+var require$$33__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$33);
+var require$$34__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$34);
+var require$$35__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$35);
 
 const CustomTable$3 = ({ children, caption, sx, ...props }) => {
     return (require$$6.jsxs(require$$11.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$6.jsx("caption", { children: caption }), children] }));
@@ -626,22 +778,22 @@ var require$$22 = require$$33__default["default"];
 var require$$23 = require$$34__default["default"];
 var require$$24 = require$$35__default["default"];
 
-function _interopDefaultLegacy$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var require$$2__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$2);
-var require$$3__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$3);
-var DeleteTwoToneIcon__default$2 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(DeleteTwoToneIcon$2);
-var EditTwoToneIcon__default$2 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(EditTwoToneIcon$2);
-var require$$14__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$14);
-var require$$15__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$15);
-var i18n__default$2 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(i18n$2);
-var require$$17__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$17);
-var require$$18__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$18);
-var require$$19__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$19);
-var require$$20__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$20);
-var require$$22__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$22);
-var require$$23__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$23);
-var require$$24__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1(require$$24);
+var require$$2__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$2);
+var require$$3__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$3);
+var DeleteTwoToneIcon__default$2 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(DeleteTwoToneIcon$2);
+var EditTwoToneIcon__default$2 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(EditTwoToneIcon$2);
+var require$$14__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$14);
+var require$$15__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$15);
+var i18n__default$2 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(i18n$2);
+var require$$17__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$17);
+var require$$18__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$18);
+var require$$19__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$19);
+var require$$20__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$20);
+var require$$22__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$22);
+var require$$23__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$23);
+var require$$24__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$24);
 
 const CustomTable$2 = ({ children, caption, sx, ...props }) => {
     return (require$$2.jsxs(require$$3.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$2.jsx("caption", { children: caption }), children] }));
@@ -778,22 +930,22 @@ var require$$12 = require$$22__default["default"];
 var require$$13 = require$$23__default["default"];
 var SearchTwoToneIcon = require$$24__default["default"];
 
-function _interopDefaultLegacy$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var require$$0__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$0);
-var require$$1__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$1);
-var DeleteTwoToneIcon__default$1 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(DeleteTwoToneIcon$1);
-var EditTwoToneIcon__default$1 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(EditTwoToneIcon$1);
-var require$$4__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$4);
-var require$$5__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$5);
-var i18n__default$1 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(i18n$1);
-var require$$7__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$7);
-var require$$8__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$8);
-var require$$9__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$9);
-var require$$10__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$10);
-var require$$12__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$12);
-var require$$13__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(require$$13);
-var SearchTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1(SearchTwoToneIcon);
+var require$$0__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$0);
+var require$$1__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$1);
+var DeleteTwoToneIcon__default$1 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(DeleteTwoToneIcon$1);
+var EditTwoToneIcon__default$1 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(EditTwoToneIcon$1);
+var require$$4__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$4);
+var require$$5__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$5);
+var i18n__default$1 = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(i18n$1);
+var require$$7__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$7);
+var require$$8__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$8);
+var require$$9__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$9);
+var require$$10__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$10);
+var require$$12__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$12);
+var require$$13__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(require$$13);
+var SearchTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(SearchTwoToneIcon);
 
 const CustomTable$1 = ({ children, caption, sx, ...props }) => {
     return (require$$0.jsxs(require$$1.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && require$$0.jsx("caption", { children: caption }), children] }));
@@ -929,15 +1081,15 @@ var Link = require$$10__default["default"];
 var styles$1 = require$$12__default["default"];
 var react = require$$13__default["default"];
 
-function _interopDefaultLegacy$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefaultLegacy$1$1$1$1$1$1$1 (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var DeleteTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(DeleteTwoToneIcon);
-var EditTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(EditTwoToneIcon);
-var ExpandMoreIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(ExpandMoreIcon);
-var HelpOutlineIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(HelpOutlineIcon);
-var i18n__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(i18n);
-var CloseIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(CloseIcon);
-var Link__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1(Link);
+var DeleteTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(DeleteTwoToneIcon);
+var EditTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(EditTwoToneIcon);
+var ExpandMoreIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(ExpandMoreIcon);
+var HelpOutlineIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(HelpOutlineIcon);
+var i18n__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(i18n);
+var CloseIcon__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(CloseIcon);
+var Link__default = /*#__PURE__*/_interopDefaultLegacy$1$1$1$1$1$1$1(Link);
 
 const CustomTable = ({ children, caption, sx, ...props }) => {
     return (jsxRuntime.jsxs(material.Table, { stickyHeader: true, ...props, sx: sx, children: [caption && jsxRuntime.jsx("caption", { children: caption }), children] }));
@@ -36089,7 +36241,7 @@ dist$5.ThemeContext = ThemeContext$6;
 dist$5.TitleSet = TitleSet$6;
 dist$5.themeCreator = themeCreator$6;
 
-const CustomTableFilterResult = ({ text }) => {
+const CustomTableFilterResult$6 = ({ text }) => {
     return (require$$38.jsx(require$$43.TableBody, { children: require$$38.jsx(CustomTableRow_6, { children: require$$38.jsx(CustomTableCell_6, { colSpan: 100, children: require$$38.jsx(require$$43.Box, { sx: {
                         p: 4,
                         whiteSpace: 'nowrap',
@@ -36098,7 +36250,7 @@ const CustomTableFilterResult = ({ text }) => {
                     }, children: require$$38.jsx("b", { children: text || '検索結果はありませんでした' }) }) }) }) }));
 };
 
-const CustomTableFilter = ({ onChange, placeholder, value }) => {
+const CustomTableFilter$6 = ({ onChange, placeholder, value }) => {
     return (require$$38.jsx(require$$43.Box, { children: require$$38.jsx(require$$43.TextField, { sx: {
                 mx: 0,
                 my: 2,
@@ -36107,8 +36259,5850 @@ const CustomTableFilter = ({ onChange, placeholder, value }) => {
             }, onChange: () => onChange, placeholder: placeholder, value: value, size: "small", fullWidth: true, margin: "normal", variant: "outlined" }) }));
 };
 
-const TableHeightSwitch = ({ checked, onChange, sxStyle, label, ...props }) => {
+const TableHeightSwitch$7 = ({ checked, onChange, sxStyle, label, ...props }) => {
     return (require$$38.jsx(require$$43.FormControlLabel, { control: require$$38.jsx(require$$43.Switch, { checked: checked, onChange: onChange }), label: label, labelPlacement: "end", sx: sxStyle, style: {
+            display: 'flex',
+            flexDirection: 'column-reverse',
+            justifyContent: 'end',
+            margin: '0 8px -8px 0',
+        }, ...props }));
+};
+
+// the translations
+// (tip move them in a JSON file and import them,
+// or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
+const resources$7 = {
+    ja: {
+        saasusTheme: {
+            help: 'ヘルプ',
+        },
+    },
+    en: {
+        saasusTheme: {
+            help: 'Help',
+        },
+    },
+};
+const i18nNamespace$7 = 'saasusTheme';
+i18n__default$6["default"]
+    .use(require$$61.initReactI18next) // passes i18n down to react-i18next
+    .init({
+    defaultNS: i18nNamespace$7,
+    fallbackNS: i18nNamespace$7,
+    ns: [i18nNamespace$7],
+    resources: resources$7,
+    lng: 'ja',
+    fallbackLng: 'ja',
+    interpolation: {
+        escapeValue: false, // react already safes from xss
+    },
+});
+
+const CustomTooltip$7 = ({ TooltipTitleIconComponent, TooltipComponent, }) => {
+    const { t } = require$$61.useTranslation(i18nNamespace$7, { i18n: i18n__default$6["default"] });
+    // TooltipComponentが定義されていない場合、
+    // スクリーンリーダーにButtonと読まれてしまうのでaria-labelを設定
+    const toolTipAriaLabel = TooltipComponent ? undefined : t('help');
+    return (require$$38.jsx(require$$38.Fragment, { children: TooltipTitleIconComponent && (require$$38.jsx(require$$43.Tooltip, { title: require$$38.jsx(require$$43.Box, { sx: { textAlign: 'justify' }, children: TooltipTitleIconComponent }), arrow: true, placement: "top-start", children: require$$38.jsx(require$$43.Button, { sx: {
+                    margin: '0 0 .2em 0',
+                    '&.MuiButton-root': {
+                        margin: '0 2px 4px',
+                        minWidth: 'fit-content',
+                        padding: '2px 4px',
+                        borderRadius: '6px',
+                    },
+                }, "aria-label": toolTipAriaLabel, children: TooltipComponent ? (TooltipComponent) : (require$$38.jsx(require$$59__default["default"], { fontSize: "small" })) }) })) }));
+};
+
+const AccordionStyle$7 = require$$43.styled((props) => (require$$38.jsx(require$$43.Accordion, { disableGutters: true, elevation: 0, square: true, ...props })))(({ theme }) => ({
+    border: `1px solid ${theme.palette.divider}`,
+    borderRadius: 10,
+    transition: '0ms',
+    '&:before': {
+        display: 'none',
+    },
+    // 重複border非表示
+    '.MuiAccordionDetails-root': { border: 'none !important' },
+}));
+// Stylings アコーディオン見出し、トリガー部分
+const AccordionSummaryStyle$7 = require$$43.styled((props) => (require$$38.jsx(require$$43.AccordionSummary, { ...props })))(({ theme }) => ({
+    padding: '8px 16px',
+    borderRadius: 10,
+    marginBottom: -1,
+    // TODO: DarkMode Color設定
+    borderBottom: theme.palette.mode === 'dark'
+        ? '1px solid rgba(255, 255, 255, 0.1)'
+        : '1px solid rgba(0, 0, 0, 0.1)',
+    backgroundColor: theme.palette.mode === 'dark'
+        ? 'rgba(255, 255, 255, .01)'
+        : 'rgba(0, 0, 0, .01)',
+    '&.Mui-expanded': {
+        borderRadius: '9px 9px 0 0',
+    },
+    transition: '.3s',
+    '&:hover': {
+        backgroundColor: 'rgba(0, 0, 0, .03)',
+    },
+    '& .MuiAccordionSummary-content': {
+        marginLeft: theme.spacing(1),
+    },
+}));
+// Stylings アコーディオン内部、コンテンツ部分
+const AccordionDetailsStyle$7 = require$$43.styled(require$$43.AccordionDetails)(({ theme }) => ({
+    padding: theme.spacing(3, 3, 4),
+    borderTop: '1px solid rgba(0, 0, 0, .125)',
+    borderRadius: '0 0 10px 10px',
+}));
+const AccordionWrap$7 = ({ 
+// 見出し
+accordionTitle, variant, component, accordionSubTitle, variantSubTitle, 
+// アコーディオン開閉ステータス
+defaultExpanded, expanded, onChange, 
+// 一意の値が必要であれば、id関連をこの値に兼用させる
+id, 
+// Style
+AccordionSx, AccordionSummarySx, DetailsSx, BorderNone, spacing, 
+// コンテンツ
+children, disabled, AdditionalProps, 
+// ヘルプアイコンとツールチップ
+TooltipTitleIconComponent, TooltipComponent, }) => {
+    return (require$$38.jsx(require$$43.Paper, { sx: { p: 0, mb: spacing ? spacing : 4 }, children: require$$38.jsxs(AccordionStyle$7, { expanded: expanded, onChange: onChange, sx: AccordionSx, defaultExpanded: defaultExpanded, children: [require$$38.jsx(AccordionSummaryStyle$7, { expandIcon: require$$38.jsx(require$$58__default["default"], {}), "aria-controls": id, id: id, disabled: disabled, sx: AccordionSummarySx, style: {
+                        border: BorderNone && 'none',
+                        background: BorderNone && 'none',
+                    }, children: require$$38.jsxs(require$$43.Box, { sx: {
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            flexWrap: 'wrap',
+                            width: '100%',
+                            pr: 5,
+                        }, children: [require$$38.jsxs(require$$43.Box, { children: [require$$38.jsxs(require$$43.Box, { sx: {
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'end',
+                                        }, children: [require$$38.jsx(require$$43.Typography, { variant: variant ? variant : 'h3', component: component ? component : 'div', children: accordionTitle }), require$$38.jsx(CustomTooltip$7, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$38.jsx(require$$43.Box, { children: require$$38.jsx(require$$43.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', children: accordionSubTitle }) })] }), require$$38.jsx(require$$43.Box, { children: AdditionalProps })] }) }), require$$38.jsx(AccordionDetailsStyle$7, { sx: DetailsSx, style: {
+                        marginTop: BorderNone ? '-16px' : '',
+                    }, children: children })] }) }));
+};
+
+const AlertInner$7 = require$$43.styled(require$$43.Alert)(({ theme }) => `
+    padding: ${theme.spacing(1, 4)};
+    box-shadow: 0 2px 4px ${theme.colors.alpha.black[10]};
+
+    .MuiAlert-message {
+      padding: 7px 0;
+    }
+
+    .MuiTypography-root.MuiAlertTitle-root {
+      margin: 0;
+      font-size: 1em;
+      line-height: 1.75;
+    }
+
+    .MuiAlert-icon {
+      margin-right: ${theme.spacing(1)};
+    }
+
+    &.MuiAlert-standardError, &.MuiAlert-outlinedError {
+      color: ${theme.colors.error.dark};
+    }
+    &.MuiAlert-standardWarning, &.MuiAlert-outlinedWarning {
+      color: ${theme.colors.warning.dark};
+    }
+    &.MuiAlert-standardInfo, &.MuiAlert-outlinedInfo {
+      color: ${theme.colors.info.dark};
+    }
+    &.MuiAlert-standardSuccess, &.MuiAlert-outlinedSuccess {
+      color: ${theme.colors.success.dark};
+    }
+
+  `);
+const CustomAlert$7 = ({ severity, variant, alertHeadingTitle, children, square, action, sx, }) => {
+    return (require$$38.jsx(require$$43.Stack, { spacing: 4, children: require$$38.jsxs(AlertInner$7, { severity: severity || 'error', variant: variant || 'standard', style: {
+                borderRadius: square ? 0 : '',
+            }, sx: sx, action: action, children: [require$$38.jsx(require$$43.AlertTitle, { children: require$$38.jsx("strong", { children: alertHeadingTitle }) }), children] }) }));
+};
+
+// ----- extend Container -----
+const StyledContainer$7 = require$$43.styled(require$$43.Container)(({ theme }) => `
+    padding: ${theme.spacing(0, 0, 0, 0)};
+  `);
+const CustomContainer$7 = ({ children, maxWidth, fixed, sx, addGutter, mb, style, }) => {
+    return (
+    // margin-bottom or デフォルトmargin-bottom
+    require$$38.jsx(require$$43.Box, { sx: { mb: mb || 4 }, children: require$$38.jsx(StyledContainer$7, { maxWidth: maxWidth, sx: sx, style: style, 
+            // 段階的な横幅指定
+            fixed: fixed, 
+            // 両横の溝=paddingの有無 defaultは無しに指定
+            disableGutters: addGutter ? false : true, children: children }) }));
+};
+
+// 中見出しとサブタイトル
+const TitleSet$7 = ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, sxHeader, sxSubTitle, sx, gutterBottom, noMargin, mbSmall, mbLarge, style, 
+// ヘルプアイコンとツールチップ
+TooltipTitleIconComponent, TooltipComponent, 
+// 下線
+divider, dividerSx, }) => {
+    const theme = require$$43.useTheme();
+    return (require$$38.jsxs(require$$43.Box, { sx: {
+            margin: noMargin
+                ? theme.spacing(0)
+                : mbSmall
+                    ? theme.spacing(0, 0, 1, 0)
+                    : mbLarge
+                        ? theme.spacing(0, 0, 5, 0)
+                        : theme.spacing(0, 0, 3, 0),
+            '.MuiPageTitle-wrapper': {
+                m: theme.spacing(0),
+                p: theme.spacing(0),
+                background: 'transparent',
+                boxShadow: 'none',
+            },
+            ...sx,
+        }, children: [require$$38.jsxs(require$$43.Grid, { container: true, justifyContent: "space-between", alignItems: "center", sx: { mb: noMargin ? 0 : 1 }, columnSpacing: 2, children: [require$$38.jsxs(require$$43.Grid, { item: true, sx: style, flex: 1, children: [require$$38.jsxs(require$$43.Typography, { variant: variant, component: component ? component : 'div', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: [headingText, require$$38.jsx(CustomTooltip$7, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$38.jsx(require$$43.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$38.jsx(require$$43.Grid, { item: true, children: AdditionalProps })] }), divider && require$$38.jsx(require$$43.Divider, { sx: dividerSx })] }));
+};
+
+const BoxOuter$7 = require$$43.styled(require$$43.Box)(({ theme }) => `
+  margin-bottom: ${theme.spacing(4)};
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  `);
+const BoxInner$1$7 = require$$43.styled(require$$43.Box)(({ theme }) => `
+    padding: ${theme.spacing(0)};
+    `);
+const BoxContent$7 = ({ 
+// 見出し
+addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, 
+// 下線
+divider, dividerSx, 
+// コンテンツ
+children, boxInnerSx, 
+// 下マージン
+noMargin, mbSmall, mbLarge, 
+// ヘルプアイコンとツールチップ
+TooltipTitleIconComponent, TooltipComponent, 
+// 右端オプション
+AdditionalProps, 
+// 全体sx
+sx, }) => {
+    // const theme = useTheme()
+    return (require$$38.jsx(BoxOuter$7, { sx: sx, children: require$$38.jsxs(BoxInner$1$7, { sx: {
+                ...boxInnerSx,
+            }, children: [addTitle ? (require$$38.jsx(TitleSet$7
+                // 見出しフォントサイズ htmlElement設定 サブタイトル
+                , { 
+                    // 見出しフォントサイズ htmlElement設定 サブタイトル
+                    headingText: headingText, variant: variant ? variant : 'h4', component: component ? component : 'div', subtitleText: subtitleText, variantSubTitle: variantSubTitle ? variantSubTitle : 'subtitle2', 
+                    // 見出し直下の余白具合
+                    noMargin: noMargin, mbSmall: mbSmall, mbLarge: mbLarge, 
+                    // カスタムCSSがあれば設置
+                    sx: titleSx, 
+                    // ヘルプアイコンとツールチップ
+                    TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent, AdditionalProps: AdditionalProps, divider: divider, dividerSx: dividerSx })) : (''), children] }) }));
+};
+
+const BoxInner$8 = require$$43.styled(require$$43.Paper)(({ theme }) => ({
+    marginBottom: theme.spacing(4),
+}));
+const BoxWrap$7 = ({ 
+// 見出し
+addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, 
+// 下線
+divider, 
+// コンテンツ
+children, boxInnerSx, 
+// 下マージン
+noMargin, mbSmall, mbLarge, 
+// ヘルプアイコンとツールチップ
+TooltipTitleIconComponent, TooltipComponent, 
+// 右端オプション
+AdditionalProps, 
+// 全体sx
+sx, }) => {
+    const theme = require$$43.useTheme();
+    return (require$$38.jsx(require$$43.Box, { sx: sx, children: require$$38.jsxs(BoxInner$8, { elevation: 1, sx: {
+                padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
+                ...boxInnerSx,
+            }, children: [addTitle && (require$$38.jsx(TitleSet$7
+                // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
+                , { 
+                    // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
+                    headingText: headingText, variant: variant ? variant : 'h3', component: component ? component : 'div', subtitleText: subtitleText, variantSubTitle: variantSubTitle ? variantSubTitle : 'subtitle2', 
+                    // 見出し直下の余白具合
+                    noMargin: noMargin, mbSmall: mbSmall, mbLarge: mbLarge, 
+                    // カスタムCSSがあれば設置
+                    sx: titleSx, 
+                    // ヘルプアイコンとツールチップ
+                    TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent, AdditionalProps: AdditionalProps, 
+                    // 下線
+                    divider: divider, 
+                    // 下線がある時は見出し内の余白をタイトにする。横幅を合わせる
+                    dividerSx: { my: 1.5, mx: -3 } })), children] }) }));
+};
+
+// {`theme.breakpoints.up('sm') matches: ${matches}`}
+const StackButtonWrap$7 = require$$43.styled(require$$43.Stack)(() => ({
+    display: 'grid',
+    gap: 8,
+    gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px, 100%), 1fr))',
+    // テーマブレイクポイントのsm
+    '@media (min-width: 600px)': {
+        gap: 24,
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px, 100%), auto))',
+    },
+}));
+const ButtonWrap$7 = ({ mt, mb, sx, children, justifyContent }) => {
+    return (require$$38.jsx(StackButtonWrap$7, { justifyContent: justifyContent ? justifyContent : 'flex-start', sx: {
+            mt: mt || 4,
+            mb: mb || 2,
+            ...sx,
+        }, children: children }));
+};
+
+const CustomButton$7 = ({ color, variant, size, type, startIcon, endIcon, disabled, onClick, sx, children, }) => {
+    return (require$$38.jsx(require$$43.Button, { color: color, size: size, variant: variant ? variant : 'contained', type: type ? type : 'submit', onClick: onClick, startIcon: startIcon, endIcon: endIcon, disabled: disabled, sx: sx, children: children }));
+};
+
+const DialogWrapper$7 = require$$43.styled(require$$43.Dialog)(() => `
+      .MuiDialog-paper {
+        overflow: visible;
+      }
+`);
+const AvatarError$7 = require$$43.styled(require$$43.Avatar)(({ theme }) => `
+    background-color: ${theme.colors.error.lighter};
+    color: ${theme.colors.error.main};
+    width: ${theme.spacing(12)};
+    height: ${theme.spacing(12)};
+
+    .MuiSvgIcon-root {
+      font-size: ${theme.typography.pxToRem(45)};
+    }
+  `);
+const ButtonError$7 = require$$43.styled(require$$43.Button)(({ theme }) => `
+    background: ${theme.colors.error.main};
+    color: ${theme.palette.error.contrastText};
+
+    &:hover {
+      background: ${theme.colors.error.dark};
+    }
+  `);
+const DeleteDialog$7 = ({ open, DeleteItem, handleDeleteCompleted, closeDeleteDialog, }) => {
+    return (require$$38.jsx(DialogWrapper$7, { open: open, maxWidth: "sm", fullWidth: true, keepMounted: true, onClose: closeDeleteDialog, children: require$$38.jsxs(require$$43.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 5, children: [require$$38.jsx(AvatarError$7, { children: require$$38.jsx(require$$62__default["default"], {}) }), require$$38.jsxs(require$$43.Typography, { align: "center", sx: {
+                        pt: 4,
+                    }, variant: "h3", children: [DeleteItem, require$$38.jsx("br", {}), "\u3092\u524A\u9664\u3057\u307E\u3059"] }), require$$38.jsx(require$$43.Typography, { align: "center", sx: {
+                        py: 4,
+                    }, children: "\u4E00\u5EA6\u524A\u9664\u3059\u308B\u3068\u5143\u306B\u623B\u305B\u307E\u305B\u3093" }), require$$38.jsxs(require$$43.Box, { children: [require$$38.jsx(require$$43.Button, { variant: "text", size: "large", sx: {
+                                mx: 1,
+                            }, onClick: closeDeleteDialog, "data-testid": "cancel", children: "\u30AD\u30E3\u30F3\u30BB\u30EB" }), require$$38.jsx(ButtonError$7, { onClick: handleDeleteCompleted, size: "large", sx: {
+                                mx: 1,
+                                px: 3,
+                            }, variant: "contained", "data-testid": "deleteButton", children: "\u524A\u9664" })] })] }) }));
+};
+
+const Label$7 = require$$43.styled(require$$43.InputLabel)(() => ({
+    fontSize: '14px',
+    position: 'initial',
+    textAlign: 'left',
+    transform: 'none',
+    minHeight: '1.85em',
+    '&.MuiFormLabel-root.MuiInputLabel-root': {
+        fontSize: 14,
+    },
+}));
+const CustomLabel$7 = ({ id, TooltipTitleIconComponent, TooltipComponent, children, OptionalChip, chipLabel, color, size, sx, variant, mt, }) => {
+    return (require$$38.jsxs(Label$7, { htmlFor: id, sx: { mt: mt || 3 }, children: [children, require$$38.jsx(CustomTooltip$7, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent }), OptionalChip && (require$$38.jsx(require$$43.Chip, { size: size ? size : 'small', color: color, variant: variant, label: chipLabel ? chipLabel : '任意', sx: sx, style: {
+                    borderRadius: 4,
+                    margin: `0px 4px 4px`,
+                    padding: `1px 8px 0`,
+                } }))] }));
+};
+
+// ヘルパーテキストまで含めたラッピング
+const WrapButtonlUI$7 = require$$43.styled(require$$43.Stack)(() => `
+  flexDirectiom: column;
+  & + .MuiFormHelperText-root.MuiFormHelperText-contained.MuiFormHelperText-root {
+    margin: -4px 12px 4px 12px;
+  }
+  `);
+const MinWidth$7 = 200;
+const MinHeight$7 = 70;
+const FontWeight$7 = 600;
+const ClickableElement$7 = `
+  position: absolute;
+  content: '';
+  display: block;
+  overflow: hidden;
+  min-width: ${MinWidth$7};
+`;
+const ButtonlUI$7 = require$$43.styled(require$$43.Button)(({ theme }) => `
+  margin: ${theme.spacing(1)};
+
+  // Button Style
+  &.MuiButtonBase-root {
+
+    &.MuiButton-root {
+      min-width: ${MinWidth$7}px;
+      min-height: ${MinHeight$7}px;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding-left: 44px;
+      padding-bottom: 0px;
+
+      &.Mui-disabled {
+        background-color: ${theme.colors.secondary.lighter};
+        border: none;
+      }
+
+      .MuiButtonBase-root.MuiRadio-root {
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        padding-left: 12px;
+
+        // Checked Style
+        &.Mui-checked {
+          min-width: ${MinWidth$7}px;
+          background-color: ${theme.colors.primary.lighter};
+          border: 2px solid ${theme.colors.primary.main};
+          height: 100%;
+          border-radius: 9px;
+          overflow: hidden;
+
+          &:after{
+            ${ClickableElement$7}
+            left: -24px;
+          }
+        }
+      }
+    }
+  }
+
+  // Label Style
+  span.MuiTypography-root.MuiTypography-body1.MuiFormControlLabel-label.MuiTypography-root {
+    font-weight: ${FontWeight$7};
+    color: ${theme.colors.secondary.dark};
+    padding-left: 4px;
+
+    &.MuiTypography-body1.MuiTypography-root {
+      margin: 0px 0px -24px 0px;
+    }
+  }
+
+  .MuiTypography-root.MuiTypography-body1.MuiTypography-root+.MuiTypography-root.MuiTypography-body1.MuiTypography-root {
+    color: ${theme.colors.secondary.dark};
+    font-size: 14px;
+  }
+
+  .MuiFormControlLabel-root {
+    margin-left: -4px;
+
+    &.MuiFormControlLabel-label {
+      fontWeight: 600,
+      min-width: ${MinWidth$7}px;
+      font-weight: ${FontWeight$7};
+      text-align: left;
+      z-index: 1;
+    }
+
+    .MuiButtonBase-root.MuiRadio-root {
+      left: 0;
+      position: absolute;
+      width: 100%;
+      justify-content: flex-start;
+
+      &:hover {
+        min-width: ${MinWidth$7}px;
+        height: 100%;
+        border-radius: 0;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .MuiTouchRipple-root.MuiTouchRipple-root {
+    min-width: ${MinWidth$7}px;
+    min-height: ${MinHeight$7}px;
+    background-color: ${theme.colors.primary.lighter};
+    min-width: ${MinWidth$7};
+    min-height: 100px;
+    padding: 0;
+    margin-top: -12px;
+    margin-left: -4px;
+    border-radius: 0;
+    overflow: hidden;
+    opacity: 0.5;
+  }
+  `);
+const FormControlUI$7 = require$$43.styled(require$$43.FormControlLabel)(() => `
+    min-width: ${MinWidth$7}px;
+    `);
+const OptionComponent$7 = require$$43.styled(require$$43.Typography)(({ theme }) => `
+      color: ${theme.colors.primary.main};
+      font-weight: ${FontWeight$7};
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      font-size: 12px !important;
+      text-align: right;
+    `);
+const RadioButton$7 = ({ label, value, disabled, AdditionalProps, helperText, onClick, checked, }) => {
+    return (require$$38.jsx(WrapButtonlUI$7, { children: require$$38.jsxs(ButtonlUI$7, { variant: "outlined", disabled: disabled, onClick: onClick, children: [require$$38.jsx(FormControlUI$7, { control: require$$38.jsx(require$$43.Radio, {}), label: label, value: value, checked: checked }), require$$38.jsx(require$$43.Typography, { children: require$$38.jsx(OptionComponent$7, { children: AdditionalProps }) }), require$$38.jsx(require$$43.Typography, { children: helperText })] }) }));
+};
+
+// 大見出しとサブタイトル
+const MainTitleSet$7 = ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, 
+// TitleWrapNone,
+sxHeader, sxSubTitle, gutterBottom, mb, }) => {
+    const theme = require$$43.useTheme();
+    return (require$$38.jsx(require$$43.Box, { sx: [
+            {
+                p: theme.spacing(3, 4),
+                mb: mb || theme.spacing(2),
+            },
+        ], children: require$$38.jsxs(require$$43.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, children: [require$$38.jsxs(require$$43.Grid, { item: true, flex: 1, children: [require$$38.jsx(require$$43.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.4 }, children: headingText }), require$$38.jsx(require$$43.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$38.jsx(require$$43.Grid, { item: true, children: AdditionalProps })] }) }));
+};
+
+function toVal$7(mix) {
+	var k, y, str='';
+
+	if (typeof mix === 'string' || typeof mix === 'number') {
+		str += mix;
+	} else if (typeof mix === 'object') {
+		if (Array.isArray(mix)) {
+			for (k=0; k < mix.length; k++) {
+				if (mix[k]) {
+					if (y = toVal$7(mix[k])) {
+						str && (str += ' ');
+						str += y;
+					}
+				}
+			}
+		} else {
+			for (k in mix) {
+				if (mix[k]) {
+					str && (str += ' ');
+					str += k;
+				}
+			}
+		}
+	}
+
+	return str;
+}
+
+function clsx$7() {
+	var i=0, tmp, x, str='';
+	while (i < arguments.length) {
+		if (tmp = arguments[i++]) {
+			if (x = toVal$7(tmp)) {
+				str && (str += ' ');
+				str += x;
+			}
+		}
+	}
+	return str;
+}
+
+var propTypes$7 = {exports: {}};
+
+var reactIs$7 = {exports: {}};
+
+var reactIs_production_min$7 = {};
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactIs_production_min$7;
+
+function requireReactIs_production_min$7 () {
+	if (hasRequiredReactIs_production_min$7) return reactIs_production_min$7;
+	hasRequiredReactIs_production_min$7 = 1;
+var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
+	Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+	function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}reactIs_production_min$7.AsyncMode=l;reactIs_production_min$7.ConcurrentMode=m;reactIs_production_min$7.ContextConsumer=k;reactIs_production_min$7.ContextProvider=h;reactIs_production_min$7.Element=c;reactIs_production_min$7.ForwardRef=n;reactIs_production_min$7.Fragment=e;reactIs_production_min$7.Lazy=t;reactIs_production_min$7.Memo=r;reactIs_production_min$7.Portal=d;
+	reactIs_production_min$7.Profiler=g;reactIs_production_min$7.StrictMode=f;reactIs_production_min$7.Suspense=p;reactIs_production_min$7.isAsyncMode=function(a){return A(a)||z(a)===l};reactIs_production_min$7.isConcurrentMode=A;reactIs_production_min$7.isContextConsumer=function(a){return z(a)===k};reactIs_production_min$7.isContextProvider=function(a){return z(a)===h};reactIs_production_min$7.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};reactIs_production_min$7.isForwardRef=function(a){return z(a)===n};reactIs_production_min$7.isFragment=function(a){return z(a)===e};reactIs_production_min$7.isLazy=function(a){return z(a)===t};
+	reactIs_production_min$7.isMemo=function(a){return z(a)===r};reactIs_production_min$7.isPortal=function(a){return z(a)===d};reactIs_production_min$7.isProfiler=function(a){return z(a)===g};reactIs_production_min$7.isStrictMode=function(a){return z(a)===f};reactIs_production_min$7.isSuspense=function(a){return z(a)===p};
+	reactIs_production_min$7.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};reactIs_production_min$7.typeOf=z;
+	return reactIs_production_min$7;
+}
+
+var reactIs_development$7 = {};
+
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactIs_development$7;
+
+function requireReactIs_development$7 () {
+	if (hasRequiredReactIs_development$7) return reactIs_development$7;
+	hasRequiredReactIs_development$7 = 1;
+
+
+
+	if (process.env.NODE_ENV !== "production") {
+	  (function() {
+
+	// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+	// nor polyfill, then a plain number is used for performance.
+	var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+	var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+	var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+	var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+	var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+	var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+	var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+	var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+	// (unstable) APIs that have been removed. Can we remove the symbols?
+
+	var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+	var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+	var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+	var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+	var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+	var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+	var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+	var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+	var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+	var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+	var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+	function isValidElementType(type) {
+	  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+	  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+	}
+
+	function typeOf(object) {
+	  if (typeof object === 'object' && object !== null) {
+	    var $$typeof = object.$$typeof;
+
+	    switch ($$typeof) {
+	      case REACT_ELEMENT_TYPE:
+	        var type = object.type;
+
+	        switch (type) {
+	          case REACT_ASYNC_MODE_TYPE:
+	          case REACT_CONCURRENT_MODE_TYPE:
+	          case REACT_FRAGMENT_TYPE:
+	          case REACT_PROFILER_TYPE:
+	          case REACT_STRICT_MODE_TYPE:
+	          case REACT_SUSPENSE_TYPE:
+	            return type;
+
+	          default:
+	            var $$typeofType = type && type.$$typeof;
+
+	            switch ($$typeofType) {
+	              case REACT_CONTEXT_TYPE:
+	              case REACT_FORWARD_REF_TYPE:
+	              case REACT_LAZY_TYPE:
+	              case REACT_MEMO_TYPE:
+	              case REACT_PROVIDER_TYPE:
+	                return $$typeofType;
+
+	              default:
+	                return $$typeof;
+	            }
+
+	        }
+
+	      case REACT_PORTAL_TYPE:
+	        return $$typeof;
+	    }
+	  }
+
+	  return undefined;
+	} // AsyncMode is deprecated along with isAsyncMode
+
+	var AsyncMode = REACT_ASYNC_MODE_TYPE;
+	var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+	var ContextConsumer = REACT_CONTEXT_TYPE;
+	var ContextProvider = REACT_PROVIDER_TYPE;
+	var Element = REACT_ELEMENT_TYPE;
+	var ForwardRef = REACT_FORWARD_REF_TYPE;
+	var Fragment = REACT_FRAGMENT_TYPE;
+	var Lazy = REACT_LAZY_TYPE;
+	var Memo = REACT_MEMO_TYPE;
+	var Portal = REACT_PORTAL_TYPE;
+	var Profiler = REACT_PROFILER_TYPE;
+	var StrictMode = REACT_STRICT_MODE_TYPE;
+	var Suspense = REACT_SUSPENSE_TYPE;
+	var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+	function isAsyncMode(object) {
+	  {
+	    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+	      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+	      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+	    }
+	  }
+
+	  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+	}
+	function isConcurrentMode(object) {
+	  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+	}
+	function isContextConsumer(object) {
+	  return typeOf(object) === REACT_CONTEXT_TYPE;
+	}
+	function isContextProvider(object) {
+	  return typeOf(object) === REACT_PROVIDER_TYPE;
+	}
+	function isElement(object) {
+	  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+	}
+	function isForwardRef(object) {
+	  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+	}
+	function isFragment(object) {
+	  return typeOf(object) === REACT_FRAGMENT_TYPE;
+	}
+	function isLazy(object) {
+	  return typeOf(object) === REACT_LAZY_TYPE;
+	}
+	function isMemo(object) {
+	  return typeOf(object) === REACT_MEMO_TYPE;
+	}
+	function isPortal(object) {
+	  return typeOf(object) === REACT_PORTAL_TYPE;
+	}
+	function isProfiler(object) {
+	  return typeOf(object) === REACT_PROFILER_TYPE;
+	}
+	function isStrictMode(object) {
+	  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+	}
+	function isSuspense(object) {
+	  return typeOf(object) === REACT_SUSPENSE_TYPE;
+	}
+
+	reactIs_development$7.AsyncMode = AsyncMode;
+	reactIs_development$7.ConcurrentMode = ConcurrentMode;
+	reactIs_development$7.ContextConsumer = ContextConsumer;
+	reactIs_development$7.ContextProvider = ContextProvider;
+	reactIs_development$7.Element = Element;
+	reactIs_development$7.ForwardRef = ForwardRef;
+	reactIs_development$7.Fragment = Fragment;
+	reactIs_development$7.Lazy = Lazy;
+	reactIs_development$7.Memo = Memo;
+	reactIs_development$7.Portal = Portal;
+	reactIs_development$7.Profiler = Profiler;
+	reactIs_development$7.StrictMode = StrictMode;
+	reactIs_development$7.Suspense = Suspense;
+	reactIs_development$7.isAsyncMode = isAsyncMode;
+	reactIs_development$7.isConcurrentMode = isConcurrentMode;
+	reactIs_development$7.isContextConsumer = isContextConsumer;
+	reactIs_development$7.isContextProvider = isContextProvider;
+	reactIs_development$7.isElement = isElement;
+	reactIs_development$7.isForwardRef = isForwardRef;
+	reactIs_development$7.isFragment = isFragment;
+	reactIs_development$7.isLazy = isLazy;
+	reactIs_development$7.isMemo = isMemo;
+	reactIs_development$7.isPortal = isPortal;
+	reactIs_development$7.isProfiler = isProfiler;
+	reactIs_development$7.isStrictMode = isStrictMode;
+	reactIs_development$7.isSuspense = isSuspense;
+	reactIs_development$7.isValidElementType = isValidElementType;
+	reactIs_development$7.typeOf = typeOf;
+	  })();
+	}
+	return reactIs_development$7;
+}
+
+var hasRequiredReactIs$7;
+
+function requireReactIs$7 () {
+	if (hasRequiredReactIs$7) return reactIs$7.exports;
+	hasRequiredReactIs$7 = 1;
+	(function (module) {
+
+		if (process.env.NODE_ENV === 'production') {
+		  module.exports = requireReactIs_production_min$7();
+		} else {
+		  module.exports = requireReactIs_development$7();
+		}
+} (reactIs$7));
+	return reactIs$7.exports;
+}
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+var objectAssign$7;
+var hasRequiredObjectAssign$7;
+
+function requireObjectAssign$7 () {
+	if (hasRequiredObjectAssign$7) return objectAssign$7;
+	hasRequiredObjectAssign$7 = 1;
+	/* eslint-disable no-unused-vars */
+	var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+	function toObject(val) {
+		if (val === null || val === undefined) {
+			throw new TypeError('Object.assign cannot be called with null or undefined');
+		}
+
+		return Object(val);
+	}
+
+	function shouldUseNative() {
+		try {
+			if (!Object.assign) {
+				return false;
+			}
+
+			// Detect buggy property enumeration order in older V8 versions.
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+			var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+			test1[5] = 'de';
+			if (Object.getOwnPropertyNames(test1)[0] === '5') {
+				return false;
+			}
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+			var test2 = {};
+			for (var i = 0; i < 10; i++) {
+				test2['_' + String.fromCharCode(i)] = i;
+			}
+			var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+				return test2[n];
+			});
+			if (order2.join('') !== '0123456789') {
+				return false;
+			}
+
+			// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+			var test3 = {};
+			'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+				test3[letter] = letter;
+			});
+			if (Object.keys(Object.assign({}, test3)).join('') !==
+					'abcdefghijklmnopqrst') {
+				return false;
+			}
+
+			return true;
+		} catch (err) {
+			// We don't expect any of the above to throw, but better to be safe.
+			return false;
+		}
+	}
+
+	objectAssign$7 = shouldUseNative() ? Object.assign : function (target, source) {
+		var from;
+		var to = toObject(target);
+		var symbols;
+
+		for (var s = 1; s < arguments.length; s++) {
+			from = Object(arguments[s]);
+
+			for (var key in from) {
+				if (hasOwnProperty.call(from, key)) {
+					to[key] = from[key];
+				}
+			}
+
+			if (getOwnPropertySymbols) {
+				symbols = getOwnPropertySymbols(from);
+				for (var i = 0; i < symbols.length; i++) {
+					if (propIsEnumerable.call(from, symbols[i])) {
+						to[symbols[i]] = from[symbols[i]];
+					}
+				}
+			}
+		}
+
+		return to;
+	};
+	return objectAssign$7;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var ReactPropTypesSecret_1$7;
+var hasRequiredReactPropTypesSecret$7;
+
+function requireReactPropTypesSecret$7 () {
+	if (hasRequiredReactPropTypesSecret$7) return ReactPropTypesSecret_1$7;
+	hasRequiredReactPropTypesSecret$7 = 1;
+
+	var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+	ReactPropTypesSecret_1$7 = ReactPropTypesSecret;
+	return ReactPropTypesSecret_1$7;
+}
+
+var has$7;
+var hasRequiredHas$7;
+
+function requireHas$7 () {
+	if (hasRequiredHas$7) return has$7;
+	hasRequiredHas$7 = 1;
+	has$7 = Function.call.bind(Object.prototype.hasOwnProperty);
+	return has$7;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var checkPropTypes_1$7;
+var hasRequiredCheckPropTypes$7;
+
+function requireCheckPropTypes$7 () {
+	if (hasRequiredCheckPropTypes$7) return checkPropTypes_1$7;
+	hasRequiredCheckPropTypes$7 = 1;
+
+	var printWarning = function() {};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  var ReactPropTypesSecret = requireReactPropTypesSecret$7();
+	  var loggedTypeFailures = {};
+	  var has = requireHas$7();
+
+	  printWarning = function(text) {
+	    var message = 'Warning: ' + text;
+	    if (typeof console !== 'undefined') {
+	      console.error(message);
+	    }
+	    try {
+	      // --- Welcome to debugging React ---
+	      // This error was thrown as a convenience so that you can use this stack
+	      // to find the callsite that caused this warning to fire.
+	      throw new Error(message);
+	    } catch (x) { /**/ }
+	  };
+	}
+
+	/**
+	 * Assert that the values match with the type specs.
+	 * Error messages are memorized and will only be shown once.
+	 *
+	 * @param {object} typeSpecs Map of name to a ReactPropType
+	 * @param {object} values Runtime values that need to be type-checked
+	 * @param {string} location e.g. "prop", "context", "child context"
+	 * @param {string} componentName Name of the component for error messages.
+	 * @param {?Function} getStack Returns the component stack.
+	 * @private
+	 */
+	function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+	  if (process.env.NODE_ENV !== 'production') {
+	    for (var typeSpecName in typeSpecs) {
+	      if (has(typeSpecs, typeSpecName)) {
+	        var error;
+	        // Prop type validation may throw. In case they do, we don't want to
+	        // fail the render phase where it didn't fail before. So we log it.
+	        // After these have been cleaned up, we'll let them throw.
+	        try {
+	          // This is intentionally an invariant that gets caught. It's the same
+	          // behavior as without this statement except with a better message.
+	          if (typeof typeSpecs[typeSpecName] !== 'function') {
+	            var err = Error(
+	              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+	              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' +
+	              'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.'
+	            );
+	            err.name = 'Invariant Violation';
+	            throw err;
+	          }
+	          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+	        } catch (ex) {
+	          error = ex;
+	        }
+	        if (error && !(error instanceof Error)) {
+	          printWarning(
+	            (componentName || 'React class') + ': type specification of ' +
+	            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+	            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+	            'You may have forgotten to pass an argument to the type checker ' +
+	            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+	            'shape all require an argument).'
+	          );
+	        }
+	        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+	          // Only monitor this failure once because there tends to be a lot of the
+	          // same error.
+	          loggedTypeFailures[error.message] = true;
+
+	          var stack = getStack ? getStack() : '';
+
+	          printWarning(
+	            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+	          );
+	        }
+	      }
+	    }
+	  }
+	}
+
+	/**
+	 * Resets warning cache when testing.
+	 *
+	 * @private
+	 */
+	checkPropTypes.resetWarningCache = function() {
+	  if (process.env.NODE_ENV !== 'production') {
+	    loggedTypeFailures = {};
+	  }
+	};
+
+	checkPropTypes_1$7 = checkPropTypes;
+	return checkPropTypes_1$7;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var factoryWithTypeCheckers$7;
+var hasRequiredFactoryWithTypeCheckers$7;
+
+function requireFactoryWithTypeCheckers$7 () {
+	if (hasRequiredFactoryWithTypeCheckers$7) return factoryWithTypeCheckers$7;
+	hasRequiredFactoryWithTypeCheckers$7 = 1;
+
+	var ReactIs = requireReactIs$7();
+	var assign = requireObjectAssign$7();
+
+	var ReactPropTypesSecret = requireReactPropTypesSecret$7();
+	var has = requireHas$7();
+	var checkPropTypes = requireCheckPropTypes$7();
+
+	var printWarning = function() {};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  printWarning = function(text) {
+	    var message = 'Warning: ' + text;
+	    if (typeof console !== 'undefined') {
+	      console.error(message);
+	    }
+	    try {
+	      // --- Welcome to debugging React ---
+	      // This error was thrown as a convenience so that you can use this stack
+	      // to find the callsite that caused this warning to fire.
+	      throw new Error(message);
+	    } catch (x) {}
+	  };
+	}
+
+	function emptyFunctionThatReturnsNull() {
+	  return null;
+	}
+
+	factoryWithTypeCheckers$7 = function(isValidElement, throwOnDirectAccess) {
+	  /* global Symbol */
+	  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+	  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+	  /**
+	   * Returns the iterator method function contained on the iterable object.
+	   *
+	   * Be sure to invoke the function with the iterable as context:
+	   *
+	   *     var iteratorFn = getIteratorFn(myIterable);
+	   *     if (iteratorFn) {
+	   *       var iterator = iteratorFn.call(myIterable);
+	   *       ...
+	   *     }
+	   *
+	   * @param {?object} maybeIterable
+	   * @return {?function}
+	   */
+	  function getIteratorFn(maybeIterable) {
+	    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+	    if (typeof iteratorFn === 'function') {
+	      return iteratorFn;
+	    }
+	  }
+
+	  /**
+	   * Collection of methods that allow declaration and validation of props that are
+	   * supplied to React components. Example usage:
+	   *
+	   *   var Props = require('ReactPropTypes');
+	   *   var MyArticle = React.createClass({
+	   *     propTypes: {
+	   *       // An optional string prop named "description".
+	   *       description: Props.string,
+	   *
+	   *       // A required enum prop named "category".
+	   *       category: Props.oneOf(['News','Photos']).isRequired,
+	   *
+	   *       // A prop named "dialog" that requires an instance of Dialog.
+	   *       dialog: Props.instanceOf(Dialog).isRequired
+	   *     },
+	   *     render: function() { ... }
+	   *   });
+	   *
+	   * A more formal specification of how these methods are used:
+	   *
+	   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+	   *   decl := ReactPropTypes.{type}(.isRequired)?
+	   *
+	   * Each and every declaration produces a function with the same signature. This
+	   * allows the creation of custom validation functions. For example:
+	   *
+	   *  var MyLink = React.createClass({
+	   *    propTypes: {
+	   *      // An optional string or URI prop named "href".
+	   *      href: function(props, propName, componentName) {
+	   *        var propValue = props[propName];
+	   *        if (propValue != null && typeof propValue !== 'string' &&
+	   *            !(propValue instanceof URI)) {
+	   *          return new Error(
+	   *            'Expected a string or an URI for ' + propName + ' in ' +
+	   *            componentName
+	   *          );
+	   *        }
+	   *      }
+	   *    },
+	   *    render: function() {...}
+	   *  });
+	   *
+	   * @internal
+	   */
+
+	  var ANONYMOUS = '<<anonymous>>';
+
+	  // Important!
+	  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+	  var ReactPropTypes = {
+	    array: createPrimitiveTypeChecker('array'),
+	    bigint: createPrimitiveTypeChecker('bigint'),
+	    bool: createPrimitiveTypeChecker('boolean'),
+	    func: createPrimitiveTypeChecker('function'),
+	    number: createPrimitiveTypeChecker('number'),
+	    object: createPrimitiveTypeChecker('object'),
+	    string: createPrimitiveTypeChecker('string'),
+	    symbol: createPrimitiveTypeChecker('symbol'),
+
+	    any: createAnyTypeChecker(),
+	    arrayOf: createArrayOfTypeChecker,
+	    element: createElementTypeChecker(),
+	    elementType: createElementTypeTypeChecker(),
+	    instanceOf: createInstanceTypeChecker,
+	    node: createNodeChecker(),
+	    objectOf: createObjectOfTypeChecker,
+	    oneOf: createEnumTypeChecker,
+	    oneOfType: createUnionTypeChecker,
+	    shape: createShapeTypeChecker,
+	    exact: createStrictShapeTypeChecker,
+	  };
+
+	  /**
+	   * inlined Object.is polyfill to avoid requiring consumers ship their own
+	   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+	   */
+	  /*eslint-disable no-self-compare*/
+	  function is(x, y) {
+	    // SameValue algorithm
+	    if (x === y) {
+	      // Steps 1-5, 7-10
+	      // Steps 6.b-6.e: +0 != -0
+	      return x !== 0 || 1 / x === 1 / y;
+	    } else {
+	      // Step 6.a: NaN == NaN
+	      return x !== x && y !== y;
+	    }
+	  }
+	  /*eslint-enable no-self-compare*/
+
+	  /**
+	   * We use an Error-like object for backward compatibility as people may call
+	   * PropTypes directly and inspect their output. However, we don't use real
+	   * Errors anymore. We don't inspect their stack anyway, and creating them
+	   * is prohibitively expensive if they are created too often, such as what
+	   * happens in oneOfType() for any type before the one that matched.
+	   */
+	  function PropTypeError(message, data) {
+	    this.message = message;
+	    this.data = data && typeof data === 'object' ? data: {};
+	    this.stack = '';
+	  }
+	  // Make `instanceof Error` still work for returned errors.
+	  PropTypeError.prototype = Error.prototype;
+
+	  function createChainableTypeChecker(validate) {
+	    if (process.env.NODE_ENV !== 'production') {
+	      var manualPropTypeCallCache = {};
+	      var manualPropTypeWarningCount = 0;
+	    }
+	    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+	      componentName = componentName || ANONYMOUS;
+	      propFullName = propFullName || propName;
+
+	      if (secret !== ReactPropTypesSecret) {
+	        if (throwOnDirectAccess) {
+	          // New behavior only for users of `prop-types` package
+	          var err = new Error(
+	            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+	            'Use `PropTypes.checkPropTypes()` to call them. ' +
+	            'Read more at http://fb.me/use-check-prop-types'
+	          );
+	          err.name = 'Invariant Violation';
+	          throw err;
+	        } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
+	          // Old behavior for people using React.PropTypes
+	          var cacheKey = componentName + ':' + propName;
+	          if (
+	            !manualPropTypeCallCache[cacheKey] &&
+	            // Avoid spamming the console because they are often not actionable except for lib authors
+	            manualPropTypeWarningCount < 3
+	          ) {
+	            printWarning(
+	              'You are manually calling a React.PropTypes validation ' +
+	              'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' +
+	              'and will throw in the standalone `prop-types` package. ' +
+	              'You may be seeing this warning due to a third-party PropTypes ' +
+	              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+	            );
+	            manualPropTypeCallCache[cacheKey] = true;
+	            manualPropTypeWarningCount++;
+	          }
+	        }
+	      }
+	      if (props[propName] == null) {
+	        if (isRequired) {
+	          if (props[propName] === null) {
+	            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+	          }
+	          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+	        }
+	        return null;
+	      } else {
+	        return validate(props, propName, componentName, location, propFullName);
+	      }
+	    }
+
+	    var chainedCheckType = checkType.bind(null, false);
+	    chainedCheckType.isRequired = checkType.bind(null, true);
+
+	    return chainedCheckType;
+	  }
+
+	  function createPrimitiveTypeChecker(expectedType) {
+	    function validate(props, propName, componentName, location, propFullName, secret) {
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== expectedType) {
+	        // `propValue` being instance of, say, date/regexp, pass the 'object'
+	        // check, but we can offer a more precise error message here rather than
+	        // 'of type `object`'.
+	        var preciseType = getPreciseType(propValue);
+
+	        return new PropTypeError(
+	          'Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'),
+	          {expectedType: expectedType}
+	        );
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createAnyTypeChecker() {
+	    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+	  }
+
+	  function createArrayOfTypeChecker(typeChecker) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (typeof typeChecker !== 'function') {
+	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+	      }
+	      var propValue = props[propName];
+	      if (!Array.isArray(propValue)) {
+	        var propType = getPropType(propValue);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+	      }
+	      for (var i = 0; i < propValue.length; i++) {
+	        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+	        if (error instanceof Error) {
+	          return error;
+	        }
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createElementTypeChecker() {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      if (!isValidElement(propValue)) {
+	        var propType = getPropType(propValue);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createElementTypeTypeChecker() {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      if (!ReactIs.isValidElementType(propValue)) {
+	        var propType = getPropType(propValue);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createInstanceTypeChecker(expectedClass) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (!(props[propName] instanceof expectedClass)) {
+	        var expectedClassName = expectedClass.name || ANONYMOUS;
+	        var actualClassName = getClassName(props[propName]);
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createEnumTypeChecker(expectedValues) {
+	    if (!Array.isArray(expectedValues)) {
+	      if (process.env.NODE_ENV !== 'production') {
+	        if (arguments.length > 1) {
+	          printWarning(
+	            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
+	            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
+	          );
+	        } else {
+	          printWarning('Invalid argument supplied to oneOf, expected an array.');
+	        }
+	      }
+	      return emptyFunctionThatReturnsNull;
+	    }
+
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      for (var i = 0; i < expectedValues.length; i++) {
+	        if (is(propValue, expectedValues[i])) {
+	          return null;
+	        }
+	      }
+
+	      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+	        var type = getPreciseType(value);
+	        if (type === 'symbol') {
+	          return String(value);
+	        }
+	        return value;
+	      });
+	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createObjectOfTypeChecker(typeChecker) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (typeof typeChecker !== 'function') {
+	        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+	      }
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== 'object') {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+	      }
+	      for (var key in propValue) {
+	        if (has(propValue, key)) {
+	          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+	          if (error instanceof Error) {
+	            return error;
+	          }
+	        }
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createUnionTypeChecker(arrayOfTypeCheckers) {
+	    if (!Array.isArray(arrayOfTypeCheckers)) {
+	      process.env.NODE_ENV !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+	      return emptyFunctionThatReturnsNull;
+	    }
+
+	    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+	      var checker = arrayOfTypeCheckers[i];
+	      if (typeof checker !== 'function') {
+	        printWarning(
+	          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+	          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+	        );
+	        return emptyFunctionThatReturnsNull;
+	      }
+	    }
+
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var expectedTypes = [];
+	      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+	        var checker = arrayOfTypeCheckers[i];
+	        var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+	        if (checkerResult == null) {
+	          return null;
+	        }
+	        if (checkerResult.data && has(checkerResult.data, 'expectedType')) {
+	          expectedTypes.push(checkerResult.data.expectedType);
+	        }
+	      }
+	      var expectedTypesMessage = (expectedTypes.length > 0) ? ', expected one of type [' + expectedTypes.join(', ') + ']': '';
+	      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createNodeChecker() {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      if (!isNode(props[propName])) {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function invalidValidatorError(componentName, location, propFullName, key, type) {
+	    return new PropTypeError(
+	      (componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' +
+	      'it must be a function, usually from the `prop-types` package, but received `' + type + '`.'
+	    );
+	  }
+
+	  function createShapeTypeChecker(shapeTypes) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== 'object') {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+	      }
+	      for (var key in shapeTypes) {
+	        var checker = shapeTypes[key];
+	        if (typeof checker !== 'function') {
+	          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+	        }
+	        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+	        if (error) {
+	          return error;
+	        }
+	      }
+	      return null;
+	    }
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function createStrictShapeTypeChecker(shapeTypes) {
+	    function validate(props, propName, componentName, location, propFullName) {
+	      var propValue = props[propName];
+	      var propType = getPropType(propValue);
+	      if (propType !== 'object') {
+	        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+	      }
+	      // We need to check all keys in case some are required but missing from props.
+	      var allKeys = assign({}, props[propName], shapeTypes);
+	      for (var key in allKeys) {
+	        var checker = shapeTypes[key];
+	        if (has(shapeTypes, key) && typeof checker !== 'function') {
+	          return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+	        }
+	        if (!checker) {
+	          return new PropTypeError(
+	            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+	            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+	            '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  ')
+	          );
+	        }
+	        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+	        if (error) {
+	          return error;
+	        }
+	      }
+	      return null;
+	    }
+
+	    return createChainableTypeChecker(validate);
+	  }
+
+	  function isNode(propValue) {
+	    switch (typeof propValue) {
+	      case 'number':
+	      case 'string':
+	      case 'undefined':
+	        return true;
+	      case 'boolean':
+	        return !propValue;
+	      case 'object':
+	        if (Array.isArray(propValue)) {
+	          return propValue.every(isNode);
+	        }
+	        if (propValue === null || isValidElement(propValue)) {
+	          return true;
+	        }
+
+	        var iteratorFn = getIteratorFn(propValue);
+	        if (iteratorFn) {
+	          var iterator = iteratorFn.call(propValue);
+	          var step;
+	          if (iteratorFn !== propValue.entries) {
+	            while (!(step = iterator.next()).done) {
+	              if (!isNode(step.value)) {
+	                return false;
+	              }
+	            }
+	          } else {
+	            // Iterator will provide entry [k,v] tuples rather than values.
+	            while (!(step = iterator.next()).done) {
+	              var entry = step.value;
+	              if (entry) {
+	                if (!isNode(entry[1])) {
+	                  return false;
+	                }
+	              }
+	            }
+	          }
+	        } else {
+	          return false;
+	        }
+
+	        return true;
+	      default:
+	        return false;
+	    }
+	  }
+
+	  function isSymbol(propType, propValue) {
+	    // Native Symbol.
+	    if (propType === 'symbol') {
+	      return true;
+	    }
+
+	    // falsy value can't be a Symbol
+	    if (!propValue) {
+	      return false;
+	    }
+
+	    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+	    if (propValue['@@toStringTag'] === 'Symbol') {
+	      return true;
+	    }
+
+	    // Fallback for non-spec compliant Symbols which are polyfilled.
+	    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+	      return true;
+	    }
+
+	    return false;
+	  }
+
+	  // Equivalent of `typeof` but with special handling for array and regexp.
+	  function getPropType(propValue) {
+	    var propType = typeof propValue;
+	    if (Array.isArray(propValue)) {
+	      return 'array';
+	    }
+	    if (propValue instanceof RegExp) {
+	      // Old webkits (at least until Android 4.0) return 'function' rather than
+	      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+	      // passes PropTypes.object.
+	      return 'object';
+	    }
+	    if (isSymbol(propType, propValue)) {
+	      return 'symbol';
+	    }
+	    return propType;
+	  }
+
+	  // This handles more types than `getPropType`. Only used for error messages.
+	  // See `createPrimitiveTypeChecker`.
+	  function getPreciseType(propValue) {
+	    if (typeof propValue === 'undefined' || propValue === null) {
+	      return '' + propValue;
+	    }
+	    var propType = getPropType(propValue);
+	    if (propType === 'object') {
+	      if (propValue instanceof Date) {
+	        return 'date';
+	      } else if (propValue instanceof RegExp) {
+	        return 'regexp';
+	      }
+	    }
+	    return propType;
+	  }
+
+	  // Returns a string that is postfixed to a warning about an invalid type.
+	  // For example, "undefined" or "of type array"
+	  function getPostfixForTypeWarning(value) {
+	    var type = getPreciseType(value);
+	    switch (type) {
+	      case 'array':
+	      case 'object':
+	        return 'an ' + type;
+	      case 'boolean':
+	      case 'date':
+	      case 'regexp':
+	        return 'a ' + type;
+	      default:
+	        return type;
+	    }
+	  }
+
+	  // Returns class name of the object, if any.
+	  function getClassName(propValue) {
+	    if (!propValue.constructor || !propValue.constructor.name) {
+	      return ANONYMOUS;
+	    }
+	    return propValue.constructor.name;
+	  }
+
+	  ReactPropTypes.checkPropTypes = checkPropTypes;
+	  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+	  ReactPropTypes.PropTypes = ReactPropTypes;
+
+	  return ReactPropTypes;
+	};
+	return factoryWithTypeCheckers$7;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var factoryWithThrowingShims$7;
+var hasRequiredFactoryWithThrowingShims$7;
+
+function requireFactoryWithThrowingShims$7 () {
+	if (hasRequiredFactoryWithThrowingShims$7) return factoryWithThrowingShims$7;
+	hasRequiredFactoryWithThrowingShims$7 = 1;
+
+	var ReactPropTypesSecret = requireReactPropTypesSecret$7();
+
+	function emptyFunction() {}
+	function emptyFunctionWithReset() {}
+	emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+	factoryWithThrowingShims$7 = function() {
+	  function shim(props, propName, componentName, location, propFullName, secret) {
+	    if (secret === ReactPropTypesSecret) {
+	      // It is still safe when called from React.
+	      return;
+	    }
+	    var err = new Error(
+	      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+	      'Use PropTypes.checkPropTypes() to call them. ' +
+	      'Read more at http://fb.me/use-check-prop-types'
+	    );
+	    err.name = 'Invariant Violation';
+	    throw err;
+	  }	  shim.isRequired = shim;
+	  function getShim() {
+	    return shim;
+	  }	  // Important!
+	  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+	  var ReactPropTypes = {
+	    array: shim,
+	    bigint: shim,
+	    bool: shim,
+	    func: shim,
+	    number: shim,
+	    object: shim,
+	    string: shim,
+	    symbol: shim,
+
+	    any: shim,
+	    arrayOf: getShim,
+	    element: shim,
+	    elementType: shim,
+	    instanceOf: getShim,
+	    node: shim,
+	    objectOf: getShim,
+	    oneOf: getShim,
+	    oneOfType: getShim,
+	    shape: getShim,
+	    exact: getShim,
+
+	    checkPropTypes: emptyFunctionWithReset,
+	    resetWarningCache: emptyFunction
+	  };
+
+	  ReactPropTypes.PropTypes = ReactPropTypes;
+
+	  return ReactPropTypes;
+	};
+	return factoryWithThrowingShims$7;
+}
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactIs$7 = requireReactIs$7();
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess$7 = true;
+  propTypes$7.exports = requireFactoryWithTypeCheckers$7()(ReactIs$7.isElement, throwOnDirectAccess$7);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  propTypes$7.exports = requireFactoryWithThrowingShims$7()();
+}
+
+const TextWrapper$7 = require$$63.styled('span')(({ theme }) => `
+      display: inline-block;
+      align-items: center;
+
+      &.flexItem {
+        display: inline-flex;
+      }
+
+      &.MuiText {
+
+        &-black {
+          color: ${theme.palette.common.black}
+        }
+
+        &-primary {
+          color: ${theme.palette.primary.main}
+        }
+
+        &-secondary {
+          color: ${theme.palette.secondary.main}
+        }
+
+        &-success {
+          color: ${theme.palette.success.main}
+        }
+
+        &-warning {
+          color: ${theme.palette.warning.main}
+        }
+
+        &-error {
+          color: ${theme.palette.error.main}
+        }
+
+        &-info {
+          color: ${theme.palette.info.main}
+        }
+      }
+`);
+const Text$7 = ({ color = 'secondary', flex, children, ...rest }) => {
+    return (require$$38.jsx(TextWrapper$7, { className: clsx$7('MuiText-' + color, { flexItem: flex }), ...rest, children: children }));
+};
+Text$7.propTypes = {
+    children: propTypes$7.exports.node,
+    className: propTypes$7.exports.string,
+    color: propTypes$7.exports.oneOf([
+        'primary',
+        'secondary',
+        'error',
+        'warning',
+        'success',
+        'info',
+        'black',
+    ]),
+};
+
+const LogoBox$7 = require$$43.styled(require$$43.Box)(() => `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+`);
+function SaaSusLogo$7({ width, alt }) {
+    return (require$$38.jsx(LogoBox$7, { children: require$$38.jsx(require$$64__default["default"], { href: "/", children: require$$38.jsx("img", { width: width, src: "/static/images/logo/saasus_logo.svg", alt: alt }) }) }));
+}
+
+/***
+ * @param fontPxToRem pxからrem変換計算用
+ *  ユーザーのブラウザ設定に応じ、基準サイズをユーザーが意図した表示サイズに追従させ得るための対応
+ *  例：fontPxToRem(24) -> fontSize:1.5rem 見た目上24pxのrem
+ * @param fontPxToRemMinim レスポンシブ対応の縮小サイズ用 現在85%
+ *  モバイルファースト設計で先にこちらが優先され、ブレイクポイント（現在960px）以上の画面幅になれば100%になる仕様です
+ *  レスポンシブ設計は必要応じてアップデートを見込んでいます。
+ */
+const fontPxToRem$2$7 = (px) => {
+    return px / 16 + 'rem';
+};
+// レスポンシブ対応の縮小サイズ用
+const fontPxToRemMinim$2$7 = (px) => {
+    return (px / 16) * 0.85 + 'rem';
+};
+const themeColors$2$7 = {
+    primary: '#44a574',
+    secondary: '#a2a8ab',
+    success: '#57CA22',
+    warning: '#FFA319',
+    error: '#FF1943',
+    info: '#33C2FF',
+    black: '#CBCCD2',
+    white: '#232a2e',
+    primaryAlt: '#232a2e',
+    trueWhite: '#ffffff',
+};
+const colors$2$7 = {
+    gradients: {
+        blue1: 'linear-gradient(135deg, #6B73FF 0%, #000DFF 100%)',
+        blue2: 'linear-gradient(135deg, #ABDCFF 0%, #0396FF 100%)',
+        blue3: 'linear-gradient(127.55deg, #141E30 3.73%, #243B55 92.26%)',
+        blue4: 'linear-gradient(-20deg, #2b5876 0%, #4e4376 100%)',
+        blue5: 'linear-gradient(135deg, #97ABFF 10%, #123597 100%)',
+        orange1: 'linear-gradient(135deg, #FCCF31 0%, #F55555 100%)',
+        orange2: 'linear-gradient(135deg, #FFD3A5 0%, #FD6585 100%)',
+        orange3: 'linear-gradient(120deg, #f6d365 0%, #fda085 100%)',
+        purple1: 'linear-gradient(135deg, #43CBFF 0%, #9708CC 100%)',
+        purple3: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        pink1: 'linear-gradient(135deg, #F6CEEC 0%, #D939CD 100%)',
+        pink2: 'linear-gradient(135deg, #F761A1 0%, #8C1BAB 100%)',
+        green1: 'linear-gradient(135deg, #FFF720 0%, #3CD500 100%)',
+        green2: 'linear-gradient(to bottom, #00b09b, #96c93d)',
+        black1: 'linear-gradient(100.66deg, #434343 6.56%, #000000 93.57%)',
+        black2: 'linear-gradient(60deg, #29323c 0%, #485563 100%)',
+    },
+    shadows: {
+        success: '0px 1px 4px rgba(68, 214, 0, 0.25), 0px 3px 12px 2px rgba(68, 214, 0, 0.35)',
+        error: '0px 1px 4px rgba(255, 25, 67, 0.25), 0px 3px 12px 2px rgba(255, 25, 67, 0.35)',
+        info: '0px 1px 4px rgba(51, 194, 255, 0.25), 0px 3px 12px 2px rgba(51, 194, 255, 0.35)',
+        primary: '0px 1px 4px rgba(112, 99, 192, 0.25), 0px 3px 12px 2px rgba(112, 99, 192, 0.35)',
+        warning: '0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35)',
+        card: '0px 0px 2px #757c82',
+        cardSm: '0px 0px 2px #757c82',
+        cardLg: '0 0rem 14rem 0 rgb(255 255 255 / 20%), 0 0.8rem 2.3rem rgb(111 130 156 / 3%), 0 0.2rem 0.7rem rgb(17 29 57 / 15%)',
+    },
+    layout: {
+        general: {
+            bodyBg: '#141c23',
+        },
+        sidebar: {
+            background: themeColors$2$7.primaryAlt,
+            textColor: themeColors$2$7.secondary,
+            dividerBg: '#303e47',
+            menuItemColor: '#a1a7ab',
+            menuItemColorActive: '#ffffff',
+            menuItemBg: themeColors$2$7.primaryAlt,
+            menuItemBgActive: themeColors$2$7.primary,
+            menuItemIconColor: '#4a5d69',
+            menuItemIconColorActive: '#ffffff',
+            menuItemHeadingColor: require$$43.darken(themeColors$2$7.secondary, 0.3),
+        },
+    },
+    alpha: {
+        white: {
+            5: require$$43.alpha(themeColors$2$7.white, 0.02),
+            10: require$$43.alpha(themeColors$2$7.white, 0.1),
+            30: require$$43.alpha(themeColors$2$7.white, 0.3),
+            50: require$$43.alpha(themeColors$2$7.white, 0.5),
+            70: require$$43.alpha(themeColors$2$7.white, 0.7),
+            100: themeColors$2$7.white,
+        },
+        trueWhite: {
+            5: require$$43.alpha(themeColors$2$7.trueWhite, 0.02),
+            10: require$$43.alpha(themeColors$2$7.trueWhite, 0.1),
+            30: require$$43.alpha(themeColors$2$7.trueWhite, 0.3),
+            50: require$$43.alpha(themeColors$2$7.trueWhite, 0.5),
+            70: require$$43.alpha(themeColors$2$7.trueWhite, 0.7),
+            100: themeColors$2$7.trueWhite,
+        },
+        black: {
+            5: require$$43.alpha(themeColors$2$7.black, 0.02),
+            10: require$$43.alpha(themeColors$2$7.black, 0.1),
+            30: require$$43.alpha(themeColors$2$7.black, 0.3),
+            50: require$$43.alpha(themeColors$2$7.black, 0.5),
+            70: require$$43.alpha(themeColors$2$7.black, 0.7),
+            100: themeColors$2$7.black,
+        },
+    },
+    secondary: {
+        lighter: require$$43.alpha(themeColors$2$7.secondary, 0.85),
+        light: require$$43.alpha(themeColors$2$7.secondary, 0.6),
+        main: themeColors$2$7.secondary,
+        dark: require$$43.darken(themeColors$2$7.secondary, 0.2),
+    },
+    primary: {
+        lighter: require$$43.alpha(themeColors$2$7.primary, 0.85),
+        light: require$$43.alpha(themeColors$2$7.primary, 0.3),
+        main: themeColors$2$7.primary,
+        dark: require$$43.darken(themeColors$2$7.primary, 0.2),
+    },
+    success: {
+        lighter: require$$43.alpha(themeColors$2$7.success, 0.85),
+        light: require$$43.alpha(themeColors$2$7.success, 0.3),
+        main: themeColors$2$7.success,
+        dark: require$$43.darken(themeColors$2$7.success, 0.2),
+    },
+    warning: {
+        lighter: require$$43.alpha(themeColors$2$7.warning, 0.85),
+        light: require$$43.alpha(themeColors$2$7.warning, 0.3),
+        main: themeColors$2$7.warning,
+        dark: require$$43.darken(themeColors$2$7.warning, 0.2),
+    },
+    error: {
+        lighter: require$$43.alpha(themeColors$2$7.error, 0.85),
+        light: require$$43.alpha(themeColors$2$7.error, 0.3),
+        main: themeColors$2$7.error,
+        dark: require$$43.darken(themeColors$2$7.error, 0.2),
+    },
+    info: {
+        lighter: require$$43.alpha(themeColors$2$7.info, 0.85),
+        light: require$$43.alpha(themeColors$2$7.info, 0.3),
+        main: themeColors$2$7.info,
+        dark: require$$43.darken(themeColors$2$7.info, 0.2),
+    },
+};
+const SaaSusDarkThemeHighContrast$7 = require$$43.createTheme({
+    // direction: i18n.dir(),
+    colors: {
+        gradients: {
+            blue1: colors$2$7.gradients.blue1,
+            blue2: colors$2$7.gradients.blue2,
+            blue3: colors$2$7.gradients.blue3,
+            blue4: colors$2$7.gradients.blue4,
+            blue5: colors$2$7.gradients.blue5,
+            orange1: colors$2$7.gradients.orange1,
+            orange2: colors$2$7.gradients.orange2,
+            orange3: colors$2$7.gradients.orange3,
+            purple1: colors$2$7.gradients.purple1,
+            purple3: colors$2$7.gradients.purple3,
+            pink1: colors$2$7.gradients.pink1,
+            pink2: colors$2$7.gradients.pink2,
+            green1: colors$2$7.gradients.green1,
+            green2: colors$2$7.gradients.green2,
+            black1: colors$2$7.gradients.black1,
+            black2: colors$2$7.gradients.black2,
+        },
+        shadows: {
+            success: colors$2$7.shadows.success,
+            error: colors$2$7.shadows.error,
+            primary: colors$2$7.shadows.primary,
+            info: colors$2$7.shadows.info,
+            warning: colors$2$7.shadows.warning,
+        },
+        alpha: {
+            white: {
+                5: require$$43.alpha(themeColors$2$7.white, 0.02),
+                10: require$$43.alpha(themeColors$2$7.white, 0.1),
+                30: require$$43.alpha(themeColors$2$7.white, 0.3),
+                50: require$$43.alpha(themeColors$2$7.white, 0.5),
+                70: require$$43.alpha(themeColors$2$7.white, 0.7),
+                100: themeColors$2$7.white,
+            },
+            trueWhite: {
+                5: require$$43.alpha(themeColors$2$7.trueWhite, 0.02),
+                10: require$$43.alpha(themeColors$2$7.trueWhite, 0.1),
+                30: require$$43.alpha(themeColors$2$7.trueWhite, 0.3),
+                50: require$$43.alpha(themeColors$2$7.trueWhite, 0.5),
+                70: require$$43.alpha(themeColors$2$7.trueWhite, 0.7),
+                100: themeColors$2$7.trueWhite,
+            },
+            black: {
+                5: require$$43.alpha(themeColors$2$7.black, 0.02),
+                10: require$$43.alpha(themeColors$2$7.black, 0.1),
+                30: require$$43.alpha(themeColors$2$7.black, 0.3),
+                50: require$$43.alpha(themeColors$2$7.black, 0.5),
+                70: require$$43.alpha(themeColors$2$7.black, 0.7),
+                100: themeColors$2$7.black,
+            },
+        },
+        secondary: {
+            lighter: require$$43.alpha(themeColors$2$7.secondary, 0.1),
+            light: require$$43.alpha(themeColors$2$7.secondary, 0.3),
+            main: themeColors$2$7.secondary,
+            dark: require$$43.darken(themeColors$2$7.secondary, 0.2),
+        },
+        primary: {
+            lighter: require$$43.alpha(themeColors$2$7.primary, 0.1),
+            light: require$$43.alpha(themeColors$2$7.primary, 0.3),
+            main: themeColors$2$7.primary,
+            dark: require$$43.darken(themeColors$2$7.primary, 0.2),
+        },
+        success: {
+            lighter: require$$43.alpha(themeColors$2$7.success, 0.1),
+            light: require$$43.alpha(themeColors$2$7.success, 0.3),
+            main: themeColors$2$7.success,
+            dark: require$$43.darken(themeColors$2$7.success, 0.2),
+        },
+        warning: {
+            lighter: require$$43.alpha(themeColors$2$7.warning, 0.1),
+            light: require$$43.alpha(themeColors$2$7.warning, 0.3),
+            main: themeColors$2$7.warning,
+            dark: require$$43.darken(themeColors$2$7.warning, 0.2),
+        },
+        error: {
+            lighter: require$$43.alpha(themeColors$2$7.error, 0.1),
+            light: require$$43.alpha(themeColors$2$7.error, 0.3),
+            main: themeColors$2$7.error,
+            dark: require$$43.darken(themeColors$2$7.error, 0.2),
+        },
+        info: {
+            lighter: require$$43.alpha(themeColors$2$7.info, 0.1),
+            light: require$$43.alpha(themeColors$2$7.info, 0.3),
+            main: themeColors$2$7.info,
+            dark: require$$43.darken(themeColors$2$7.info, 0.2),
+        },
+    },
+    general: {
+        reactFrameworkColor: '#00D8FF',
+        borderRadiusSm: '6px',
+        borderRadius: '10px',
+        borderRadiusLg: '12px',
+        borderRadiusXl: '16px',
+    },
+    sidebar: {
+        background: colors$2$7.layout.sidebar.background,
+        textColor: colors$2$7.layout.sidebar.textColor,
+        dividerBg: colors$2$7.layout.sidebar.dividerBg,
+        menuItemColor: colors$2$7.layout.sidebar.menuItemColor,
+        menuItemColorActive: colors$2$7.layout.sidebar.menuItemColorActive,
+        menuItemBg: colors$2$7.layout.sidebar.menuItemBg,
+        menuItemBgActive: colors$2$7.layout.sidebar.menuItemBgActive,
+        menuItemIconColor: colors$2$7.layout.sidebar.menuItemIconColor,
+        menuItemIconColorActive: colors$2$7.layout.sidebar.menuItemIconColorActive,
+        menuItemHeadingColor: colors$2$7.layout.sidebar.menuItemHeadingColor,
+        boxShadow: '1px 0 0 #303e47',
+        width: '180px',
+    },
+    header: {
+        height: 'auto',
+        background: themeColors$2$7.primaryAlt,
+        boxShadow: '0px 1px 0px #303e47',
+        textColor: colors$2$7.secondary.main,
+    },
+    spacing: 8,
+    palette: {
+        common: {
+            black: colors$2$7.alpha.black[100],
+            white: colors$2$7.alpha.white[100],
+        },
+        mode: 'dark',
+        primary: {
+            light: colors$2$7.primary.light,
+            main: colors$2$7.primary.main,
+            dark: colors$2$7.primary.dark,
+        },
+        secondary: {
+            light: colors$2$7.secondary.light,
+            main: colors$2$7.secondary.main,
+            dark: colors$2$7.secondary.dark,
+        },
+        error: {
+            light: colors$2$7.error.light,
+            main: colors$2$7.error.main,
+            dark: colors$2$7.error.dark,
+            contrastText: themeColors$2$7.trueWhite,
+        },
+        success: {
+            light: colors$2$7.success.light,
+            main: colors$2$7.success.main,
+            dark: colors$2$7.success.dark,
+            contrastText: themeColors$2$7.trueWhite,
+        },
+        info: {
+            light: colors$2$7.info.light,
+            main: colors$2$7.info.main,
+            dark: colors$2$7.info.dark,
+            contrastText: themeColors$2$7.trueWhite,
+        },
+        warning: {
+            light: colors$2$7.warning.light,
+            main: colors$2$7.warning.main,
+            dark: colors$2$7.warning.dark,
+            contrastText: themeColors$2$7.trueWhite,
+        },
+        text: {
+            primary: colors$2$7.alpha.black[100],
+            secondary: colors$2$7.alpha.black[70],
+            disabled: colors$2$7.alpha.black[50],
+        },
+        background: {
+            paper: colors$2$7.alpha.white[100],
+            default: colors$2$7.layout.general.bodyBg,
+        },
+        action: {
+            active: colors$2$7.alpha.black[100],
+            hover: colors$2$7.primary.lighter,
+            hoverOpacity: 0.1,
+            selected: colors$2$7.alpha.black[10],
+            selectedOpacity: 0.1,
+            disabled: colors$2$7.alpha.black[50],
+            disabledBackground: colors$2$7.alpha.black[5],
+            disabledOpacity: 0.38,
+            focus: colors$2$7.alpha.black[10],
+            focusOpacity: 0.05,
+            activatedOpacity: 0.12,
+        },
+    },
+    components: {
+        MuiBackdrop: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: require$$43.alpha(require$$43.darken('#141c23', 0.5), 0.4),
+                    backdropFilter: 'blur(2px)',
+                    '&.MuiBackdrop-invisible': {
+                        backgroundColor: 'transparent',
+                        backdropFilter: 'blur(2px)',
+                    },
+                },
+            },
+        },
+        MuiFormHelperText: {
+            styleOverrides: {
+                root: {
+                    textTransform: 'none',
+                    marginLeft: 8,
+                    marginRight: 8,
+                    fontWeight: 'bold',
+                },
+            },
+        },
+        MuiDialog: {
+            styleOverrides: {
+                paper: {
+                    backgroundColor: require$$43.darken(themeColors$2$7.primaryAlt, 0.5),
+                },
+            },
+        },
+        MuiCssBaseline: {
+            styleOverrides: {
+                'html, body': {
+                    width: '100%',
+                    height: '100%',
+                },
+                body: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100%',
+                    width: '100%',
+                    flex: 1,
+                    breakWord: 'break-word',
+                    // FIXME! 定義
+                    lineHeight: 1.75,
+                },
+                '#__next': {
+                    width: '100%',
+                    display: 'flex',
+                    flex: 1,
+                    flexDirection: 'column',
+                },
+                html: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100%',
+                    width: '100%',
+                    MozOsxFontSmoothing: 'grayscale',
+                    WebkitFontSmoothing: 'antialiased',
+                },
+                summary: {
+                    cursor: 'pointer',
+                    color: colors$2$7.primary.main,
+                },
+                '.child-popover .MuiPaper-root .MuiList-root': {
+                    flexDirection: 'column',
+                },
+                '#nprogress': {
+                    pointerEvents: 'none',
+                },
+                '#nprogress .bar': {
+                    background: colors$2$7.primary.lighter,
+                },
+                '#nprogress .spinner-icon': {
+                    borderTopColor: colors$2$7.primary.lighter,
+                    borderLeftColor: colors$2$7.primary.lighter,
+                },
+                '#nprogress .peg': {
+                    boxShadow: '0 0 15px ' +
+                        colors$2$7.primary.lighter +
+                        ', 0 0 8px' +
+                        colors$2$7.primary.light,
+                },
+                ':root': {
+                    '--swiper-theme-color': colors$2$7.primary.main,
+                    colorScheme: 'dark',
+                },
+                code: {
+                    fontFamily: 'Inter',
+                    fontWeight: 500,
+                    fontSize: `${fontPxToRemMinim$2$7(14)}`,
+                    '@media (min-width: 960px)': {
+                        fontSize: `${fontPxToRem$2$7(14)}`,
+                    },
+                    lineHeight: 1.5,
+                    margin: '0 0.1ch',
+                    paddingLeft: 6,
+                    paddingRight: 6,
+                    paddingTop: 1,
+                    paddingBottom: 2,
+                    borderRadius: 4,
+                    // TODO: Set Color
+                    background: 'transparent',
+                    border: `1px solid ${colors$2$7.info.light}`,
+                    color: colors$2$7.info.dark,
+                },
+                '@keyframes pulse': {
+                    '0%': {
+                        transform: 'scale(.75)',
+                    },
+                    '20%': {
+                        transform: 'scale(1.1)',
+                    },
+                    '40%': {
+                        transform: 'scale(.75)',
+                    },
+                    '60%': {
+                        transform: 'scale(1.05)',
+                    },
+                    '80%': {
+                        transform: 'scale(.75)',
+                    },
+                    '100%': {
+                        transform: 'scale(.75)',
+                    },
+                },
+                '@keyframes ripple': {
+                    '0%': {
+                        transform: 'scale(.8)',
+                        opacity: 1,
+                    },
+                    '100%': {
+                        transform: 'scale(2.8)',
+                        opacity: 0,
+                    },
+                },
+                '@keyframes float': {
+                    '0%': {
+                        transform: 'translate(0%, 0%)',
+                    },
+                    '100%': {
+                        transform: 'translate(3%, 3%)',
+                    },
+                },
+            },
+        },
+        MuiSelect: {
+            styleOverrides: {
+                iconOutlined: {
+                    color: colors$2$7.alpha.black[50],
+                },
+                icon: {
+                    top: 'calc(50% - 14px)',
+                },
+            },
+        },
+        MuiOutlinedInput: {
+            styleOverrides: {
+                root: {
+                    '& .MuiInputAdornment-positionEnd.MuiInputAdornment-outlined': {
+                        paddingRight: 6,
+                    },
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: colors$2$7.alpha.black[50],
+                    },
+                    '&.Mui-focused:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: colors$2$7.primary.main,
+                    },
+                },
+            },
+        },
+        MuiListSubheader: {
+            styleOverrides: {
+                colorPrimary: {
+                    fontWeight: '700',
+                    lineHeight: '40px',
+                    fontSize: '0.8125rem',
+                    background: colors$2$7.alpha.black[5],
+                    color: colors$2$7.alpha.black[70],
+                },
+            },
+        },
+        MuiCardHeader: {
+            styleOverrides: {
+                action: {
+                    marginTop: -5,
+                    marginBottom: -5,
+                },
+                title: {
+                    fontSize: 15,
+                },
+            },
+        },
+        MuiRadio: {
+            styleOverrides: {
+                root: {
+                    borderRadius: '50px',
+                },
+            },
+        },
+        MuiChip: {
+            styleOverrides: {
+                colorSecondary: {
+                    background: colors$2$7.alpha.black[5],
+                    color: colors$2$7.alpha.black[100],
+                    '&:hover': {
+                        background: colors$2$7.alpha.black[10],
+                    },
+                },
+                deleteIcon: {
+                    color: colors$2$7.alpha.black[50],
+                    '&:hover': {
+                        color: colors$2$7.alpha.black[70],
+                    },
+                },
+            },
+        },
+        MuiAccordion: {
+            styleOverrides: {
+                root: {
+                    boxShadow: 'none',
+                    '&.Mui-expanded': {
+                        margin: 0,
+                    },
+                    '&::before': {
+                        display: 'none',
+                    },
+                },
+            },
+        },
+        MuiAvatar: {
+            styleOverrides: {
+                root: {
+                    fontSize: 14,
+                    fontWeight: 'bold',
+                },
+                colorDefault: {
+                    background: colors$2$7.alpha.black[30],
+                    color: colors$2$7.alpha.trueWhite[100],
+                },
+            },
+        },
+        MuiAvatarGroup: {
+            styleOverrides: {
+                root: {
+                    alignItems: 'center',
+                },
+                avatar: {
+                    background: colors$2$7.alpha.black[10],
+                    fontSize: 13,
+                    color: colors$2$7.alpha.black[70],
+                    fontWeight: 'bold',
+                    '&:first-of-type': {
+                        border: 0,
+                        background: 'transparent',
+                    },
+                },
+            },
+        },
+        MuiListItemAvatar: {
+            styleOverrides: {
+                alignItemsFlexStart: {
+                    marginTop: 0,
+                },
+            },
+        },
+        MuiPaginationItem: {
+            styleOverrides: {
+                page: {
+                    fontSize: 13,
+                    fontWeight: 'bold',
+                    transition: 'all .2s',
+                },
+                textPrimary: {
+                    '&.Mui-selected': {
+                        boxShadow: colors$2$7.shadows.primary,
+                    },
+                    '&.MuiButtonBase-root:hover': {
+                        background: colors$2$7.alpha.black[5],
+                    },
+                    '&.Mui-selected.MuiButtonBase-root:hover': {
+                        background: colors$2$7.primary.main,
+                    },
+                },
+            },
+        },
+        MuiButton: {
+            defaultProps: {
+                disableRipple: true,
+            },
+            styleOverrides: {
+                root: {
+                    fontWeight: 'bold',
+                    textTransform: 'none',
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                    '.MuiSvgIcon-root': {
+                        transition: 'all .2s',
+                    },
+                },
+                endIcon: {
+                    marginRight: -8,
+                },
+                containedSecondary: {
+                    backgroundColor: colors$2$7.secondary.main,
+                    color: colors$2$7.alpha.white[100],
+                    border: '1px solid ' + colors$2$7.alpha.black[30],
+                },
+                outlinedSecondary: {
+                    backgroundColor: colors$2$7.alpha.white[100],
+                    '&:hover, &.MuiSelected': {
+                        backgroundColor: colors$2$7.alpha.black[5],
+                        color: colors$2$7.alpha.black[100],
+                    },
+                },
+                sizeSmall: {
+                    padding: '6px 16px',
+                    lineHeight: 1.5,
+                },
+                sizeMedium: {
+                    padding: '8px 20px',
+                },
+                sizeLarge: {
+                    padding: '11px 24px',
+                },
+                textSizeSmall: {
+                    padding: '7px 12px',
+                },
+                textSizeMedium: {
+                    padding: '9px 16px',
+                },
+                textSizeLarge: {
+                    padding: '12px 16px',
+                },
+            },
+        },
+        MuiButtonBase: {
+            defaultProps: {
+                disableRipple: false,
+            },
+            styleOverrides: {
+                root: {
+                    borderRadius: 6,
+                },
+            },
+        },
+        MuiToggleButton: {
+            defaultProps: {
+                disableRipple: true,
+            },
+            styleOverrides: {
+                root: {
+                    color: colors$2$7.primary.main,
+                    background: colors$2$7.alpha.white[100],
+                    transition: 'all .2s',
+                    '&:hover, &.Mui-selected, &.Mui-selected:hover': {
+                        color: themeColors$2$7.trueWhite,
+                        background: colors$2$7.primary.main,
+                    },
+                },
+            },
+        },
+        MuiIconButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 8,
+                    padding: 8,
+                    '& .MuiTouchRipple-root': {
+                        borderRadius: 8,
+                    },
+                },
+                sizeSmall: {
+                    padding: 4,
+                },
+            },
+        },
+        MuiListItemText: {
+            styleOverrides: {
+                root: {
+                    margin: 0,
+                },
+            },
+        },
+        MuiListItemButton: {
+            styleOverrides: {
+                root: {
+                    '& .MuiTouchRipple-root': {
+                        opacity: 0.3,
+                    },
+                },
+            },
+        },
+        MuiDivider: {
+            styleOverrides: {
+                root: {
+                    background: colors$2$7.alpha.black[10],
+                    border: 0,
+                    height: 1,
+                },
+                vertical: {
+                    height: 'auto',
+                    width: 1,
+                    '&.MuiDivider-flexItem.MuiDivider-fullWidth': {
+                        height: 'auto',
+                    },
+                    '&.MuiDivider-absolute.MuiDivider-fullWidth': {
+                        height: '100%',
+                    },
+                },
+                withChildren: {
+                    '&:before, &:after': {
+                        border: 0,
+                    },
+                },
+                wrapper: {
+                    background: colors$2$7.alpha.white[100],
+                    fontWeight: 'bold',
+                    height: 24,
+                    lineHeight: '24px',
+                    marginTop: -12,
+                    color: 'inherit',
+                    textTransform: 'uppercase',
+                },
+            },
+        },
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    backgroundImage: 'none',
+                    padding: 0,
+                },
+                elevation0: {
+                    boxShadow: 'none',
+                },
+                elevation: {
+                    boxShadow: colors$2$7.shadows.card,
+                },
+                elevation2: {
+                    boxShadow: colors$2$7.shadows.cardSm,
+                },
+                elevation24: {
+                    boxShadow: colors$2$7.shadows.cardLg,
+                },
+                outlined: {
+                    boxShadow: colors$2$7.shadows.card,
+                },
+            },
+        },
+        MuiLink: {
+            defaultProps: {
+                underline: 'hover',
+            },
+        },
+        MuiLinearProgress: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 6,
+                    height: 6,
+                },
+            },
+        },
+        MuiSlider: {
+            styleOverrides: {
+                root: {
+                    '& .MuiSlider-valueLabelCircle, .MuiSlider-valueLabelLabel': {
+                        transform: 'none',
+                    },
+                    '& .MuiSlider-valueLabel': {
+                        borderRadius: 6,
+                        background: colors$2$7.alpha.black[100],
+                        color: colors$2$7.alpha.white[100],
+                    },
+                },
+            },
+        },
+        MuiList: {
+            styleOverrides: {
+                root: {
+                    padding: 0,
+                    '& .MuiListItem-button': {
+                        transition: 'all .2s',
+                        '& > .MuiSvgIcon-root': {
+                            minWidth: 34,
+                        },
+                        '& .MuiTouchRipple-root': {
+                            opacity: 0.2,
+                        },
+                    },
+                    '& .MuiListItem-root.MuiButtonBase-root.Mui-selected': {
+                        backgroundColor: colors$2$7.alpha.black[10],
+                    },
+                    '& .MuiMenuItem-root.MuiButtonBase-root:active': {
+                        backgroundColor: require$$43.alpha(colors$2$7.primary.lighter, 0.2),
+                    },
+                    '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
+                        opacity: 0.2,
+                    },
+                },
+                padding: {
+                    padding: '12px',
+                    '& .MuiListItem-button': {
+                        borderRadius: 6,
+                        margin: '1px 0',
+                    },
+                },
+            },
+        },
+        MuiTabs: {
+            styleOverrides: {
+                root: {
+                    height: 38,
+                    minHeight: 38,
+                    overflow: 'visible',
+                },
+                indicator: {
+                    height: 38,
+                    minHeight: 38,
+                    borderRadius: 6,
+                    border: '1px solid ' + colors$2$7.primary.dark,
+                    boxShadow: '0px 2px 10px ' + colors$2$7.primary.light,
+                },
+                scrollableX: {
+                    overflow: 'visible !important',
+                },
+            },
+        },
+        MuiTab: {
+            styleOverrides: {
+                root: {
+                    padding: 0,
+                    height: 38,
+                    minHeight: 38,
+                    borderRadius: 6,
+                    transition: 'color .2s',
+                    textTransform: 'capitalize',
+                    '&.MuiButtonBase-root': {
+                        minWidth: 'auto',
+                        paddingLeft: 20,
+                        paddingRight: 20,
+                        marginRight: 4,
+                    },
+                    '&.Mui-selected, &.Mui-selected:hover': {
+                        color: colors$2$7.alpha.trueWhite[100],
+                        zIndex: 5,
+                    },
+                    '&:hover': {
+                        color: colors$2$7.alpha.trueWhite[70],
+                    },
+                },
+            },
+        },
+        MuiMenu: {
+            styleOverrides: {
+                paper: {
+                    padding: 12,
+                },
+                list: {
+                    padding: 12,
+                    '& .MuiMenuItem-root.MuiButtonBase-root': {
+                        fontSize: 14,
+                        marginTop: 1,
+                        marginBottom: 1,
+                        transition: 'all .2s',
+                        color: colors$2$7.alpha.black[70],
+                        '& .MuiTouchRipple-root': {
+                            opacity: 0.2,
+                        },
+                        '&:hover, &:active, &.active, &.Mui-selected': {
+                            color: colors$2$7.alpha.black[100],
+                            background: require$$43.alpha(colors$2$7.primary.lighter, 0.2),
+                        },
+                    },
+                },
+            },
+        },
+        MuiMenuItem: {
+            styleOverrides: {
+                root: {
+                    background: 'transparent',
+                    transition: 'all .2s',
+                    '&:hover, &:active, &.active, &.Mui-selected': {
+                        color: colors$2$7.alpha.black[100],
+                        background: require$$43.alpha(colors$2$7.primary.lighter, 0.2),
+                    },
+                    '&.Mui-selected:hover': {
+                        background: require$$43.alpha(colors$2$7.primary.lighter, 0.2),
+                    },
+                },
+            },
+        },
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    '&.MuiButtonBase-root': {
+                        color: colors$2$7.secondary.main,
+                        '&:hover, &:active, &.active, &.Mui-selected': {
+                            color: colors$2$7.alpha.black[100],
+                            background: require$$43.alpha(colors$2$7.primary.lighter, 0.2),
+                        },
+                    },
+                },
+            },
+        },
+        MuiAutocomplete: {
+            styleOverrides: {
+                tag: {
+                    margin: 1,
+                },
+                root: {
+                    '.MuiAutocomplete-inputRoot.MuiOutlinedInput-root .MuiAutocomplete-endAdornment': {
+                        right: 14,
+                    },
+                },
+                clearIndicator: {
+                    background: require$$43.alpha(colors$2$7.error.lighter, 0.2),
+                    color: colors$2$7.error.main,
+                    marginRight: 8,
+                    '&:hover': {
+                        background: require$$43.alpha(colors$2$7.error.lighter, 0.3),
+                    },
+                },
+                popupIndicator: {
+                    color: colors$2$7.alpha.black[70],
+                    '&:hover': {
+                        background: require$$43.alpha(colors$2$7.primary.lighter, 0.2),
+                    },
+                },
+            },
+        },
+        MuiTablePagination: {
+            styleOverrides: {
+                toolbar: {
+                    '& .MuiIconButton-root': {
+                        padding: 8,
+                    },
+                },
+                select: {
+                    '&:focus': {
+                        backgroundColor: 'transparent',
+                    },
+                },
+            },
+        },
+        MuiToolbar: {
+            styleOverrides: {
+                root: {
+                    minHeight: '0 !important',
+                    padding: '0 !important',
+                },
+            },
+        },
+        MuiTableRow: {
+            styleOverrides: {
+                head: {
+                    background: colors$2$7.alpha.black[5],
+                },
+                root: {
+                    transition: 'background-color .2s',
+                    '&.MuiTableRow-hover:hover': {
+                        backgroundColor: require$$43.alpha(colors$2$7.alpha.black[5], 0.05),
+                    },
+                },
+            },
+        },
+        MuiTableCell: {
+            styleOverrides: {
+                root: {
+                    borderBottomColor: colors$2$7.alpha.black[10],
+                    fontSize: 14,
+                },
+                head: {
+                    textTransform: 'uppercase',
+                    fontSize: 13,
+                    fontWeight: 'bold',
+                    color: colors$2$7.alpha.black[70],
+                },
+            },
+        },
+        MuiAlert: {
+            styleOverrides: {
+                message: {
+                    lineHeight: 1.5,
+                    fontSize: 14,
+                },
+                standardInfo: {
+                    color: colors$2$7.info.main,
+                },
+                action: {
+                    color: colors$2$7.alpha.black[70],
+                },
+            },
+        },
+        MuiTimelineDot: {
+            styleOverrides: {
+                root: {
+                    margin: 0,
+                    zIndex: 5,
+                    position: 'absolute',
+                    top: '50%',
+                    marginTop: -6,
+                    left: -6,
+                },
+                outlined: {
+                    backgroundColor: colors$2$7.alpha.white[100],
+                    boxShadow: '0 0 0 6px ' + colors$2$7.alpha.white[100],
+                },
+                outlinedPrimary: {
+                    backgroundColor: colors$2$7.alpha.white[100],
+                    boxShadow: '0 0 0 6px ' + colors$2$7.alpha.white[100],
+                },
+            },
+        },
+        MuiTimelineConnector: {
+            styleOverrides: {
+                root: {
+                    position: 'absolute',
+                    height: '100%',
+                    top: 0,
+                    borderRadius: 50,
+                    backgroundColor: colors$2$7.alpha.black[10],
+                },
+            },
+        },
+        MuiTimelineItem: {
+            styleOverrides: {
+                root: {
+                    minHeight: 0,
+                    padding: '8px 0',
+                    '&:before': {
+                        display: 'none',
+                    },
+                },
+                missingOppositeContent: {
+                    '&:before': {
+                        display: 'none',
+                    },
+                },
+            },
+        },
+        MuiTooltip: {
+            styleOverrides: {
+                tooltip: {
+                    backgroundColor: require$$43.alpha(colors$2$7.alpha.black['100'], 0.95),
+                    padding: '8px 16px',
+                    fontSize: 13,
+                },
+                arrow: {
+                    color: require$$43.alpha(colors$2$7.alpha.black['100'], 0.95),
+                },
+            },
+        },
+        MuiSwitch: {
+            styleOverrides: {
+                root: {
+                    height: 33,
+                    overflow: 'visible',
+                    '& .MuiButtonBase-root': {
+                        position: 'absolute',
+                        padding: 6,
+                        transition: 'left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+                    },
+                    '& .MuiIconButton-root': {
+                        borderRadius: 100,
+                    },
+                    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                        opacity: 0.3,
+                    },
+                },
+                thumb: {
+                    border: '1px solid ' + colors$2$7.alpha.black[30],
+                    boxShadow: '0px 9px 14px ' +
+                        colors$2$7.alpha.black[10] +
+                        ', 0px 2px 2px ' +
+                        colors$2$7.alpha.black[10],
+                },
+                track: {
+                    backgroundColor: colors$2$7.alpha.black[5],
+                    border: '1px solid ' + colors$2$7.alpha.black[10],
+                    boxShadow: 'inset 0px 1px 1px ' + colors$2$7.alpha.black[10],
+                    opacity: 1,
+                },
+                colorPrimary: {
+                    '& .MuiSwitch-thumb': {
+                        backgroundColor: colors$2$7.alpha.white[100],
+                    },
+                    '&.Mui-checked .MuiSwitch-thumb': {
+                        backgroundColor: colors$2$7.primary.main,
+                    },
+                },
+            },
+        },
+        MuiStepper: {
+            styleOverrides: {
+                root: {
+                    paddingTop: 20,
+                    paddingBottom: 20,
+                    background: colors$2$7.alpha.black[5],
+                },
+            },
+        },
+        MuiStepIcon: {
+            styleOverrides: {
+                root: {
+                    '&.MuiStepIcon-completed': {
+                        color: colors$2$7.success.main,
+                    },
+                },
+            },
+        },
+        MuiTypography: {
+            defaultProps: {
+                variantMapping: {
+                    h1: 'h1',
+                    h2: 'h2',
+                    h3: 'div',
+                    h4: 'div',
+                    h5: 'div',
+                    h6: 'div',
+                    subtitle1: 'div',
+                    subtitle2: 'div',
+                    body1: 'div',
+                    body2: 'div',
+                },
+            },
+            styleOverrides: {
+                gutterBottom: {
+                    marginBottom: 4,
+                },
+                paragraph: {
+                    fontSize: 17,
+                    lineHeight: 1.7,
+                },
+            },
+        },
+    },
+    shape: {
+        borderRadius: 10,
+    },
+    /***
+     * @param breakpoints ブレイクポイントの設定
+     * 現状md:960をフォントサイズ用途で利用中
+     * TODO:どこかで値を正式に決める
+     * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
+     */
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 960,
+            lg: 1280,
+            xl: 1840,
+        },
+    },
+    typography: {
+        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+        // 見出し用
+        h1: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$2$7(24)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(24)}`,
+            },
+        },
+        h2: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$2$7(22)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(22)}`,
+            },
+        },
+        h3: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$2$7(20)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(20)}`,
+            },
+        },
+        h4: {
+            fontWeight: 700,
+            fontSize: `${fontPxToRemMinim$2$7(18)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(18)}`,
+            },
+        },
+        h5: {
+            fontWeight: 700,
+            fontSize: `${fontPxToRemMinim$2$7(16)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(16)}`,
+            },
+        },
+        h6: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$2$7(15)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(15)}`,
+            },
+        },
+        // Text本文 Utility用
+        body1: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$2$7(15)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(15)}`,
+            },
+        },
+        body2: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$2$7(14)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(14)}`,
+            },
+        },
+        // サブタイトル用
+        subtitle1: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$2$7(14)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(14)}`,
+            },
+            color: colors$2$7.alpha.black[70],
+        },
+        subtitle2: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$2$7(13)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(13)}`,
+            },
+            color: colors$2$7.alpha.black[70],
+        },
+        // Text Utility用
+        caption: {
+            fontWeigt: 400,
+            fontSize: `${fontPxToRemMinim$2$7(12)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(12)}`,
+            },
+            color: colors$2$7.alpha.black[70],
+        },
+        overline: {
+            fontWeight: 400,
+            fontSize: `${fontPxToRemMinim$2$7(13)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(13)}`,
+            },
+            textTransform: 'none',
+        },
+        // TODO:用途のリサーチ/ボタン用？
+        button: {
+            fontWeigt: 500,
+            fontSize: `${fontPxToRemMinim$2$7(14)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$2$7(14)}`,
+            },
+            textTransform: 'none',
+        },
+    },
+    // シャドーの初期化？ TODO: 何の配列なのかリサーチ
+    shadows: [
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+    ],
+});
+
+/***
+ * @param fontPxToRem pxからrem変換計算用
+ *  ユーザーのブラウザ設定に応じ、基準サイズをユーザーが意図した表示サイズに追従させ得るための対応
+ *  例：fontPxToRem(24) -> fontSize:1.5rem 見た目上24pxのrem
+ * @param fontPxToRemMinim レスポンシブ対応の縮小サイズ用 現在85%
+ *  モバイルファースト設計で先にこちらが優先され、ブレイクポイント（現在960px）以上の画面幅になれば100%になる仕様です
+ *  レスポンシブ設計は必要応じてアップデートを見込んでいます。
+ */
+const fontPxToRem$1$7 = (px) => {
+    return px / 16 + 'rem';
+};
+// レスポンシブ対応の縮小サイズ用
+const fontPxToRemMinim$1$7 = (px) => {
+    return (px / 16) * 0.85 + 'rem';
+};
+const themeColors$1$7 = {
+    primary: '#8C7CF0',
+    secondary: '#9EA4C1',
+    success: '#57CA22',
+    warning: '#FFA319',
+    error: '#FF1943',
+    info: '#33C2FF',
+    black: '#CBCCD2',
+    white: '#111633',
+    primaryAlt: '#111633',
+    trueWhite: '#ffffff',
+};
+const colors$1$7 = {
+    gradients: {
+        blue1: 'linear-gradient(135deg, #6B73FF 0%, #000DFF 100%)',
+        blue2: 'linear-gradient(135deg, #ABDCFF 0%, #0396FF 100%)',
+        blue3: 'linear-gradient(127.55deg, #141E30 3.73%, #243B55 92.26%)',
+        blue4: 'linear-gradient(-20deg, #2b5876 0%, #4e4376 100%)',
+        blue5: 'linear-gradient(135deg, #97ABFF 10%, #123597 100%)',
+        orange1: 'linear-gradient(135deg, #FCCF31 0%, #F55555 100%)',
+        orange2: 'linear-gradient(135deg, #FFD3A5 0%, #FD6585 100%)',
+        orange3: 'linear-gradient(120deg, #f6d365 0%, #fda085 100%)',
+        purple1: 'linear-gradient(135deg, #43CBFF 0%, #9708CC 100%)',
+        purple3: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        pink1: 'linear-gradient(135deg, #F6CEEC 0%, #D939CD 100%)',
+        pink2: 'linear-gradient(135deg, #F761A1 0%, #8C1BAB 100%)',
+        green1: 'linear-gradient(135deg, #FFF720 0%, #3CD500 100%)',
+        green2: 'linear-gradient(to bottom, #00b09b, #96c93d)',
+        black1: 'linear-gradient(100.66deg, #434343 6.56%, #000000 93.57%)',
+        black2: 'linear-gradient(60deg, #29323c 0%, #485563 100%)',
+    },
+    shadows: {
+        success: '0px 1px 4px rgba(68, 214, 0, 0.25), 0px 3px 12px 2px rgba(68, 214, 0, 0.35)',
+        error: '0px 1px 4px rgba(255, 25, 67, 0.25), 0px 3px 12px 2px rgba(255, 25, 67, 0.35)',
+        info: '0px 1px 4px rgba(51, 194, 255, 0.25), 0px 3px 12px 2px rgba(51, 194, 255, 0.35)',
+        primary: '0px 1px 4px rgba(112, 99, 192, 0.25), 0px 3px 12px 2px rgba(112, 99, 192, 0.35)',
+        warning: '0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35)',
+        card: '0px 0px 2px #6A7199',
+        cardSm: '0px 0px 2px #6A7199',
+        cardLg: '0 0rem 14rem 0 rgb(255 255 255 / 20%), 0 0.8rem 2.3rem rgb(111 130 156 / 3%), 0 0.2rem 0.7rem rgb(17 29 57 / 15%)',
+    },
+    layout: {
+        general: {
+            bodyBg: '#070C27',
+        },
+        sidebar: {
+            background: themeColors$1$7.primaryAlt,
+            textColor: themeColors$1$7.secondary,
+            dividerBg: '#272C48',
+            menuItemColor: '#9EA4C1',
+            menuItemColorActive: '#ffffff',
+            menuItemBg: themeColors$1$7.primaryAlt,
+            menuItemBgActive: 'rgba(43, 48, 77, .6)',
+            menuItemIconColor: '#444A6B',
+            menuItemIconColorActive: '#ffffff',
+            menuItemHeadingColor: require$$43.darken(themeColors$1$7.secondary, 0.3),
+        },
+    },
+    alpha: {
+        white: {
+            5: require$$43.alpha(themeColors$1$7.white, 0.02),
+            10: require$$43.alpha(themeColors$1$7.white, 0.1),
+            30: require$$43.alpha(themeColors$1$7.white, 0.3),
+            50: require$$43.alpha(themeColors$1$7.white, 0.5),
+            70: require$$43.alpha(themeColors$1$7.white, 0.7),
+            100: themeColors$1$7.white,
+        },
+        trueWhite: {
+            5: require$$43.alpha(themeColors$1$7.trueWhite, 0.02),
+            10: require$$43.alpha(themeColors$1$7.trueWhite, 0.1),
+            30: require$$43.alpha(themeColors$1$7.trueWhite, 0.3),
+            50: require$$43.alpha(themeColors$1$7.trueWhite, 0.5),
+            70: require$$43.alpha(themeColors$1$7.trueWhite, 0.7),
+            100: themeColors$1$7.trueWhite,
+        },
+        black: {
+            5: require$$43.alpha(themeColors$1$7.black, 0.02),
+            10: require$$43.alpha(themeColors$1$7.black, 0.1),
+            30: require$$43.alpha(themeColors$1$7.black, 0.3),
+            50: require$$43.alpha(themeColors$1$7.black, 0.5),
+            70: require$$43.alpha(themeColors$1$7.black, 0.7),
+            100: themeColors$1$7.black,
+        },
+    },
+    secondary: {
+        lighter: require$$43.alpha(themeColors$1$7.secondary, 0.85),
+        light: require$$43.alpha(themeColors$1$7.secondary, 0.6),
+        main: themeColors$1$7.secondary,
+        dark: require$$43.darken(themeColors$1$7.secondary, 0.2),
+    },
+    primary: {
+        lighter: require$$43.alpha(themeColors$1$7.primary, 0.85),
+        light: require$$43.alpha(themeColors$1$7.primary, 0.3),
+        main: themeColors$1$7.primary,
+        dark: require$$43.darken(themeColors$1$7.primary, 0.2),
+    },
+    success: {
+        lighter: require$$43.alpha(themeColors$1$7.success, 0.85),
+        light: require$$43.alpha(themeColors$1$7.success, 0.3),
+        main: themeColors$1$7.success,
+        dark: require$$43.darken(themeColors$1$7.success, 0.2),
+    },
+    warning: {
+        lighter: require$$43.alpha(themeColors$1$7.warning, 0.85),
+        light: require$$43.alpha(themeColors$1$7.warning, 0.3),
+        main: themeColors$1$7.warning,
+        dark: require$$43.darken(themeColors$1$7.warning, 0.2),
+    },
+    error: {
+        lighter: require$$43.alpha(themeColors$1$7.error, 0.85),
+        light: require$$43.alpha(themeColors$1$7.error, 0.3),
+        main: themeColors$1$7.error,
+        dark: require$$43.darken(themeColors$1$7.error, 0.2),
+    },
+    info: {
+        lighter: require$$43.alpha(themeColors$1$7.info, 0.85),
+        light: require$$43.alpha(themeColors$1$7.info, 0.3),
+        main: themeColors$1$7.info,
+        dark: require$$43.darken(themeColors$1$7.info, 0.2),
+    },
+};
+const SaaSusDarkTheme$7 = require$$43.createTheme({
+    // direction: i18n.dir(),
+    colors: {
+        gradients: {
+            blue1: colors$1$7.gradients.blue1,
+            blue2: colors$1$7.gradients.blue2,
+            blue3: colors$1$7.gradients.blue3,
+            blue4: colors$1$7.gradients.blue4,
+            blue5: colors$1$7.gradients.blue5,
+            orange1: colors$1$7.gradients.orange1,
+            orange2: colors$1$7.gradients.orange2,
+            orange3: colors$1$7.gradients.orange3,
+            purple1: colors$1$7.gradients.purple1,
+            purple3: colors$1$7.gradients.purple3,
+            pink1: colors$1$7.gradients.pink1,
+            pink2: colors$1$7.gradients.pink2,
+            green1: colors$1$7.gradients.green1,
+            green2: colors$1$7.gradients.green2,
+            black1: colors$1$7.gradients.black1,
+            black2: colors$1$7.gradients.black2,
+        },
+        shadows: {
+            success: colors$1$7.shadows.success,
+            error: colors$1$7.shadows.error,
+            primary: colors$1$7.shadows.primary,
+            info: colors$1$7.shadows.info,
+            warning: colors$1$7.shadows.warning,
+        },
+        alpha: {
+            white: {
+                5: require$$43.alpha(themeColors$1$7.white, 0.02),
+                10: require$$43.alpha(themeColors$1$7.white, 0.1),
+                30: require$$43.alpha(themeColors$1$7.white, 0.3),
+                50: require$$43.alpha(themeColors$1$7.white, 0.5),
+                70: require$$43.alpha(themeColors$1$7.white, 0.7),
+                100: themeColors$1$7.white,
+            },
+            trueWhite: {
+                5: require$$43.alpha(themeColors$1$7.trueWhite, 0.02),
+                10: require$$43.alpha(themeColors$1$7.trueWhite, 0.1),
+                30: require$$43.alpha(themeColors$1$7.trueWhite, 0.3),
+                50: require$$43.alpha(themeColors$1$7.trueWhite, 0.5),
+                70: require$$43.alpha(themeColors$1$7.trueWhite, 0.7),
+                100: themeColors$1$7.trueWhite,
+            },
+            black: {
+                5: require$$43.alpha(themeColors$1$7.black, 0.02),
+                10: require$$43.alpha(themeColors$1$7.black, 0.1),
+                30: require$$43.alpha(themeColors$1$7.black, 0.3),
+                50: require$$43.alpha(themeColors$1$7.black, 0.5),
+                70: require$$43.alpha(themeColors$1$7.black, 0.7),
+                100: themeColors$1$7.black,
+            },
+        },
+        secondary: {
+            lighter: require$$43.alpha(themeColors$1$7.secondary, 0.1),
+            light: require$$43.alpha(themeColors$1$7.secondary, 0.3),
+            main: themeColors$1$7.secondary,
+            dark: require$$43.darken(themeColors$1$7.secondary, 0.2),
+        },
+        primary: {
+            lighter: require$$43.alpha(themeColors$1$7.primary, 0.1),
+            light: require$$43.alpha(themeColors$1$7.primary, 0.3),
+            main: themeColors$1$7.primary,
+            dark: require$$43.darken(themeColors$1$7.primary, 0.2),
+        },
+        success: {
+            lighter: require$$43.alpha(themeColors$1$7.success, 0.1),
+            light: require$$43.alpha(themeColors$1$7.success, 0.3),
+            main: themeColors$1$7.success,
+            dark: require$$43.darken(themeColors$1$7.success, 0.2),
+        },
+        warning: {
+            lighter: require$$43.alpha(themeColors$1$7.warning, 0.1),
+            light: require$$43.alpha(themeColors$1$7.warning, 0.3),
+            main: themeColors$1$7.warning,
+            dark: require$$43.darken(themeColors$1$7.warning, 0.2),
+        },
+        error: {
+            lighter: require$$43.alpha(themeColors$1$7.error, 0.1),
+            light: require$$43.alpha(themeColors$1$7.error, 0.3),
+            main: themeColors$1$7.error,
+            dark: require$$43.darken(themeColors$1$7.error, 0.2),
+        },
+        info: {
+            lighter: require$$43.alpha(themeColors$1$7.info, 0.1),
+            light: require$$43.alpha(themeColors$1$7.info, 0.3),
+            main: themeColors$1$7.info,
+            dark: require$$43.darken(themeColors$1$7.info, 0.2),
+        },
+    },
+    general: {
+        reactFrameworkColor: '#00D8FF',
+        borderRadiusSm: '6px',
+        borderRadius: '10px',
+        borderRadiusLg: '12px',
+        borderRadiusXl: '16px',
+    },
+    sidebar: {
+        background: colors$1$7.layout.sidebar.background,
+        textColor: colors$1$7.layout.sidebar.textColor,
+        dividerBg: colors$1$7.layout.sidebar.dividerBg,
+        menuItemColor: colors$1$7.layout.sidebar.menuItemColor,
+        menuItemColorActive: colors$1$7.layout.sidebar.menuItemColorActive,
+        menuItemBg: colors$1$7.layout.sidebar.menuItemBg,
+        menuItemBgActive: colors$1$7.layout.sidebar.menuItemBgActive,
+        menuItemIconColor: colors$1$7.layout.sidebar.menuItemIconColor,
+        menuItemIconColorActive: colors$1$7.layout.sidebar.menuItemIconColorActive,
+        menuItemHeadingColor: colors$1$7.layout.sidebar.menuItemHeadingColor,
+        boxShadow: '1px 0 0 #272C48',
+        width: '180px',
+    },
+    header: {
+        height: 'auto',
+        background: themeColors$1$7.primaryAlt,
+        boxShadow: '0px 1px 0px #272C48',
+        textColor: colors$1$7.secondary.main,
+    },
+    spacing: 8,
+    palette: {
+        common: {
+            black: colors$1$7.alpha.black[100],
+            white: colors$1$7.alpha.white[100],
+        },
+        mode: 'dark',
+        primary: {
+            light: colors$1$7.primary.light,
+            main: colors$1$7.primary.main,
+            dark: colors$1$7.primary.dark,
+        },
+        secondary: {
+            light: colors$1$7.secondary.light,
+            main: colors$1$7.secondary.main,
+            dark: colors$1$7.secondary.dark,
+        },
+        error: {
+            light: colors$1$7.error.light,
+            main: colors$1$7.error.main,
+            dark: colors$1$7.error.dark,
+            contrastText: themeColors$1$7.trueWhite,
+        },
+        success: {
+            light: colors$1$7.success.light,
+            main: colors$1$7.success.main,
+            dark: colors$1$7.success.dark,
+            contrastText: themeColors$1$7.trueWhite,
+        },
+        info: {
+            light: colors$1$7.info.light,
+            main: colors$1$7.info.main,
+            dark: colors$1$7.info.dark,
+            contrastText: themeColors$1$7.trueWhite,
+        },
+        warning: {
+            light: colors$1$7.warning.light,
+            main: colors$1$7.warning.main,
+            dark: colors$1$7.warning.dark,
+            contrastText: themeColors$1$7.trueWhite,
+        },
+        text: {
+            primary: colors$1$7.alpha.black[100],
+            secondary: colors$1$7.alpha.black[70],
+            disabled: colors$1$7.alpha.black[50],
+        },
+        background: {
+            paper: colors$1$7.alpha.white[100],
+            default: colors$1$7.layout.general.bodyBg,
+        },
+        action: {
+            active: colors$1$7.alpha.black[100],
+            hover: colors$1$7.primary.lighter,
+            hoverOpacity: 0.1,
+            selected: colors$1$7.alpha.black[10],
+            selectedOpacity: 0.1,
+            disabled: colors$1$7.alpha.black[50],
+            disabledBackground: colors$1$7.alpha.black[5],
+            disabledOpacity: 0.38,
+            focus: colors$1$7.alpha.black[10],
+            focusOpacity: 0.05,
+            activatedOpacity: 0.12,
+        },
+    },
+    components: {
+        MuiBackdrop: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: require$$43.alpha(require$$43.darken('#070C27', 0.5), 0.4),
+                    backdropFilter: 'blur(2px)',
+                    '&.MuiBackdrop-invisible': {
+                        backgroundColor: 'transparent',
+                        backdropFilter: 'blur(2px)',
+                    },
+                },
+            },
+        },
+        MuiFormHelperText: {
+            styleOverrides: {
+                root: {
+                    textTransform: 'none',
+                    marginLeft: 8,
+                    marginRight: 8,
+                    fontWeight: 'bold',
+                },
+            },
+        },
+        MuiDialog: {
+            styleOverrides: {
+                paper: {
+                    backgroundColor: require$$43.darken(themeColors$1$7.primaryAlt, 0.5),
+                },
+            },
+        },
+        MuiCssBaseline: {
+            styleOverrides: {
+                'html, body': {
+                    width: '100%',
+                    height: '100%',
+                },
+                body: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100%',
+                    width: '100%',
+                    flex: 1,
+                    breakWord: 'break-word',
+                    // FIXME! 定義
+                    lineHeight: 1.75,
+                },
+                '#__next': {
+                    width: '100%',
+                    display: 'flex',
+                    flex: 1,
+                    flexDirection: 'column',
+                },
+                html: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100%',
+                    width: '100%',
+                    MozOsxFontSmoothing: 'grayscale',
+                    WebkitFontSmoothing: 'antialiased',
+                },
+                summary: {
+                    cursor: 'pointer',
+                    color: colors$1$7.primary.main,
+                },
+                '.child-popover .MuiPaper-root .MuiList-root': {
+                    flexDirection: 'column',
+                },
+                '#nprogress': {
+                    pointerEvents: 'none',
+                },
+                '#nprogress .bar': {
+                    background: colors$1$7.primary.lighter,
+                },
+                '#nprogress .spinner-icon': {
+                    borderTopColor: colors$1$7.primary.lighter,
+                    borderLeftColor: colors$1$7.primary.lighter,
+                },
+                '#nprogress .peg': {
+                    boxShadow: '0 0 15px ' +
+                        colors$1$7.primary.lighter +
+                        ', 0 0 8px' +
+                        colors$1$7.primary.light,
+                },
+                ':root': {
+                    '--swiper-theme-color': colors$1$7.primary.main,
+                    colorScheme: 'dark',
+                },
+                code: {
+                    fontFamily: 'Inter',
+                    fontWeight: 500,
+                    fontSize: `${fontPxToRemMinim$1$7(14)}`,
+                    '@media (min-width: 960px)': {
+                        fontSize: `${fontPxToRem$1$7(14)}`,
+                    },
+                    lineHeight: 1.5,
+                    margin: '0 0.1ch',
+                    paddingLeft: 6,
+                    paddingRight: 6,
+                    paddingTop: 1,
+                    paddingBottom: 2,
+                    borderRadius: 4,
+                    // TODO: Set Color
+                    background: 'transparent',
+                    border: `1px solid ${colors$1$7.info.light}`,
+                    color: colors$1$7.info.dark,
+                },
+                '@keyframes pulse': {
+                    '0%': {
+                        transform: 'scale(.75)',
+                    },
+                    '20%': {
+                        transform: 'scale(1.1)',
+                    },
+                    '40%': {
+                        transform: 'scale(.75)',
+                    },
+                    '60%': {
+                        transform: 'scale(1.05)',
+                    },
+                    '80%': {
+                        transform: 'scale(.75)',
+                    },
+                    '100%': {
+                        transform: 'scale(.75)',
+                    },
+                },
+                '@keyframes ripple': {
+                    '0%': {
+                        transform: 'scale(.8)',
+                        opacity: 1,
+                    },
+                    '100%': {
+                        transform: 'scale(2.8)',
+                        opacity: 0,
+                    },
+                },
+                '@keyframes float': {
+                    '0%': {
+                        transform: 'translate(0%, 0%)',
+                    },
+                    '100%': {
+                        transform: 'translate(3%, 3%)',
+                    },
+                },
+            },
+        },
+        MuiSelect: {
+            styleOverrides: {
+                iconOutlined: {
+                    color: colors$1$7.alpha.black[50],
+                },
+                icon: {
+                    top: 'calc(50% - 14px)',
+                },
+            },
+        },
+        MuiOutlinedInput: {
+            styleOverrides: {
+                root: {
+                    '& .MuiInputAdornment-positionEnd.MuiInputAdornment-outlined': {
+                        paddingRight: 6,
+                    },
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: colors$1$7.alpha.black[50],
+                    },
+                    '&.Mui-focused:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: colors$1$7.primary.main,
+                    },
+                },
+            },
+        },
+        MuiListSubheader: {
+            styleOverrides: {
+                colorPrimary: {
+                    fontWeight: '700',
+                    lineHeight: '40px',
+                    fontSize: '0.8125rem',
+                    background: colors$1$7.alpha.black[5],
+                    color: colors$1$7.alpha.black[70],
+                },
+            },
+        },
+        MuiCardHeader: {
+            styleOverrides: {
+                action: {
+                    marginTop: -5,
+                    marginBottom: -5,
+                },
+                title: {
+                    fontSize: 15,
+                },
+            },
+        },
+        MuiRadio: {
+            styleOverrides: {
+                root: {
+                    borderRadius: '50px',
+                },
+            },
+        },
+        MuiChip: {
+            styleOverrides: {
+                colorSecondary: {
+                    background: colors$1$7.alpha.black[5],
+                    color: colors$1$7.alpha.black[100],
+                    '&:hover': {
+                        background: colors$1$7.alpha.black[10],
+                    },
+                },
+                deleteIcon: {
+                    color: colors$1$7.alpha.black[50],
+                    '&:hover': {
+                        color: colors$1$7.alpha.black[70],
+                    },
+                },
+            },
+        },
+        MuiAccordion: {
+            styleOverrides: {
+                root: {
+                    boxShadow: 'none',
+                    '&.Mui-expanded': {
+                        margin: 0,
+                    },
+                    '&::before': {
+                        display: 'none',
+                    },
+                },
+            },
+        },
+        MuiAvatar: {
+            styleOverrides: {
+                root: {
+                    fontSize: 14,
+                    fontWeight: 'bold',
+                },
+                colorDefault: {
+                    background: colors$1$7.alpha.black[30],
+                    color: colors$1$7.alpha.trueWhite[100],
+                },
+            },
+        },
+        MuiAvatarGroup: {
+            styleOverrides: {
+                root: {
+                    alignItems: 'center',
+                },
+                avatar: {
+                    background: colors$1$7.alpha.black[10],
+                    fontSize: 13,
+                    color: colors$1$7.alpha.black[70],
+                    fontWeight: 'bold',
+                    '&:first-of-type': {
+                        border: 0,
+                        background: 'transparent',
+                    },
+                },
+            },
+        },
+        MuiListItemAvatar: {
+            styleOverrides: {
+                alignItemsFlexStart: {
+                    marginTop: 0,
+                },
+            },
+        },
+        MuiPaginationItem: {
+            styleOverrides: {
+                page: {
+                    fontSize: 13,
+                    fontWeight: 'bold',
+                    transition: 'all .2s',
+                },
+                textPrimary: {
+                    '&.Mui-selected': {
+                        boxShadow: colors$1$7.shadows.primary,
+                    },
+                    '&.MuiButtonBase-root:hover': {
+                        background: colors$1$7.alpha.black[5],
+                    },
+                    '&.Mui-selected.MuiButtonBase-root:hover': {
+                        background: colors$1$7.primary.main,
+                    },
+                },
+            },
+        },
+        MuiButton: {
+            defaultProps: {
+                disableRipple: true,
+            },
+            styleOverrides: {
+                root: {
+                    fontWeight: 'bold',
+                    textTransform: 'none',
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                    '.MuiSvgIcon-root': {
+                        transition: 'all .2s',
+                    },
+                },
+                endIcon: {
+                    marginRight: -8,
+                },
+                containedSecondary: {
+                    backgroundColor: colors$1$7.secondary.main,
+                    color: colors$1$7.alpha.white[100],
+                    border: '1px solid ' + colors$1$7.alpha.black[30],
+                },
+                outlinedSecondary: {
+                    backgroundColor: colors$1$7.alpha.white[100],
+                    '&:hover, &.MuiSelected': {
+                        backgroundColor: colors$1$7.alpha.black[5],
+                        color: colors$1$7.alpha.black[100],
+                    },
+                },
+                sizeSmall: {
+                    padding: '6px 16px',
+                    lineHeight: 1.5,
+                },
+                sizeMedium: {
+                    padding: '8px 20px',
+                },
+                sizeLarge: {
+                    padding: '11px 24px',
+                },
+                textSizeSmall: {
+                    padding: '7px 12px',
+                },
+                textSizeMedium: {
+                    padding: '9px 16px',
+                },
+                textSizeLarge: {
+                    padding: '12px 16px',
+                },
+            },
+        },
+        MuiButtonBase: {
+            defaultProps: {
+                disableRipple: false,
+            },
+            styleOverrides: {
+                root: {
+                    borderRadius: 6,
+                },
+            },
+        },
+        MuiToggleButton: {
+            defaultProps: {
+                disableRipple: true,
+            },
+            styleOverrides: {
+                root: {
+                    color: colors$1$7.primary.main,
+                    background: colors$1$7.alpha.white[100],
+                    transition: 'all .2s',
+                    '&:hover, &.Mui-selected, &.Mui-selected:hover': {
+                        color: themeColors$1$7.trueWhite,
+                        background: colors$1$7.primary.main,
+                    },
+                },
+            },
+        },
+        MuiIconButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 8,
+                    padding: 8,
+                    '& .MuiTouchRipple-root': {
+                        borderRadius: 8,
+                    },
+                },
+                sizeSmall: {
+                    padding: 4,
+                },
+            },
+        },
+        MuiListItemText: {
+            styleOverrides: {
+                root: {
+                    margin: 0,
+                },
+            },
+        },
+        MuiListItemButton: {
+            styleOverrides: {
+                root: {
+                    '& .MuiTouchRipple-root': {
+                        opacity: 0.3,
+                    },
+                },
+            },
+        },
+        MuiDivider: {
+            styleOverrides: {
+                root: {
+                    background: colors$1$7.alpha.black[10],
+                    border: 0,
+                    height: 1,
+                },
+                vertical: {
+                    height: 'auto',
+                    width: 1,
+                    '&.MuiDivider-flexItem.MuiDivider-fullWidth': {
+                        height: 'auto',
+                    },
+                    '&.MuiDivider-absolute.MuiDivider-fullWidth': {
+                        height: '100%',
+                    },
+                },
+                withChildren: {
+                    '&:before, &:after': {
+                        border: 0,
+                    },
+                },
+                wrapper: {
+                    background: colors$1$7.alpha.white[100],
+                    fontWeight: 'bold',
+                    height: 24,
+                    lineHeight: '24px',
+                    marginTop: -12,
+                    color: 'inherit',
+                    textTransform: 'uppercase',
+                },
+            },
+        },
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    backgroundImage: 'none',
+                    padding: 0,
+                },
+                elevation0: {
+                    boxShadow: 'none',
+                },
+                elevation: {
+                    boxShadow: colors$1$7.shadows.card,
+                },
+                elevation2: {
+                    boxShadow: colors$1$7.shadows.cardSm,
+                },
+                elevation24: {
+                    boxShadow: colors$1$7.shadows.cardLg,
+                },
+                outlined: {
+                    boxShadow: colors$1$7.shadows.card,
+                },
+            },
+        },
+        MuiLink: {
+            defaultProps: {
+                underline: 'hover',
+            },
+        },
+        MuiLinearProgress: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 6,
+                    height: 6,
+                },
+            },
+        },
+        MuiSlider: {
+            styleOverrides: {
+                root: {
+                    '& .MuiSlider-valueLabelCircle, .MuiSlider-valueLabelLabel': {
+                        transform: 'none',
+                    },
+                    '& .MuiSlider-valueLabel': {
+                        borderRadius: 6,
+                        background: colors$1$7.alpha.black[100],
+                        color: colors$1$7.alpha.white[100],
+                    },
+                },
+            },
+        },
+        MuiList: {
+            styleOverrides: {
+                root: {
+                    padding: 0,
+                    '& .MuiListItem-button': {
+                        transition: 'all .2s',
+                        '& > .MuiSvgIcon-root': {
+                            minWidth: 34,
+                        },
+                        '& .MuiTouchRipple-root': {
+                            opacity: 0.2,
+                        },
+                    },
+                    '& .MuiListItem-root.MuiButtonBase-root.Mui-selected': {
+                        backgroundColor: colors$1$7.alpha.black[10],
+                    },
+                    '& .MuiMenuItem-root.MuiButtonBase-root:active': {
+                        backgroundColor: require$$43.alpha(colors$1$7.primary.lighter, 0.2),
+                    },
+                    '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
+                        opacity: 0.2,
+                    },
+                },
+                padding: {
+                    padding: '12px',
+                    '& .MuiListItem-button': {
+                        borderRadius: 6,
+                        margin: '1px 0',
+                    },
+                },
+            },
+        },
+        MuiTabs: {
+            styleOverrides: {
+                root: {
+                    height: 38,
+                    minHeight: 38,
+                    overflow: 'visible',
+                },
+                indicator: {
+                    height: 38,
+                    minHeight: 38,
+                    borderRadius: 6,
+                    border: '1px solid ' + colors$1$7.primary.dark,
+                    boxShadow: '0px 2px 10px ' + colors$1$7.primary.light,
+                },
+                scrollableX: {
+                    overflow: 'visible !important',
+                },
+            },
+        },
+        MuiTab: {
+            styleOverrides: {
+                root: {
+                    padding: 0,
+                    height: 38,
+                    minHeight: 38,
+                    borderRadius: 6,
+                    transition: 'color .2s',
+                    textTransform: 'capitalize',
+                    '&.MuiButtonBase-root': {
+                        minWidth: 'auto',
+                        paddingLeft: 20,
+                        paddingRight: 20,
+                        marginRight: 4,
+                    },
+                    '&.Mui-selected, &.Mui-selected:hover': {
+                        color: colors$1$7.alpha.trueWhite[100],
+                        zIndex: 5,
+                    },
+                    '&:hover': {
+                        color: colors$1$7.alpha.trueWhite[70],
+                    },
+                },
+            },
+        },
+        MuiMenu: {
+            styleOverrides: {
+                paper: {
+                    padding: 12,
+                },
+                list: {
+                    padding: 12,
+                    '& .MuiMenuItem-root.MuiButtonBase-root': {
+                        fontSize: 14,
+                        marginTop: 1,
+                        marginBottom: 1,
+                        transition: 'all .2s',
+                        color: colors$1$7.alpha.black[70],
+                        '& .MuiTouchRipple-root': {
+                            opacity: 0.2,
+                        },
+                        '&:hover, &:active, &.active, &.Mui-selected': {
+                            color: colors$1$7.alpha.black[100],
+                            background: require$$43.alpha(colors$1$7.primary.lighter, 0.2),
+                        },
+                    },
+                },
+            },
+        },
+        MuiMenuItem: {
+            styleOverrides: {
+                root: {
+                    background: 'transparent',
+                    transition: 'all .2s',
+                    '&:hover, &:active, &.active, &.Mui-selected': {
+                        color: colors$1$7.alpha.black[100],
+                        background: require$$43.alpha(colors$1$7.primary.lighter, 0.2),
+                    },
+                    '&.Mui-selected:hover': {
+                        background: require$$43.alpha(colors$1$7.primary.lighter, 0.2),
+                    },
+                },
+            },
+        },
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    '&.MuiButtonBase-root': {
+                        color: colors$1$7.secondary.main,
+                        '&:hover, &:active, &.active, &.Mui-selected': {
+                            color: colors$1$7.alpha.black[100],
+                            background: require$$43.alpha(colors$1$7.primary.lighter, 0.2),
+                        },
+                    },
+                },
+            },
+        },
+        MuiAutocomplete: {
+            styleOverrides: {
+                tag: {
+                    margin: 1,
+                },
+                root: {
+                    '.MuiAutocomplete-inputRoot.MuiOutlinedInput-root .MuiAutocomplete-endAdornment': {
+                        right: 14,
+                    },
+                },
+                clearIndicator: {
+                    background: require$$43.alpha(colors$1$7.error.lighter, 0.2),
+                    color: colors$1$7.error.main,
+                    marginRight: 8,
+                    '&:hover': {
+                        background: require$$43.alpha(colors$1$7.error.lighter, 0.3),
+                    },
+                },
+                popupIndicator: {
+                    color: colors$1$7.alpha.black[70],
+                    '&:hover': {
+                        background: require$$43.alpha(colors$1$7.primary.lighter, 0.2),
+                    },
+                },
+            },
+        },
+        MuiTablePagination: {
+            styleOverrides: {
+                toolbar: {
+                    '& .MuiIconButton-root': {
+                        padding: 8,
+                    },
+                },
+                select: {
+                    '&:focus': {
+                        backgroundColor: 'transparent',
+                    },
+                },
+            },
+        },
+        MuiToolbar: {
+            styleOverrides: {
+                root: {
+                    minHeight: '0 !important',
+                    padding: '0 !important',
+                },
+            },
+        },
+        MuiTableRow: {
+            styleOverrides: {
+                head: {
+                    background: colors$1$7.alpha.black[5],
+                },
+                root: {
+                    transition: 'background-color .2s',
+                    '&.MuiTableRow-hover:hover': {
+                        backgroundColor: require$$43.alpha(colors$1$7.alpha.black[5], 0.05),
+                    },
+                },
+            },
+        },
+        MuiTableCell: {
+            styleOverrides: {
+                root: {
+                    borderBottomColor: colors$1$7.alpha.black[10],
+                    fontSize: 14,
+                },
+                head: {
+                    textTransform: 'uppercase',
+                    fontSize: 13,
+                    fontWeight: 'bold',
+                    color: colors$1$7.alpha.black[70],
+                },
+            },
+        },
+        MuiAlert: {
+            styleOverrides: {
+                message: {
+                    lineHeight: 1.5,
+                    fontSize: 14,
+                },
+                standardInfo: {
+                    color: colors$1$7.info.main,
+                },
+                action: {
+                    color: colors$1$7.alpha.black[70],
+                },
+            },
+        },
+        MuiTimelineDot: {
+            styleOverrides: {
+                root: {
+                    margin: 0,
+                    zIndex: 5,
+                    position: 'absolute',
+                    top: '50%',
+                    marginTop: -6,
+                    left: -6,
+                },
+                outlined: {
+                    backgroundColor: colors$1$7.alpha.white[100],
+                    boxShadow: '0 0 0 6px ' + colors$1$7.alpha.white[100],
+                },
+                outlinedPrimary: {
+                    backgroundColor: colors$1$7.alpha.white[100],
+                    boxShadow: '0 0 0 6px ' + colors$1$7.alpha.white[100],
+                },
+            },
+        },
+        MuiTimelineConnector: {
+            styleOverrides: {
+                root: {
+                    position: 'absolute',
+                    height: '100%',
+                    top: 0,
+                    borderRadius: 50,
+                    backgroundColor: colors$1$7.alpha.black[10],
+                },
+            },
+        },
+        MuiTimelineItem: {
+            styleOverrides: {
+                root: {
+                    minHeight: 0,
+                    padding: '8px 0',
+                    '&:before': {
+                        display: 'none',
+                    },
+                },
+                missingOppositeContent: {
+                    '&:before': {
+                        display: 'none',
+                    },
+                },
+            },
+        },
+        MuiTooltip: {
+            styleOverrides: {
+                tooltip: {
+                    backgroundColor: require$$43.alpha(colors$1$7.alpha.black['100'], 0.95),
+                    padding: '8px 16px',
+                    fontSize: 13,
+                },
+                arrow: {
+                    color: require$$43.alpha(colors$1$7.alpha.black['100'], 0.95),
+                },
+            },
+        },
+        MuiSwitch: {
+            styleOverrides: {
+                root: {
+                    height: 33,
+                    overflow: 'visible',
+                    '& .MuiButtonBase-root': {
+                        position: 'absolute',
+                        padding: 6,
+                        transition: 'left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+                    },
+                    '& .MuiIconButton-root': {
+                        borderRadius: 100,
+                    },
+                    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                        opacity: 0.3,
+                    },
+                },
+                thumb: {
+                    border: '1px solid ' + colors$1$7.alpha.black[30],
+                    boxShadow: '0px 9px 14px ' +
+                        colors$1$7.alpha.black[10] +
+                        ', 0px 2px 2px ' +
+                        colors$1$7.alpha.black[10],
+                },
+                track: {
+                    backgroundColor: colors$1$7.alpha.black[5],
+                    border: '1px solid ' + colors$1$7.alpha.black[10],
+                    boxShadow: 'inset 0px 1px 1px ' + colors$1$7.alpha.black[10],
+                    opacity: 1,
+                },
+                colorPrimary: {
+                    '& .MuiSwitch-thumb': {
+                        backgroundColor: colors$1$7.alpha.white[100],
+                    },
+                    '&.Mui-checked .MuiSwitch-thumb': {
+                        backgroundColor: colors$1$7.primary.main,
+                    },
+                },
+            },
+        },
+        MuiStepper: {
+            styleOverrides: {
+                root: {
+                    paddingTop: 20,
+                    paddingBottom: 20,
+                    background: colors$1$7.alpha.black[5],
+                },
+            },
+        },
+        MuiStepIcon: {
+            styleOverrides: {
+                root: {
+                    '&.MuiStepIcon-completed': {
+                        color: colors$1$7.success.main,
+                    },
+                },
+            },
+        },
+        MuiTypography: {
+            defaultProps: {
+                variantMapping: {
+                    h1: 'h1',
+                    h2: 'h2',
+                    h3: 'div',
+                    h4: 'div',
+                    h5: 'div',
+                    h6: 'div',
+                    subtitle1: 'div',
+                    subtitle2: 'div',
+                    body1: 'div',
+                    body2: 'div',
+                },
+            },
+            styleOverrides: {
+                gutterBottom: {
+                    marginBottom: 4,
+                },
+                paragraph: {
+                    fontSize: 17,
+                    lineHeight: 1.7,
+                },
+            },
+        },
+    },
+    shape: {
+        borderRadius: 10,
+    },
+    /***
+     * @param breakpoints ブレイクポイントの設定
+     * 現状md:960をフォントサイズ用途で利用中
+     * TODO:どこかで値を正式に決める
+     * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
+     */
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 960,
+            lg: 1280,
+            xl: 1840,
+        },
+    },
+    typography: {
+        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+        // 見出し用
+        h1: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$1$7(24)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(24)}`,
+            },
+        },
+        h2: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$1$7(22)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(22)}`,
+            },
+        },
+        h3: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$1$7(20)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(20)}`,
+            },
+        },
+        h4: {
+            fontWeight: 700,
+            fontSize: `${fontPxToRemMinim$1$7(18)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(18)}`,
+            },
+        },
+        h5: {
+            fontWeight: 700,
+            fontSize: `${fontPxToRemMinim$1$7(16)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(16)}`,
+            },
+        },
+        h6: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$1$7(15)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(15)}`,
+            },
+        },
+        // Text本文 Utility用
+        body1: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$1$7(15)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(15)}`,
+            },
+        },
+        body2: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$1$7(14)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(14)}`,
+            },
+        },
+        // サブタイトル用
+        subtitle1: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$1$7(14)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(14)}`,
+            },
+            color: colors$1$7.alpha.black[70],
+        },
+        subtitle2: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$1$7(13)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(13)}`,
+            },
+            color: colors$1$7.alpha.black[70],
+        },
+        // Text Utility用
+        caption: {
+            fontWeigt: 400,
+            fontSize: `${fontPxToRemMinim$1$7(12)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(12)}`,
+            },
+            color: colors$1$7.alpha.black[70],
+        },
+        overline: {
+            fontWeight: 400,
+            fontSize: `${fontPxToRemMinim$1$7(13)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(13)}`,
+            },
+            textTransform: 'none',
+        },
+        // TODO:用途のリサーチ/ボタン用？
+        button: {
+            fontWeigt: 500,
+            fontSize: `${fontPxToRemMinim$1$7(14)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$1$7(14)}`,
+            },
+            textTransform: 'none',
+        },
+    },
+    // シャドーの初期化？ TODO: 何の配列なのかリサーチ
+    shadows: [
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+    ],
+});
+
+/***
+ * @param fontPxToRem pxからrem変換計算用
+ *  ユーザーのブラウザ設定に応じ、基準サイズをユーザーが意図した表示サイズに追従させ得るための対応
+ *  例：fontPxToRem(24) -> fontSize:1.5rem 見た目上24pxのrem
+ * @param fontPxToRemMinim レスポンシブ対応の縮小サイズ用 現在85%
+ *  モバイルファースト設計で先にこちらが優先され、ブレイクポイント（現在960px）以上の画面幅になれば100%になる仕様です
+ *  レスポンシブ設計は必要応じてアップデートを見込んでいます。
+ */
+const fontPxToRem$9 = (px) => {
+    return px / 16 + 'rem';
+};
+// レスポンシブ対応の縮小サイズ用
+const fontPxToRemMinim$9 = (px) => {
+    return (px / 16) * 0.85 + 'rem';
+};
+const themeColors$9 = {
+    primary: '#1A75FF',
+    secondary: '#6E759F',
+    success: '#57CA22',
+    warning: '#FFA319',
+    error: '#FF1943',
+    info: '#33C2FF',
+    black: '#223354',
+    white: '#ffffff',
+    primaryAlt: '#000C57',
+};
+const colors$9 = {
+    gradients: {
+        blue1: 'linear-gradient(135deg, #6B73FF 0%, #000DFF 100%)',
+        blue2: 'linear-gradient(135deg, #ABDCFF 0%, #0396FF 100%)',
+        blue3: 'linear-gradient(127.55deg, #141E30 3.73%, #243B55 92.26%)',
+        blue4: 'linear-gradient(-20deg, #2b5876 0%, #4e4376 100%)',
+        blue5: 'linear-gradient(135deg, #97ABFF 10%, #123597 100%)',
+        orange1: 'linear-gradient(135deg, #FCCF31 0%, #F55555 100%)',
+        orange2: 'linear-gradient(135deg, #FFD3A5 0%, #FD6585 100%)',
+        orange3: 'linear-gradient(120deg, #f6d365 0%, #fda085 100%)',
+        purple1: 'linear-gradient(135deg, #43CBFF 0%, #9708CC 100%)',
+        purple3: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        pink1: 'linear-gradient(135deg, #F6CEEC 0%, #D939CD 100%)',
+        pink2: 'linear-gradient(135deg, #F761A1 0%, #8C1BAB 100%)',
+        green1: 'linear-gradient(135deg, #FFF720 0%, #3CD500 100%)',
+        green2: 'linear-gradient(to bottom, #00b09b, #96c93d)',
+        black1: 'linear-gradient(100.66deg, #434343 6.56%, #000000 93.57%)',
+        black2: 'linear-gradient(60deg, #29323c 0%, #485563 100%)',
+    },
+    shadows: {
+        success: '0px 1px 4px rgba(68, 214, 0, 0.25), 0px 3px 12px 2px rgba(68, 214, 0, 0.35)',
+        error: '0px 1px 4px rgba(255, 25, 67, 0.25), 0px 3px 12px 2px rgba(255, 25, 67, 0.35)',
+        info: '0px 1px 4px rgba(51, 194, 255, 0.25), 0px 3px 12px 2px rgba(51, 194, 255, 0.35)',
+        primary: '0px 1px 4px rgba(28, 52, 140, 0.25), 0px 3px 12px 2px rgba(28, 52, 140, 0.35)',
+        warning: '0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35)',
+        card: '0px 9px 16px rgba(159, 162, 191, .18), 0px 2px 2px rgba(159, 162, 191, 0.32)',
+        cardSm: '0px 2px 3px rgba(159, 162, 191, .18), 0px 1px 1px rgba(159, 162, 191, 0.32)',
+        cardLg: '0 5rem 14rem 0 rgb(255 255 255 / 30%), 0 0.8rem 2.3rem rgb(0 0 0 / 60%), 0 0.2rem 0.3rem rgb(0 0 0 / 45%)',
+    },
+    layout: {
+        general: {
+            bodyBg: '#F8F8F8',
+        },
+        sidebar: {
+            background: themeColors$9.white,
+            textColor: themeColors$9.black,
+            dividerBg: '#f2f5f9',
+            menuItemColor: '#242E6F',
+            menuItemColorActive: themeColors$9.primary,
+            menuItemBg: themeColors$9.white,
+            menuItemBgActive: '#f2f5f9',
+            menuItemIconColor: require$$43.lighten(themeColors$9.secondary, 0.3),
+            menuItemIconColorActive: themeColors$9.primary,
+            menuItemHeadingColor: require$$43.darken(themeColors$9.secondary, 0.3),
+        },
+    },
+    alpha: {
+        white: {
+            5: require$$43.alpha(themeColors$9.white, 0.02),
+            10: require$$43.alpha(themeColors$9.white, 0.1),
+            30: require$$43.alpha(themeColors$9.white, 0.3),
+            50: require$$43.alpha(themeColors$9.white, 0.5),
+            70: require$$43.alpha(themeColors$9.white, 0.7),
+            100: themeColors$9.white,
+        },
+        trueWhite: {
+            5: require$$43.alpha(themeColors$9.white, 0.02),
+            10: require$$43.alpha(themeColors$9.white, 0.1),
+            30: require$$43.alpha(themeColors$9.white, 0.3),
+            50: require$$43.alpha(themeColors$9.white, 0.5),
+            70: require$$43.alpha(themeColors$9.white, 0.7),
+            100: themeColors$9.white,
+        },
+        black: {
+            5: require$$43.alpha(themeColors$9.black, 0.02),
+            10: require$$43.alpha(themeColors$9.black, 0.1),
+            30: require$$43.alpha(themeColors$9.black, 0.3),
+            50: require$$43.alpha(themeColors$9.black, 0.5),
+            70: require$$43.alpha(themeColors$9.black, 0.7),
+            100: themeColors$9.black,
+        },
+    },
+    secondary: {
+        lighter: require$$43.lighten(themeColors$9.secondary, 0.85),
+        light: require$$43.lighten(themeColors$9.secondary, 0.25),
+        main: themeColors$9.secondary,
+        dark: require$$43.darken(themeColors$9.secondary, 0.2),
+    },
+    primary: {
+        lighter: require$$43.lighten(themeColors$9.primary, 0.85),
+        light: require$$43.lighten(themeColors$9.primary, 0.3),
+        main: themeColors$9.primary,
+        dark: require$$43.darken(themeColors$9.primary, 0.2),
+    },
+    success: {
+        lighter: require$$43.lighten(themeColors$9.success, 0.85),
+        light: require$$43.lighten(themeColors$9.success, 0.3),
+        main: themeColors$9.success,
+        dark: require$$43.darken(themeColors$9.success, 0.2),
+    },
+    warning: {
+        lighter: require$$43.lighten(themeColors$9.warning, 0.85),
+        light: require$$43.lighten(themeColors$9.warning, 0.3),
+        main: themeColors$9.warning,
+        dark: require$$43.darken(themeColors$9.warning, 0.2),
+    },
+    error: {
+        lighter: require$$43.lighten(themeColors$9.error, 0.85),
+        light: require$$43.lighten(themeColors$9.error, 0.3),
+        main: themeColors$9.error,
+        dark: require$$43.darken(themeColors$9.error, 0.2),
+    },
+    info: {
+        lighter: require$$43.lighten(themeColors$9.info, 0.85),
+        light: require$$43.lighten(themeColors$9.info, 0.3),
+        main: themeColors$9.info,
+        dark: require$$43.darken(themeColors$9.info, 0.2),
+    },
+};
+const SaaSusTheme$7 = require$$43.createTheme({
+    colors: {
+        gradients: {
+            blue1: colors$9.gradients.blue1,
+            blue2: colors$9.gradients.blue2,
+            blue3: colors$9.gradients.blue3,
+            blue4: colors$9.gradients.blue4,
+            blue5: colors$9.gradients.blue5,
+            orange1: colors$9.gradients.orange1,
+            orange2: colors$9.gradients.orange2,
+            orange3: colors$9.gradients.orange3,
+            purple1: colors$9.gradients.purple1,
+            purple3: colors$9.gradients.purple3,
+            pink1: colors$9.gradients.pink1,
+            pink2: colors$9.gradients.pink2,
+            green1: colors$9.gradients.green1,
+            green2: colors$9.gradients.green2,
+            black1: colors$9.gradients.black1,
+            black2: colors$9.gradients.black2,
+        },
+        shadows: {
+            success: colors$9.shadows.success,
+            error: colors$9.shadows.error,
+            primary: colors$9.shadows.primary,
+            info: colors$9.shadows.info,
+            warning: colors$9.shadows.warning,
+        },
+        alpha: {
+            white: {
+                5: require$$43.alpha(themeColors$9.white, 0.02),
+                10: require$$43.alpha(themeColors$9.white, 0.1),
+                30: require$$43.alpha(themeColors$9.white, 0.3),
+                50: require$$43.alpha(themeColors$9.white, 0.5),
+                70: require$$43.alpha(themeColors$9.white, 0.7),
+                100: themeColors$9.white,
+            },
+            trueWhite: {
+                5: require$$43.alpha(themeColors$9.white, 0.02),
+                10: require$$43.alpha(themeColors$9.white, 0.1),
+                30: require$$43.alpha(themeColors$9.white, 0.3),
+                50: require$$43.alpha(themeColors$9.white, 0.5),
+                70: require$$43.alpha(themeColors$9.white, 0.7),
+                100: themeColors$9.white,
+            },
+            black: {
+                5: require$$43.alpha(themeColors$9.black, 0.02),
+                10: require$$43.alpha(themeColors$9.black, 0.1),
+                30: require$$43.alpha(themeColors$9.black, 0.3),
+                50: require$$43.alpha(themeColors$9.black, 0.5),
+                70: require$$43.alpha(themeColors$9.black, 0.7),
+                100: themeColors$9.black,
+            },
+        },
+        secondary: {
+            lighter: require$$43.alpha(themeColors$9.secondary, 0.1),
+            light: require$$43.lighten(themeColors$9.secondary, 0.3),
+            main: themeColors$9.secondary,
+            dark: require$$43.darken(themeColors$9.secondary, 0.2),
+        },
+        primary: {
+            lighter: require$$43.alpha(themeColors$9.primary, 0.1),
+            light: require$$43.lighten(themeColors$9.primary, 0.3),
+            main: themeColors$9.primary,
+            dark: require$$43.darken(themeColors$9.primary, 0.2),
+        },
+        success: {
+            lighter: require$$43.alpha(themeColors$9.success, 0.1),
+            light: require$$43.lighten(themeColors$9.success, 0.3),
+            main: themeColors$9.success,
+            dark: require$$43.darken(themeColors$9.success, 0.2),
+        },
+        warning: {
+            lighter: require$$43.alpha(themeColors$9.warning, 0.1),
+            light: require$$43.lighten(themeColors$9.warning, 0.3),
+            main: themeColors$9.warning,
+            dark: require$$43.darken(themeColors$9.warning, 0.2),
+        },
+        error: {
+            lighter: require$$43.alpha(themeColors$9.error, 0.1),
+            light: require$$43.lighten(themeColors$9.error, 0.3),
+            main: themeColors$9.error,
+            dark: require$$43.darken(themeColors$9.error, 0.2),
+        },
+        info: {
+            lighter: require$$43.alpha(themeColors$9.info, 0.1),
+            light: require$$43.lighten(themeColors$9.info, 0.3),
+            main: themeColors$9.info,
+            dark: require$$43.darken(themeColors$9.info, 0.2),
+        },
+        turquoise: {
+            main: '#00838f',
+            dark: '#005662',
+            light: '#76C4CB',
+        },
+        coral: {
+            main: '#FF8052',
+            dark: '#BF603E',
+            light: '#FBC2AD',
+        },
+    },
+    general: {
+        reactFrameworkColor: '#00D8FF',
+        borderRadiusSm: '6px',
+        borderRadius: '10px',
+        borderRadiusLg: '12px',
+        borderRadiusXl: '16px',
+    },
+    sidebar: {
+        background: colors$9.layout.sidebar.background,
+        textColor: colors$9.layout.sidebar.textColor,
+        dividerBg: colors$9.layout.sidebar.dividerBg,
+        menuItemColor: colors$9.layout.sidebar.menuItemColor,
+        menuItemColorActive: colors$9.layout.sidebar.menuItemColorActive,
+        menuItemBg: colors$9.layout.sidebar.menuItemBg,
+        menuItemBgActive: colors$9.layout.sidebar.menuItemBgActive,
+        menuItemIconColor: colors$9.layout.sidebar.menuItemIconColor,
+        menuItemIconColorActive: colors$9.layout.sidebar.menuItemIconColorActive,
+        menuItemHeadingColor: colors$9.layout.sidebar.menuItemHeadingColor,
+        boxShadow: '2px 0 3px rgba(159, 162, 191, .18), 1px 0 1px rgba(159, 162, 191, 0.32)',
+        width: '180px',
+    },
+    header: {
+        height: 'auto',
+        background: colors$9.alpha.white[100],
+        boxShadow: colors$9.shadows.cardSm,
+        textColor: colors$9.secondary.main,
+    },
+    spacing: 8,
+    palette: {
+        common: {
+            black: colors$9.alpha.black[100],
+            white: colors$9.alpha.white[100],
+        },
+        mode: 'light',
+        primary: {
+            lighter: colors$9.primary.lighter,
+            light: colors$9.primary.light,
+            main: colors$9.primary.main,
+            dark: colors$9.primary.dark,
+        },
+        secondary: {
+            lighter: colors$9.secondary.lighter,
+            light: colors$9.secondary.light,
+            main: colors$9.secondary.main,
+            dark: colors$9.secondary.dark,
+        },
+        error: {
+            lighter: colors$9.error.lighter,
+            light: colors$9.error.light,
+            main: colors$9.error.main,
+            dark: colors$9.error.dark,
+            contrastText: colors$9.alpha.white[100],
+        },
+        success: {
+            lighter: colors$9.success.lighter,
+            light: colors$9.success.light,
+            main: colors$9.success.main,
+            dark: colors$9.success.dark,
+            contrastText: colors$9.alpha.white[100],
+        },
+        info: {
+            lighter: colors$9.info.lighter,
+            light: colors$9.info.light,
+            main: colors$9.info.main,
+            dark: colors$9.info.dark,
+            contrastText: colors$9.alpha.white[100],
+        },
+        warning: {
+            lighter: colors$9.warning.lighter,
+            light: colors$9.warning.light,
+            main: colors$9.warning.main,
+            dark: colors$9.warning.dark,
+            contrastText: colors$9.alpha.white[100],
+        },
+        text: {
+            primary: colors$9.alpha.black[100],
+            secondary: colors$9.alpha.black[70],
+            disabled: colors$9.alpha.black[50],
+        },
+        background: {
+            paper: colors$9.alpha.white[100],
+            default: colors$9.layout.general.bodyBg,
+        },
+        action: {
+            active: colors$9.alpha.black[100],
+            hover: colors$9.primary.lighter,
+            hoverOpacity: 0.1,
+            selected: colors$9.alpha.black[10],
+            selectedOpacity: 0.1,
+            disabled: colors$9.alpha.black[50],
+            disabledBackground: colors$9.alpha.black[5],
+            disabledOpacity: 0.38,
+            focus: colors$9.alpha.black[10],
+            focusOpacity: 0.05,
+            activatedOpacity: 0.12,
+        },
+        tonalOffset: 0.5,
+    },
+    components: {
+        MuiBackdrop: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: require$$43.alpha(require$$43.darken(themeColors$9.primaryAlt, 0.4), 0.2),
+                    backdropFilter: 'blur(2px)',
+                    '&.MuiBackdrop-invisible': {
+                        backgroundColor: 'transparent',
+                        backdropFilter: 'blur(2px)',
+                    },
+                },
+            },
+        },
+        MuiFormHelperText: {
+            styleOverrides: {
+                root: {
+                    textTransform: 'none',
+                    // FIXME! ヘルパーテキストポジション
+                    marginLeft: 8,
+                    marginRight: 8,
+                    fontWeight: '700',
+                },
+            },
+        },
+        MuiCssBaseline: {
+            styleOverrides: {
+                'html, body': {
+                    width: '100%',
+                    height: '100%',
+                },
+                body: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100%',
+                    width: '100%',
+                    flex: 1,
+                    breakWord: 'break-word',
+                    // FIXME! 定義
+                    lineHeight: 1.75,
+                },
+                '#__next': {
+                    width: '100%',
+                    display: 'flex',
+                    flex: 1,
+                    flexDirection: 'column',
+                },
+                html: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100%',
+                    width: '100%',
+                    MozOsxFontSmoothing: 'grayscale',
+                    WebkitFontSmoothing: 'antialiased',
+                    // TODO: Baseフォントサイズ
+                    // fontSize: 16 // FIXME! フォントサイズ
+                },
+                summary: {
+                    cursor: 'pointer',
+                    color: colors$9.primary.main,
+                },
+                '.child-popover .MuiPaper-root .MuiList-root': {
+                    flexDirection: 'column',
+                },
+                '#nprogress': {
+                    pointerEvents: 'none',
+                },
+                '#nprogress .bar': {
+                    background: colors$9.primary.lighter,
+                },
+                '#nprogress .spinner-icon': {
+                    borderTopColor: colors$9.primary.lighter,
+                    borderLeftColor: colors$9.primary.lighter,
+                },
+                '#nprogress .peg': {
+                    boxShadow: '0 0 15px ' +
+                        colors$9.primary.lighter +
+                        ', 0 0 8px' +
+                        colors$9.primary.light,
+                },
+                ':root': {
+                    '--swiper-theme-color': colors$9.primary.main,
+                },
+                // FIXME! Codeタグはグローバルに
+                code: {
+                    fontFamily: 'Inter',
+                    fontWeight: 500,
+                    fontSize: `${fontPxToRemMinim$9(14)}`,
+                    '@media (min-width: 960px)': {
+                        fontSize: `${fontPxToRem$9(14)}`,
+                    },
+                    lineHeight: 1.5,
+                    margin: '0 0.1ch',
+                    paddingLeft: 6,
+                    paddingRight: 6,
+                    paddingTop: 1,
+                    paddingBottom: 2,
+                    borderRadius: 4,
+                    // background: colors.info.lighter,
+                    background: 'transparent',
+                    border: `1px solid ${colors$9.info.dark}`,
+                    color: colors$9.info.dark,
+                },
+                '@keyframes pulse': {
+                    '0%': {
+                        transform: 'scale(.75)',
+                    },
+                    '20%': {
+                        transform: 'scale(1.1)',
+                    },
+                    '40%': {
+                        transform: 'scale(.75)',
+                    },
+                    '60%': {
+                        transform: 'scale(1.05)',
+                    },
+                    '80%': {
+                        transform: 'scale(.75)',
+                    },
+                    '100%': {
+                        transform: 'scale(.75)',
+                    },
+                },
+                '@keyframes ripple': {
+                    '0%': {
+                        transform: 'scale(.8)',
+                        opacity: 1,
+                    },
+                    '100%': {
+                        transform: 'scale(2.8)',
+                        opacity: 0,
+                    },
+                },
+                '@keyframes float': {
+                    '0%': {
+                        transform: 'translate(0%, 0%)',
+                    },
+                    '100%': {
+                        transform: 'translate(3%, 3%)',
+                    },
+                },
+            },
+        },
+        MuiSelect: {
+            styleOverrides: {
+                iconOutlined: {
+                    color: colors$9.alpha.black[50],
+                },
+                icon: {
+                    top: 'calc(50% - 14px)',
+                },
+            },
+        },
+        // TODO: フォームUIカスタム
+        MuiOutlinedInput: {
+            styleOverrides: {
+                root: {
+                    '& .MuiInputAdornment-positionEnd.MuiInputAdornment-outlined': {
+                        paddingRight: 6,
+                    },
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: colors$9.alpha.black[50],
+                    },
+                    '&.Mui-focused:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: colors$9.primary.main,
+                    },
+                },
+            },
+        },
+        MuiListSubheader: {
+            styleOverrides: {
+                colorPrimary: {
+                    fontWeight: '700',
+                    lineHeight: '40px',
+                    fontSize: '0.8125rem',
+                    background: colors$9.alpha.black[5],
+                    color: colors$9.alpha.black[70],
+                },
+            },
+        },
+        MuiCardHeader: {
+            styleOverrides: {
+                action: {
+                    marginTop: -5,
+                    marginBottom: -5,
+                },
+                title: {
+                    fontSize: '0.9375rem',
+                },
+            },
+        },
+        MuiRadio: {
+            styleOverrides: {
+                root: {
+                    borderRadius: '50px',
+                },
+            },
+        },
+        MuiChip: {
+            styleOverrides: {
+                colorSecondary: {
+                    background: colors$9.alpha.black[5],
+                    color: colors$9.alpha.black[100],
+                    '&:hover': {
+                        background: colors$9.alpha.black[10],
+                    },
+                },
+                deleteIcon: {
+                    color: colors$9.error.light,
+                    '&:hover': {
+                        color: colors$9.error.main,
+                    },
+                },
+            },
+        },
+        MuiAccordion: {
+            styleOverrides: {
+                root: {
+                    boxShadow: 'none',
+                    '&.Mui-expanded': {
+                        margin: 0,
+                    },
+                    '&::before': {
+                        display: 'none',
+                    },
+                },
+            },
+        },
+        MuiAvatar: {
+            styleOverrides: {
+                root: {
+                    fontSize: '0.875rem',
+                    fontWeight: '700',
+                },
+                colorDefault: {
+                    background: colors$9.alpha.black[30],
+                    color: colors$9.alpha.white[100],
+                },
+            },
+        },
+        MuiAvatarGroup: {
+            styleOverrides: {
+                root: {
+                    alignItems: 'center',
+                },
+                avatar: {
+                    background: colors$9.alpha.black[10],
+                    fontSize: '0.8125rem',
+                    color: colors$9.alpha.black[70],
+                    fontWeight: '700',
+                    '&:first-of-type': {
+                        border: 0,
+                        background: 'transparent',
+                    },
+                },
+            },
+        },
+        MuiListItemAvatar: {
+            styleOverrides: {
+                alignItemsFlexStart: {
+                    marginTop: 0,
+                },
+            },
+        },
+        MuiPaginationItem: {
+            styleOverrides: {
+                page: {
+                    fontSize: '0.8125rem',
+                    fontWeight: '700',
+                    transition: 'all .2s',
+                },
+                textPrimary: {
+                    '&.Mui-selected': {
+                        boxShadow: colors$9.shadows.primary,
+                    },
+                    '&.MuiButtonBase-root:hover': {
+                        background: colors$9.alpha.black[5],
+                    },
+                    '&.Mui-selected.MuiButtonBase-root:hover': {
+                        background: colors$9.primary.main,
+                    },
+                },
+            },
+        },
+        MuiButton: {
+            defaultProps: {
+                disableRipple: true,
+            },
+            styleOverrides: {
+                root: {
+                    fontWeight: '700',
+                    textTransform: 'none',
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                    minWidth: 160,
+                    maxWidth: '100%',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    '&.MuiButton-contained.MuiButton-containedPrimary': {
+                        '&:not(.Mui-disabled)': {
+                            boxShadow: '0 2px 4px rgba(180, 180, 180, 0.5)',
+                        },
+                    },
+                    '.MuiSvgIcon-root': {
+                        transition: 'all .2s',
+                    },
+                },
+                endIcon: {
+                    marginRight: -8,
+                },
+                containedSecondary: {
+                    backgroundColor: colors$9.secondary.main,
+                    color: colors$9.alpha.white[100],
+                    border: '1px solid ' + colors$9.alpha.black[30],
+                },
+                outlinedSecondary: {
+                    backgroundColor: colors$9.alpha.white[100],
+                    '&:hover, &.MuiSelected': {
+                        backgroundColor: colors$9.alpha.black[5],
+                        color: colors$9.alpha.black[100],
+                    },
+                },
+                sizeSmall: {
+                    padding: '6px 16px',
+                    lineHeight: 1.5,
+                },
+                sizeMedium: {
+                    padding: '8px 20px',
+                },
+                sizeLarge: {
+                    padding: '11px 24px',
+                },
+                textSizeSmall: {
+                    padding: '7px 12px',
+                },
+                textSizeMedium: {
+                    padding: '9px 16px',
+                },
+                textSizeLarge: {
+                    padding: '12px 16px',
+                },
+            },
+        },
+        MuiButtonBase: {
+            defaultProps: {
+                disableRipple: false,
+            },
+            styleOverrides: {
+                root: {
+                    borderRadius: 6,
+                },
+            },
+        },
+        MuiToggleButton: {
+            defaultProps: {
+                disableRipple: true,
+            },
+            styleOverrides: {
+                root: {
+                    color: colors$9.primary.main,
+                    background: colors$9.alpha.white[100],
+                    transition: 'all .2s',
+                    '&:hover, &.Mui-selected, &.Mui-selected:hover': {
+                        color: colors$9.alpha.white[100],
+                        background: colors$9.primary.main,
+                    },
+                },
+            },
+        },
+        MuiIconButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 8,
+                    padding: 8,
+                    '& .MuiTouchRipple-root': {
+                        borderRadius: 8,
+                    },
+                },
+                sizeSmall: {
+                    padding: 4,
+                },
+            },
+        },
+        MuiListItemText: {
+            styleOverrides: {
+                root: {
+                    margin: 0,
+                },
+            },
+        },
+        MuiListItemButton: {
+            styleOverrides: {
+                root: {
+                    '& .MuiTouchRipple-root': {
+                        opacity: 0.3,
+                    },
+                },
+            },
+        },
+        MuiDivider: {
+            styleOverrides: {
+                root: {
+                    background: colors$9.alpha.black[10],
+                    border: 0,
+                    height: 1,
+                },
+                vertical: {
+                    height: 'auto',
+                    width: 1,
+                    '&.MuiDivider-flexItem.MuiDivider-fullWidth': {
+                        height: 'auto',
+                    },
+                    '&.MuiDivider-absolute.MuiDivider-fullWidth': {
+                        height: '100%',
+                    },
+                },
+                withChildren: {
+                    '&:before, &:after': {
+                        border: 0,
+                    },
+                },
+                wrapper: {
+                    background: colors$9.alpha.white[100],
+                    fontWeight: '700',
+                    height: 24,
+                    lineHeight: '24px',
+                    marginTop: -12,
+                    color: 'inherit',
+                    textTransform: 'uppercase',
+                },
+            },
+        },
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    padding: 0,
+                },
+                elevation0: {
+                    boxShadow: 'none',
+                },
+                elevation: {
+                    boxShadow: colors$9.shadows.card,
+                },
+                elevation2: {
+                    boxShadow: colors$9.shadows.cardSm,
+                },
+                elevation24: {
+                    boxShadow: colors$9.shadows.cardLg,
+                },
+                outlined: {
+                    boxShadow: colors$9.shadows.card,
+                },
+            },
+        },
+        MuiLink: {
+            defaultProps: {
+                underline: 'hover',
+            },
+        },
+        MuiLinearProgress: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 6,
+                    height: 6,
+                },
+            },
+        },
+        MuiSlider: {
+            styleOverrides: {
+                root: {
+                    '& .MuiSlider-valueLabelCircle, .MuiSlider-valueLabelLabel': {
+                        transform: 'none',
+                    },
+                    '& .MuiSlider-valueLabel': {
+                        borderRadius: 6,
+                        background: colors$9.alpha.black[100],
+                        color: colors$9.alpha.white[100],
+                    },
+                },
+            },
+        },
+        MuiList: {
+            styleOverrides: {
+                root: {
+                    padding: 0,
+                    '& .MuiListItem-button': {
+                        transition: 'all .2s',
+                        '& > .MuiSvgIcon-root': {
+                            minWidth: 34,
+                        },
+                        '& .MuiTouchRipple-root': {
+                            opacity: 0.2,
+                        },
+                    },
+                    '& .MuiListItem-root.MuiButtonBase-root.Mui-selected': {
+                        backgroundColor: require$$43.alpha(colors$9.primary.lighter, 0.4),
+                    },
+                    '& .MuiMenuItem-root.MuiButtonBase-root:active': {
+                        backgroundColor: require$$43.alpha(colors$9.primary.lighter, 0.4),
+                    },
+                    '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
+                        opacity: 0.2,
+                    },
+                },
+                padding: {
+                    padding: '12px',
+                    '& .MuiListItem-button': {
+                        borderRadius: 6,
+                        margin: '1px 0',
+                    },
+                },
+            },
+        },
+        MuiTabs: {
+            styleOverrides: {
+                root: {
+                    height: 38,
+                    minHeight: 38,
+                    overflow: 'visible',
+                },
+                indicator: {
+                    height: 38,
+                    minHeight: 38,
+                    borderRadius: 6,
+                    border: '1px solid ' + colors$9.primary.dark,
+                    boxShadow: '0px 2px 10px ' + colors$9.primary.light,
+                },
+                scrollableX: {
+                    overflow: 'visible !important',
+                },
+            },
+        },
+        MuiTab: {
+            styleOverrides: {
+                root: {
+                    padding: 0,
+                    height: 38,
+                    minHeight: 38,
+                    borderRadius: 6,
+                    transition: 'color .2s',
+                    textTransform: 'capitalize',
+                    '&.MuiButtonBase-root': {
+                        minWidth: 'auto',
+                        paddingLeft: 20,
+                        paddingRight: 20,
+                        marginRight: 4,
+                    },
+                    '&.Mui-selected, &.Mui-selected:hover': {
+                        color: colors$9.alpha.white[100],
+                        zIndex: 5,
+                    },
+                    '&:hover': {
+                        color: colors$9.alpha.black[100],
+                    },
+                },
+            },
+        },
+        MuiMenu: {
+            styleOverrides: {
+                paper: {
+                    padding: 12,
+                },
+                list: {
+                    padding: 12,
+                    '& .MuiMenuItem-root.MuiButtonBase-root': {
+                        fontSize: '0.875rem',
+                        marginTop: 1,
+                        marginBottom: 1,
+                        transition: 'all .2s',
+                        color: colors$9.alpha.black[70],
+                        '& .MuiTouchRipple-root': {
+                            opacity: 0.2,
+                        },
+                        '&:hover, &:active, &.active, &.Mui-selected': {
+                            color: colors$9.alpha.black[100],
+                            background: require$$43.alpha(colors$9.primary.lighter, 0.4),
+                        },
+                    },
+                },
+            },
+        },
+        MuiMenuItem: {
+            styleOverrides: {
+                root: {
+                    background: 'transparent',
+                    transition: 'all .2s',
+                    '&:hover, &:active, &.active, &.Mui-selected': {
+                        color: colors$9.alpha.black[100],
+                        background: require$$43.alpha(colors$9.primary.lighter, 0.4),
+                    },
+                    '&.Mui-selected:hover': {
+                        background: require$$43.alpha(colors$9.primary.lighter, 0.4),
+                    },
+                },
+            },
+        },
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    '&.MuiButtonBase-root': {
+                        color: colors$9.secondary.main,
+                        '&:hover, &:active, &.active, &.Mui-selected': {
+                            color: colors$9.alpha.black[100],
+                            background: require$$43.lighten(colors$9.primary.lighter, 0.5),
+                        },
+                    },
+                },
+            },
+        },
+        MuiAutocomplete: {
+            styleOverrides: {
+                tag: {
+                    margin: 1,
+                },
+                root: {
+                    '.MuiAutocomplete-inputRoot.MuiOutlinedInput-root .MuiAutocomplete-endAdornment': {
+                        right: 14,
+                    },
+                },
+                clearIndicator: {
+                    background: colors$9.error.lighter,
+                    color: colors$9.error.main,
+                    marginRight: 8,
+                    '&:hover': {
+                        background: colors$9.error.lighter,
+                        color: colors$9.error.dark,
+                    },
+                },
+                popupIndicator: {
+                    color: colors$9.alpha.black[50],
+                    '&:hover': {
+                        background: colors$9.primary.lighter,
+                        color: colors$9.primary.main,
+                    },
+                },
+            },
+        },
+        MuiTablePagination: {
+            styleOverrides: {
+                toolbar: {
+                    '& .MuiIconButton-root': {
+                        padding: 8,
+                    },
+                },
+                select: {
+                    '&:focus': {
+                        backgroundColor: 'transparent',
+                    },
+                },
+            },
+        },
+        MuiToolbar: {
+            styleOverrides: {
+                root: {
+                    minHeight: '0 !important',
+                    padding: '0 !important',
+                },
+            },
+        },
+        MuiTableRow: {
+            styleOverrides: {
+                head: {
+                    background: colors$9.alpha.black[5],
+                },
+                root: {
+                    transition: 'background-color .2s',
+                    '&.MuiTableRow-hover:hover': {
+                        backgroundColor: colors$9.alpha.black[5],
+                    },
+                },
+            },
+        },
+        MuiTableCell: {
+            styleOverrides: {
+                // FIXME! TableCell
+                root: {
+                    borderBottomColor: colors$9.alpha.black[10],
+                    fontSize: '1rem',
+                    padding: '0.75rem 1rem',
+                },
+                head: {
+                    // textTransform: 'uppercase',
+                    fontSize: '0.8125rem',
+                    fontWeight: '700',
+                    color: colors$9.alpha.black[70],
+                },
+            },
+        },
+        MuiAlert: {
+            styleOverrides: {
+                message: {
+                    lineHeight: 1.5,
+                    fontSize: '0.875rem',
+                },
+                standardInfo: {
+                    color: colors$9.info.main,
+                },
+                action: {
+                    color: colors$9.alpha.black[70],
+                },
+            },
+        },
+        MuiTimelineDot: {
+            styleOverrides: {
+                root: {
+                    margin: 0,
+                    zIndex: 5,
+                    position: 'absolute',
+                    top: '50%',
+                    marginTop: -6,
+                    left: -6,
+                },
+                outlined: {
+                    backgroundColor: colors$9.alpha.white[100],
+                    boxShadow: '0 0 0 6px ' + colors$9.alpha.white[100],
+                },
+                outlinedPrimary: {
+                    backgroundColor: colors$9.alpha.white[100],
+                    boxShadow: '0 0 0 6px ' + colors$9.alpha.white[100],
+                },
+            },
+        },
+        MuiTimelineConnector: {
+            styleOverrides: {
+                root: {
+                    position: 'absolute',
+                    height: '100%',
+                    top: 0,
+                    borderRadius: 50,
+                    backgroundColor: colors$9.alpha.black[10],
+                },
+            },
+        },
+        MuiTimelineItem: {
+            styleOverrides: {
+                root: {
+                    minHeight: 0,
+                    padding: '8px 0',
+                    '&:before': {
+                        display: 'none',
+                    },
+                },
+                missingOppositeContent: {
+                    '&:before': {
+                        display: 'none',
+                    },
+                },
+            },
+        },
+        MuiTooltip: {
+            styleOverrides: {
+                tooltip: {
+                    backgroundColor: require$$43.alpha(colors$9.alpha.black['100'], 0.95),
+                    padding: '8px 16px',
+                    fontSize: '0.8125rem',
+                },
+                arrow: {
+                    color: require$$43.alpha(colors$9.alpha.black['100'], 0.95),
+                },
+            },
+        },
+        MuiSwitch: {
+            styleOverrides: {
+                root: {
+                    height: 33,
+                    overflow: 'visible',
+                    '& .MuiButtonBase-root': {
+                        position: 'absolute',
+                        padding: 6,
+                        transition: 'left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+                    },
+                    '& .MuiIconButton-root': {
+                        borderRadius: 100,
+                    },
+                    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                        opacity: 0.3,
+                    },
+                },
+                thumb: {
+                    border: '1px solid ' + colors$9.alpha.black[30],
+                    boxShadow: '0px 9px 14px ' +
+                        colors$9.alpha.black[10] +
+                        ', 0px 2px 2px ' +
+                        colors$9.alpha.black[10],
+                },
+                track: {
+                    backgroundColor: colors$9.alpha.black[5],
+                    border: '1px solid ' + colors$9.alpha.black[10],
+                    boxShadow: 'inset 0px 1px 1px ' + colors$9.alpha.black[10],
+                    opacity: 1,
+                },
+                colorPrimary: {
+                    '& .MuiSwitch-thumb': {
+                        backgroundColor: colors$9.alpha.white[100],
+                    },
+                    '&.Mui-checked .MuiSwitch-thumb': {
+                        backgroundColor: colors$9.primary.main,
+                    },
+                },
+            },
+        },
+        MuiStepper: {
+            styleOverrides: {
+                root: {
+                    paddingTop: 20,
+                    paddingBottom: 20,
+                    background: colors$9.alpha.black[5],
+                },
+            },
+        },
+        MuiStepIcon: {
+            styleOverrides: {
+                root: {
+                    '&.MuiStepIcon-completed': {
+                        color: colors$9.success.main,
+                    },
+                },
+            },
+        },
+        // TODO: 構造の周知
+        // INFO: headingの使い方
+        MuiTypography: {
+            defaultProps: {
+                variantMapping: {
+                    h1: 'h1',
+                    h2: 'h2',
+                    h3: 'div',
+                    h4: 'div',
+                    h5: 'div',
+                    h6: 'div',
+                    subtitle1: 'div',
+                    subtitle2: 'div',
+                    body1: 'div',
+                    body2: 'div',
+                },
+            },
+            styleOverrides: {
+                gutterBottom: {
+                    marginBottom: '0.25rem',
+                },
+                paragraph: {
+                    // fontSize: 17,
+                    fontSize: '1rem',
+                    lineHeight: 1.5,
+                },
+            },
+        },
+    },
+    shape: {
+        borderRadius: 10,
+    },
+    /***
+     * @param breakpoints ブレイクポイントの設定
+     * 現状md:960をフォントサイズ用途で利用中
+     * TODO:どこかで値を正式に決める
+     * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
+     */
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 960,
+            lg: 1280,
+            xl: 1840,
+        },
+    },
+    typography: {
+        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+        // 見出し用
+        h1: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$9(24)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(24)}`,
+            },
+        },
+        h2: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$9(22)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(22)}`,
+            },
+        },
+        h3: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$9(20)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(20)}`,
+            },
+        },
+        h4: {
+            fontWeight: 700,
+            fontSize: `${fontPxToRemMinim$9(18)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(18)}`,
+            },
+        },
+        h5: {
+            fontWeight: 700,
+            fontSize: `${fontPxToRemMinim$9(16)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(16)}`,
+            },
+        },
+        h6: {
+            fontWeight: 700,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$9(15)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(15)}`,
+            },
+        },
+        // Text本文 Utility用
+        body1: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$9(15)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(15)}`,
+            },
+        },
+        body2: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$9(14)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(14)}`,
+            },
+        },
+        // サブタイトル用
+        subtitle1: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$9(14)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(14)}`,
+            },
+            color: colors$9.alpha.black[70],
+        },
+        subtitle2: {
+            fontWeight: 400,
+            lineHeight: 1.5,
+            fontSize: `${fontPxToRemMinim$9(13)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(13)}`,
+            },
+            color: colors$9.alpha.black[70],
+        },
+        // Text Utility用
+        caption: {
+            fontWeigt: 400,
+            fontSize: `${fontPxToRemMinim$9(12)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(12)}`,
+            },
+            color: colors$9.alpha.black[70],
+        },
+        overline: {
+            fontWeight: 400,
+            fontSize: `${fontPxToRemMinim$9(13)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(13)}`,
+            },
+            textTransform: 'none',
+        },
+        // TODO:用途のリサーチ/ボタン用？
+        button: {
+            fontWeigt: 500,
+            fontSize: `${fontPxToRemMinim$9(14)}`,
+            '@media (min-width: 960px)': {
+                fontSize: `${fontPxToRem$9(14)}`,
+            },
+            textTransform: 'none',
+        },
+    },
+    // シャドーの初期化？ TODO: 何の配列なのかリサーチ
+    shadows: [
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+    ],
+});
+
+function themeCreator$7(theme) {
+    return themeMap$7[theme];
+}
+const themeMap$7 = {
+    SaaSusTheme: SaaSusTheme$7,
+    SaaSusDarkTheme: SaaSusDarkTheme$7,
+    SaaSusDarkThemeHighContrast: SaaSusDarkThemeHighContrast$7,
+};
+
+const ThemeContext$7 = require$$67.createContext({
+    theme: null,
+    setThemeName: null,
+});
+const ThemeProviderWrapper$7 = ({ lang = 'ja', children, }) => {
+    const [themeName, _setThemeName] = require$$67.useState('SaaSusTheme');
+    require$$67.useEffect(() => {
+        const curThemeName = 'SaaSusTheme';
+        _setThemeName(curThemeName);
+    }, []);
+    require$$67.useEffect(() => {
+        // change language
+        i18n__default$6["default"].changeLanguage(lang);
+    }, [lang]);
+    const theme = themeCreator$7(themeName);
+    const setThemeName = (themeName) => {
+        window.localStorage.setItem('appTheme', themeName);
+        _setThemeName(themeName);
+    };
+    return (require$$38.jsx(require$$66.StylesProvider, { injectFirst: true, children: require$$38.jsx(ThemeContext$7.Provider, { value: { theme, setThemeName }, children: require$$38.jsx(require$$63.ThemeProvider, { theme: theme, children: children }) }) }));
+};
+
+dist$6.AccordionWrap = AccordionWrap$7;
+dist$6.BoxContent = BoxContent$7;
+dist$6.BoxWrap = BoxWrap$7;
+dist$6.ButtonWrap = ButtonWrap$7;
+dist$6.CustomAlert = CustomAlert$7;
+dist$6.CustomButton = CustomButton$7;
+dist$6.CustomContainer = CustomContainer$7;
+dist$6.CustomLabel = CustomLabel$7;
+dist$6.CustomTable = CustomTable$6;
+var CustomTableCell_7 = dist$6.CustomTableCell = CustomTableCell$6;
+dist$6.CustomTableCellAction = CustomTableCellAction$6;
+dist$6.CustomTableCellActionBody = CustomTableCellActionBody$6;
+dist$6.CustomTableContainer = CustomTableContainer$6;
+dist$6.CustomTableFilter = CustomTableFilter$6;
+dist$6.CustomTableFilterResult = CustomTableFilterResult$6;
+dist$6.CustomTableHeader = CustomTableHeader$6;
+var CustomTableRow_7 = dist$6.CustomTableRow = CustomTableRow$6;
+dist$6.CustomTooltip = CustomTooltip$7;
+dist$6.DeleteDialog = DeleteDialog$7;
+dist$6.MainTitleSet = MainTitleSet$7;
+dist$6.RadioButton = RadioButton$7;
+dist$6.SaaSusLogo = SaaSusLogo$7;
+dist$6.SaaSusThemeProvider = ThemeProviderWrapper$7;
+dist$6.TableHeightSwitch = TableHeightSwitch$7;
+dist$6.Text = Text$7;
+dist$6.ThemeContext = ThemeContext$7;
+dist$6.TitleSet = TitleSet$7;
+dist$6.themeCreator = themeCreator$7;
+
+const CustomTableFilterResult = ({ text }) => {
+    return (require$$49.jsx(require$$54.TableBody, { children: require$$49.jsx(CustomTableRow_7, { children: require$$49.jsx(CustomTableCell_7, { colSpan: 100, children: require$$49.jsx(require$$54.Box, { sx: {
+                        p: 4,
+                        whiteSpace: 'nowrap',
+                        textAlign: 'center',
+                        fontSize: 24,
+                    }, children: require$$49.jsx("b", { children: text || '検索結果はありませんでした' }) }) }) }) }));
+};
+
+const CustomTableFilter = ({ onChange, placeholder, value }) => {
+    return (require$$49.jsx(require$$54.Box, { children: require$$49.jsx(require$$54.TextField, { sx: {
+                mx: 0,
+                my: 2,
+            }, InputProps: {
+                startAdornment: (require$$49.jsx(require$$54.InputAdornment, { position: "start", children: require$$49.jsx(require$$79__default["default"], {}) })),
+            }, onChange: () => onChange, placeholder: placeholder, value: value, size: "small", fullWidth: true, margin: "normal", variant: "outlined" }) }));
+};
+
+const TableHeightSwitch = ({ checked, onChange, sxStyle, label, ...props }) => {
+    return (require$$49.jsx(require$$54.FormControlLabel, { control: require$$49.jsx(require$$54.Switch, { checked: checked, onChange: onChange }), label: label, labelPlacement: "end", sx: sxStyle, style: {
             display: 'flex',
             flexDirection: 'column-reverse',
             justifyContent: 'end',
@@ -36132,8 +42126,8 @@ const resources = {
     },
 };
 const i18nNamespace = 'saasusTheme';
-i18n__default$6["default"]
-    .use(require$$61.initReactI18next) // passes i18n down to react-i18next
+i18n__default$7["default"]
+    .use(require$$72.initReactI18next) // passes i18n down to react-i18next
     .init({
     defaultNS: i18nNamespace,
     fallbackNS: i18nNamespace,
@@ -36147,11 +42141,11 @@ i18n__default$6["default"]
 });
 
 const CustomTooltip = ({ TooltipTitleIconComponent, TooltipComponent, }) => {
-    const { t } = require$$61.useTranslation(i18nNamespace, { i18n: i18n__default$6["default"] });
+    const { t } = require$$72.useTranslation(i18nNamespace, { i18n: i18n__default$7["default"] });
     // TooltipComponentが定義されていない場合、
     // スクリーンリーダーにButtonと読まれてしまうのでaria-labelを設定
     const toolTipAriaLabel = TooltipComponent ? undefined : t('help');
-    return (require$$38.jsx(require$$38.Fragment, { children: TooltipTitleIconComponent && (require$$38.jsx(require$$43.Tooltip, { title: require$$38.jsx(require$$43.Box, { sx: { textAlign: 'justify' }, children: TooltipTitleIconComponent }), arrow: true, placement: "top-start", children: require$$38.jsx(require$$43.Button, { sx: {
+    return (require$$49.jsx(require$$49.Fragment, { children: TooltipTitleIconComponent && (require$$49.jsx(require$$54.Tooltip, { title: require$$49.jsx(require$$54.Box, { sx: { textAlign: 'justify' }, children: TooltipTitleIconComponent }), arrow: true, placement: "top-start", children: require$$49.jsx(require$$54.Button, { sx: {
                     margin: '0 0 .2em 0',
                     '&.MuiButton-root': {
                         margin: '0 2px 4px',
@@ -36159,10 +42153,10 @@ const CustomTooltip = ({ TooltipTitleIconComponent, TooltipComponent, }) => {
                         padding: '2px 4px',
                         borderRadius: '6px',
                     },
-                }, "aria-label": toolTipAriaLabel, children: TooltipComponent ? (TooltipComponent) : (require$$38.jsx(require$$59__default["default"], { fontSize: "small" })) }) })) }));
+                }, "aria-label": toolTipAriaLabel, children: TooltipComponent ? (TooltipComponent) : (require$$49.jsx(require$$70__default["default"], { fontSize: "small" })) }) })) }));
 };
 
-const AccordionStyle = require$$43.styled((props) => (require$$38.jsx(require$$43.Accordion, { disableGutters: true, elevation: 0, square: true, ...props })))(({ theme }) => ({
+const AccordionStyle = require$$54.styled((props) => (require$$49.jsx(require$$54.Accordion, { disableGutters: true, elevation: 0, square: true, ...props })))(({ theme }) => ({
     border: `1px solid ${theme.palette.divider}`,
     borderRadius: 10,
     transition: '0ms',
@@ -36173,7 +42167,7 @@ const AccordionStyle = require$$43.styled((props) => (require$$38.jsx(require$$4
     '.MuiAccordionDetails-root': { border: 'none !important' },
 }));
 // Stylings アコーディオン見出し、トリガー部分
-const AccordionSummaryStyle = require$$43.styled((props) => (require$$38.jsx(require$$43.AccordionSummary, { ...props })))(({ theme }) => ({
+const AccordionSummaryStyle = require$$54.styled((props) => (require$$49.jsx(require$$54.AccordionSummary, { ...props })))(({ theme }) => ({
     padding: '8px 16px',
     borderRadius: 10,
     marginBottom: -1,
@@ -36196,7 +42190,7 @@ const AccordionSummaryStyle = require$$43.styled((props) => (require$$38.jsx(req
     },
 }));
 // Stylings アコーディオン内部、コンテンツ部分
-const AccordionDetailsStyle = require$$43.styled(require$$43.AccordionDetails)(({ theme }) => ({
+const AccordionDetailsStyle = require$$54.styled(require$$54.AccordionDetails)(({ theme }) => ({
     padding: theme.spacing(3, 3, 4),
     borderTop: '1px solid rgba(0, 0, 0, .125)',
     borderRadius: '0 0 10px 10px',
@@ -36214,26 +42208,26 @@ AccordionSx, AccordionSummarySx, DetailsSx, BorderNone, spacing,
 children, disabled, AdditionalProps, 
 // ヘルプアイコンとツールチップ
 TooltipTitleIconComponent, TooltipComponent, }) => {
-    return (require$$38.jsx(require$$43.Paper, { sx: { p: 0, mb: spacing ? spacing : 4 }, children: require$$38.jsxs(AccordionStyle, { expanded: expanded, onChange: onChange, sx: AccordionSx, defaultExpanded: defaultExpanded, children: [require$$38.jsx(AccordionSummaryStyle, { expandIcon: require$$38.jsx(require$$58__default["default"], {}), "aria-controls": id, id: id, disabled: disabled, sx: AccordionSummarySx, style: {
+    return (require$$49.jsx(require$$54.Paper, { sx: { p: 0, mb: spacing ? spacing : 4 }, children: require$$49.jsxs(AccordionStyle, { expanded: expanded, onChange: onChange, sx: AccordionSx, defaultExpanded: defaultExpanded, children: [require$$49.jsx(AccordionSummaryStyle, { expandIcon: require$$49.jsx(require$$69__default["default"], {}), "aria-controls": id, id: id, disabled: disabled, sx: AccordionSummarySx, style: {
                         border: BorderNone && 'none',
                         background: BorderNone && 'none',
-                    }, children: require$$38.jsxs(require$$43.Box, { sx: {
+                    }, children: require$$49.jsxs(require$$54.Box, { sx: {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
                             flexWrap: 'wrap',
                             width: '100%',
                             pr: 5,
-                        }, children: [require$$38.jsxs(require$$43.Box, { children: [require$$38.jsxs(require$$43.Box, { sx: {
+                        }, children: [require$$49.jsxs(require$$54.Box, { children: [require$$49.jsxs(require$$54.Box, { sx: {
                                             display: 'flex',
                                             justifyContent: 'space-between',
                                             alignItems: 'end',
-                                        }, children: [require$$38.jsx(require$$43.Typography, { variant: variant ? variant : 'h3', component: component ? component : 'div', children: accordionTitle }), require$$38.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$38.jsx(require$$43.Box, { children: require$$38.jsx(require$$43.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', children: accordionSubTitle }) })] }), require$$38.jsx(require$$43.Box, { children: AdditionalProps })] }) }), require$$38.jsx(AccordionDetailsStyle, { sx: DetailsSx, style: {
+                                        }, children: [require$$49.jsx(require$$54.Typography, { variant: variant ? variant : 'h3', component: component ? component : 'div', children: accordionTitle }), require$$49.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$49.jsx(require$$54.Box, { children: require$$49.jsx(require$$54.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', children: accordionSubTitle }) })] }), require$$49.jsx(require$$54.Box, { children: AdditionalProps })] }) }), require$$49.jsx(AccordionDetailsStyle, { sx: DetailsSx, style: {
                         marginTop: BorderNone ? '-16px' : '',
                     }, children: children })] }) }));
 };
 
-const AlertInner = require$$43.styled(require$$43.Alert)(({ theme }) => `
+const AlertInner = require$$54.styled(require$$54.Alert)(({ theme }) => `
     padding: ${theme.spacing(1, 4)};
     box-shadow: 0 2px 4px ${theme.colors.alpha.black[10]};
 
@@ -36266,19 +42260,19 @@ const AlertInner = require$$43.styled(require$$43.Alert)(({ theme }) => `
 
   `);
 const CustomAlert = ({ severity, variant, alertHeadingTitle, children, square, action, sx, }) => {
-    return (require$$38.jsx(require$$43.Stack, { spacing: 4, children: require$$38.jsxs(AlertInner, { severity: severity || 'error', variant: variant || 'standard', style: {
+    return (require$$49.jsx(require$$54.Stack, { spacing: 4, children: require$$49.jsxs(AlertInner, { severity: severity || 'error', variant: variant || 'standard', style: {
                 borderRadius: square ? 0 : '',
-            }, sx: sx, action: action, children: [require$$38.jsx(require$$43.AlertTitle, { children: require$$38.jsx("strong", { children: alertHeadingTitle }) }), children] }) }));
+            }, sx: sx, action: action, children: [require$$49.jsx(require$$54.AlertTitle, { children: require$$49.jsx("strong", { children: alertHeadingTitle }) }), children] }) }));
 };
 
 // ----- extend Container -----
-const StyledContainer = require$$43.styled(require$$43.Container)(({ theme }) => `
+const StyledContainer = require$$54.styled(require$$54.Container)(({ theme }) => `
     padding: ${theme.spacing(0, 0, 0, 0)};
   `);
 const CustomContainer = ({ children, maxWidth, fixed, sx, addGutter, mb, style, }) => {
     return (
     // margin-bottom or デフォルトmargin-bottom
-    require$$38.jsx(require$$43.Box, { sx: { mb: mb || 4 }, children: require$$38.jsx(StyledContainer, { maxWidth: maxWidth, sx: sx, style: style, 
+    require$$49.jsx(require$$54.Box, { sx: { mb: mb || 4 }, children: require$$49.jsx(StyledContainer, { maxWidth: maxWidth, sx: sx, style: style, 
             // 段階的な横幅指定
             fixed: fixed, 
             // 両横の溝=paddingの有無 defaultは無しに指定
@@ -36291,8 +42285,8 @@ const TitleSet = ({ variant, component, headingText, variantSubTitle, subtitleTe
 TooltipTitleIconComponent, TooltipComponent, 
 // 下線
 divider, dividerSx, }) => {
-    const theme = require$$43.useTheme();
-    return (require$$38.jsxs(require$$43.Box, { sx: {
+    const theme = require$$54.useTheme();
+    return (require$$49.jsxs(require$$54.Box, { sx: {
             margin: noMargin
                 ? theme.spacing(0)
                 : mbSmall
@@ -36307,17 +42301,17 @@ divider, dividerSx, }) => {
                 boxShadow: 'none',
             },
             ...sx,
-        }, children: [require$$38.jsxs(require$$43.Grid, { container: true, justifyContent: "space-between", alignItems: "center", sx: { mb: noMargin ? 0 : 1 }, columnSpacing: 2, children: [require$$38.jsxs(require$$43.Grid, { item: true, sx: style, flex: 1, children: [require$$38.jsxs(require$$43.Typography, { variant: variant, component: component ? component : 'div', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: [headingText, require$$38.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$38.jsx(require$$43.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$38.jsx(require$$43.Grid, { item: true, children: AdditionalProps })] }), divider && require$$38.jsx(require$$43.Divider, { sx: dividerSx })] }));
+        }, children: [require$$49.jsxs(require$$54.Grid, { container: true, justifyContent: "space-between", alignItems: "center", sx: { mb: noMargin ? 0 : 1 }, columnSpacing: 2, children: [require$$49.jsxs(require$$54.Grid, { item: true, sx: style, flex: 1, children: [require$$49.jsxs(require$$54.Typography, { variant: variant, component: component ? component : 'div', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: [headingText, require$$49.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), require$$49.jsx(require$$54.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$49.jsx(require$$54.Grid, { item: true, children: AdditionalProps })] }), divider && require$$49.jsx(require$$54.Divider, { sx: dividerSx })] }));
 };
 
-const BoxOuter = require$$43.styled(require$$43.Box)(({ theme }) => `
+const BoxOuter = require$$54.styled(require$$54.Box)(({ theme }) => `
   margin-bottom: ${theme.spacing(4)};
 
   &:last-child {
     margin-bottom: 0;
   }
   `);
-const BoxInner$1 = require$$43.styled(require$$43.Box)(({ theme }) => `
+const BoxInner$1 = require$$54.styled(require$$54.Box)(({ theme }) => `
     padding: ${theme.spacing(0)};
     `);
 const BoxContent = ({ 
@@ -36336,9 +42330,9 @@ AdditionalProps,
 // 全体sx
 sx, }) => {
     // const theme = useTheme()
-    return (require$$38.jsx(BoxOuter, { sx: sx, children: require$$38.jsxs(BoxInner$1, { sx: {
+    return (require$$49.jsx(BoxOuter, { sx: sx, children: require$$49.jsxs(BoxInner$1, { sx: {
                 ...boxInnerSx,
-            }, children: [addTitle ? (require$$38.jsx(TitleSet
+            }, children: [addTitle ? (require$$49.jsx(TitleSet
                 // 見出しフォントサイズ htmlElement設定 サブタイトル
                 , { 
                     // 見出しフォントサイズ htmlElement設定 サブタイトル
@@ -36351,7 +42345,7 @@ sx, }) => {
                     TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent, AdditionalProps: AdditionalProps, divider: divider, dividerSx: dividerSx })) : (''), children] }) }));
 };
 
-const BoxInner = require$$43.styled(require$$43.Paper)(({ theme }) => ({
+const BoxInner = require$$54.styled(require$$54.Paper)(({ theme }) => ({
     marginBottom: theme.spacing(4),
 }));
 const BoxWrap = ({ 
@@ -36369,11 +42363,11 @@ TooltipTitleIconComponent, TooltipComponent,
 AdditionalProps, 
 // 全体sx
 sx, }) => {
-    const theme = require$$43.useTheme();
-    return (require$$38.jsx(require$$43.Box, { sx: sx, children: require$$38.jsxs(BoxInner, { elevation: 1, sx: {
+    const theme = require$$54.useTheme();
+    return (require$$49.jsx(require$$54.Box, { sx: sx, children: require$$49.jsxs(BoxInner, { elevation: 1, sx: {
                 padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
                 ...boxInnerSx,
-            }, children: [addTitle && (require$$38.jsx(TitleSet
+            }, children: [addTitle && (require$$49.jsx(TitleSet
                 // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
                 , { 
                     // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
@@ -36391,7 +42385,7 @@ sx, }) => {
 };
 
 // {`theme.breakpoints.up('sm') matches: ${matches}`}
-const StackButtonWrap = require$$43.styled(require$$43.Stack)(() => ({
+const StackButtonWrap = require$$54.styled(require$$54.Stack)(() => ({
     display: 'grid',
     gap: 8,
     gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px, 100%), 1fr))',
@@ -36402,7 +42396,7 @@ const StackButtonWrap = require$$43.styled(require$$43.Stack)(() => ({
     },
 }));
 const ButtonWrap = ({ mt, mb, sx, children, justifyContent }) => {
-    return (require$$38.jsx(StackButtonWrap, { justifyContent: justifyContent ? justifyContent : 'flex-start', sx: {
+    return (require$$49.jsx(StackButtonWrap, { justifyContent: justifyContent ? justifyContent : 'flex-start', sx: {
             mt: mt || 4,
             mb: mb || 2,
             ...sx,
@@ -36410,15 +42404,15 @@ const ButtonWrap = ({ mt, mb, sx, children, justifyContent }) => {
 };
 
 const CustomButton = ({ color, variant, size, type, startIcon, endIcon, disabled, onClick, sx, children, }) => {
-    return (require$$38.jsx(require$$43.Button, { color: color, size: size, variant: variant ? variant : 'contained', type: type ? type : 'submit', onClick: onClick, startIcon: startIcon, endIcon: endIcon, disabled: disabled, sx: sx, children: children }));
+    return (require$$49.jsx(require$$54.Button, { color: color, size: size, variant: variant ? variant : 'contained', type: type ? type : 'submit', onClick: onClick, startIcon: startIcon, endIcon: endIcon, disabled: disabled, sx: sx, children: children }));
 };
 
-const DialogWrapper = require$$43.styled(require$$43.Dialog)(() => `
+const DialogWrapper = require$$54.styled(require$$54.Dialog)(() => `
       .MuiDialog-paper {
         overflow: visible;
       }
 `);
-const AvatarError = require$$43.styled(require$$43.Avatar)(({ theme }) => `
+const AvatarError = require$$54.styled(require$$54.Avatar)(({ theme }) => `
     background-color: ${theme.colors.error.lighter};
     color: ${theme.colors.error.main};
     width: ${theme.spacing(12)};
@@ -36428,7 +42422,7 @@ const AvatarError = require$$43.styled(require$$43.Avatar)(({ theme }) => `
       font-size: ${theme.typography.pxToRem(45)};
     }
   `);
-const ButtonError = require$$43.styled(require$$43.Button)(({ theme }) => `
+const ButtonError = require$$54.styled(require$$54.Button)(({ theme }) => `
     background: ${theme.colors.error.main};
     color: ${theme.palette.error.contrastText};
 
@@ -36437,19 +42431,19 @@ const ButtonError = require$$43.styled(require$$43.Button)(({ theme }) => `
     }
   `);
 const DeleteDialog = ({ open, DeleteItem, handleDeleteCompleted, closeDeleteDialog, }) => {
-    return (require$$38.jsx(DialogWrapper, { open: open, maxWidth: "sm", fullWidth: true, keepMounted: true, onClose: closeDeleteDialog, children: require$$38.jsxs(require$$43.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 5, children: [require$$38.jsx(AvatarError, { children: require$$38.jsx(require$$62__default["default"], {}) }), require$$38.jsxs(require$$43.Typography, { align: "center", sx: {
+    return (require$$49.jsx(DialogWrapper, { open: open, maxWidth: "sm", fullWidth: true, keepMounted: true, onClose: closeDeleteDialog, children: require$$49.jsxs(require$$54.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 5, children: [require$$49.jsx(AvatarError, { children: require$$49.jsx(require$$73__default["default"], {}) }), require$$49.jsxs(require$$54.Typography, { align: "center", sx: {
                         pt: 4,
-                    }, variant: "h3", children: [DeleteItem, require$$38.jsx("br", {}), "\u3092\u524A\u9664\u3057\u307E\u3059"] }), require$$38.jsx(require$$43.Typography, { align: "center", sx: {
+                    }, variant: "h3", children: [DeleteItem, require$$49.jsx("br", {}), "\u3092\u524A\u9664\u3057\u307E\u3059"] }), require$$49.jsx(require$$54.Typography, { align: "center", sx: {
                         py: 4,
-                    }, children: "\u4E00\u5EA6\u524A\u9664\u3059\u308B\u3068\u5143\u306B\u623B\u305B\u307E\u305B\u3093" }), require$$38.jsxs(require$$43.Box, { children: [require$$38.jsx(require$$43.Button, { variant: "text", size: "large", sx: {
+                    }, children: "\u4E00\u5EA6\u524A\u9664\u3059\u308B\u3068\u5143\u306B\u623B\u305B\u307E\u305B\u3093" }), require$$49.jsxs(require$$54.Box, { children: [require$$49.jsx(require$$54.Button, { variant: "text", size: "large", sx: {
                                 mx: 1,
-                            }, onClick: closeDeleteDialog, "data-testid": "cancel", children: "\u30AD\u30E3\u30F3\u30BB\u30EB" }), require$$38.jsx(ButtonError, { onClick: handleDeleteCompleted, size: "large", sx: {
+                            }, onClick: closeDeleteDialog, "data-testid": "cancel", children: "\u30AD\u30E3\u30F3\u30BB\u30EB" }), require$$49.jsx(ButtonError, { onClick: handleDeleteCompleted, size: "large", sx: {
                                 mx: 1,
                                 px: 3,
                             }, variant: "contained", "data-testid": "deleteButton", children: "\u524A\u9664" })] })] }) }));
 };
 
-const Label = require$$43.styled(require$$43.InputLabel)(() => ({
+const Label = require$$54.styled(require$$54.InputLabel)(() => ({
     fontSize: '14px',
     position: 'initial',
     textAlign: 'left',
@@ -36460,7 +42454,7 @@ const Label = require$$43.styled(require$$43.InputLabel)(() => ({
     },
 }));
 const CustomLabel = ({ id, TooltipTitleIconComponent, TooltipComponent, children, OptionalChip, chipLabel, color, size, sx, variant, mt, }) => {
-    return (require$$38.jsxs(Label, { htmlFor: id, sx: { mt: mt || 3 }, children: [children, require$$38.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent }), OptionalChip && (require$$38.jsx(require$$43.Chip, { size: size ? size : 'small', color: color, variant: variant, label: chipLabel ? chipLabel : '任意', sx: sx, style: {
+    return (require$$49.jsxs(Label, { htmlFor: id, sx: { mt: mt || 3 }, children: [children, require$$49.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent }), OptionalChip && (require$$49.jsx(require$$54.Chip, { size: size ? size : 'small', color: color, variant: variant, label: chipLabel ? chipLabel : '任意', sx: sx, style: {
                     borderRadius: 4,
                     margin: `0px 4px 4px`,
                     padding: `1px 8px 0`,
@@ -36468,7 +42462,7 @@ const CustomLabel = ({ id, TooltipTitleIconComponent, TooltipComponent, children
 };
 
 // ヘルパーテキストまで含めたラッピング
-const WrapButtonlUI = require$$43.styled(require$$43.Stack)(() => `
+const WrapButtonlUI = require$$54.styled(require$$54.Stack)(() => `
   flexDirectiom: column;
   & + .MuiFormHelperText-root.MuiFormHelperText-contained.MuiFormHelperText-root {
     margin: -4px 12px 4px 12px;
@@ -36484,7 +42478,7 @@ const ClickableElement = `
   overflow: hidden;
   min-width: ${MinWidth};
 `;
-const ButtonlUI = require$$43.styled(require$$43.Button)(({ theme }) => `
+const ButtonlUI = require$$54.styled(require$$54.Button)(({ theme }) => `
   margin: ${theme.spacing(1)};
 
   // Button Style
@@ -36584,10 +42578,10 @@ const ButtonlUI = require$$43.styled(require$$43.Button)(({ theme }) => `
     opacity: 0.5;
   }
   `);
-const FormControlUI = require$$43.styled(require$$43.FormControlLabel)(() => `
+const FormControlUI = require$$54.styled(require$$54.FormControlLabel)(() => `
     min-width: ${MinWidth}px;
     `);
-const OptionComponent = require$$43.styled(require$$43.Typography)(({ theme }) => `
+const OptionComponent = require$$54.styled(require$$54.Typography)(({ theme }) => `
       color: ${theme.colors.primary.main};
       font-weight: ${FontWeight};
       position: absolute;
@@ -36597,20 +42591,20 @@ const OptionComponent = require$$43.styled(require$$43.Typography)(({ theme }) =
       text-align: right;
     `);
 const RadioButton = ({ label, value, disabled, AdditionalProps, helperText, onClick, checked, }) => {
-    return (require$$38.jsx(WrapButtonlUI, { children: require$$38.jsxs(ButtonlUI, { variant: "outlined", disabled: disabled, onClick: onClick, children: [require$$38.jsx(FormControlUI, { control: require$$38.jsx(require$$43.Radio, {}), label: label, value: value, checked: checked }), require$$38.jsx(require$$43.Typography, { children: require$$38.jsx(OptionComponent, { children: AdditionalProps }) }), require$$38.jsx(require$$43.Typography, { children: helperText })] }) }));
+    return (require$$49.jsx(WrapButtonlUI, { children: require$$49.jsxs(ButtonlUI, { variant: "outlined", disabled: disabled, onClick: onClick, children: [require$$49.jsx(FormControlUI, { control: require$$49.jsx(require$$54.Radio, {}), label: label, value: value, checked: checked }), require$$49.jsx(require$$54.Typography, { children: require$$49.jsx(OptionComponent, { children: AdditionalProps }) }), require$$49.jsx(require$$54.Typography, { children: helperText })] }) }));
 };
 
 // 大見出しとサブタイトル
 const MainTitleSet = ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, 
 // TitleWrapNone,
 sxHeader, sxSubTitle, gutterBottom, mb, }) => {
-    const theme = require$$43.useTheme();
-    return (require$$38.jsx(require$$43.Box, { sx: [
+    const theme = require$$54.useTheme();
+    return (require$$49.jsx(require$$54.Box, { sx: [
             {
                 p: theme.spacing(3, 4),
                 mb: mb || theme.spacing(2),
             },
-        ], children: require$$38.jsxs(require$$43.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, children: [require$$38.jsxs(require$$43.Grid, { item: true, flex: 1, children: [require$$38.jsx(require$$43.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.4 }, children: headingText }), require$$38.jsx(require$$43.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$38.jsx(require$$43.Grid, { item: true, children: AdditionalProps })] }) }));
+        ], children: require$$49.jsxs(require$$54.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, children: [require$$49.jsxs(require$$54.Grid, { item: true, flex: 1, children: [require$$49.jsx(require$$54.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.4 }, children: headingText }), require$$49.jsx(require$$54.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && require$$49.jsx(require$$54.Grid, { item: true, children: AdditionalProps })] }) }));
 };
 
 function toVal(mix) {
@@ -37836,7 +43830,7 @@ if (process.env.NODE_ENV !== 'production') {
   propTypes.exports = requireFactoryWithThrowingShims()();
 }
 
-const TextWrapper = require$$63.styled('span')(({ theme }) => `
+const TextWrapper = require$$74.styled('span')(({ theme }) => `
       display: inline-block;
       align-items: center;
 
@@ -37876,7 +43870,7 @@ const TextWrapper = require$$63.styled('span')(({ theme }) => `
       }
 `);
 const Text = ({ color = 'secondary', flex, children, ...rest }) => {
-    return (require$$38.jsx(TextWrapper, { className: clsx('MuiText-' + color, { flexItem: flex }), ...rest, children: children }));
+    return (require$$49.jsx(TextWrapper, { className: clsx('MuiText-' + color, { flexItem: flex }), ...rest, children: children }));
 };
 Text.propTypes = {
     children: propTypes.exports.node,
@@ -37892,7 +43886,7 @@ Text.propTypes = {
     ]),
 };
 
-const LogoBox = require$$43.styled(require$$43.Box)(() => `
+const LogoBox = require$$54.styled(require$$54.Box)(() => `
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37902,7 +43896,7 @@ const LogoBox = require$$43.styled(require$$43.Box)(() => `
     }
 `);
 function SaaSusLogo({ width, alt }) {
-    return (require$$38.jsx(LogoBox, { children: require$$38.jsx(require$$64__default["default"], { href: "/", children: require$$38.jsx("img", { width: width, src: "/static/images/logo/saasus_logo.svg", alt: alt }) }) }));
+    return (require$$49.jsx(LogoBox, { children: require$$49.jsx(require$$75__default["default"], { href: "/", children: require$$49.jsx("img", { width: width, src: "/static/images/logo/saasus_logo.svg", alt: alt }) }) }));
 }
 
 /***
@@ -37975,73 +43969,73 @@ const colors$2 = {
             menuItemBgActive: themeColors$2.primary,
             menuItemIconColor: '#4a5d69',
             menuItemIconColorActive: '#ffffff',
-            menuItemHeadingColor: require$$43.darken(themeColors$2.secondary, 0.3),
+            menuItemHeadingColor: require$$54.darken(themeColors$2.secondary, 0.3),
         },
     },
     alpha: {
         white: {
-            5: require$$43.alpha(themeColors$2.white, 0.02),
-            10: require$$43.alpha(themeColors$2.white, 0.1),
-            30: require$$43.alpha(themeColors$2.white, 0.3),
-            50: require$$43.alpha(themeColors$2.white, 0.5),
-            70: require$$43.alpha(themeColors$2.white, 0.7),
+            5: require$$54.alpha(themeColors$2.white, 0.02),
+            10: require$$54.alpha(themeColors$2.white, 0.1),
+            30: require$$54.alpha(themeColors$2.white, 0.3),
+            50: require$$54.alpha(themeColors$2.white, 0.5),
+            70: require$$54.alpha(themeColors$2.white, 0.7),
             100: themeColors$2.white,
         },
         trueWhite: {
-            5: require$$43.alpha(themeColors$2.trueWhite, 0.02),
-            10: require$$43.alpha(themeColors$2.trueWhite, 0.1),
-            30: require$$43.alpha(themeColors$2.trueWhite, 0.3),
-            50: require$$43.alpha(themeColors$2.trueWhite, 0.5),
-            70: require$$43.alpha(themeColors$2.trueWhite, 0.7),
+            5: require$$54.alpha(themeColors$2.trueWhite, 0.02),
+            10: require$$54.alpha(themeColors$2.trueWhite, 0.1),
+            30: require$$54.alpha(themeColors$2.trueWhite, 0.3),
+            50: require$$54.alpha(themeColors$2.trueWhite, 0.5),
+            70: require$$54.alpha(themeColors$2.trueWhite, 0.7),
             100: themeColors$2.trueWhite,
         },
         black: {
-            5: require$$43.alpha(themeColors$2.black, 0.02),
-            10: require$$43.alpha(themeColors$2.black, 0.1),
-            30: require$$43.alpha(themeColors$2.black, 0.3),
-            50: require$$43.alpha(themeColors$2.black, 0.5),
-            70: require$$43.alpha(themeColors$2.black, 0.7),
+            5: require$$54.alpha(themeColors$2.black, 0.02),
+            10: require$$54.alpha(themeColors$2.black, 0.1),
+            30: require$$54.alpha(themeColors$2.black, 0.3),
+            50: require$$54.alpha(themeColors$2.black, 0.5),
+            70: require$$54.alpha(themeColors$2.black, 0.7),
             100: themeColors$2.black,
         },
     },
     secondary: {
-        lighter: require$$43.alpha(themeColors$2.secondary, 0.85),
-        light: require$$43.alpha(themeColors$2.secondary, 0.6),
+        lighter: require$$54.alpha(themeColors$2.secondary, 0.85),
+        light: require$$54.alpha(themeColors$2.secondary, 0.6),
         main: themeColors$2.secondary,
-        dark: require$$43.darken(themeColors$2.secondary, 0.2),
+        dark: require$$54.darken(themeColors$2.secondary, 0.2),
     },
     primary: {
-        lighter: require$$43.alpha(themeColors$2.primary, 0.85),
-        light: require$$43.alpha(themeColors$2.primary, 0.3),
+        lighter: require$$54.alpha(themeColors$2.primary, 0.85),
+        light: require$$54.alpha(themeColors$2.primary, 0.3),
         main: themeColors$2.primary,
-        dark: require$$43.darken(themeColors$2.primary, 0.2),
+        dark: require$$54.darken(themeColors$2.primary, 0.2),
     },
     success: {
-        lighter: require$$43.alpha(themeColors$2.success, 0.85),
-        light: require$$43.alpha(themeColors$2.success, 0.3),
+        lighter: require$$54.alpha(themeColors$2.success, 0.85),
+        light: require$$54.alpha(themeColors$2.success, 0.3),
         main: themeColors$2.success,
-        dark: require$$43.darken(themeColors$2.success, 0.2),
+        dark: require$$54.darken(themeColors$2.success, 0.2),
     },
     warning: {
-        lighter: require$$43.alpha(themeColors$2.warning, 0.85),
-        light: require$$43.alpha(themeColors$2.warning, 0.3),
+        lighter: require$$54.alpha(themeColors$2.warning, 0.85),
+        light: require$$54.alpha(themeColors$2.warning, 0.3),
         main: themeColors$2.warning,
-        dark: require$$43.darken(themeColors$2.warning, 0.2),
+        dark: require$$54.darken(themeColors$2.warning, 0.2),
     },
     error: {
-        lighter: require$$43.alpha(themeColors$2.error, 0.85),
-        light: require$$43.alpha(themeColors$2.error, 0.3),
+        lighter: require$$54.alpha(themeColors$2.error, 0.85),
+        light: require$$54.alpha(themeColors$2.error, 0.3),
         main: themeColors$2.error,
-        dark: require$$43.darken(themeColors$2.error, 0.2),
+        dark: require$$54.darken(themeColors$2.error, 0.2),
     },
     info: {
-        lighter: require$$43.alpha(themeColors$2.info, 0.85),
-        light: require$$43.alpha(themeColors$2.info, 0.3),
+        lighter: require$$54.alpha(themeColors$2.info, 0.85),
+        light: require$$54.alpha(themeColors$2.info, 0.3),
         main: themeColors$2.info,
-        dark: require$$43.darken(themeColors$2.info, 0.2),
+        dark: require$$54.darken(themeColors$2.info, 0.2),
     },
 };
-const SaaSusDarkThemeHighContrast = require$$43.createTheme({
+const SaaSusDarkThemeHighContrast = require$$54.createTheme({
     // direction: i18n.dir(),
     colors: {
         gradients: {
@@ -38071,65 +44065,65 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
         },
         alpha: {
             white: {
-                5: require$$43.alpha(themeColors$2.white, 0.02),
-                10: require$$43.alpha(themeColors$2.white, 0.1),
-                30: require$$43.alpha(themeColors$2.white, 0.3),
-                50: require$$43.alpha(themeColors$2.white, 0.5),
-                70: require$$43.alpha(themeColors$2.white, 0.7),
+                5: require$$54.alpha(themeColors$2.white, 0.02),
+                10: require$$54.alpha(themeColors$2.white, 0.1),
+                30: require$$54.alpha(themeColors$2.white, 0.3),
+                50: require$$54.alpha(themeColors$2.white, 0.5),
+                70: require$$54.alpha(themeColors$2.white, 0.7),
                 100: themeColors$2.white,
             },
             trueWhite: {
-                5: require$$43.alpha(themeColors$2.trueWhite, 0.02),
-                10: require$$43.alpha(themeColors$2.trueWhite, 0.1),
-                30: require$$43.alpha(themeColors$2.trueWhite, 0.3),
-                50: require$$43.alpha(themeColors$2.trueWhite, 0.5),
-                70: require$$43.alpha(themeColors$2.trueWhite, 0.7),
+                5: require$$54.alpha(themeColors$2.trueWhite, 0.02),
+                10: require$$54.alpha(themeColors$2.trueWhite, 0.1),
+                30: require$$54.alpha(themeColors$2.trueWhite, 0.3),
+                50: require$$54.alpha(themeColors$2.trueWhite, 0.5),
+                70: require$$54.alpha(themeColors$2.trueWhite, 0.7),
                 100: themeColors$2.trueWhite,
             },
             black: {
-                5: require$$43.alpha(themeColors$2.black, 0.02),
-                10: require$$43.alpha(themeColors$2.black, 0.1),
-                30: require$$43.alpha(themeColors$2.black, 0.3),
-                50: require$$43.alpha(themeColors$2.black, 0.5),
-                70: require$$43.alpha(themeColors$2.black, 0.7),
+                5: require$$54.alpha(themeColors$2.black, 0.02),
+                10: require$$54.alpha(themeColors$2.black, 0.1),
+                30: require$$54.alpha(themeColors$2.black, 0.3),
+                50: require$$54.alpha(themeColors$2.black, 0.5),
+                70: require$$54.alpha(themeColors$2.black, 0.7),
                 100: themeColors$2.black,
             },
         },
         secondary: {
-            lighter: require$$43.alpha(themeColors$2.secondary, 0.1),
-            light: require$$43.alpha(themeColors$2.secondary, 0.3),
+            lighter: require$$54.alpha(themeColors$2.secondary, 0.1),
+            light: require$$54.alpha(themeColors$2.secondary, 0.3),
             main: themeColors$2.secondary,
-            dark: require$$43.darken(themeColors$2.secondary, 0.2),
+            dark: require$$54.darken(themeColors$2.secondary, 0.2),
         },
         primary: {
-            lighter: require$$43.alpha(themeColors$2.primary, 0.1),
-            light: require$$43.alpha(themeColors$2.primary, 0.3),
+            lighter: require$$54.alpha(themeColors$2.primary, 0.1),
+            light: require$$54.alpha(themeColors$2.primary, 0.3),
             main: themeColors$2.primary,
-            dark: require$$43.darken(themeColors$2.primary, 0.2),
+            dark: require$$54.darken(themeColors$2.primary, 0.2),
         },
         success: {
-            lighter: require$$43.alpha(themeColors$2.success, 0.1),
-            light: require$$43.alpha(themeColors$2.success, 0.3),
+            lighter: require$$54.alpha(themeColors$2.success, 0.1),
+            light: require$$54.alpha(themeColors$2.success, 0.3),
             main: themeColors$2.success,
-            dark: require$$43.darken(themeColors$2.success, 0.2),
+            dark: require$$54.darken(themeColors$2.success, 0.2),
         },
         warning: {
-            lighter: require$$43.alpha(themeColors$2.warning, 0.1),
-            light: require$$43.alpha(themeColors$2.warning, 0.3),
+            lighter: require$$54.alpha(themeColors$2.warning, 0.1),
+            light: require$$54.alpha(themeColors$2.warning, 0.3),
             main: themeColors$2.warning,
-            dark: require$$43.darken(themeColors$2.warning, 0.2),
+            dark: require$$54.darken(themeColors$2.warning, 0.2),
         },
         error: {
-            lighter: require$$43.alpha(themeColors$2.error, 0.1),
-            light: require$$43.alpha(themeColors$2.error, 0.3),
+            lighter: require$$54.alpha(themeColors$2.error, 0.1),
+            light: require$$54.alpha(themeColors$2.error, 0.3),
             main: themeColors$2.error,
-            dark: require$$43.darken(themeColors$2.error, 0.2),
+            dark: require$$54.darken(themeColors$2.error, 0.2),
         },
         info: {
-            lighter: require$$43.alpha(themeColors$2.info, 0.1),
-            light: require$$43.alpha(themeColors$2.info, 0.3),
+            lighter: require$$54.alpha(themeColors$2.info, 0.1),
+            light: require$$54.alpha(themeColors$2.info, 0.3),
             main: themeColors$2.info,
-            dark: require$$43.darken(themeColors$2.info, 0.2),
+            dark: require$$54.darken(themeColors$2.info, 0.2),
         },
     },
     general: {
@@ -38227,7 +44221,7 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
         MuiBackdrop: {
             styleOverrides: {
                 root: {
-                    backgroundColor: require$$43.alpha(require$$43.darken('#141c23', 0.5), 0.4),
+                    backgroundColor: require$$54.alpha(require$$54.darken('#141c23', 0.5), 0.4),
                     backdropFilter: 'blur(2px)',
                     '&.MuiBackdrop-invisible': {
                         backgroundColor: 'transparent',
@@ -38249,7 +44243,7 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
         MuiDialog: {
             styleOverrides: {
                 paper: {
-                    backgroundColor: require$$43.darken(themeColors$2.primaryAlt, 0.5),
+                    backgroundColor: require$$54.darken(themeColors$2.primaryAlt, 0.5),
                 },
             },
         },
@@ -38715,7 +44709,7 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
                         backgroundColor: colors$2.alpha.black[10],
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root:active': {
-                        backgroundColor: require$$43.alpha(colors$2.primary.lighter, 0.2),
+                        backgroundColor: require$$54.alpha(colors$2.primary.lighter, 0.2),
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
                         opacity: 0.2,
@@ -38792,7 +44786,7 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
                         },
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors$2.alpha.black[100],
-                            background: require$$43.alpha(colors$2.primary.lighter, 0.2),
+                            background: require$$54.alpha(colors$2.primary.lighter, 0.2),
                         },
                     },
                 },
@@ -38805,10 +44799,10 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
                     transition: 'all .2s',
                     '&:hover, &:active, &.active, &.Mui-selected': {
                         color: colors$2.alpha.black[100],
-                        background: require$$43.alpha(colors$2.primary.lighter, 0.2),
+                        background: require$$54.alpha(colors$2.primary.lighter, 0.2),
                     },
                     '&.Mui-selected:hover': {
-                        background: require$$43.alpha(colors$2.primary.lighter, 0.2),
+                        background: require$$54.alpha(colors$2.primary.lighter, 0.2),
                     },
                 },
             },
@@ -38820,7 +44814,7 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
                         color: colors$2.secondary.main,
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors$2.alpha.black[100],
-                            background: require$$43.alpha(colors$2.primary.lighter, 0.2),
+                            background: require$$54.alpha(colors$2.primary.lighter, 0.2),
                         },
                     },
                 },
@@ -38837,17 +44831,17 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
                     },
                 },
                 clearIndicator: {
-                    background: require$$43.alpha(colors$2.error.lighter, 0.2),
+                    background: require$$54.alpha(colors$2.error.lighter, 0.2),
                     color: colors$2.error.main,
                     marginRight: 8,
                     '&:hover': {
-                        background: require$$43.alpha(colors$2.error.lighter, 0.3),
+                        background: require$$54.alpha(colors$2.error.lighter, 0.3),
                     },
                 },
                 popupIndicator: {
                     color: colors$2.alpha.black[70],
                     '&:hover': {
-                        background: require$$43.alpha(colors$2.primary.lighter, 0.2),
+                        background: require$$54.alpha(colors$2.primary.lighter, 0.2),
                     },
                 },
             },
@@ -38882,7 +44876,7 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
                 root: {
                     transition: 'background-color .2s',
                     '&.MuiTableRow-hover:hover': {
-                        backgroundColor: require$$43.alpha(colors$2.alpha.black[5], 0.05),
+                        backgroundColor: require$$54.alpha(colors$2.alpha.black[5], 0.05),
                     },
                 },
             },
@@ -38965,12 +44959,12 @@ const SaaSusDarkThemeHighContrast = require$$43.createTheme({
         MuiTooltip: {
             styleOverrides: {
                 tooltip: {
-                    backgroundColor: require$$43.alpha(colors$2.alpha.black['100'], 0.95),
+                    backgroundColor: require$$54.alpha(colors$2.alpha.black['100'], 0.95),
                     padding: '8px 16px',
                     fontSize: 13,
                 },
                 arrow: {
-                    color: require$$43.alpha(colors$2.alpha.black['100'], 0.95),
+                    color: require$$54.alpha(colors$2.alpha.black['100'], 0.95),
                 },
             },
         },
@@ -39288,73 +45282,73 @@ const colors$1 = {
             menuItemBgActive: 'rgba(43, 48, 77, .6)',
             menuItemIconColor: '#444A6B',
             menuItemIconColorActive: '#ffffff',
-            menuItemHeadingColor: require$$43.darken(themeColors$1.secondary, 0.3),
+            menuItemHeadingColor: require$$54.darken(themeColors$1.secondary, 0.3),
         },
     },
     alpha: {
         white: {
-            5: require$$43.alpha(themeColors$1.white, 0.02),
-            10: require$$43.alpha(themeColors$1.white, 0.1),
-            30: require$$43.alpha(themeColors$1.white, 0.3),
-            50: require$$43.alpha(themeColors$1.white, 0.5),
-            70: require$$43.alpha(themeColors$1.white, 0.7),
+            5: require$$54.alpha(themeColors$1.white, 0.02),
+            10: require$$54.alpha(themeColors$1.white, 0.1),
+            30: require$$54.alpha(themeColors$1.white, 0.3),
+            50: require$$54.alpha(themeColors$1.white, 0.5),
+            70: require$$54.alpha(themeColors$1.white, 0.7),
             100: themeColors$1.white,
         },
         trueWhite: {
-            5: require$$43.alpha(themeColors$1.trueWhite, 0.02),
-            10: require$$43.alpha(themeColors$1.trueWhite, 0.1),
-            30: require$$43.alpha(themeColors$1.trueWhite, 0.3),
-            50: require$$43.alpha(themeColors$1.trueWhite, 0.5),
-            70: require$$43.alpha(themeColors$1.trueWhite, 0.7),
+            5: require$$54.alpha(themeColors$1.trueWhite, 0.02),
+            10: require$$54.alpha(themeColors$1.trueWhite, 0.1),
+            30: require$$54.alpha(themeColors$1.trueWhite, 0.3),
+            50: require$$54.alpha(themeColors$1.trueWhite, 0.5),
+            70: require$$54.alpha(themeColors$1.trueWhite, 0.7),
             100: themeColors$1.trueWhite,
         },
         black: {
-            5: require$$43.alpha(themeColors$1.black, 0.02),
-            10: require$$43.alpha(themeColors$1.black, 0.1),
-            30: require$$43.alpha(themeColors$1.black, 0.3),
-            50: require$$43.alpha(themeColors$1.black, 0.5),
-            70: require$$43.alpha(themeColors$1.black, 0.7),
+            5: require$$54.alpha(themeColors$1.black, 0.02),
+            10: require$$54.alpha(themeColors$1.black, 0.1),
+            30: require$$54.alpha(themeColors$1.black, 0.3),
+            50: require$$54.alpha(themeColors$1.black, 0.5),
+            70: require$$54.alpha(themeColors$1.black, 0.7),
             100: themeColors$1.black,
         },
     },
     secondary: {
-        lighter: require$$43.alpha(themeColors$1.secondary, 0.85),
-        light: require$$43.alpha(themeColors$1.secondary, 0.6),
+        lighter: require$$54.alpha(themeColors$1.secondary, 0.85),
+        light: require$$54.alpha(themeColors$1.secondary, 0.6),
         main: themeColors$1.secondary,
-        dark: require$$43.darken(themeColors$1.secondary, 0.2),
+        dark: require$$54.darken(themeColors$1.secondary, 0.2),
     },
     primary: {
-        lighter: require$$43.alpha(themeColors$1.primary, 0.85),
-        light: require$$43.alpha(themeColors$1.primary, 0.3),
+        lighter: require$$54.alpha(themeColors$1.primary, 0.85),
+        light: require$$54.alpha(themeColors$1.primary, 0.3),
         main: themeColors$1.primary,
-        dark: require$$43.darken(themeColors$1.primary, 0.2),
+        dark: require$$54.darken(themeColors$1.primary, 0.2),
     },
     success: {
-        lighter: require$$43.alpha(themeColors$1.success, 0.85),
-        light: require$$43.alpha(themeColors$1.success, 0.3),
+        lighter: require$$54.alpha(themeColors$1.success, 0.85),
+        light: require$$54.alpha(themeColors$1.success, 0.3),
         main: themeColors$1.success,
-        dark: require$$43.darken(themeColors$1.success, 0.2),
+        dark: require$$54.darken(themeColors$1.success, 0.2),
     },
     warning: {
-        lighter: require$$43.alpha(themeColors$1.warning, 0.85),
-        light: require$$43.alpha(themeColors$1.warning, 0.3),
+        lighter: require$$54.alpha(themeColors$1.warning, 0.85),
+        light: require$$54.alpha(themeColors$1.warning, 0.3),
         main: themeColors$1.warning,
-        dark: require$$43.darken(themeColors$1.warning, 0.2),
+        dark: require$$54.darken(themeColors$1.warning, 0.2),
     },
     error: {
-        lighter: require$$43.alpha(themeColors$1.error, 0.85),
-        light: require$$43.alpha(themeColors$1.error, 0.3),
+        lighter: require$$54.alpha(themeColors$1.error, 0.85),
+        light: require$$54.alpha(themeColors$1.error, 0.3),
         main: themeColors$1.error,
-        dark: require$$43.darken(themeColors$1.error, 0.2),
+        dark: require$$54.darken(themeColors$1.error, 0.2),
     },
     info: {
-        lighter: require$$43.alpha(themeColors$1.info, 0.85),
-        light: require$$43.alpha(themeColors$1.info, 0.3),
+        lighter: require$$54.alpha(themeColors$1.info, 0.85),
+        light: require$$54.alpha(themeColors$1.info, 0.3),
         main: themeColors$1.info,
-        dark: require$$43.darken(themeColors$1.info, 0.2),
+        dark: require$$54.darken(themeColors$1.info, 0.2),
     },
 };
-const SaaSusDarkTheme = require$$43.createTheme({
+const SaaSusDarkTheme = require$$54.createTheme({
     // direction: i18n.dir(),
     colors: {
         gradients: {
@@ -39384,65 +45378,65 @@ const SaaSusDarkTheme = require$$43.createTheme({
         },
         alpha: {
             white: {
-                5: require$$43.alpha(themeColors$1.white, 0.02),
-                10: require$$43.alpha(themeColors$1.white, 0.1),
-                30: require$$43.alpha(themeColors$1.white, 0.3),
-                50: require$$43.alpha(themeColors$1.white, 0.5),
-                70: require$$43.alpha(themeColors$1.white, 0.7),
+                5: require$$54.alpha(themeColors$1.white, 0.02),
+                10: require$$54.alpha(themeColors$1.white, 0.1),
+                30: require$$54.alpha(themeColors$1.white, 0.3),
+                50: require$$54.alpha(themeColors$1.white, 0.5),
+                70: require$$54.alpha(themeColors$1.white, 0.7),
                 100: themeColors$1.white,
             },
             trueWhite: {
-                5: require$$43.alpha(themeColors$1.trueWhite, 0.02),
-                10: require$$43.alpha(themeColors$1.trueWhite, 0.1),
-                30: require$$43.alpha(themeColors$1.trueWhite, 0.3),
-                50: require$$43.alpha(themeColors$1.trueWhite, 0.5),
-                70: require$$43.alpha(themeColors$1.trueWhite, 0.7),
+                5: require$$54.alpha(themeColors$1.trueWhite, 0.02),
+                10: require$$54.alpha(themeColors$1.trueWhite, 0.1),
+                30: require$$54.alpha(themeColors$1.trueWhite, 0.3),
+                50: require$$54.alpha(themeColors$1.trueWhite, 0.5),
+                70: require$$54.alpha(themeColors$1.trueWhite, 0.7),
                 100: themeColors$1.trueWhite,
             },
             black: {
-                5: require$$43.alpha(themeColors$1.black, 0.02),
-                10: require$$43.alpha(themeColors$1.black, 0.1),
-                30: require$$43.alpha(themeColors$1.black, 0.3),
-                50: require$$43.alpha(themeColors$1.black, 0.5),
-                70: require$$43.alpha(themeColors$1.black, 0.7),
+                5: require$$54.alpha(themeColors$1.black, 0.02),
+                10: require$$54.alpha(themeColors$1.black, 0.1),
+                30: require$$54.alpha(themeColors$1.black, 0.3),
+                50: require$$54.alpha(themeColors$1.black, 0.5),
+                70: require$$54.alpha(themeColors$1.black, 0.7),
                 100: themeColors$1.black,
             },
         },
         secondary: {
-            lighter: require$$43.alpha(themeColors$1.secondary, 0.1),
-            light: require$$43.alpha(themeColors$1.secondary, 0.3),
+            lighter: require$$54.alpha(themeColors$1.secondary, 0.1),
+            light: require$$54.alpha(themeColors$1.secondary, 0.3),
             main: themeColors$1.secondary,
-            dark: require$$43.darken(themeColors$1.secondary, 0.2),
+            dark: require$$54.darken(themeColors$1.secondary, 0.2),
         },
         primary: {
-            lighter: require$$43.alpha(themeColors$1.primary, 0.1),
-            light: require$$43.alpha(themeColors$1.primary, 0.3),
+            lighter: require$$54.alpha(themeColors$1.primary, 0.1),
+            light: require$$54.alpha(themeColors$1.primary, 0.3),
             main: themeColors$1.primary,
-            dark: require$$43.darken(themeColors$1.primary, 0.2),
+            dark: require$$54.darken(themeColors$1.primary, 0.2),
         },
         success: {
-            lighter: require$$43.alpha(themeColors$1.success, 0.1),
-            light: require$$43.alpha(themeColors$1.success, 0.3),
+            lighter: require$$54.alpha(themeColors$1.success, 0.1),
+            light: require$$54.alpha(themeColors$1.success, 0.3),
             main: themeColors$1.success,
-            dark: require$$43.darken(themeColors$1.success, 0.2),
+            dark: require$$54.darken(themeColors$1.success, 0.2),
         },
         warning: {
-            lighter: require$$43.alpha(themeColors$1.warning, 0.1),
-            light: require$$43.alpha(themeColors$1.warning, 0.3),
+            lighter: require$$54.alpha(themeColors$1.warning, 0.1),
+            light: require$$54.alpha(themeColors$1.warning, 0.3),
             main: themeColors$1.warning,
-            dark: require$$43.darken(themeColors$1.warning, 0.2),
+            dark: require$$54.darken(themeColors$1.warning, 0.2),
         },
         error: {
-            lighter: require$$43.alpha(themeColors$1.error, 0.1),
-            light: require$$43.alpha(themeColors$1.error, 0.3),
+            lighter: require$$54.alpha(themeColors$1.error, 0.1),
+            light: require$$54.alpha(themeColors$1.error, 0.3),
             main: themeColors$1.error,
-            dark: require$$43.darken(themeColors$1.error, 0.2),
+            dark: require$$54.darken(themeColors$1.error, 0.2),
         },
         info: {
-            lighter: require$$43.alpha(themeColors$1.info, 0.1),
-            light: require$$43.alpha(themeColors$1.info, 0.3),
+            lighter: require$$54.alpha(themeColors$1.info, 0.1),
+            light: require$$54.alpha(themeColors$1.info, 0.3),
             main: themeColors$1.info,
-            dark: require$$43.darken(themeColors$1.info, 0.2),
+            dark: require$$54.darken(themeColors$1.info, 0.2),
         },
     },
     general: {
@@ -39540,7 +45534,7 @@ const SaaSusDarkTheme = require$$43.createTheme({
         MuiBackdrop: {
             styleOverrides: {
                 root: {
-                    backgroundColor: require$$43.alpha(require$$43.darken('#070C27', 0.5), 0.4),
+                    backgroundColor: require$$54.alpha(require$$54.darken('#070C27', 0.5), 0.4),
                     backdropFilter: 'blur(2px)',
                     '&.MuiBackdrop-invisible': {
                         backgroundColor: 'transparent',
@@ -39562,7 +45556,7 @@ const SaaSusDarkTheme = require$$43.createTheme({
         MuiDialog: {
             styleOverrides: {
                 paper: {
-                    backgroundColor: require$$43.darken(themeColors$1.primaryAlt, 0.5),
+                    backgroundColor: require$$54.darken(themeColors$1.primaryAlt, 0.5),
                 },
             },
         },
@@ -40028,7 +46022,7 @@ const SaaSusDarkTheme = require$$43.createTheme({
                         backgroundColor: colors$1.alpha.black[10],
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root:active': {
-                        backgroundColor: require$$43.alpha(colors$1.primary.lighter, 0.2),
+                        backgroundColor: require$$54.alpha(colors$1.primary.lighter, 0.2),
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
                         opacity: 0.2,
@@ -40105,7 +46099,7 @@ const SaaSusDarkTheme = require$$43.createTheme({
                         },
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors$1.alpha.black[100],
-                            background: require$$43.alpha(colors$1.primary.lighter, 0.2),
+                            background: require$$54.alpha(colors$1.primary.lighter, 0.2),
                         },
                     },
                 },
@@ -40118,10 +46112,10 @@ const SaaSusDarkTheme = require$$43.createTheme({
                     transition: 'all .2s',
                     '&:hover, &:active, &.active, &.Mui-selected': {
                         color: colors$1.alpha.black[100],
-                        background: require$$43.alpha(colors$1.primary.lighter, 0.2),
+                        background: require$$54.alpha(colors$1.primary.lighter, 0.2),
                     },
                     '&.Mui-selected:hover': {
-                        background: require$$43.alpha(colors$1.primary.lighter, 0.2),
+                        background: require$$54.alpha(colors$1.primary.lighter, 0.2),
                     },
                 },
             },
@@ -40133,7 +46127,7 @@ const SaaSusDarkTheme = require$$43.createTheme({
                         color: colors$1.secondary.main,
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors$1.alpha.black[100],
-                            background: require$$43.alpha(colors$1.primary.lighter, 0.2),
+                            background: require$$54.alpha(colors$1.primary.lighter, 0.2),
                         },
                     },
                 },
@@ -40150,17 +46144,17 @@ const SaaSusDarkTheme = require$$43.createTheme({
                     },
                 },
                 clearIndicator: {
-                    background: require$$43.alpha(colors$1.error.lighter, 0.2),
+                    background: require$$54.alpha(colors$1.error.lighter, 0.2),
                     color: colors$1.error.main,
                     marginRight: 8,
                     '&:hover': {
-                        background: require$$43.alpha(colors$1.error.lighter, 0.3),
+                        background: require$$54.alpha(colors$1.error.lighter, 0.3),
                     },
                 },
                 popupIndicator: {
                     color: colors$1.alpha.black[70],
                     '&:hover': {
-                        background: require$$43.alpha(colors$1.primary.lighter, 0.2),
+                        background: require$$54.alpha(colors$1.primary.lighter, 0.2),
                     },
                 },
             },
@@ -40195,7 +46189,7 @@ const SaaSusDarkTheme = require$$43.createTheme({
                 root: {
                     transition: 'background-color .2s',
                     '&.MuiTableRow-hover:hover': {
-                        backgroundColor: require$$43.alpha(colors$1.alpha.black[5], 0.05),
+                        backgroundColor: require$$54.alpha(colors$1.alpha.black[5], 0.05),
                     },
                 },
             },
@@ -40278,12 +46272,12 @@ const SaaSusDarkTheme = require$$43.createTheme({
         MuiTooltip: {
             styleOverrides: {
                 tooltip: {
-                    backgroundColor: require$$43.alpha(colors$1.alpha.black['100'], 0.95),
+                    backgroundColor: require$$54.alpha(colors$1.alpha.black['100'], 0.95),
                     padding: '8px 16px',
                     fontSize: 13,
                 },
                 arrow: {
-                    color: require$$43.alpha(colors$1.alpha.black['100'], 0.95),
+                    color: require$$54.alpha(colors$1.alpha.black['100'], 0.95),
                 },
             },
         },
@@ -40598,75 +46592,75 @@ const colors = {
             menuItemColorActive: themeColors.primary,
             menuItemBg: themeColors.white,
             menuItemBgActive: '#f2f5f9',
-            menuItemIconColor: require$$43.lighten(themeColors.secondary, 0.3),
+            menuItemIconColor: require$$54.lighten(themeColors.secondary, 0.3),
             menuItemIconColorActive: themeColors.primary,
-            menuItemHeadingColor: require$$43.darken(themeColors.secondary, 0.3),
+            menuItemHeadingColor: require$$54.darken(themeColors.secondary, 0.3),
         },
     },
     alpha: {
         white: {
-            5: require$$43.alpha(themeColors.white, 0.02),
-            10: require$$43.alpha(themeColors.white, 0.1),
-            30: require$$43.alpha(themeColors.white, 0.3),
-            50: require$$43.alpha(themeColors.white, 0.5),
-            70: require$$43.alpha(themeColors.white, 0.7),
+            5: require$$54.alpha(themeColors.white, 0.02),
+            10: require$$54.alpha(themeColors.white, 0.1),
+            30: require$$54.alpha(themeColors.white, 0.3),
+            50: require$$54.alpha(themeColors.white, 0.5),
+            70: require$$54.alpha(themeColors.white, 0.7),
             100: themeColors.white,
         },
         trueWhite: {
-            5: require$$43.alpha(themeColors.white, 0.02),
-            10: require$$43.alpha(themeColors.white, 0.1),
-            30: require$$43.alpha(themeColors.white, 0.3),
-            50: require$$43.alpha(themeColors.white, 0.5),
-            70: require$$43.alpha(themeColors.white, 0.7),
+            5: require$$54.alpha(themeColors.white, 0.02),
+            10: require$$54.alpha(themeColors.white, 0.1),
+            30: require$$54.alpha(themeColors.white, 0.3),
+            50: require$$54.alpha(themeColors.white, 0.5),
+            70: require$$54.alpha(themeColors.white, 0.7),
             100: themeColors.white,
         },
         black: {
-            5: require$$43.alpha(themeColors.black, 0.02),
-            10: require$$43.alpha(themeColors.black, 0.1),
-            30: require$$43.alpha(themeColors.black, 0.3),
-            50: require$$43.alpha(themeColors.black, 0.5),
-            70: require$$43.alpha(themeColors.black, 0.7),
+            5: require$$54.alpha(themeColors.black, 0.02),
+            10: require$$54.alpha(themeColors.black, 0.1),
+            30: require$$54.alpha(themeColors.black, 0.3),
+            50: require$$54.alpha(themeColors.black, 0.5),
+            70: require$$54.alpha(themeColors.black, 0.7),
             100: themeColors.black,
         },
     },
     secondary: {
-        lighter: require$$43.lighten(themeColors.secondary, 0.85),
-        light: require$$43.lighten(themeColors.secondary, 0.25),
+        lighter: require$$54.lighten(themeColors.secondary, 0.85),
+        light: require$$54.lighten(themeColors.secondary, 0.25),
         main: themeColors.secondary,
-        dark: require$$43.darken(themeColors.secondary, 0.2),
+        dark: require$$54.darken(themeColors.secondary, 0.2),
     },
     primary: {
-        lighter: require$$43.lighten(themeColors.primary, 0.85),
-        light: require$$43.lighten(themeColors.primary, 0.3),
+        lighter: require$$54.lighten(themeColors.primary, 0.85),
+        light: require$$54.lighten(themeColors.primary, 0.3),
         main: themeColors.primary,
-        dark: require$$43.darken(themeColors.primary, 0.2),
+        dark: require$$54.darken(themeColors.primary, 0.2),
     },
     success: {
-        lighter: require$$43.lighten(themeColors.success, 0.85),
-        light: require$$43.lighten(themeColors.success, 0.3),
+        lighter: require$$54.lighten(themeColors.success, 0.85),
+        light: require$$54.lighten(themeColors.success, 0.3),
         main: themeColors.success,
-        dark: require$$43.darken(themeColors.success, 0.2),
+        dark: require$$54.darken(themeColors.success, 0.2),
     },
     warning: {
-        lighter: require$$43.lighten(themeColors.warning, 0.85),
-        light: require$$43.lighten(themeColors.warning, 0.3),
+        lighter: require$$54.lighten(themeColors.warning, 0.85),
+        light: require$$54.lighten(themeColors.warning, 0.3),
         main: themeColors.warning,
-        dark: require$$43.darken(themeColors.warning, 0.2),
+        dark: require$$54.darken(themeColors.warning, 0.2),
     },
     error: {
-        lighter: require$$43.lighten(themeColors.error, 0.85),
-        light: require$$43.lighten(themeColors.error, 0.3),
+        lighter: require$$54.lighten(themeColors.error, 0.85),
+        light: require$$54.lighten(themeColors.error, 0.3),
         main: themeColors.error,
-        dark: require$$43.darken(themeColors.error, 0.2),
+        dark: require$$54.darken(themeColors.error, 0.2),
     },
     info: {
-        lighter: require$$43.lighten(themeColors.info, 0.85),
-        light: require$$43.lighten(themeColors.info, 0.3),
+        lighter: require$$54.lighten(themeColors.info, 0.85),
+        light: require$$54.lighten(themeColors.info, 0.3),
         main: themeColors.info,
-        dark: require$$43.darken(themeColors.info, 0.2),
+        dark: require$$54.darken(themeColors.info, 0.2),
     },
 };
-const SaaSusTheme = require$$43.createTheme({
+const SaaSusTheme = require$$54.createTheme({
     colors: {
         gradients: {
             blue1: colors.gradients.blue1,
@@ -40695,65 +46689,65 @@ const SaaSusTheme = require$$43.createTheme({
         },
         alpha: {
             white: {
-                5: require$$43.alpha(themeColors.white, 0.02),
-                10: require$$43.alpha(themeColors.white, 0.1),
-                30: require$$43.alpha(themeColors.white, 0.3),
-                50: require$$43.alpha(themeColors.white, 0.5),
-                70: require$$43.alpha(themeColors.white, 0.7),
+                5: require$$54.alpha(themeColors.white, 0.02),
+                10: require$$54.alpha(themeColors.white, 0.1),
+                30: require$$54.alpha(themeColors.white, 0.3),
+                50: require$$54.alpha(themeColors.white, 0.5),
+                70: require$$54.alpha(themeColors.white, 0.7),
                 100: themeColors.white,
             },
             trueWhite: {
-                5: require$$43.alpha(themeColors.white, 0.02),
-                10: require$$43.alpha(themeColors.white, 0.1),
-                30: require$$43.alpha(themeColors.white, 0.3),
-                50: require$$43.alpha(themeColors.white, 0.5),
-                70: require$$43.alpha(themeColors.white, 0.7),
+                5: require$$54.alpha(themeColors.white, 0.02),
+                10: require$$54.alpha(themeColors.white, 0.1),
+                30: require$$54.alpha(themeColors.white, 0.3),
+                50: require$$54.alpha(themeColors.white, 0.5),
+                70: require$$54.alpha(themeColors.white, 0.7),
                 100: themeColors.white,
             },
             black: {
-                5: require$$43.alpha(themeColors.black, 0.02),
-                10: require$$43.alpha(themeColors.black, 0.1),
-                30: require$$43.alpha(themeColors.black, 0.3),
-                50: require$$43.alpha(themeColors.black, 0.5),
-                70: require$$43.alpha(themeColors.black, 0.7),
+                5: require$$54.alpha(themeColors.black, 0.02),
+                10: require$$54.alpha(themeColors.black, 0.1),
+                30: require$$54.alpha(themeColors.black, 0.3),
+                50: require$$54.alpha(themeColors.black, 0.5),
+                70: require$$54.alpha(themeColors.black, 0.7),
                 100: themeColors.black,
             },
         },
         secondary: {
-            lighter: require$$43.alpha(themeColors.secondary, 0.1),
-            light: require$$43.lighten(themeColors.secondary, 0.3),
+            lighter: require$$54.alpha(themeColors.secondary, 0.1),
+            light: require$$54.lighten(themeColors.secondary, 0.3),
             main: themeColors.secondary,
-            dark: require$$43.darken(themeColors.secondary, 0.2),
+            dark: require$$54.darken(themeColors.secondary, 0.2),
         },
         primary: {
-            lighter: require$$43.alpha(themeColors.primary, 0.1),
-            light: require$$43.lighten(themeColors.primary, 0.3),
+            lighter: require$$54.alpha(themeColors.primary, 0.1),
+            light: require$$54.lighten(themeColors.primary, 0.3),
             main: themeColors.primary,
-            dark: require$$43.darken(themeColors.primary, 0.2),
+            dark: require$$54.darken(themeColors.primary, 0.2),
         },
         success: {
-            lighter: require$$43.alpha(themeColors.success, 0.1),
-            light: require$$43.lighten(themeColors.success, 0.3),
+            lighter: require$$54.alpha(themeColors.success, 0.1),
+            light: require$$54.lighten(themeColors.success, 0.3),
             main: themeColors.success,
-            dark: require$$43.darken(themeColors.success, 0.2),
+            dark: require$$54.darken(themeColors.success, 0.2),
         },
         warning: {
-            lighter: require$$43.alpha(themeColors.warning, 0.1),
-            light: require$$43.lighten(themeColors.warning, 0.3),
+            lighter: require$$54.alpha(themeColors.warning, 0.1),
+            light: require$$54.lighten(themeColors.warning, 0.3),
             main: themeColors.warning,
-            dark: require$$43.darken(themeColors.warning, 0.2),
+            dark: require$$54.darken(themeColors.warning, 0.2),
         },
         error: {
-            lighter: require$$43.alpha(themeColors.error, 0.1),
-            light: require$$43.lighten(themeColors.error, 0.3),
+            lighter: require$$54.alpha(themeColors.error, 0.1),
+            light: require$$54.lighten(themeColors.error, 0.3),
             main: themeColors.error,
-            dark: require$$43.darken(themeColors.error, 0.2),
+            dark: require$$54.darken(themeColors.error, 0.2),
         },
         info: {
-            lighter: require$$43.alpha(themeColors.info, 0.1),
-            light: require$$43.lighten(themeColors.info, 0.3),
+            lighter: require$$54.alpha(themeColors.info, 0.1),
+            light: require$$54.lighten(themeColors.info, 0.3),
             main: themeColors.info,
-            dark: require$$43.darken(themeColors.info, 0.2),
+            dark: require$$54.darken(themeColors.info, 0.2),
         },
         turquoise: {
             main: '#00838f',
@@ -40868,7 +46862,7 @@ const SaaSusTheme = require$$43.createTheme({
         MuiBackdrop: {
             styleOverrides: {
                 root: {
-                    backgroundColor: require$$43.alpha(require$$43.darken(themeColors.primaryAlt, 0.4), 0.2),
+                    backgroundColor: require$$54.alpha(require$$54.darken(themeColors.primaryAlt, 0.4), 0.2),
                     backdropFilter: 'blur(2px)',
                     '&.MuiBackdrop-invisible': {
                         backgroundColor: 'transparent',
@@ -41358,10 +47352,10 @@ const SaaSusTheme = require$$43.createTheme({
                         },
                     },
                     '& .MuiListItem-root.MuiButtonBase-root.Mui-selected': {
-                        backgroundColor: require$$43.alpha(colors.primary.lighter, 0.4),
+                        backgroundColor: require$$54.alpha(colors.primary.lighter, 0.4),
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root:active': {
-                        backgroundColor: require$$43.alpha(colors.primary.lighter, 0.4),
+                        backgroundColor: require$$54.alpha(colors.primary.lighter, 0.4),
                     },
                     '& .MuiMenuItem-root.MuiButtonBase-root .MuiTouchRipple-root': {
                         opacity: 0.2,
@@ -41438,7 +47432,7 @@ const SaaSusTheme = require$$43.createTheme({
                         },
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors.alpha.black[100],
-                            background: require$$43.alpha(colors.primary.lighter, 0.4),
+                            background: require$$54.alpha(colors.primary.lighter, 0.4),
                         },
                     },
                 },
@@ -41451,10 +47445,10 @@ const SaaSusTheme = require$$43.createTheme({
                     transition: 'all .2s',
                     '&:hover, &:active, &.active, &.Mui-selected': {
                         color: colors.alpha.black[100],
-                        background: require$$43.alpha(colors.primary.lighter, 0.4),
+                        background: require$$54.alpha(colors.primary.lighter, 0.4),
                     },
                     '&.Mui-selected:hover': {
-                        background: require$$43.alpha(colors.primary.lighter, 0.4),
+                        background: require$$54.alpha(colors.primary.lighter, 0.4),
                     },
                 },
             },
@@ -41466,7 +47460,7 @@ const SaaSusTheme = require$$43.createTheme({
                         color: colors.secondary.main,
                         '&:hover, &:active, &.active, &.Mui-selected': {
                             color: colors.alpha.black[100],
-                            background: require$$43.lighten(colors.primary.lighter, 0.5),
+                            background: require$$54.lighten(colors.primary.lighter, 0.5),
                         },
                     },
                 },
@@ -41615,12 +47609,12 @@ const SaaSusTheme = require$$43.createTheme({
         MuiTooltip: {
             styleOverrides: {
                 tooltip: {
-                    backgroundColor: require$$43.alpha(colors.alpha.black['100'], 0.95),
+                    backgroundColor: require$$54.alpha(colors.alpha.black['100'], 0.95),
                     padding: '8px 16px',
                     fontSize: '0.8125rem',
                 },
                 arrow: {
-                    color: require$$43.alpha(colors.alpha.black['100'], 0.95),
+                    color: require$$54.alpha(colors.alpha.black['100'], 0.95),
                 },
             },
         },
@@ -41880,26 +47874,26 @@ const themeMap = {
     SaaSusDarkThemeHighContrast,
 };
 
-const ThemeContext = require$$67.createContext({
+const ThemeContext = require$$78.createContext({
     theme: null,
     setThemeName: null,
 });
 const ThemeProviderWrapper = ({ lang = 'ja', children, }) => {
-    const [themeName, _setThemeName] = require$$67.useState('SaaSusTheme');
-    require$$67.useEffect(() => {
+    const [themeName, _setThemeName] = require$$78.useState('SaaSusTheme');
+    require$$78.useEffect(() => {
         const curThemeName = 'SaaSusTheme';
         _setThemeName(curThemeName);
     }, []);
-    require$$67.useEffect(() => {
+    require$$78.useEffect(() => {
         // change language
-        i18n__default$6["default"].changeLanguage(lang);
+        i18n__default$7["default"].changeLanguage(lang);
     }, [lang]);
     const theme = themeCreator(themeName);
     const setThemeName = (themeName) => {
         window.localStorage.setItem('appTheme', themeName);
         _setThemeName(themeName);
     };
-    return (require$$38.jsx(require$$66.StylesProvider, { injectFirst: true, children: require$$38.jsx(ThemeContext.Provider, { value: { theme, setThemeName }, children: require$$38.jsx(require$$63.ThemeProvider, { theme: theme, children: children }) }) }));
+    return (require$$49.jsx(require$$77.StylesProvider, { injectFirst: true, children: require$$49.jsx(ThemeContext.Provider, { value: { theme, setThemeName }, children: require$$49.jsx(require$$74.ThemeProvider, { theme: theme, children: children }) }) }));
 };
 
 exports.AccordionWrap = AccordionWrap;
@@ -41910,15 +47904,15 @@ exports.CustomAlert = CustomAlert;
 exports.CustomButton = CustomButton;
 exports.CustomContainer = CustomContainer;
 exports.CustomLabel = CustomLabel;
-exports.CustomTable = CustomTable$6;
-exports.CustomTableCell = CustomTableCell$6;
-exports.CustomTableCellAction = CustomTableCellAction$6;
-exports.CustomTableCellActionBody = CustomTableCellActionBody$6;
-exports.CustomTableContainer = CustomTableContainer$6;
+exports.CustomTable = CustomTable$7;
+exports.CustomTableCell = CustomTableCell$7;
+exports.CustomTableCellAction = CustomTableCellAction$7;
+exports.CustomTableCellActionBody = CustomTableCellActionBody$7;
+exports.CustomTableContainer = CustomTableContainer$7;
 exports.CustomTableFilter = CustomTableFilter;
 exports.CustomTableFilterResult = CustomTableFilterResult;
-exports.CustomTableHeader = CustomTableHeader$6;
-exports.CustomTableRow = CustomTableRow$6;
+exports.CustomTableHeader = CustomTableHeader$7;
+exports.CustomTableRow = CustomTableRow$7;
 exports.CustomTooltip = CustomTooltip;
 exports.DeleteDialog = DeleteDialog;
 exports.MainTitleSet = MainTitleSet;
