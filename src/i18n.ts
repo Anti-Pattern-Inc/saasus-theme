@@ -1,7 +1,7 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-//  テストコメント
+//  テストコメント2
 
 // the translations
 // (tip move them in a JSON file and import them,
