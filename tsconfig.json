@@ -28,11 +28,11 @@
     "isolatedModules": true,
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
-    "declarationMap": true,
-    "outDir": null // VSCodeのバグ対策 https://kasheight.hatenablog.jp/entry/2018/12/nuxt-typescript
+    "declarationMap": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ],
   "include": [
     "src/**/*.ts",
