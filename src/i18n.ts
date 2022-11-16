@@ -32,5 +32,5 @@ i18n
       escapeValue: false, // react already safes from xss
     },
   })
-// for test
+
 export default i18n
