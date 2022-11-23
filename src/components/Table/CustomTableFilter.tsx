@@ -1,8 +1,9 @@
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone'
 import { Box, InputAdornment, TextField } from '@mui/material'
+import { ChangeEventHandler } from 'react'
 
 type Props = {
-  onChange: (_event: React.MouseEvent<HTMLElement, MouseEvent>) => void
+  onChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
   placeholder: string
   value: string
 }
