@@ -2,9 +2,9 @@ import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone'
 import { Box, InputAdornment, TextField } from '@mui/material'
 
 type Props = {
-  onChange?: (_event: React.MouseEvent<HTMLElement, MouseEvent>) => void
-  placeholder?: string
-  value?: string
+  onChange: (_event: React.MouseEvent<HTMLElement, MouseEvent>) => void
+  placeholder: string
+  value: string
 }
 
 export const CustomTableFilter = ({ onChange, placeholder, value }: Props) => {
@@ -22,7 +22,7 @@ export const CustomTableFilter = ({ onChange, placeholder, value }: Props) => {
             </InputAdornment>
           ),
         }}
-        onChange={() => onChange}
+        onChange={onChange}
         placeholder={placeholder}
         value={value}
         size="small"
