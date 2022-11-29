@@ -23,13 +23,19 @@ const StackButtonWrap = styled(Stack)(() => ({
   },
 }))
 
-export const ButtonWrap = ({ mt, mb, sx, children, justifyContent }: Props) => {
+export const ButtonWrap = ({
+  mt = 4,
+  mb = 2,
+  sx,
+  children,
+  justifyContent,
+}: Props) => {
   return (
     <StackButtonWrap
       justifyContent={justifyContent ? justifyContent : 'flex-start'}
       sx={{
-        mt: mt || 4,
-        mb: mb || 2,
+        mt,
+        mb,
         ...sx,
       }}
     >

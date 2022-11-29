@@ -41,10 +41,10 @@ export const CustomLabel = ({
   size,
   sx,
   variant,
-  mt,
+  mt = 3,
 }: Props) => {
   return (
-    <Label htmlFor={id} sx={{ mt: mt || 3 }}>
+    <Label htmlFor={id} sx={{ mt }}>
       {children}
       <CustomTooltip
         TooltipTitleIconComponent={TooltipTitleIconComponent}

@@ -7,6 +7,6 @@ declare type Props = Partial<{
     sx: SxProps;
     children: ReactNode;
 }>;
-export declare const ButtonWrap: ({ mt, mb, sx, children, justifyContent }: Props) => JSX.Element;
+export declare const ButtonWrap: ({ mt, mb, sx, children, justifyContent, }: Props) => JSX.Element;
 export {};
 //# sourceMappingURL=ButtonWrap.d.ts.map
