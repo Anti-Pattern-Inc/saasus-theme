@@ -456,12 +456,11 @@ const StackButtonWrap = material.styled(material.Stack)(() => ({
         gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px, 100%), auto))',
     },
 }));
-const ButtonWrap = ({ mt = 4, mb = 2, sx, children, justifyContent, }) => {
-    return (jsxRuntime.jsx(StackButtonWrap, { justifyContent: justifyContent ? justifyContent : 'flex-start', sx: {
-            mt,
-            mb,
-            ...sx,
-        }, children: children }));
+const ButtonWrap = ({ mt = 32, mb = 16, sx, children, justifyContent, }) => {
+    return (jsxRuntime.jsx(StackButtonWrap, { justifyContent: justifyContent ? justifyContent : 'flex-start', style: {
+            marginTop: mt,
+            marginBottom: mb,
+        }, sx: sx, children: children }));
 };
 
 const CustomButton = ({ color, variant, size, type, startIcon, endIcon, disabled, onClick, sx, children, }) => {

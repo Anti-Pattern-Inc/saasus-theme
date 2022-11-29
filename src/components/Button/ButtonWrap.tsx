@@ -3,8 +3,8 @@ import { SxProps } from '@mui/system'
 import { ReactNode } from 'react'
 
 type Props = Partial<{
-  mt: number
-  mb: number
+  mt: number // px指定
+  mb: number // px指定
   justifyContent: 'center' | 'flex-end' | 'flex-start' // 左右位置 default: 右付け
   sx: SxProps
   children: ReactNode
@@ -24,8 +24,8 @@ const StackButtonWrap = styled(Stack)(() => ({
 }))
 
 export const ButtonWrap = ({
-  mt = 4,
-  mb = 2,
+  mt = 32,
+  mb = 16,
   sx,
   children,
   justifyContent,
@@ -33,11 +33,11 @@ export const ButtonWrap = ({
   return (
     <StackButtonWrap
       justifyContent={justifyContent ? justifyContent : 'flex-start'}
-      sx={{
-        mt,
-        mb,
-        ...sx,
+      style={{
+        marginTop: mt,
+        marginBottom: mb,
       }}
+      sx={sx}
     >
       {children}
     </StackButtonWrap>
