@@ -35,12 +35,12 @@ export const CustomContainer = ({
   fixed,
   sx,
   addGutter,
-  mb,
+  mb = 4,
   style,
 }: Props) => {
   return (
     // margin-bottom or デフォルトmargin-bottom
-    <Box sx={{ mb: mb || 4 }}>
+    <Box sx={{ mb }}>
       <StyledContainer
         maxWidth={maxWidth}
         sx={sx}

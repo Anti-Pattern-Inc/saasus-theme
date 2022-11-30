@@ -330,10 +330,10 @@ const CustomAlert = ({ severity, variant, alertHeadingTitle, children, square, a
 const StyledContainer = material.styled(material.Container)(({ theme }) => `
     padding: ${theme.spacing(0, 0, 0, 0)};
   `);
-const CustomContainer = ({ children, maxWidth, fixed, sx, addGutter, mb, style, }) => {
+const CustomContainer = ({ children, maxWidth, fixed, sx, addGutter, mb = 4, style, }) => {
     return (
     // margin-bottom or デフォルトmargin-bottom
-    jsxRuntime.jsx(material.Box, { sx: { mb: mb || 4 }, children: jsxRuntime.jsx(StyledContainer, { maxWidth: maxWidth, sx: sx, style: style, 
+    jsxRuntime.jsx(material.Box, { sx: { mb }, children: jsxRuntime.jsx(StyledContainer, { maxWidth: maxWidth, sx: sx, style: style, 
             // 段階的な横幅指定
             fixed: fixed, 
             // 両横の溝=paddingの有無 defaultは無しに指定
@@ -456,12 +456,11 @@ const StackButtonWrap = material.styled(material.Stack)(() => ({
         gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px, 100%), auto))',
     },
 }));
-const ButtonWrap = ({ mt, mb, sx, children, justifyContent }) => {
-    return (jsxRuntime.jsx(StackButtonWrap, { justifyContent: justifyContent ? justifyContent : 'flex-start', sx: {
-            mt: mt || 4,
-            mb: mb || 2,
-            ...sx,
-        }, children: children }));
+const ButtonWrap = ({ mt = 32, mb = 16, sx, children, justifyContent, }) => {
+    return (jsxRuntime.jsx(StackButtonWrap, { justifyContent: justifyContent ? justifyContent : 'flex-start', style: {
+            marginTop: mt,
+            marginBottom: mb,
+        }, sx: sx, children: children }));
 };
 
 const CustomButton = ({ color, variant, size, type, startIcon, endIcon, disabled, onClick, sx, children, }) => {
@@ -514,8 +513,8 @@ const Label = material.styled(material.InputLabel)(() => ({
         fontSize: 14,
     },
 }));
-const CustomLabel = ({ id, TooltipTitleIconComponent, TooltipComponent, children, OptionalChip, chipLabel, color, size, sx, variant, mt, }) => {
-    return (jsxRuntime.jsxs(Label, { htmlFor: id, sx: { mt: mt || 3 }, children: [children, jsxRuntime.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent }), OptionalChip && (jsxRuntime.jsx(material.Chip, { size: size ? size : 'small', color: color, variant: variant, label: chipLabel ? chipLabel : '任意', sx: sx, style: {
+const CustomLabel = ({ id, TooltipTitleIconComponent, TooltipComponent, children, OptionalChip, chipLabel, color, size, sx, variant, mt = 3, }) => {
+    return (jsxRuntime.jsxs(Label, { htmlFor: id, sx: { mt }, children: [children, jsxRuntime.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent }), OptionalChip && (jsxRuntime.jsx(material.Chip, { size: size ? size : 'small', color: color, variant: variant, label: chipLabel ? chipLabel : '任意', sx: sx, style: {
                     borderRadius: 4,
                     margin: `0px 4px 4px`,
                     padding: `1px 8px 0`,
@@ -658,12 +657,12 @@ const RadioButton = ({ label, value, disabled, AdditionalProps, helperText, onCl
 // 大見出しとサブタイトル
 const MainTitleSet = ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, 
 // TitleWrapNone,
-sxHeader, sxSubTitle, gutterBottom, mb, }) => {
+sxHeader, sxSubTitle, gutterBottom, mb = 2, }) => {
     const theme = material.useTheme();
     return (jsxRuntime.jsx(material.Box, { sx: [
             {
                 p: theme.spacing(3, 4),
-                mb: mb || theme.spacing(2),
+                mb,
             },
         ], children: jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, children: [jsxRuntime.jsxs(material.Grid, { item: true, flex: 1, children: [jsxRuntime.jsx(material.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.4 }, children: headingText }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps })] }) }));
 };

@@ -51,7 +51,7 @@ const MainTitleSet = ({
   sxHeader,
   sxSubTitle,
   gutterBottom,
-  mb,
+  mb = 2,
 }: MainTitleSetProps) => {
   const theme = useTheme()
   return (
@@ -59,7 +59,7 @@ const MainTitleSet = ({
       sx={[
         {
           p: theme.spacing(3, 4),
-          mb: mb || theme.spacing(2),
+          mb,
         },
       ]}
     >
