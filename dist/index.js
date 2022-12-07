@@ -3124,10 +3124,16 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
     breakpoints: {
         values: {
             xs: 0,
-            sm: 600,
-            md: 960,
+            sm: 576,
+            md: 768,
             lg: 1280,
-            xl: 1840,
+            xl: 1440,
+            xxl: 1920,
+            // // 明示的な命名でも使えるようにする
+            mobile: 576,
+            tablet: 768,
+            laptop: 1280,
+            desktop: 1440,
         },
     },
     typography: {
@@ -4437,10 +4443,16 @@ const SaaSusDarkTheme = material.createTheme({
     breakpoints: {
         values: {
             xs: 0,
-            sm: 600,
-            md: 960,
+            sm: 576,
+            md: 768,
             lg: 1280,
-            xl: 1840,
+            xl: 1440,
+            xxl: 1920,
+            // 明示的な命名でも使えるようにする
+            mobile: 576,
+            tablet: 768,
+            laptop: 1280,
+            desktop: 1440,
         },
     },
     typography: {
@@ -5771,16 +5783,21 @@ const SaaSusTheme = material.createTheme({
     /***
      * @param breakpoints ブレイクポイントの設定
      * 現状md:960をフォントサイズ用途で利用中
-     * TODO:どこかで値を正式に決める
      * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
      */
     breakpoints: {
         values: {
             xs: 0,
-            sm: 600,
-            md: 960,
+            sm: 576,
+            md: 768,
             lg: 1280,
-            xl: 1840,
+            xl: 1440,
+            xxl: 1920,
+            // 明示的な命名でも使えるようにする
+            mobile: 576,
+            tablet: 768,
+            laptop: 1280,
+            desktop: 1440,
         },
     },
     typography: {

@@ -25,6 +25,20 @@ declare module '@mui/material/styles' {
   interface FontStyle {
     info?: string
   }
+  // カスタムBreakPoint
+  interface BreakpointOverrides {
+    xs: true
+    sm: true
+    md: true
+    lg: true
+    xl: true
+    xxl: true // Add New
+    // 明示的な命名でも使えるようにする
+    mobile: true // = xs ~ sm
+    tablet: true // = md ~ lg
+    laptop: true // = lg ~ xl
+    desktop: true // = xl ~ xxl ~
+  }
 }
 
 /***
@@ -1254,16 +1268,21 @@ export const SaaSusTheme = createTheme({
   /***
    * @param breakpoints ブレイクポイントの設定
    * 現状md:960をフォントサイズ用途で利用中
-   * TODO:どこかで値を正式に決める
    * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
    */
   breakpoints: {
     values: {
       xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1840,
+      sm: 576, // mobile
+      md: 768, // tablet
+      lg: 1280, // laptop small
+      xl: 1440, // laptop large ~ Desktop
+      xxl: 1920, // Desktop
+      // 明示的な命名でも使えるようにする
+      mobile: 576,
+      tablet: 768,
+      laptop: 1280,
+      desktop: 1440,
     },
   },
   typography: {

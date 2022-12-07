@@ -10,7 +10,23 @@ export function themeCreator(theme: string): Theme {
 }
 
 declare module '@mui/material/styles' {
+  // カスタムBreakPoint
   interface Theme {
+    breakpoints: {
+      values: {
+        xs: number
+        sm: number // mobile
+        md: number // tablet
+        lg: number // laptop small
+        xl: number // laptop large ~ Desktop
+        xxl?: number // Desktop
+        // 明示的な命名でも使えるようにする
+        mobile?: number
+        tablet?: number
+        laptop?: number
+        desktop?: number
+      }
+    }
     colors: {
       gradients: {
         blue1: string
@@ -140,6 +156,21 @@ declare module '@mui/material/styles' {
   }
 
   interface ThemeOptions {
+    breakpoints: {
+      values: {
+        xs: number
+        sm: number // mobile
+        md: number // tablet
+        lg: number // laptop small
+        xl: number // laptop large ~ Desktop
+        xxl?: number // Desktop
+        // 明示的な命名でも使えるようにする
+        mobile?: number
+        tablet?: number
+        laptop?: number
+        desktop?: number
+      }
+    }
     colors: {
       gradients: {
         blue1: string

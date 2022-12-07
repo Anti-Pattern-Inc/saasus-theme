@@ -13,6 +13,18 @@ declare module '@mui/material/styles' {
     interface FontStyle {
         info?: string;
     }
+    interface BreakpointOverrides {
+        xs: true;
+        sm: true;
+        md: true;
+        lg: true;
+        xl: true;
+        xxl: true;
+        mobile: true;
+        tablet: true;
+        laptop: true;
+        desktop: true;
+    }
 }
 export declare const SaaSusDarkTheme: import("@mui/material").Theme;
 //# sourceMappingURL=SaaSusDarkTheme.d.ts.map
