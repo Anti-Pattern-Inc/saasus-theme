@@ -14,17 +14,19 @@ declare module '@mui/material/styles' {
   interface Theme {
     breakpoints: {
       values: {
-        xs: number
-        sm: number // mobile
-        md: number // tablet
-        lg: number // laptop small
-        xl: number // laptop large ~ Desktop
-        xxl?: number // Desktop
-        // 明示的な命名でも使えるようにする
+        xs: number //= base
+        sm: number //= mobile
+        md: number //= tablet
+        lg: number //= laptop
+        xl: number //= desktop
+        xxl?: number //= wide
+        // 明示的な命名での同じ用途
+        base?: number
         mobile?: number
         tablet?: number
         laptop?: number
         desktop?: number
+        wide?: number
       }
     }
     colors: {
@@ -158,17 +160,19 @@ declare module '@mui/material/styles' {
   interface ThemeOptions {
     breakpoints: {
       values: {
-        xs: number
-        sm: number // mobile
-        md: number // tablet
-        lg: number // laptop small
-        xl: number // laptop large ~ Desktop
-        xxl?: number // Desktop
-        // 明示的な命名でも使えるようにする
+        xs: number //= base
+        sm: number //= mobile
+        md: number //= tablet
+        lg: number //= laptop
+        xl: number //= desktop
+        xxl?: number //= wide
+        // 明示的な命名での同じ用途
+        base?: number
         mobile?: number
         tablet?: number
         laptop?: number
         desktop?: number
+        wide?: number
       }
     }
     colors: {

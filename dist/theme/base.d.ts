@@ -11,10 +11,12 @@ declare module '@mui/material/styles' {
                 lg: number;
                 xl: number;
                 xxl?: number;
+                base?: number;
                 mobile?: number;
                 tablet?: number;
                 laptop?: number;
                 desktop?: number;
+                wide?: number;
             };
         };
         colors: {
@@ -153,10 +155,12 @@ declare module '@mui/material/styles' {
                 lg: number;
                 xl: number;
                 xxl?: number;
+                base?: number;
                 mobile?: number;
                 tablet?: number;
                 laptop?: number;
                 desktop?: number;
+                wide?: number;
             };
         };
         colors: {

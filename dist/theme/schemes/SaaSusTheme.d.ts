@@ -27,10 +27,12 @@ declare module '@mui/material/styles' {
         lg: true;
         xl: true;
         xxl: true;
+        base: true;
         mobile: true;
         tablet: true;
         laptop: true;
         desktop: true;
+        wide: true;
     }
 }
 export declare const SaaSusTheme: import("@mui/material").Theme;

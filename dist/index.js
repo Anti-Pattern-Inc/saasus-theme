@@ -1959,6 +1959,38 @@ function SaaSusLogo({ width, alt }) {
     return (jsxRuntime.jsx(LogoBox, { children: jsxRuntime.jsx(Link__default["default"], { href: "/", children: jsxRuntime.jsx("img", { width: width, src: "/static/images/logo/saasus_logo.svg", alt: alt }) }) }));
 }
 
+const sidebar = {
+    width: '180px',
+};
+const spacing = 8;
+const viewport = {
+    width: {
+        xs: 0,
+        sm: 480,
+        md: 768,
+        lg: 1280,
+        xl: 1536,
+        xxl: 1920, // wide
+    },
+};
+const breakpoints = {
+    values: {
+        xs: viewport.width.xs,
+        sm: viewport.width.sm,
+        md: viewport.width.md,
+        lg: viewport.width.lg,
+        xl: viewport.width.xl,
+        xxl: viewport.width.xxl,
+        // 明示的な命名での同じ用途
+        base: viewport.width.xs,
+        mobile: viewport.width.sm,
+        tablet: viewport.width.md,
+        laptop: viewport.width.lg,
+        desktop: viewport.width.xl,
+        wide: viewport.width.xxl,
+    },
+};
+
 /***
  * @param fontPxToRem pxからrem変換計算用
  *  ユーザーのブラウザ設定に応じ、基準サイズをユーザーが意図した表示サイズに追従させ得るための対応
@@ -2193,7 +2225,9 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
         borderRadiusLg: '12px',
         borderRadiusXl: '16px',
     },
+    spacing: spacing,
     sidebar: {
+        width: sidebar.width,
         background: colors$2.layout.sidebar.background,
         textColor: colors$2.layout.sidebar.textColor,
         dividerBg: colors$2.layout.sidebar.dividerBg,
@@ -2205,7 +2239,6 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
         menuItemIconColorActive: colors$2.layout.sidebar.menuItemIconColorActive,
         menuItemHeadingColor: colors$2.layout.sidebar.menuItemHeadingColor,
         boxShadow: '1px 0 0 #303e47',
-        width: '180px',
     },
     header: {
         height: 'auto',
@@ -2213,7 +2246,6 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
         boxShadow: '0px 1px 0px #303e47',
         textColor: colors$2.secondary.main,
     },
-    spacing: 8,
     palette: {
         common: {
             black: colors$2.alpha.black[100],
@@ -3115,25 +3147,22 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
     shape: {
         borderRadius: 10,
     },
-    /***
-     * @param breakpoints ブレイクポイントの設定
-     * 現状md:960をフォントサイズ用途で利用中
-     * TODO:どこかで値を正式に決める
-     * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
-     */
+    // default: lg
     breakpoints: {
         values: {
-            xs: 0,
-            sm: 576,
-            md: 768,
-            lg: 1280,
-            xl: 1440,
-            xxl: 1920,
-            // // 明示的な命名でも使えるようにする
-            mobile: 576,
-            tablet: 768,
-            laptop: 1280,
-            desktop: 1440,
+            xs: breakpoints.values.xs,
+            sm: breakpoints.values.sm,
+            md: breakpoints.values.md,
+            lg: breakpoints.values.lg,
+            xl: breakpoints.values.xl,
+            xxl: breakpoints.values.xxl,
+            // 明示的な命名での同じ用途
+            base: breakpoints.values.xs,
+            mobile: breakpoints.values.sm,
+            tablet: breakpoints.values.md,
+            laptop: breakpoints.values.lg,
+            desktop: breakpoints.values.xl,
+            wide: breakpoints.values.xxl,
         },
     },
     typography: {
@@ -3512,7 +3541,9 @@ const SaaSusDarkTheme = material.createTheme({
         borderRadiusLg: '12px',
         borderRadiusXl: '16px',
     },
+    spacing: spacing,
     sidebar: {
+        width: sidebar.width,
         background: colors$1.layout.sidebar.background,
         textColor: colors$1.layout.sidebar.textColor,
         dividerBg: colors$1.layout.sidebar.dividerBg,
@@ -3524,7 +3555,6 @@ const SaaSusDarkTheme = material.createTheme({
         menuItemIconColorActive: colors$1.layout.sidebar.menuItemIconColorActive,
         menuItemHeadingColor: colors$1.layout.sidebar.menuItemHeadingColor,
         boxShadow: '1px 0 0 #272C48',
-        width: '180px',
     },
     header: {
         height: 'auto',
@@ -3532,7 +3562,6 @@ const SaaSusDarkTheme = material.createTheme({
         boxShadow: '0px 1px 0px #272C48',
         textColor: colors$1.secondary.main,
     },
-    spacing: 8,
     palette: {
         common: {
             black: colors$1.alpha.black[100],
@@ -4434,25 +4463,22 @@ const SaaSusDarkTheme = material.createTheme({
     shape: {
         borderRadius: 10,
     },
-    /***
-     * @param breakpoints ブレイクポイントの設定
-     * 現状md:960をフォントサイズ用途で利用中
-     * TODO:どこかで値を正式に決める
-     * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
-     */
+    // default: lg
     breakpoints: {
         values: {
-            xs: 0,
-            sm: 576,
-            md: 768,
-            lg: 1280,
-            xl: 1440,
-            xxl: 1920,
-            // 明示的な命名でも使えるようにする
-            mobile: 576,
-            tablet: 768,
-            laptop: 1280,
-            desktop: 1440,
+            xs: breakpoints.values.xs,
+            sm: breakpoints.values.sm,
+            md: breakpoints.values.md,
+            lg: breakpoints.values.lg,
+            xl: breakpoints.values.xl,
+            xxl: breakpoints.values.xxl,
+            // 明示的な命名での同じ用途
+            base: breakpoints.values.xs,
+            mobile: breakpoints.values.sm,
+            tablet: breakpoints.values.md,
+            laptop: breakpoints.values.lg,
+            desktop: breakpoints.values.xl,
+            wide: breakpoints.values.xxl,
         },
     },
     typography: {
@@ -4839,7 +4865,9 @@ const SaaSusTheme = material.createTheme({
         borderRadiusLg: '12px',
         borderRadiusXl: '16px',
     },
+    spacing: spacing,
     sidebar: {
+        width: sidebar.width,
         background: colors.layout.sidebar.background,
         textColor: colors.layout.sidebar.textColor,
         dividerBg: colors.layout.sidebar.dividerBg,
@@ -4851,7 +4879,6 @@ const SaaSusTheme = material.createTheme({
         menuItemIconColorActive: colors.layout.sidebar.menuItemIconColorActive,
         menuItemHeadingColor: colors.layout.sidebar.menuItemHeadingColor,
         boxShadow: '2px 0 3px rgba(159, 162, 191, .18), 1px 0 1px rgba(159, 162, 191, 0.32)',
-        width: '180px',
     },
     header: {
         height: 'auto',
@@ -4859,7 +4886,6 @@ const SaaSusTheme = material.createTheme({
         boxShadow: colors.shadows.cardSm,
         textColor: colors.secondary.main,
     },
-    spacing: 8,
     palette: {
         common: {
             black: colors.alpha.black[100],
@@ -5780,24 +5806,22 @@ const SaaSusTheme = material.createTheme({
     shape: {
         borderRadius: 10,
     },
-    /***
-     * @param breakpoints ブレイクポイントの設定
-     * 現状md:960をフォントサイズ用途で利用中
-     * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
-     */
+    // default: lg
     breakpoints: {
         values: {
-            xs: 0,
-            sm: 576,
-            md: 768,
-            lg: 1280,
-            xl: 1440,
-            xxl: 1920,
-            // 明示的な命名でも使えるようにする
-            mobile: 576,
-            tablet: 768,
-            laptop: 1280,
-            desktop: 1440,
+            xs: breakpoints.values.xs,
+            sm: breakpoints.values.sm,
+            md: breakpoints.values.md,
+            lg: breakpoints.values.lg,
+            xl: breakpoints.values.xl,
+            xxl: breakpoints.values.xxl,
+            // 明示的な命名での同じ用途
+            base: breakpoints.values.xs,
+            mobile: breakpoints.values.sm,
+            tablet: breakpoints.values.md,
+            laptop: breakpoints.values.lg,
+            desktop: breakpoints.values.xl,
+            wide: breakpoints.values.xxl,
         },
     },
     typography: {

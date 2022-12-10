@@ -1,6 +1,8 @@
 import '@mui/lab/themeAugmentation'
-
 import { alpha, createTheme, darken, lighten } from '@mui/material'
+
+// 全テーマ共通のobject/utiliy
+import { sidebar, spacing, breakpoints } from './CommonTheme'
 
 /***
  * マテリアルカラー 一覧
@@ -27,17 +29,19 @@ declare module '@mui/material/styles' {
   }
   // カスタムBreakPoint
   interface BreakpointOverrides {
-    xs: true
-    sm: true
-    md: true
-    lg: true
-    xl: true
-    xxl: true // Add New
-    // 明示的な命名でも使えるようにする
-    mobile: true // = xs ~ sm
-    tablet: true // = md ~ lg
-    laptop: true // = lg ~ xl
-    desktop: true // = xl ~ xxl ~
+    xs: true //= base
+    sm: true //= mobile
+    md: true //= tablet
+    lg: true //= laptop
+    xl: true //= desktop
+    xxl: true //= wide
+    // 明示的な命名での同じ用途
+    base: true
+    mobile: true
+    tablet: true
+    laptop: true
+    desktop: true
+    wide: true
   }
 }
 
@@ -292,7 +296,9 @@ export const SaaSusTheme = createTheme({
     borderRadiusLg: '12px',
     borderRadiusXl: '16px',
   },
+  spacing: spacing,
   sidebar: {
+    width: sidebar.width,
     background: colors.layout.sidebar.background,
     textColor: colors.layout.sidebar.textColor,
     dividerBg: colors.layout.sidebar.dividerBg,
@@ -305,7 +311,6 @@ export const SaaSusTheme = createTheme({
     menuItemHeadingColor: colors.layout.sidebar.menuItemHeadingColor,
     boxShadow:
       '2px 0 3px rgba(159, 162, 191, .18), 1px 0 1px rgba(159, 162, 191, 0.32)',
-    width: '180px',
   },
   header: {
     height: 'auto',
@@ -313,7 +318,6 @@ export const SaaSusTheme = createTheme({
     boxShadow: colors.shadows.cardSm,
     textColor: colors.secondary.main,
   },
-  spacing: 8,
   palette: {
     common: {
       black: colors.alpha.black[100],
@@ -1265,24 +1269,22 @@ export const SaaSusTheme = createTheme({
   shape: {
     borderRadius: 10,
   },
-  /***
-   * @param breakpoints ブレイクポイントの設定
-   * 現状md:960をフォントサイズ用途で利用中
-   * TODO:breakpointsのvaluesのキー名としてmedia(min-width:xx)の中では埋め込めなかったので、一旦数値を直書き。対応方法のリサーチをする
-   */
+  // default: lg
   breakpoints: {
     values: {
-      xs: 0,
-      sm: 576, // mobile
-      md: 768, // tablet
-      lg: 1280, // laptop small
-      xl: 1440, // laptop large ~ Desktop
-      xxl: 1920, // Desktop
-      // 明示的な命名でも使えるようにする
-      mobile: 576,
-      tablet: 768,
-      laptop: 1280,
-      desktop: 1440,
+      xs: breakpoints.values.xs, // = base
+      sm: breakpoints.values.sm, // = mobile
+      md: breakpoints.values.md, // = tablet
+      lg: breakpoints.values.lg, // = laptop
+      xl: breakpoints.values.xl, // = desktop
+      xxl: breakpoints.values.xxl, // = wide
+      // 明示的な命名での同じ用途
+      base: breakpoints.values.xs,
+      mobile: breakpoints.values.sm,
+      tablet: breakpoints.values.md,
+      laptop: breakpoints.values.lg,
+      desktop: breakpoints.values.xl,
+      wide: breakpoints.values.xxl,
     },
   },
   typography: {
