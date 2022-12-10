@@ -445,7 +445,6 @@ sx, }) => {
                     dividerSx: { my: 1.5, mx: -3 } })), children] }) }));
 };
 
-// {`theme.breakpoints.up('sm') matches: ${matches}`}
 const StackButtonWrap = material.styled(material.Stack)(() => ({
     display: 'grid',
     gap: 8,
