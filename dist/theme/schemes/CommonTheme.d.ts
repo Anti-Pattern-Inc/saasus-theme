@@ -28,4 +28,15 @@ export declare const breakpoints: {
         wide: number;
     };
 };
+export declare const typography: {
+    fontFamily: string;
+    h1: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        lineHeight: number;
+        fontSize: string;
+    };
+};
 //# sourceMappingURL=CommonTheme.d.ts.map

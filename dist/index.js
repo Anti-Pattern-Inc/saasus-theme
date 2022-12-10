@@ -1989,6 +1989,27 @@ const breakpoints = {
         wide: viewport.width.xxl,
     },
 };
+// Typography
+const fontPxToRem$3 = (px) => {
+    return px / 16 + 'rem';
+};
+// レスポンシブ対応の縮小サイズ用
+const fontPxToRemMinim$3 = (px) => {
+    return (px / 16) * 0.85 + 'rem';
+};
+const typography = {
+    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    // 見出し用
+    h1: {
+        fontWeight: 700,
+        lineHeight: 1.5,
+        fontSize: `${fontPxToRemMinim$3(24)}`,
+        [`@media (min-width: ${breakpoints.values.md}px)`]: {
+            fontSize: `${fontPxToRem$3(24)}`,
+        },
+    },
+    // TODO: other Typography
+};
 
 /***
  * @param fontPxToRem pxからrem変換計算用
@@ -5824,16 +5845,19 @@ const SaaSusTheme = material.createTheme({
         },
     },
     typography: {
-        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+        // fontFamily:
+        //   '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+        fontFamily: typography.fontFamily,
         // 見出し用
-        h1: {
-            fontWeight: 700,
-            lineHeight: 1.5,
-            fontSize: `${fontPxToRemMinim(24)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(24)}`,
-            },
-        },
+        h1: typography.h1,
+        // h1: {
+        //   fontWeight: 700,
+        //   lineHeight: 1.5,
+        //   fontSize: `${fontPxToRemMinim(24)}`,
+        //   [`@media (min-width: ${breakpoints.values.md}px)`]: {
+        //     fontSize: `${fontPxToRem(24)}`,
+        //   },
+        // },
         h2: {
             fontWeight: 700,
             lineHeight: 1.5,

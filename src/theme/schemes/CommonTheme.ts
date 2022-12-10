@@ -32,3 +32,28 @@ export const breakpoints = {
     wide: viewport.width.xxl,
   },
 }
+
+// Typography
+
+const fontPxToRem = (px: number) => {
+  return px / 16 + 'rem'
+}
+// レスポンシブ対応の縮小サイズ用
+const fontPxToRemMinim = (px: number) => {
+  return (px / 16) * 0.85 + 'rem'
+}
+
+export const typography = {
+  fontFamily:
+    '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+  // 見出し用
+  h1: {
+    fontWeight: 700,
+    lineHeight: 1.5,
+    fontSize: `${fontPxToRemMinim(24)}`,
+    [`@media (min-width: ${breakpoints.values.md}px)`]: {
+      fontSize: `${fontPxToRem(24)}`,
+    },
+  },
+  // TODO: other Typography
+}

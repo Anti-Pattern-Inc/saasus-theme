@@ -2,7 +2,7 @@ import '@mui/lab/themeAugmentation'
 import { alpha, createTheme, darken, lighten } from '@mui/material'
 
 // 全テーマ共通のobject/utiliy
-import { sidebar, spacing, breakpoints } from './CommonTheme'
+import { sidebar, spacing, breakpoints, typography } from './CommonTheme'
 
 /***
  * マテリアルカラー 一覧
@@ -1288,17 +1288,19 @@ export const SaaSusTheme = createTheme({
     },
   },
   typography: {
-    fontFamily:
-      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    // fontFamily:
+    //   '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamily: typography.fontFamily,
     // 見出し用
-    h1: {
-      fontWeight: 700,
-      lineHeight: 1.5,
-      fontSize: `${fontPxToRemMinim(24)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(24)}`,
-      },
-    },
+    h1: typography.h1,
+    // h1: {
+    //   fontWeight: 700,
+    //   lineHeight: 1.5,
+    //   fontSize: `${fontPxToRemMinim(24)}`,
+    //   [`@media (min-width: ${breakpoints.values.md}px)`]: {
+    //     fontSize: `${fontPxToRem(24)}`,
+    //   },
+    // },
     h2: {
       fontWeight: 700,
       lineHeight: 1.5,
