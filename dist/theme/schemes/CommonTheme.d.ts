@@ -2,16 +2,6 @@ export declare const sidebar: {
     width: string;
 };
 export declare const spacing = 8;
-export declare const viewport: {
-    width: {
-        xs: number;
-        sm: number;
-        md: number;
-        lg: number;
-        xl: number;
-        xxl: number;
-    };
-};
 export declare const breakpoints: {
     values: {
         xs: number;
@@ -28,6 +18,19 @@ export declare const breakpoints: {
         wide: number;
     };
 };
+export declare const fontWeight: {
+    normal: number;
+    medium: number;
+    bold: number;
+};
+export declare const lineHeight: {
+    small: number;
+    medium: number;
+    large: number;
+};
+export declare const typographyBreakpoint: {
+    up: string;
+};
 export declare const typography: {
     fontFamily: string;
     h1: {
@@ -37,6 +40,91 @@ export declare const typography: {
         fontWeight: number;
         lineHeight: number;
         fontSize: string;
+    };
+    h2: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        lineHeight: number;
+        fontSize: string;
+    };
+    h3: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        lineHeight: number;
+        fontSize: string;
+    };
+    h4: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        fontSize: string;
+    };
+    h5: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        fontSize: string;
+    };
+    h6: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        lineHeight: number;
+        fontSize: string;
+    };
+    body1: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        lineHeight: number;
+        fontSize: string;
+    };
+    body2: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        lineHeight: number;
+        fontSize: string;
+    };
+    subtitle1: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        lineHeight: number;
+        fontSize: string;
+    };
+    caption: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        fontSize: string;
+    };
+    overline: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        fontSize: string;
+        textTransform: string;
+    };
+    button: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        fontSize: string;
+        textTransform: string;
     };
 };
 //# sourceMappingURL=CommonTheme.d.ts.map

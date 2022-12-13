@@ -1256,6 +1256,7 @@ export const SaaSusDarkTheme = createTheme({
     h1: {
       fontWeight: 700,
       lineHeight: 1.5,
+      // fontSize: `${fontPxToRemMinim(24)}`,
       fontSize: `${fontPxToRemMinim(24)}`,
       '@media (min-width: 960px)': {
         fontSize: `${fontPxToRem(24)}`,

@@ -1958,10 +1958,13 @@ function SaaSusLogo({ width, alt }) {
     return (jsxRuntime.jsx(LogoBox, { children: jsxRuntime.jsx(Link__default["default"], { href: "/", children: jsxRuntime.jsx("img", { width: width, src: "/static/images/logo/saasus_logo.svg", alt: alt }) }) }));
 }
 
+// sidebar
 const sidebar = {
     width: '180px',
 };
+// common spacing base
 const spacing = 8;
+// for breakpoint
 const viewport = {
     width: {
         xs: 0,
@@ -1980,7 +1983,7 @@ const breakpoints = {
         lg: viewport.width.lg,
         xl: viewport.width.xl,
         xxl: viewport.width.xxl,
-        // 明示的な命名での同じ用途
+        // 明示的な命名Œ
         base: viewport.width.xs,
         mobile: viewport.width.sm,
         tablet: viewport.width.md,
@@ -1989,7 +1992,7 @@ const breakpoints = {
         wide: viewport.width.xxl,
     },
 };
-// Typography
+// ----- Typography -----
 const fontPxToRem$3 = (px) => {
     return px / 16 + 'rem';
 };
@@ -1997,18 +2000,133 @@ const fontPxToRem$3 = (px) => {
 const fontPxToRemMinim$3 = (px) => {
     return (px / 16) * 0.85 + 'rem';
 };
+const fontWeight = {
+    normal: 400,
+    medium: 500,
+    bold: 700,
+};
+const lineHeight = {
+    small: 1.5,
+    medium: 1.75,
+    large: 2.0,
+};
+const typographyBreakpoint = {
+    // upper size lg(laptop)
+    up: `@media (min-width: ${breakpoints.values.lg}px)`,
+};
 const typography = {
     fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
     // 見出し用
     h1: {
-        fontWeight: 700,
-        lineHeight: 1.5,
+        fontWeight: fontWeight.bold,
+        lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(24)}`,
-        [`@media (min-width: ${breakpoints.values.md}px)`]: {
+        // [`@media (min-width: ${breakpoints.values.md}px)`]: {
+        [typographyBreakpoint.up]: {
             fontSize: `${fontPxToRem$3(24)}`,
+            // TODO: Clump Set Value & Test
+            // fontSizeClump: `clump(24px, 1vw, ${fontPxToRem(24)})`,
         },
     },
-    // TODO: other Typography
+    h2: {
+        fontWeight: fontWeight.bold,
+        lineHeight: lineHeight.small,
+        fontSize: `${fontPxToRemMinim$3(22)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(22)}`,
+        },
+    },
+    h3: {
+        fontWeight: fontWeight.bold,
+        lineHeight: lineHeight.small,
+        fontSize: `${fontPxToRemMinim$3(20)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(20)}`,
+        },
+    },
+    h4: {
+        fontWeight: fontWeight.bold,
+        fontSize: `${fontPxToRemMinim$3(18)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(18)}`,
+        },
+    },
+    h5: {
+        fontWeight: fontWeight.bold,
+        fontSize: `${fontPxToRemMinim$3(16)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(16)}`,
+        },
+    },
+    h6: {
+        fontWeight: fontWeight.bold,
+        lineHeight: lineHeight.small,
+        fontSize: `${fontPxToRemMinim$3(15)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(15)}`,
+        },
+    },
+    // Text本文 Utility用
+    body1: {
+        fontWeight: fontWeight.normal,
+        lineHeight: lineHeight.small,
+        fontSize: `${fontPxToRemMinim$3(15)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(15)}`,
+        },
+    },
+    body2: {
+        fontWeight: fontWeight.normal,
+        lineHeight: lineHeight.small,
+        fontSize: `${fontPxToRemMinim$3(14)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(14)}`,
+        },
+    },
+    // サブタイトル用
+    subtitle1: {
+        fontWeight: fontWeight.normal,
+        lineHeight: lineHeight.small,
+        fontSize: `${fontPxToRemMinim$3(14)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(14)}`,
+        },
+        // color: colors.alpha.black[70],
+    },
+    // subtitle2: {
+    //   fontWeight: fontWeight.normal,
+    //   lineHeight: lineHeight.small,
+    //   fontSize: `${fontPxToRemMinim(13)}`,
+    //   [typographyBreakpoint.up]: {
+    //     fontSize: `${fontPxToRem(13)}`,
+    //   },
+    //   color: colors.alpha.black[70],
+    // },
+    // Text Utility用
+    caption: {
+        fontWeight: fontWeight.normal,
+        fontSize: `${fontPxToRemMinim$3(12)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(12)}`,
+        },
+    },
+    overline: {
+        fontWeight: fontWeight.normal,
+        fontSize: `${fontPxToRemMinim$3(13)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(13)}`,
+        },
+        textTransform: 'none',
+    },
+    // TODO:用途のリサーチ/ボタン用？
+    button: {
+        fontWeight: fontWeight.medium,
+        fontSize: `${fontPxToRemMinim$3(14)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(14)}`,
+        },
+        textTransform: 'none',
+    },
 };
 
 /***
@@ -2093,14 +2211,6 @@ const colors$2 = {
             70: material.alpha(themeColors$2.white, 0.7),
             100: themeColors$2.white,
         },
-        trueWhite: {
-            5: material.alpha(themeColors$2.trueWhite, 0.02),
-            10: material.alpha(themeColors$2.trueWhite, 0.1),
-            30: material.alpha(themeColors$2.trueWhite, 0.3),
-            50: material.alpha(themeColors$2.trueWhite, 0.5),
-            70: material.alpha(themeColors$2.trueWhite, 0.7),
-            100: themeColors$2.trueWhite,
-        },
         black: {
             5: material.alpha(themeColors$2.black, 0.02),
             10: material.alpha(themeColors$2.black, 0.1),
@@ -2108,6 +2218,14 @@ const colors$2 = {
             50: material.alpha(themeColors$2.black, 0.5),
             70: material.alpha(themeColors$2.black, 0.7),
             100: themeColors$2.black,
+        },
+        trueWhite: {
+            5: material.alpha(themeColors$2.trueWhite, 0.02),
+            10: material.alpha(themeColors$2.trueWhite, 0.1),
+            30: material.alpha(themeColors$2.trueWhite, 0.3),
+            50: material.alpha(themeColors$2.trueWhite, 0.5),
+            70: material.alpha(themeColors$2.trueWhite, 0.7),
+            100: themeColors$2.trueWhite,
         },
     },
     secondary: {
@@ -4507,6 +4625,7 @@ const SaaSusDarkTheme = material.createTheme({
         h1: {
             fontWeight: 700,
             lineHeight: 1.5,
+            // fontSize: `${fontPxToRemMinim(24)}`,
             fontSize: `${fontPxToRemMinim$1(24)}`,
             '@media (min-width: 960px)': {
                 fontSize: `${fontPxToRem$1(24)}`,
@@ -4724,14 +4843,6 @@ const colors = {
             70: material.alpha(themeColors.white, 0.7),
             100: themeColors.white,
         },
-        trueWhite: {
-            5: material.alpha(themeColors.white, 0.02),
-            10: material.alpha(themeColors.white, 0.1),
-            30: material.alpha(themeColors.white, 0.3),
-            50: material.alpha(themeColors.white, 0.5),
-            70: material.alpha(themeColors.white, 0.7),
-            100: themeColors.white,
-        },
         black: {
             5: material.alpha(themeColors.black, 0.02),
             10: material.alpha(themeColors.black, 0.1),
@@ -4739,6 +4850,14 @@ const colors = {
             50: material.alpha(themeColors.black, 0.5),
             70: material.alpha(themeColors.black, 0.7),
             100: themeColors.black,
+        },
+        trueWhite: {
+            5: material.alpha(themeColors.white, 0.02),
+            10: material.alpha(themeColors.white, 0.1),
+            30: material.alpha(themeColors.white, 0.3),
+            50: material.alpha(themeColors.white, 0.5),
+            70: material.alpha(themeColors.white, 0.7),
+            100: themeColors.white,
         },
     },
     secondary: {
@@ -5850,143 +5969,89 @@ const SaaSusTheme = material.createTheme({
         fontFamily: typography.fontFamily,
         // 見出し用
         h1: typography.h1,
-        // h1: {
-        //   fontWeight: 700,
-        //   lineHeight: 1.5,
-        //   fontSize: `${fontPxToRemMinim(24)}`,
-        //   [`@media (min-width: ${breakpoints.values.md}px)`]: {
-        //     fontSize: `${fontPxToRem(24)}`,
-        //   },
-        // },
-        h2: {
-            fontWeight: 700,
-            lineHeight: 1.5,
-            fontSize: `${fontPxToRemMinim(22)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(22)}`,
-            },
-        },
-        h3: {
-            fontWeight: 700,
-            lineHeight: 1.5,
-            fontSize: `${fontPxToRemMinim(20)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(20)}`,
-            },
-        },
-        h4: {
-            fontWeight: 700,
-            fontSize: `${fontPxToRemMinim(18)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(18)}`,
-            },
-        },
-        h5: {
-            fontWeight: 700,
-            fontSize: `${fontPxToRemMinim(16)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(16)}`,
-            },
-        },
-        h6: {
-            fontWeight: 700,
-            lineHeight: 1.5,
-            fontSize: `${fontPxToRemMinim(15)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(15)}`,
-            },
-        },
+        h2: typography.h2,
+        h3: typography.h3,
+        h4: typography.h4,
+        h5: typography.h5,
+        h6: typography.h6,
         // Text本文 Utility用
-        body1: {
-            fontWeight: 400,
-            lineHeight: 1.5,
-            fontSize: `${fontPxToRemMinim(15)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(15)}`,
-            },
-        },
-        body2: {
-            fontWeight: 400,
-            lineHeight: 1.5,
-            fontSize: `${fontPxToRemMinim(14)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(14)}`,
-            },
-        },
+        body1: typography.body1,
+        body2: typography.body2,
+        // FIXME:
         // サブタイトル用
         subtitle1: {
-            fontWeight: 400,
-            lineHeight: 1.5,
+            fontWeight: fontWeight.normal,
+            lineHeight: lineHeight.small,
             fontSize: `${fontPxToRemMinim(14)}`,
-            '@media (min-width: 960px)': {
+            [typographyBreakpoint.up]: {
                 fontSize: `${fontPxToRem(14)}`,
             },
             color: colors.alpha.black[70],
         },
         subtitle2: {
-            fontWeight: 400,
-            lineHeight: 1.5,
+            fontWeight: fontWeight.normal,
+            lineHeight: lineHeight.small,
             fontSize: `${fontPxToRemMinim(13)}`,
-            '@media (min-width: 960px)': {
+            [typographyBreakpoint.up]: {
                 fontSize: `${fontPxToRem(13)}`,
             },
             color: colors.alpha.black[70],
         },
         // Text Utility用
         caption: {
-            fontWeigt: 400,
+            fontWeight: fontWeight.normal,
             fontSize: `${fontPxToRemMinim(12)}`,
-            '@media (min-width: 960px)': {
+            [typographyBreakpoint.up]: {
                 fontSize: `${fontPxToRem(12)}`,
+                color: colors.alpha.black[70],
             },
-            color: colors.alpha.black[70],
-        },
-        overline: {
-            fontWeight: 400,
-            fontSize: `${fontPxToRemMinim(13)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(13)}`,
+            overline: {
+                fontWeight: fontWeight.normal,
+                fontSize: `${fontPxToRemMinim(13)}`,
+                [typographyBreakpoint.up]: {
+                    fontSize: `${fontPxToRem(13)}`,
+                    color: colors.alpha.black[70],
+                },
             },
-            textTransform: 'none',
-        },
-        // TODO:用途のリサーチ/ボタン用？
-        button: {
-            fontWeigt: 500,
-            fontSize: `${fontPxToRemMinim(14)}`,
-            '@media (min-width: 960px)': {
-                fontSize: `${fontPxToRem(14)}`,
+            // TODO:用途のリサーチ/ボタン用？
+            button: {
+                fontWeigt: 500,
+                fontSize: `${fontPxToRemMinim(14)}`,
+                '@media (min-width: 960px)': {
+                    fontSize: `${fontPxToRem(14)}`,
+                },
+                textTransform: 'none',
             },
-            textTransform: 'none',
+            // シャドーの初期化？ TODO: 何の配列なのかリサーチ
+            shadows: [
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+                'none',
+            ],
         },
     },
-    // シャドーの初期化？ TODO: 何の配列なのかリサーチ
-    shadows: [
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-        'none',
-    ],
 });
 
 function themeCreator(theme) {

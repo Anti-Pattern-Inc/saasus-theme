@@ -2,7 +2,15 @@ import '@mui/lab/themeAugmentation'
 import { alpha, createTheme, darken, lighten } from '@mui/material'
 
 // 全テーマ共通のobject/utiliy
-import { sidebar, spacing, breakpoints, typography } from './CommonTheme'
+import {
+  sidebar,
+  spacing,
+  breakpoints,
+  typography,
+  fontWeight,
+  lineHeight,
+  typographyBreakpoint,
+} from './CommonTheme'
 
 /***
  * マテリアルカラー 一覧
@@ -134,14 +142,6 @@ const colors = {
       70: alpha(themeColors.white, 0.7),
       100: themeColors.white,
     },
-    trueWhite: {
-      5: alpha(themeColors.white, 0.02),
-      10: alpha(themeColors.white, 0.1),
-      30: alpha(themeColors.white, 0.3),
-      50: alpha(themeColors.white, 0.5),
-      70: alpha(themeColors.white, 0.7),
-      100: themeColors.white,
-    },
     black: {
       5: alpha(themeColors.black, 0.02),
       10: alpha(themeColors.black, 0.1),
@@ -149,6 +149,14 @@ const colors = {
       50: alpha(themeColors.black, 0.5),
       70: alpha(themeColors.black, 0.7),
       100: themeColors.black,
+    },
+    trueWhite: {
+      5: alpha(themeColors.white, 0.02),
+      10: alpha(themeColors.white, 0.1),
+      30: alpha(themeColors.white, 0.3),
+      50: alpha(themeColors.white, 0.5),
+      70: alpha(themeColors.white, 0.7),
+      100: themeColors.white,
     },
   },
   secondary: {
@@ -1293,141 +1301,87 @@ export const SaaSusTheme = createTheme({
     fontFamily: typography.fontFamily,
     // 見出し用
     h1: typography.h1,
-    // h1: {
-    //   fontWeight: 700,
-    //   lineHeight: 1.5,
-    //   fontSize: `${fontPxToRemMinim(24)}`,
-    //   [`@media (min-width: ${breakpoints.values.md}px)`]: {
-    //     fontSize: `${fontPxToRem(24)}`,
-    //   },
-    // },
-    h2: {
-      fontWeight: 700,
-      lineHeight: 1.5,
-      fontSize: `${fontPxToRemMinim(22)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(22)}`,
-      },
-    },
-    h3: {
-      fontWeight: 700,
-      lineHeight: 1.5,
-      fontSize: `${fontPxToRemMinim(20)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(20)}`,
-      },
-    },
-    h4: {
-      fontWeight: 700,
-      fontSize: `${fontPxToRemMinim(18)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(18)}`,
-      },
-    },
-    h5: {
-      fontWeight: 700,
-      fontSize: `${fontPxToRemMinim(16)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(16)}`,
-      },
-    },
-    h6: {
-      fontWeight: 700,
-      lineHeight: 1.5,
-      fontSize: `${fontPxToRemMinim(15)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(15)}`,
-      },
-    },
+    h2: typography.h2,
+    h3: typography.h3,
+    h4: typography.h4,
+    h5: typography.h5,
+    h6: typography.h6,
     // Text本文 Utility用
-    body1: {
-      fontWeight: 400,
-      lineHeight: 1.5,
-      fontSize: `${fontPxToRemMinim(15)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(15)}`,
-      },
-    },
-    body2: {
-      fontWeight: 400,
-      lineHeight: 1.5,
-      fontSize: `${fontPxToRemMinim(14)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(14)}`,
-      },
-    },
+    body1: typography.body1,
+    body2: typography.body2,
+    // FIXME:
     // サブタイトル用
     subtitle1: {
-      fontWeight: 400,
-      lineHeight: 1.5,
+      fontWeight: fontWeight.normal,
+      lineHeight: lineHeight.small,
       fontSize: `${fontPxToRemMinim(14)}`,
-      '@media (min-width: 960px)': {
+      [typographyBreakpoint.up]: {
         fontSize: `${fontPxToRem(14)}`,
       },
       color: colors.alpha.black[70],
     },
     subtitle2: {
-      fontWeight: 400,
-      lineHeight: 1.5,
+      fontWeight: fontWeight.normal,
+      lineHeight: lineHeight.small,
       fontSize: `${fontPxToRemMinim(13)}`,
-      '@media (min-width: 960px)': {
+      [typographyBreakpoint.up]: {
         fontSize: `${fontPxToRem(13)}`,
       },
       color: colors.alpha.black[70],
     },
     // Text Utility用
     caption: {
-      fontWeigt: 400,
+      fontWeight: fontWeight.normal,
       fontSize: `${fontPxToRemMinim(12)}`,
-      '@media (min-width: 960px)': {
+      [typographyBreakpoint.up]: {
         fontSize: `${fontPxToRem(12)}`,
+        color: colors.alpha.black[70],
       },
-      color: colors.alpha.black[70],
-    },
-    overline: {
-      fontWeight: 400,
-      fontSize: `${fontPxToRemMinim(13)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(13)}`,
+      overline: {
+        fontWeight: fontWeight.normal,
+        fontSize: `${fontPxToRemMinim(13)}`,
+        [typographyBreakpoint.up]: {
+          fontSize: `${fontPxToRem(13)}`,
+          color: colors.alpha.black[70],
+        },
       },
-      textTransform: 'none',
-    },
-    // TODO:用途のリサーチ/ボタン用？
-    button: {
-      fontWeigt: 500,
-      fontSize: `${fontPxToRemMinim(14)}`,
-      '@media (min-width: 960px)': {
-        fontSize: `${fontPxToRem(14)}`,
+      // TODO:用途のリサーチ/ボタン用？
+      button: {
+        fontWeigt: 500,
+        fontSize: `${fontPxToRemMinim(14)}`,
+        '@media (min-width: 960px)': {
+          fontSize: `${fontPxToRem(14)}`,
+        },
+        textTransform: 'none',
       },
-      textTransform: 'none',
+      // シャドーの初期化？ TODO: 何の配列なのかリサーチ
+      shadows: [
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+      ],
     },
   },
-  // シャドーの初期化？ TODO: 何の配列なのかリサーチ
-  shadows: [
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-    'none',
-  ],
 })

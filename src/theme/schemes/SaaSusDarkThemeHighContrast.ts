@@ -126,14 +126,6 @@ const colors = {
       70: alpha(themeColors.white, 0.7),
       100: themeColors.white,
     },
-    trueWhite: {
-      5: alpha(themeColors.trueWhite, 0.02),
-      10: alpha(themeColors.trueWhite, 0.1),
-      30: alpha(themeColors.trueWhite, 0.3),
-      50: alpha(themeColors.trueWhite, 0.5),
-      70: alpha(themeColors.trueWhite, 0.7),
-      100: themeColors.trueWhite,
-    },
     black: {
       5: alpha(themeColors.black, 0.02),
       10: alpha(themeColors.black, 0.1),
@@ -141,6 +133,14 @@ const colors = {
       50: alpha(themeColors.black, 0.5),
       70: alpha(themeColors.black, 0.7),
       100: themeColors.black,
+    },
+    trueWhite: {
+      5: alpha(themeColors.trueWhite, 0.02),
+      10: alpha(themeColors.trueWhite, 0.1),
+      30: alpha(themeColors.trueWhite, 0.3),
+      50: alpha(themeColors.trueWhite, 0.5),
+      70: alpha(themeColors.trueWhite, 0.7),
+      100: themeColors.trueWhite,
     },
   },
   secondary: {
