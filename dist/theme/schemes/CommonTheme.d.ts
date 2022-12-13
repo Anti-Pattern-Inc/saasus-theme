@@ -18,19 +18,6 @@ export declare const breakpoints: {
         wide: number;
     };
 };
-export declare const fontWeight: {
-    normal: number;
-    medium: number;
-    bold: number;
-};
-export declare const lineHeight: {
-    small: number;
-    medium: number;
-    large: number;
-};
-export declare const typographyBreakpoint: {
-    up: string;
-};
 export declare const typography: {
     fontFamily: string;
     h1: {
@@ -62,6 +49,7 @@ export declare const typography: {
             fontSize: string;
         };
         fontWeight: number;
+        lineHeight: number;
         fontSize: string;
     };
     h5: {
@@ -103,6 +91,14 @@ export declare const typography: {
         lineHeight: number;
         fontSize: string;
     };
+    subtitle2: {
+        [x: string]: string | number | {
+            fontSize: string;
+        };
+        fontWeight: number;
+        lineHeight: number;
+        fontSize: string;
+    };
     caption: {
         [x: string]: string | number | {
             fontSize: string;
@@ -116,7 +112,6 @@ export declare const typography: {
         };
         fontWeight: number;
         fontSize: string;
-        textTransform: string;
     };
     button: {
         [x: string]: string | number | {
@@ -124,7 +119,6 @@ export declare const typography: {
         };
         fontWeight: number;
         fontSize: string;
-        textTransform: string;
     };
 };
 //# sourceMappingURL=CommonTheme.d.ts.map

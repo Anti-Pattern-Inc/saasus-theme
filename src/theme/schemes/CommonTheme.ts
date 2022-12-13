@@ -44,19 +44,19 @@ const fontPxToRemMinim = (px: number) => {
   return (px / 16) * 0.85 + 'rem'
 }
 
-export const fontWeight = {
+const fontWeight = {
   normal: 400,
   medium: 500,
   bold: 700,
 }
 
-export const lineHeight = {
+const lineHeight = {
   small: 1.5,
   medium: 1.75,
   large: 2.0,
 }
 
-export const typographyBreakpoint = {
+const typographyBreakpoint = {
   // upper size lg(laptop)
   up: `@media (min-width: ${breakpoints.values.lg}px)`,
 }
@@ -64,16 +64,13 @@ export const typographyBreakpoint = {
 export const typography = {
   fontFamily:
     '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
-  // 見出し用
+  // 見出し
   h1: {
     fontWeight: fontWeight.bold,
     lineHeight: lineHeight.small,
     fontSize: `${fontPxToRemMinim(24)}`,
-    // [`@media (min-width: ${breakpoints.values.md}px)`]: {
     [typographyBreakpoint.up]: {
       fontSize: `${fontPxToRem(24)}`,
-      // TODO: Clump Set Value & Test
-      // fontSizeClump: `clump(24px, 1vw, ${fontPxToRem(24)})`,
     },
   },
   h2: {
@@ -94,6 +91,7 @@ export const typography = {
   },
   h4: {
     fontWeight: fontWeight.bold,
+    lineHeight: lineHeight.small,
     fontSize: `${fontPxToRemMinim(18)}`,
     [typographyBreakpoint.up]: {
       fontSize: `${fontPxToRem(18)}`,
@@ -114,7 +112,7 @@ export const typography = {
       fontSize: `${fontPxToRem(15)}`,
     },
   },
-  // Text本文 Utility用
+  // Text本文
   body1: {
     fontWeight: fontWeight.normal,
     lineHeight: lineHeight.small,
@@ -131,25 +129,24 @@ export const typography = {
       fontSize: `${fontPxToRem(14)}`,
     },
   },
-  // サブタイトル用
+  // サブタイトル
   subtitle1: {
+    // color: 'inherit’',
     fontWeight: fontWeight.normal,
     lineHeight: lineHeight.small,
     fontSize: `${fontPxToRemMinim(14)}`,
     [typographyBreakpoint.up]: {
       fontSize: `${fontPxToRem(14)}`,
     },
-    // color: colors.alpha.black[70],
   },
-  // subtitle2: {
-  //   fontWeight: fontWeight.normal,
-  //   lineHeight: lineHeight.small,
-  //   fontSize: `${fontPxToRemMinim(13)}`,
-  //   [typographyBreakpoint.up]: {
-  //     fontSize: `${fontPxToRem(13)}`,
-  //   },
-  //   color: colors.alpha.black[70],
-  // },
+  subtitle2: {
+    fontWeight: fontWeight.normal,
+    lineHeight: lineHeight.small,
+    fontSize: `${fontPxToRemMinim(13)}`,
+    [typographyBreakpoint.up]: {
+      fontSize: `${fontPxToRem(13)}`,
+    },
+  },
   // Text Utility用
   caption: {
     fontWeight: fontWeight.normal,
@@ -164,15 +161,13 @@ export const typography = {
     [typographyBreakpoint.up]: {
       fontSize: `${fontPxToRem(13)}`,
     },
-    textTransform: 'none',
   },
-  // TODO:用途のリサーチ/ボタン用？
+  // button
   button: {
     fontWeight: fontWeight.medium,
     fontSize: `${fontPxToRemMinim(14)}`,
     [typographyBreakpoint.up]: {
       fontSize: `${fontPxToRem(14)}`,
     },
-    textTransform: 'none',
   },
 }

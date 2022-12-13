@@ -2016,16 +2016,13 @@ const typographyBreakpoint = {
 };
 const typography = {
     fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
-    // 見出し用
+    // 見出し
     h1: {
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(24)}`,
-        // [`@media (min-width: ${breakpoints.values.md}px)`]: {
         [typographyBreakpoint.up]: {
             fontSize: `${fontPxToRem$3(24)}`,
-            // TODO: Clump Set Value & Test
-            // fontSizeClump: `clump(24px, 1vw, ${fontPxToRem(24)})`,
         },
     },
     h2: {
@@ -2046,6 +2043,7 @@ const typography = {
     },
     h4: {
         fontWeight: fontWeight.bold,
+        lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(18)}`,
         [typographyBreakpoint.up]: {
             fontSize: `${fontPxToRem$3(18)}`,
@@ -2066,7 +2064,7 @@ const typography = {
             fontSize: `${fontPxToRem$3(15)}`,
         },
     },
-    // Text本文 Utility用
+    // Text本文
     body1: {
         fontWeight: fontWeight.normal,
         lineHeight: lineHeight.small,
@@ -2083,25 +2081,24 @@ const typography = {
             fontSize: `${fontPxToRem$3(14)}`,
         },
     },
-    // サブタイトル用
+    // サブタイトル
     subtitle1: {
+        // color: 'inherit’',
         fontWeight: fontWeight.normal,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(14)}`,
         [typographyBreakpoint.up]: {
             fontSize: `${fontPxToRem$3(14)}`,
         },
-        // color: colors.alpha.black[70],
     },
-    // subtitle2: {
-    //   fontWeight: fontWeight.normal,
-    //   lineHeight: lineHeight.small,
-    //   fontSize: `${fontPxToRemMinim(13)}`,
-    //   [typographyBreakpoint.up]: {
-    //     fontSize: `${fontPxToRem(13)}`,
-    //   },
-    //   color: colors.alpha.black[70],
-    // },
+    subtitle2: {
+        fontWeight: fontWeight.normal,
+        lineHeight: lineHeight.small,
+        fontSize: `${fontPxToRemMinim$3(13)}`,
+        [typographyBreakpoint.up]: {
+            fontSize: `${fontPxToRem$3(13)}`,
+        },
+    },
     // Text Utility用
     caption: {
         fontWeight: fontWeight.normal,
@@ -2116,16 +2113,14 @@ const typography = {
         [typographyBreakpoint.up]: {
             fontSize: `${fontPxToRem$3(13)}`,
         },
-        textTransform: 'none',
     },
-    // TODO:用途のリサーチ/ボタン用？
+    // button
     button: {
         fontWeight: fontWeight.medium,
         fontSize: `${fontPxToRemMinim$3(14)}`,
         [typographyBreakpoint.up]: {
             fontSize: `${fontPxToRem$3(14)}`,
         },
-        textTransform: 'none',
     },
 };
 
@@ -4897,6 +4892,26 @@ const colors = {
         dark: material.darken(themeColors.info, 0.2),
     },
 };
+// ----- typography setting -----
+// 汎用alpha color
+const paleColorText = colors.alpha.black[70];
+// subtitle1
+const subtitle1_Object = typography.subtitle1;
+subtitle1_Object.color = paleColorText;
+// subtitle2
+const subtitle2_Object = typography.subtitle2;
+subtitle2_Object.color = paleColorText;
+// caption
+const caption_Object = typography.caption;
+caption_Object.color = paleColorText;
+// textTransform reset
+const textTransformReset = 'none';
+// overline
+const overline_Object = typography.overline;
+overline_Object.textTransform = textTransformReset;
+// buttom
+const button_Object = typography.button;
+button_Object.textTransform = textTransformReset;
 const SaaSusTheme = material.createTheme({
     colors: {
         gradients: {
@@ -5965,93 +5980,52 @@ const SaaSusTheme = material.createTheme({
     },
     typography: {
         // fontFamily:
-        //   '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
         fontFamily: typography.fontFamily,
-        // 見出し用
+        // 見出し
         h1: typography.h1,
         h2: typography.h2,
         h3: typography.h3,
         h4: typography.h4,
         h5: typography.h5,
         h6: typography.h6,
-        // Text本文 Utility用
+        // Text本文
         body1: typography.body1,
         body2: typography.body2,
-        // FIXME:
-        // サブタイトル用
-        subtitle1: {
-            fontWeight: fontWeight.normal,
-            lineHeight: lineHeight.small,
-            fontSize: `${fontPxToRemMinim(14)}`,
-            [typographyBreakpoint.up]: {
-                fontSize: `${fontPxToRem(14)}`,
-            },
-            color: colors.alpha.black[70],
-        },
-        subtitle2: {
-            fontWeight: fontWeight.normal,
-            lineHeight: lineHeight.small,
-            fontSize: `${fontPxToRemMinim(13)}`,
-            [typographyBreakpoint.up]: {
-                fontSize: `${fontPxToRem(13)}`,
-            },
-            color: colors.alpha.black[70],
-        },
-        // Text Utility用
-        caption: {
-            fontWeight: fontWeight.normal,
-            fontSize: `${fontPxToRemMinim(12)}`,
-            [typographyBreakpoint.up]: {
-                fontSize: `${fontPxToRem(12)}`,
-                color: colors.alpha.black[70],
-            },
-            overline: {
-                fontWeight: fontWeight.normal,
-                fontSize: `${fontPxToRemMinim(13)}`,
-                [typographyBreakpoint.up]: {
-                    fontSize: `${fontPxToRem(13)}`,
-                    color: colors.alpha.black[70],
-                },
-            },
-            // TODO:用途のリサーチ/ボタン用？
-            button: {
-                fontWeigt: 500,
-                fontSize: `${fontPxToRemMinim(14)}`,
-                '@media (min-width: 960px)': {
-                    fontSize: `${fontPxToRem(14)}`,
-                },
-                textTransform: 'none',
-            },
-            // シャドーの初期化？ TODO: 何の配列なのかリサーチ
-            shadows: [
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-                'none',
-            ],
-        },
+        // サブタイトル
+        subtitle1: subtitle1_Object,
+        subtitle2: subtitle2_Object,
+        // Text Utility
+        caption: caption_Object,
+        overline: overline_Object,
+        button: button_Object,
     },
+    shadows: [
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+        'none',
+    ],
 });
 
 function themeCreator(theme) {
