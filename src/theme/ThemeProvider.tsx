@@ -27,7 +27,10 @@ const ThemeProviderWrapper = ({
   const [themeName, _setThemeName] = useState('SaaSusTheme')
 
   useEffect(() => {
-    const curThemeName = 'SaaSusTheme'
+    const curThemeName =
+      // 公開前: 1テーマで固定 const curThemeName = 'SaaSusTheme'
+      // 読み込み時のlocalstorage key(appTheme):value(テーマ名)反映
+      window.localStorage.getItem('appTheme') || 'SaaSusTheme'
     _setThemeName(curThemeName)
   }, [])
 
