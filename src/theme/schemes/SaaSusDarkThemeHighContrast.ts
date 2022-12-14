@@ -54,7 +54,8 @@ const fontPxToRemMinim = (px: number) => {
 }
 
 const themeColors = {
-  primary: '#44a574',
+  // primary: '#44a574',
+  primary: '#41a8b5',
   secondary: '#a2a8ab',
   success: '#57CA22',
   warning: '#FFA319',
@@ -102,7 +103,7 @@ const colors = {
   },
   layout: {
     general: {
-      bodyBg: '#141c23',
+      bodyBg: '#121212',
     },
     sidebar: {
       background: themeColors.primaryAlt,

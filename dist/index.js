@@ -2140,7 +2140,8 @@ const fontPxToRemMinim$2 = (px) => {
     return (px / 16) * 0.85 + 'rem';
 };
 const themeColors$2 = {
-    primary: '#44a574',
+    // primary: '#44a574',
+    primary: '#41a8b5',
     secondary: '#a2a8ab',
     success: '#57CA22',
     warning: '#FFA319',
@@ -2182,7 +2183,7 @@ const colors$2 = {
     },
     layout: {
         general: {
-            bodyBg: '#141c23',
+            bodyBg: '#121212',
         },
         sidebar: {
             background: themeColors$2.primaryAlt,
@@ -3384,15 +3385,16 @@ const fontPxToRemMinim$1 = (px) => {
     return (px / 16) * 0.85 + 'rem';
 };
 const themeColors$1 = {
-    primary: '#8C7CF0',
+    primary: '#346bcc',
+    // primary: '#8C7CF0',
     secondary: '#9EA4C1',
     success: '#57CA22',
     warning: '#FFA319',
     error: '#FF1943',
     info: '#33C2FF',
     black: '#CBCCD2',
-    white: '#111633',
-    primaryAlt: '#111633',
+    white: '#2d2f38',
+    primaryAlt: '#2d2f38',
     trueWhite: '#ffffff',
 };
 const colors$1 = {
@@ -3426,7 +3428,7 @@ const colors$1 = {
     },
     layout: {
         general: {
-            bodyBg: '#070C27',
+            bodyBg: '#343434',
         },
         sidebar: {
             background: themeColors$1.primaryAlt,

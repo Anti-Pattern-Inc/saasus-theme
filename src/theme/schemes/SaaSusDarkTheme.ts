@@ -54,15 +54,16 @@ const fontPxToRemMinim = (px: number) => {
 }
 
 const themeColors = {
-  primary: '#8C7CF0',
+  primary: '#346bcc',
+  // primary: '#8C7CF0',
   secondary: '#9EA4C1',
   success: '#57CA22',
   warning: '#FFA319',
   error: '#FF1943',
   info: '#33C2FF',
   black: '#CBCCD2',
-  white: '#111633',
-  primaryAlt: '#111633',
+  white: '#2d2f38',
+  primaryAlt: '#2d2f38',
   trueWhite: '#ffffff',
 }
 
@@ -102,7 +103,7 @@ const colors = {
   },
   layout: {
     general: {
-      bodyBg: '#070C27',
+      bodyBg: '#343434',
     },
     sidebar: {
       background: themeColors.primaryAlt,
