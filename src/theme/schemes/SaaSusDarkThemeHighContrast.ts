@@ -27,7 +27,7 @@ declare module '@mui/material/styles' {
     lg: true //= laptop
     xl: true //= desktop
     xxl: true //= wide
-    // 明示的な命名での同じ用途
+    // target device name
     base: true
     mobile: true
     tablet: true
@@ -1264,7 +1264,7 @@ export const SaaSusDarkThemeHighContrast = createTheme({
       lg: breakpoints.values.lg, // = laptop
       xl: breakpoints.values.xl, // = desktop
       xxl: breakpoints.values.xxl, // = wide
-      // 明示的な命名での同じ用途
+      // target device name
       base: breakpoints.values.xs,
       mobile: breakpoints.values.sm,
       tablet: breakpoints.values.md,

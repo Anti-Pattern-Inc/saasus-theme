@@ -20,7 +20,7 @@ declare module '@mui/material/styles' {
         lg: number //= laptop
         xl: number //= desktop
         xxl?: number //= wide
-        // 明示的な命名での同じ用途
+        // target device name
         base?: number
         mobile?: number
         tablet?: number
@@ -166,7 +166,7 @@ declare module '@mui/material/styles' {
         lg: number //= laptop
         xl: number //= desktop
         xxl?: number //= wide
-        // 明示的な命名での同じ用途
+        // target device name
         base?: number
         mobile?: number
         tablet?: number

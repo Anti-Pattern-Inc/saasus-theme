@@ -1983,7 +1983,7 @@ const breakpoints = {
         lg: viewport.width.lg,
         xl: viewport.width.xl,
         xxl: viewport.width.xxl,
-        // 明示的な命名Œ
+        // target device name
         base: viewport.width.xs,
         mobile: viewport.width.sm,
         tablet: viewport.width.md,
@@ -2099,7 +2099,7 @@ const typography = {
             fontSize: `${fontPxToRem$3(13)}`,
         },
     },
-    // Text Utility用
+    // Text Utility
     caption: {
         fontWeight: fontWeight.normal,
         fontSize: `${fontPxToRemMinim$3(12)}`,
@@ -3310,7 +3310,7 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
             lg: breakpoints.values.lg,
             xl: breakpoints.values.xl,
             xxl: breakpoints.values.xxl,
-            // 明示的な命名での同じ用途
+            // target device name
             base: breakpoints.values.xs,
             mobile: breakpoints.values.sm,
             tablet: breakpoints.values.md,
@@ -3507,7 +3507,7 @@ const colors$1 = {
     },
 };
 // ----- typography setting -----
-// 汎用alpha color
+// set alpha color
 const paleColorText$1 = colors$1.alpha.black[70];
 // subtitle1
 const subtitle1_Object$1 = typography.subtitle1;
@@ -4555,7 +4555,7 @@ const SaaSusDarkTheme = material.createTheme({
             lg: breakpoints.values.lg,
             xl: breakpoints.values.xl,
             xxl: breakpoints.values.xxl,
-            // 明示的な命名での同じ用途
+            // target device name
             base: breakpoints.values.xs,
             mobile: breakpoints.values.sm,
             tablet: breakpoints.values.md,
@@ -4750,7 +4750,7 @@ const colors = {
     },
 };
 // ----- typography setting -----
-// 汎用alpha color
+// set alpha color
 const paleColorText = colors.alpha.black[70];
 // subtitle1
 const subtitle1_Object = typography.subtitle1;
@@ -5826,7 +5826,7 @@ const SaaSusTheme = material.createTheme({
             lg: breakpoints.values.lg,
             xl: breakpoints.values.xl,
             xxl: breakpoints.values.xxl,
-            // 明示的な命名での同じ用途
+            // target device name
             base: breakpoints.values.xs,
             mobile: breakpoints.values.sm,
             tablet: breakpoints.values.md,

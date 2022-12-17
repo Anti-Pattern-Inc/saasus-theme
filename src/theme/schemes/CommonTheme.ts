@@ -25,7 +25,7 @@ export const breakpoints = {
     lg: viewport.width.lg, // laptop
     xl: viewport.width.xl, // desktop
     xxl: viewport.width.xxl, // wide
-    // 明示的な命名Œ
+    // target device name
     base: viewport.width.xs,
     mobile: viewport.width.sm,
     tablet: viewport.width.md,
@@ -147,7 +147,7 @@ export const typography = {
       fontSize: `${fontPxToRem(13)}`,
     },
   },
-  // Text Utility用
+  // Text Utility
   caption: {
     fontWeight: fontWeight.normal,
     fontSize: `${fontPxToRemMinim(12)}`,
