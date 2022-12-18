@@ -5901,16 +5901,26 @@ const ThemeContext = react.createContext({
 const ThemeProviderWrapper = ({ lang = 'ja', children, }) => {
     const [themeName, _setThemeName] = react.useState('SaaSusTheme');
     react.useEffect(() => {
-        const curThemeName = 
-        // 公開前: 1テーマで固定 const curThemeName = 'SaaSusTheme'
-        // 読み込み時のlocalstorage key(appTheme):value(テーマ名)反映
-        window.localStorage.getItem('appTheme') || 'SaaSusTheme';
-        _setThemeName(curThemeName);
-    }, []);
-    react.useEffect(() => {
         // change language
         i18n__default["default"].changeLanguage(lang);
     }, [lang]);
+    /**
+     * 読み込み時のlocalstorage key(appTheme):value(テーマ名)反映
+     * デフォルト or キーが無い or 現在無いテーマ名であった場合->appTheme:SaaSusThemeを付与する
+     * ユーザーが任意に切り替えるまでテーマは保存
+    */
+    react.useEffect(() => {
+        const getTheme = window.localStorage.getItem('appTheme');
+        if (getTheme === 'SaaSusTheme' ||
+            getTheme === 'SaaSusDarkTheme' ||
+            getTheme === 'SaaSusDarkThemeHighContrast') {
+            _setThemeName(getTheme);
+        }
+        else {
+            window.localStorage.removeItem('appTheme'),
+                window.localStorage.setItem('appTheme', 'SaaSusTheme');
+        }
+    }, []);
     const theme = themeCreator(themeName);
     const setThemeName = (themeName) => {
         window.localStorage.setItem('appTheme', themeName);
