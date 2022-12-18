@@ -5905,25 +5905,28 @@ const ThemeProviderWrapper = ({ lang = 'ja', children, }) => {
         i18n__default["default"].changeLanguage(lang);
     }, [lang]);
     /**
-     * 読み込み時のlocalstorage key(appTheme):value(テーマ名)反映
-     * デフォルト or キーが無い or 現在無いテーマ名であった場合->appTheme:SaaSusThemeを付与する
-     * ユーザーが任意に切り替えるまでテーマは保存
-    */
+     * 読み込み時のlocalstorage key(SaaSusAppTheme):value(テーマ名)反映
+     * デフォルト or キーが無い or 現在無いテーマ名であった場合->SaaSusAppTheme:SaaSusThemeを付与する
+     * ユーザーが任意に切り替えるまでテーマは永続保存
+     */
     react.useEffect(() => {
-        const getTheme = window.localStorage.getItem('appTheme');
+        const getTheme = window.localStorage.getItem('SaaSusAppTheme');
+        // Oldキーの削除
+        window.localStorage.removeItem('appTheme');
+        // 取得 Theme value
         if (getTheme === 'SaaSusTheme' ||
             getTheme === 'SaaSusDarkTheme' ||
             getTheme === 'SaaSusDarkThemeHighContrast') {
             _setThemeName(getTheme);
         }
         else {
-            window.localStorage.removeItem('appTheme'),
-                window.localStorage.setItem('appTheme', 'SaaSusTheme');
+            window.localStorage.removeItem('SaaSusAppTheme'),
+                window.localStorage.setItem('SaaSusAppTheme', 'SaaSusTheme');
         }
     }, []);
     const theme = themeCreator(themeName);
     const setThemeName = (themeName) => {
-        window.localStorage.setItem('appTheme', themeName);
+        window.localStorage.setItem('SaaSusAppTheme', themeName);
         _setThemeName(themeName);
     };
     return (jsxRuntime.jsx(styles$1.StylesProvider, { injectFirst: true, children: jsxRuntime.jsx(ThemeContext.Provider, { value: { theme, setThemeName }, children: jsxRuntime.jsx(styles.ThemeProvider, { theme: theme, children: children }) }) }));
