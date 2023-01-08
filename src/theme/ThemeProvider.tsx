@@ -48,8 +48,8 @@ const ThemeProviderWrapper = ({
     ) {
       _setThemeName(getTheme)
     } else {
-      window.localStorage.removeItem('SaaSusAppTheme'),
-        window.localStorage.setItem('SaaSusAppTheme', 'SaaSusTheme')
+      window.localStorage.removeItem('SaaSusAppTheme')
+      window.localStorage.setItem('SaaSusAppTheme', 'SaaSusTheme')
     }
   }, [])
 

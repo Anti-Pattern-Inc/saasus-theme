@@ -5920,8 +5920,8 @@ const ThemeProviderWrapper = ({ lang = 'ja', children, }) => {
             _setThemeName(getTheme);
         }
         else {
-            window.localStorage.removeItem('SaaSusAppTheme'),
-                window.localStorage.setItem('SaaSusAppTheme', 'SaaSusTheme');
+            window.localStorage.removeItem('SaaSusAppTheme');
+            window.localStorage.setItem('SaaSusAppTheme', 'SaaSusTheme');
         }
     }, []);
     const theme = themeCreator(themeName);
