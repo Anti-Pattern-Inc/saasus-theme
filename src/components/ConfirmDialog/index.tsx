@@ -24,13 +24,15 @@ const AvatarError = styled(Avatar)(
   `,
 )
 
-const ButtonError = styled(Button)(
+const AvatarWarning = styled(Avatar)(
   ({ theme }) => `
-    background: ${theme.colors.error.main};
-    color: ${theme.palette.error.contrastText};
+    background-color: ${theme.colors.warning.lighter};
+    color: ${theme.colors.warning.main};
+    width: ${theme.spacing(12)};
+    height: ${theme.spacing(12)};
 
-    &:hover {
-      background: ${theme.colors.error.dark};
+    .MuiSvgIcon-root {
+      font-size: ${theme.typography.pxToRem(45)};
     }
   `,
 )
@@ -41,7 +43,7 @@ type Props = {
   deleteButtons: { text: string; submit: () => void | Promise<void> }[]
   Text: ReactNode
   SubText?: ReactNode
-  warning?: boolean
+  color: 'error' | 'warning'
 }
 
 const ConfirmDialog = ({
@@ -50,7 +52,7 @@ const ConfirmDialog = ({
   deleteButtons,
   SubText,
   Text,
-  warning,
+  color,
 }: Props) => {
   return (
     <>
@@ -68,9 +70,20 @@ const ConfirmDialog = ({
           flexDirection="column"
           p={4}
         >
-          <AvatarError>
-            {warning ? <WarningAmberIcon /> : <CloseIcon />}
-          </AvatarError>
+          {
+            {
+              error: (
+                <AvatarError>
+                  <CloseIcon />
+                </AvatarError>
+              ),
+              warning: (
+                <AvatarWarning>
+                  <WarningAmberIcon />
+                </AvatarWarning>
+              ),
+            }[color]
+          }
 
           <Typography
             align="center"
@@ -99,18 +112,19 @@ const ConfirmDialog = ({
           <Box>
             <Button
               data-testid="cancel"
-              variant="text"
+              variant="outlined"
               size="large"
               sx={{
                 mx: 1,
               }}
               onClick={onClose}
+              color={color}
             >
               {'キャンセル'}
             </Button>
             {deleteButtons.map((deleteButton, i) => {
               return (
-                <ButtonError
+                <Button
                   key={i}
                   data-testid="deleteTenantUserButton"
                   onClick={deleteButton.submit}
@@ -119,10 +133,11 @@ const ConfirmDialog = ({
                     mx: 1,
                     px: 3,
                   }}
+                  color={color}
                   variant="contained"
                 >
                   {deleteButton.text}
-                </ButtonError>
+                </Button>
               )
             })}
           </Box>
