@@ -37,7 +37,7 @@ const ButtonError = styled(Button)(
 
 type Props = {
   open: boolean
-  closeDeleteDialog: () => void
+  onClose: () => void
   deleteButtons: { text: string; submit: () => void | Promise<void> }[]
   Text: ReactNode
   SubText?: ReactNode
@@ -46,7 +46,7 @@ type Props = {
 
 const ConfirmDialog = ({
   open,
-  closeDeleteDialog,
+  onClose,
   deleteButtons,
   SubText,
   Text,
@@ -104,7 +104,7 @@ const ConfirmDialog = ({
               sx={{
                 mx: 1,
               }}
-              onClick={closeDeleteDialog}
+              onClick={onClose}
             >
               {'キャンセル'}
             </Button>
