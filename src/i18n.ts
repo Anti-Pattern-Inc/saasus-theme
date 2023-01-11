@@ -8,11 +8,13 @@ const resources = {
   ja: {
     saasusTheme: {
       help: 'ヘルプ',
+      cancel: 'キャンセル',
     },
   },
   en: {
     saasusTheme: {
       help: 'Help',
+      cancel: 'Cancel',
     },
   },
 }

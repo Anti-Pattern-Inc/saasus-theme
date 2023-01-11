@@ -1,7 +1,9 @@
 import CloseIcon from '@mui/icons-material/Close'
 import WarningAmberIcon from '@mui/icons-material/WarningAmber'
 import { Avatar, Box, Button, Dialog, styled, Typography } from '@mui/material'
+import i18n, { i18nNamespace } from 'i18n'
 import { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const DialogWrapper = styled(Dialog)(
   () => `
@@ -54,6 +56,8 @@ const ConfirmDialog = ({
   Text,
   color,
 }: Props) => {
+  const { t } = useTranslation(i18nNamespace, { i18n })
+
   return (
     <>
       <DialogWrapper
@@ -120,7 +124,7 @@ const ConfirmDialog = ({
               onClick={onClose}
               color={color}
             >
-              {'キャンセル'}
+              {t('cancel')}
             </Button>
             {deleteButtons.map((deleteButton, i) => {
               return (
