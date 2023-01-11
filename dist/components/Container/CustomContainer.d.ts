@@ -7,7 +7,7 @@ import { ReactNode } from 'react';
  */
 declare type Props = {
     children: ReactNode;
-    maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false;
+    maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'base' | 'mobile' | 'tablet' | 'laptop' | 'desktop' | 'wide' | false;
     fixed?: boolean;
     addGutter?: boolean;
     mb?: number | string;

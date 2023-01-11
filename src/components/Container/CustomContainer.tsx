@@ -11,7 +11,20 @@ import { ReactNode } from 'react'
 type Props = {
   children: ReactNode
   // Themeで設定した幅
-  maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false
+  maxWidth?:
+    | 'xs'
+    | 'sm'
+    | 'md'
+    | 'lg'
+    | 'xl'
+    | 'xxl'
+    | 'base'
+    | 'mobile'
+    | 'tablet'
+    | 'laptop'
+    | 'desktop'
+    | 'wide'
+    | false
   // widthをブレイクポイントに追従
   fixed?: boolean
   // Side Pagging

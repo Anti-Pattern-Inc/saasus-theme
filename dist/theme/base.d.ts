@@ -3,6 +3,22 @@ import React from 'react';
 export declare function themeCreator(theme: string): Theme;
 declare module '@mui/material/styles' {
     interface Theme {
+        breakpoints: {
+            values: {
+                xs: number;
+                sm: number;
+                md: number;
+                lg: number;
+                xl: number;
+                xxl?: number;
+                base?: number;
+                mobile?: number;
+                tablet?: number;
+                laptop?: number;
+                desktop?: number;
+                wide?: number;
+            };
+        };
         colors: {
             gradients: {
                 blue1: string;
@@ -131,6 +147,22 @@ declare module '@mui/material/styles' {
         };
     }
     interface ThemeOptions {
+        breakpoints: {
+            values: {
+                xs: number;
+                sm: number;
+                md: number;
+                lg: number;
+                xl: number;
+                xxl?: number;
+                base?: number;
+                mobile?: number;
+                tablet?: number;
+                laptop?: number;
+                desktop?: number;
+                wide?: number;
+            };
+        };
         colors: {
             gradients: {
                 blue1: string;

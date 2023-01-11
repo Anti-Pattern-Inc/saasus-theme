@@ -20,6 +20,20 @@ declare module '@mui/material/styles' {
     interface FontStyle {
         info?: string;
     }
+    interface BreakpointOverrides {
+        xs: true;
+        sm: true;
+        md: true;
+        lg: true;
+        xl: true;
+        xxl: true;
+        base: true;
+        mobile: true;
+        tablet: true;
+        laptop: true;
+        desktop: true;
+        wide: true;
+    }
 }
 export declare const SaaSusTheme: import("@mui/material").Theme;
 //# sourceMappingURL=SaaSusTheme.d.ts.map

@@ -10,8 +10,6 @@ type Props = Partial<{
   children: ReactNode
 }>
 
-// {`theme.breakpoints.up('sm') matches: ${matches}`}
-
 const StackButtonWrap = styled(Stack)(() => ({
   display: 'grid',
   gap: 8,
