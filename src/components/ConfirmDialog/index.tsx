@@ -130,7 +130,7 @@ const ConfirmDialog = ({
               return (
                 <Button
                   key={i}
-                  data-testid="deleteTenantUserButton"
+                  data-testid={`button-${deleteButton.text}`}
                   onClick={deleteButton.submit}
                   size="large"
                   sx={{
