@@ -495,7 +495,7 @@ const AvatarWarning = material.styled(material.Avatar)(({ theme }) => `
       font-size: ${theme.typography.pxToRem(45)};
     }
   `);
-const ConfirmDialog = ({ open, onClose, deleteButtons, SubText, Text, color, }) => {
+const ConfirmDialog = ({ open, onClose, buttons, SubText, Text, color, }) => {
     const { t } = reactI18next.useTranslation(i18nNamespace, { i18n: i18n__default["default"] });
     return (jsxRuntime.jsx(jsxRuntime.Fragment, { children: jsxRuntime.jsx(DialogWrapper, { open: open, maxWidth: "sm", fullWidth: true, keepMounted: true, disableEscapeKeyDown: true, children: jsxRuntime.jsxs(material.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 4, children: [{
                         error: (jsxRuntime.jsx(AvatarError, { children: jsxRuntime.jsx(CloseIcon__default["default"], {}) })),
@@ -508,8 +508,8 @@ const ConfirmDialog = ({ open, onClose, deleteButtons, SubText, Text, color, }) 
                             px: 4,
                         }, variant: "subtitle1", children: SubText })), jsxRuntime.jsxs(material.Box, { children: [jsxRuntime.jsx(material.Button, { "data-testid": "cancel", variant: "outlined", size: "large", sx: {
                                     mx: 1,
-                                }, onClick: onClose, color: color, children: t('cancel') }), deleteButtons.map((deleteButton, i) => {
-                                return (jsxRuntime.jsx(material.Button, { "data-testid": "deleteTenantUserButton", onClick: deleteButton.submit, size: "large", sx: {
+                                }, onClick: onClose, color: color, children: t('cancel') }), buttons.map((deleteButton, i) => {
+                                return (jsxRuntime.jsx(material.Button, { "data-testid": `button-${deleteButton.text}`, onClick: deleteButton.submit, size: "large", sx: {
                                         mx: 1,
                                         px: 3,
                                     }, color: color, variant: "contained", children: deleteButton.text }, i));
