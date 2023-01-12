@@ -12,6 +12,7 @@ var HelpOutlineIcon = require('@mui/icons-material/HelpOutline');
 var i18n = require('i18next');
 var reactI18next = require('react-i18next');
 var CloseIcon = require('@mui/icons-material/Close');
+var WarningAmberIcon = require('@mui/icons-material/WarningAmber');
 var styles = require('@mui/material/styles');
 var Link = require('next/link');
 require('@mui/lab/themeAugmentation');
@@ -27,6 +28,7 @@ var ExpandMoreIcon__default = /*#__PURE__*/_interopDefaultLegacy(ExpandMoreIcon)
 var HelpOutlineIcon__default = /*#__PURE__*/_interopDefaultLegacy(HelpOutlineIcon);
 var i18n__default = /*#__PURE__*/_interopDefaultLegacy(i18n);
 var CloseIcon__default = /*#__PURE__*/_interopDefaultLegacy(CloseIcon);
+var WarningAmberIcon__default = /*#__PURE__*/_interopDefaultLegacy(WarningAmberIcon);
 var Link__default = /*#__PURE__*/_interopDefaultLegacy(Link);
 
 const CustomTable = ({ children, caption, sx, ...props }) => {
@@ -178,11 +180,13 @@ const resources = {
     ja: {
         saasusTheme: {
             help: 'ヘルプ',
+            cancel: 'キャンセル',
         },
     },
     en: {
         saasusTheme: {
             help: 'Help',
+            cancel: 'Cancel',
         },
     },
 };
@@ -467,10 +471,10 @@ const CustomButton = ({ color, variant, size, type, startIcon, endIcon, disabled
 };
 
 const DialogWrapper = material.styled(material.Dialog)(() => `
-      .MuiDialog-paper {
-        overflow: visible;
-      }
-`);
+    .MuiDialog-paper {
+      overflow: visible;
+    }
+  `);
 const AvatarError = material.styled(material.Avatar)(({ theme }) => `
     background-color: ${theme.colors.error.lighter};
     color: ${theme.colors.error.main};
@@ -481,25 +485,35 @@ const AvatarError = material.styled(material.Avatar)(({ theme }) => `
       font-size: ${theme.typography.pxToRem(45)};
     }
   `);
-const ButtonError = material.styled(material.Button)(({ theme }) => `
-    background: ${theme.colors.error.main};
-    color: ${theme.palette.error.contrastText};
+const AvatarWarning = material.styled(material.Avatar)(({ theme }) => `
+    background-color: ${theme.colors.warning.lighter};
+    color: ${theme.colors.warning.main};
+    width: ${theme.spacing(12)};
+    height: ${theme.spacing(12)};
 
-    &:hover {
-      background: ${theme.colors.error.dark};
+    .MuiSvgIcon-root {
+      font-size: ${theme.typography.pxToRem(45)};
     }
   `);
-const DeleteDialog = ({ open, DeleteItem, handleDeleteCompleted, closeDeleteDialog, }) => {
-    return (jsxRuntime.jsx(DialogWrapper, { open: open, maxWidth: "sm", fullWidth: true, keepMounted: true, onClose: closeDeleteDialog, children: jsxRuntime.jsxs(material.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 5, children: [jsxRuntime.jsx(AvatarError, { children: jsxRuntime.jsx(CloseIcon__default["default"], {}) }), jsxRuntime.jsxs(material.Typography, { align: "center", sx: {
-                        pt: 4,
-                    }, variant: "h3", children: [DeleteItem, jsxRuntime.jsx("br", {}), "\u3092\u524A\u9664\u3057\u307E\u3059"] }), jsxRuntime.jsx(material.Typography, { align: "center", sx: {
-                        py: 4,
-                    }, children: "\u4E00\u5EA6\u524A\u9664\u3059\u308B\u3068\u5143\u306B\u623B\u305B\u307E\u305B\u3093" }), jsxRuntime.jsxs(material.Box, { children: [jsxRuntime.jsx(material.Button, { variant: "text", size: "large", sx: {
-                                mx: 1,
-                            }, onClick: closeDeleteDialog, "data-testid": "cancel", children: "\u30AD\u30E3\u30F3\u30BB\u30EB" }), jsxRuntime.jsx(ButtonError, { onClick: handleDeleteCompleted, size: "large", sx: {
-                                mx: 1,
-                                px: 3,
-                            }, variant: "contained", "data-testid": "deleteButton", children: "\u524A\u9664" })] })] }) }));
+const ConfirmDialog = ({ open, onClose, deleteButtons, SubText, Text, color, }) => {
+    const { t } = reactI18next.useTranslation(i18nNamespace, { i18n: i18n__default["default"] });
+    return (jsxRuntime.jsx(jsxRuntime.Fragment, { children: jsxRuntime.jsx(DialogWrapper, { open: open, maxWidth: "sm", fullWidth: true, keepMounted: true, disableEscapeKeyDown: true, children: jsxRuntime.jsxs(material.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 4, children: [{
+                        error: (jsxRuntime.jsx(AvatarError, { children: jsxRuntime.jsx(CloseIcon__default["default"], {}) })),
+                        warning: (jsxRuntime.jsx(AvatarWarning, { children: jsxRuntime.jsx(WarningAmberIcon__default["default"], {}) })),
+                    }[color], jsxRuntime.jsx(material.Typography, { align: "center", sx: {
+                            py: 4,
+                            px: 6,
+                        }, variant: "h3", children: Text }), SubText && (jsxRuntime.jsx(material.Typography, { align: "center", sx: {
+                            pb: 4,
+                            px: 4,
+                        }, variant: "subtitle1", children: SubText })), jsxRuntime.jsxs(material.Box, { children: [jsxRuntime.jsx(material.Button, { "data-testid": "cancel", variant: "outlined", size: "large", sx: {
+                                    mx: 1,
+                                }, onClick: onClose, color: color, children: t('cancel') }), deleteButtons.map((deleteButton, i) => {
+                                return (jsxRuntime.jsx(material.Button, { "data-testid": "deleteTenantUserButton", onClick: deleteButton.submit, size: "large", sx: {
+                                        mx: 1,
+                                        px: 3,
+                                    }, color: color, variant: "contained", children: deleteButton.text }, i));
+                            })] })] }) }) }));
 };
 
 const Label = material.styled(material.InputLabel)(() => ({
@@ -5936,6 +5950,7 @@ exports.AccordionWrap = AccordionWrap;
 exports.BoxContent = BoxContent;
 exports.BoxWrap = BoxWrap;
 exports.ButtonWrap = ButtonWrap;
+exports.ConfirmDialog = ConfirmDialog;
 exports.CustomAlert = CustomAlert;
 exports.CustomButton = CustomButton;
 exports.CustomContainer = CustomContainer;
@@ -5950,7 +5965,6 @@ exports.CustomTableFilterResult = CustomTableFilterResult;
 exports.CustomTableHeader = CustomTableHeader;
 exports.CustomTableRow = CustomTableRow;
 exports.CustomTooltip = CustomTooltip;
-exports.DeleteDialog = DeleteDialog;
 exports.MainTitleSet = MainTitleSet;
 exports.RadioButton = RadioButton;
 exports.SaaSusLogo = SaaSusLogo;
