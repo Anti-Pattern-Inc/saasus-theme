@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 declare type Props = {
     open: boolean;
     onClose: () => void;
-    deleteButtons: {
+    buttons: {
         text: string;
         submit: () => void | Promise<void>;
     }[];
@@ -10,6 +10,6 @@ declare type Props = {
     SubText?: ReactNode;
     color: 'error' | 'warning';
 };
-declare const ConfirmDialog: ({ open, onClose, deleteButtons, SubText, Text, color, }: Props) => JSX.Element;
+declare const ConfirmDialog: ({ open, onClose, buttons, SubText, Text, color, }: Props) => JSX.Element;
 export default ConfirmDialog;
 //# sourceMappingURL=index.d.ts.map

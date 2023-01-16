@@ -42,7 +42,7 @@ const AvatarWarning = styled(Avatar)(
 type Props = {
   open: boolean
   onClose: () => void
-  deleteButtons: { text: string; submit: () => void | Promise<void> }[]
+  buttons: { text: string; submit: () => void | Promise<void> }[]
   Text: ReactNode
   SubText?: ReactNode
   color: 'error' | 'warning'
@@ -51,7 +51,7 @@ type Props = {
 const ConfirmDialog = ({
   open,
   onClose,
-  deleteButtons,
+  buttons,
   SubText,
   Text,
   color,
@@ -126,11 +126,11 @@ const ConfirmDialog = ({
             >
               {t('cancel')}
             </Button>
-            {deleteButtons.map((deleteButton, i) => {
+            {buttons.map((deleteButton, i) => {
               return (
                 <Button
                   key={i}
-                  data-testid="deleteTenantUserButton"
+                  data-testid={`button-${deleteButton.text}`}
                   onClick={deleteButton.submit}
                   size="large"
                   sx={{
