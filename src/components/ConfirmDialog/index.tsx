@@ -42,7 +42,11 @@ const AvatarWarning = styled(Avatar)(
 type Props = {
   open: boolean
   onClose: () => void
-  buttons: { text: string; submit: () => void | Promise<void> }[]
+  buttons: {
+    text: string
+    dataTestid?: string
+    submit: () => void | Promise<void>
+  }[]
   Text: ReactNode
   SubText?: ReactNode
   color: 'error' | 'warning'
@@ -130,7 +134,7 @@ const ConfirmDialog = ({
               return (
                 <Button
                   key={i}
-                  data-testid={`button-${deleteButton.text}`}
+                  data-testid={deleteButton.dataTestid || 'deleteButton'}
                   onClick={deleteButton.submit}
                   size="large"
                   sx={{
