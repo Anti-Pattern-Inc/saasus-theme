@@ -4,6 +4,7 @@ declare type Props = {
     onClose: () => void;
     buttons: {
         text: string;
+        dataTestid?: string;
         submit: () => void | Promise<void>;
     }[];
     Text: ReactNode;
