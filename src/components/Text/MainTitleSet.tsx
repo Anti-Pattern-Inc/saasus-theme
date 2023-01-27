@@ -40,7 +40,7 @@ type MainTitleSetProps = Partial<{
 }>
 
 // 大見出しとサブタイトル
-const MainTitleSet = ({
+export const MainTitleSet = ({
   variant,
   component,
   headingText,
@@ -99,4 +99,4 @@ const MainTitleSet = ({
   )
 }
 
-export default MainTitleSet
+// export default MainTitleSet

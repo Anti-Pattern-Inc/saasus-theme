@@ -38,6 +38,6 @@ declare type Props = Partial<{
     AdditionalProps: JSX.Element;
     sx: SxProps;
 }>;
-declare const BoxWrap: ({ addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, divider, children, boxInnerSx, noMargin, mbSmall, mbLarge, TooltipTitleIconComponent, TooltipComponent, AdditionalProps, sx, }: Props) => JSX.Element;
-export default BoxWrap;
+export declare const BoxWrap: ({ addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, divider, children, boxInnerSx, noMargin, mbSmall, mbLarge, TooltipTitleIconComponent, TooltipComponent, AdditionalProps, sx, }: Props) => JSX.Element;
+export {};
 //# sourceMappingURL=BoxWrap.d.ts.map

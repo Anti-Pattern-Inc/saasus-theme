@@ -26,6 +26,6 @@ declare type MainTitleSetProps = Partial<{
     gutterBottom: boolean;
     mb: number;
 }>;
-declare const MainTitleSet: ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, sxHeader, sxSubTitle, gutterBottom, mb, }: MainTitleSetProps) => JSX.Element;
-export default MainTitleSet;
+export declare const MainTitleSet: ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, sxHeader, sxSubTitle, gutterBottom, mb, }: MainTitleSetProps) => JSX.Element;
+export {};
 //# sourceMappingURL=MainTitleSet.d.ts.map

@@ -57,7 +57,7 @@ type TitleSetProps = Partial<{
 }>
 
 // 中見出しとサブタイトル
-const TitleSet = ({
+export const TitleSet = ({
   variant,
   component,
   headingText,
@@ -144,4 +144,4 @@ const TitleSet = ({
   )
 }
 
-export default TitleSet
+// export default TitleSet

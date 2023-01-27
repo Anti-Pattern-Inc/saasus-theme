@@ -1968,9 +1968,9 @@ const LogoBox = material.styled(material.Box)(() => `
       opacity: 0.8;
     }
 `);
-function SaaSusLogo({ width, alt }) {
+const SaaSusLogo = ({ width, alt }) => {
     return (jsxRuntime.jsx(LogoBox, { children: jsxRuntime.jsx(Link__default["default"], { href: "/", children: jsxRuntime.jsx("img", { width: width, src: "/static/images/logo/saasus_logo.svg", alt: alt }) }) }));
-}
+};
 
 // sidebar
 const sidebar = {

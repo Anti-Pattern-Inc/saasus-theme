@@ -1,6 +1,6 @@
 import { Box, Paper, styled, useTheme } from '@mui/material'
 import { SxProps } from '@mui/system'
-import TitleSet from 'components/Text/TitleSet'
+import { TitleSet } from 'components/Text/TitleSet'
 import { ElementType, ReactNode } from 'react'
 
 /**
@@ -54,7 +54,7 @@ const BoxInner = styled(Paper)(({ theme }) => ({
   marginBottom: theme.spacing(4),
 }))
 
-const BoxWrap = ({
+export const BoxWrap = ({
   // 見出し
   addTitle,
   variant,
@@ -120,4 +120,4 @@ const BoxWrap = ({
   )
 }
 
-export default BoxWrap
+// export default BoxWrap
