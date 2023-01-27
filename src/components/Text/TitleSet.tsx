@@ -143,5 +143,3 @@ export const TitleSet = ({
     </Box>
   )
 }
-
-// export default TitleSet

@@ -9,6 +9,6 @@ interface ThemeProviderProps {
     lang?: 'en' | 'ja';
     children: React.ReactNode;
 }
-declare const ThemeProviderWrapper: ({ lang, children, }: ThemeProviderProps) => JSX.Element;
-export default ThemeProviderWrapper;
+export declare const ThemeProviderWrapper: ({ lang, children, }: ThemeProviderProps) => JSX.Element;
+export {};
 //# sourceMappingURL=ThemeProvider.d.ts.map

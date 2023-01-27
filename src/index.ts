@@ -25,6 +25,6 @@ export { CustomTooltip } from './components/Tooltip/CustomTooltip'
 export { SaaSusLogo } from './components/SaaSusLogo'
 export { themeCreator } from './theme/base'
 export {
-  default as SaaSusThemeProvider,
+  ThemeProviderWrapper as SaaSusThemeProvider,
   ThemeContext,
 } from './theme/ThemeProvider'

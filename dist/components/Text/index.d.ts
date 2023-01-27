@@ -6,5 +6,5 @@ interface TextProps {
     children?: ReactNode;
 }
 export declare const Text: FC<TextProps>;
-export default Text;
+export {};
 //# sourceMappingURL=index.d.ts.map

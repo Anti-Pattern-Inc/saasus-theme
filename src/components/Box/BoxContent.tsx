@@ -133,5 +133,3 @@ export const BoxContent = ({
     </BoxOuter>
   )
 }
-
-// export default BoxContent

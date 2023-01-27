@@ -119,5 +119,3 @@ export const BoxWrap = ({
     </Box>
   )
 }
-
-// export default BoxWrap

@@ -88,5 +88,3 @@ Text.propTypes = {
     'black',
   ]),
 }
-
-export default Text

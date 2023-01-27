@@ -31,5 +31,3 @@ export const SaaSusLogo = ({ width, alt }: LogoProps) => {
     </LogoBox>
   )
 }
-
-// export default SaaSusLogo

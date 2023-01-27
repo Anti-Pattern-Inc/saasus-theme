@@ -98,5 +98,3 @@ export const MainTitleSet = ({
     </Box>
   )
 }
-
-// export default MainTitleSet
