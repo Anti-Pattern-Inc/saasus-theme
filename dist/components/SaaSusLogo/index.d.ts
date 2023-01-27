@@ -2,6 +2,6 @@ declare type LogoProps = {
     width: number;
     alt: string;
 };
-declare function SaaSusLogo({ width, alt }: LogoProps): JSX.Element;
-export default SaaSusLogo;
+export declare const SaaSusLogo: ({ width, alt }: LogoProps) => JSX.Element;
+export {};
 //# sourceMappingURL=index.d.ts.map

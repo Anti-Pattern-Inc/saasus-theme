@@ -30,6 +30,6 @@ declare type TitleSetProps = Partial<{
     divider: boolean;
     dividerSx: SxProps;
 }>;
-declare const TitleSet: ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, sxHeader, sxSubTitle, sx, gutterBottom, noMargin, mbSmall, mbLarge, style, TooltipTitleIconComponent, TooltipComponent, divider, dividerSx, }: TitleSetProps) => JSX.Element;
-export default TitleSet;
+export declare const TitleSet: ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, sxHeader, sxSubTitle, sx, gutterBottom, noMargin, mbSmall, mbLarge, style, TooltipTitleIconComponent, TooltipComponent, divider, dividerSx, }: TitleSetProps) => JSX.Element;
+export {};
 //# sourceMappingURL=TitleSet.d.ts.map

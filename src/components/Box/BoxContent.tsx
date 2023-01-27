@@ -1,7 +1,7 @@
 // import { useTheme } from '@mui/material'
 import { Box, styled } from '@mui/material'
 import { SxProps } from '@mui/system'
-import TitleSet from 'components/Text/TitleSet'
+import { TitleSet } from 'components/Text/TitleSet'
 import { ElementType, ReactNode } from 'react'
 /**
  * BoxContent Option:
@@ -68,7 +68,7 @@ const BoxInner = styled(Box)(
     `,
 )
 
-const BoxContent = ({
+export const BoxContent = ({
   // 見出し
   addTitle,
   variant,
@@ -133,5 +133,3 @@ const BoxContent = ({
     </BoxOuter>
   )
 }
-
-export default BoxContent

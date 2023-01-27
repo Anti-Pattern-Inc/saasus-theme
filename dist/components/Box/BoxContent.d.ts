@@ -40,6 +40,6 @@ declare type Props = Partial<{
     dividerSx: SxProps;
     sx: SxProps;
 }>;
-declare const BoxContent: ({ addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, divider, dividerSx, children, boxInnerSx, noMargin, mbSmall, mbLarge, TooltipTitleIconComponent, TooltipComponent, AdditionalProps, sx, }: Props) => JSX.Element;
-export default BoxContent;
+export declare const BoxContent: ({ addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, divider, dividerSx, children, boxInnerSx, noMargin, mbSmall, mbLarge, TooltipTitleIconComponent, TooltipComponent, AdditionalProps, sx, }: Props) => JSX.Element;
+export {};
 //# sourceMappingURL=BoxContent.d.ts.map

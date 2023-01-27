@@ -52,7 +52,7 @@ type Props = {
   color: 'error' | 'warning'
 }
 
-const ConfirmDialog = ({
+export const ConfirmDialog = ({
   open,
   onClose,
   buttons,
@@ -154,5 +154,3 @@ const ConfirmDialog = ({
     </>
   )
 }
-
-export default ConfirmDialog

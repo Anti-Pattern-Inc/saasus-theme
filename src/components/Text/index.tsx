@@ -59,7 +59,7 @@ const TextWrapper = styled('span')(
 `,
 )
 
-const Text: FC<TextProps> = ({
+export const Text: FC<TextProps> = ({
   color = 'secondary',
   flex,
   children,
@@ -88,5 +88,3 @@ Text.propTypes = {
     'black',
   ]),
 }
-
-export default Text

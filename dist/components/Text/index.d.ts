@@ -5,6 +5,6 @@ interface TextProps {
     flex?: boolean;
     children?: ReactNode;
 }
-declare const Text: FC<TextProps>;
-export default Text;
+export declare const Text: FC<TextProps>;
+export {};
 //# sourceMappingURL=index.d.ts.map

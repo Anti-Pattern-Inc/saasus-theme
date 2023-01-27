@@ -18,7 +18,7 @@ const LogoBox = styled(Box)(
 `,
 )
 
-function SaaSusLogo({ width, alt }: LogoProps) {
+export const SaaSusLogo = ({ width, alt }: LogoProps) => {
   return (
     <LogoBox>
       <Link href="/">
@@ -31,5 +31,3 @@ function SaaSusLogo({ width, alt }: LogoProps) {
     </LogoBox>
   )
 }
-
-export default SaaSusLogo

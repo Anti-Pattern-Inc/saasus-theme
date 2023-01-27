@@ -20,7 +20,7 @@ interface ThemeProviderProps {
   children: React.ReactNode
 }
 
-const ThemeProviderWrapper = ({
+export const ThemeProviderWrapper = ({
   lang = 'ja',
   children,
 }: ThemeProviderProps) => {
@@ -68,5 +68,3 @@ const ThemeProviderWrapper = ({
     </StylesProvider>
   )
 }
-
-export default ThemeProviderWrapper

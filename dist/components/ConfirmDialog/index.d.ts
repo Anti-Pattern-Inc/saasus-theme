@@ -11,6 +11,6 @@ declare type Props = {
     SubText?: ReactNode;
     color: 'error' | 'warning';
 };
-declare const ConfirmDialog: ({ open, onClose, buttons, SubText, Text, color, }: Props) => JSX.Element;
-export default ConfirmDialog;
+export declare const ConfirmDialog: ({ open, onClose, buttons, SubText, Text, color, }: Props) => JSX.Element;
+export {};
 //# sourceMappingURL=index.d.ts.map
