@@ -509,7 +509,7 @@ const ConfirmDialog = ({ open, onClose, buttons, SubText, Text, color, }) => {
                         }, variant: "subtitle1", children: SubText })), jsxRuntime.jsxs(material.Box, { children: [jsxRuntime.jsx(material.Button, { "data-testid": "cancel", variant: "outlined", size: "large", sx: {
                                     mx: 1,
                                 }, onClick: onClose, color: color, children: t('cancel') }), buttons.map((deleteButton, i) => {
-                                return (jsxRuntime.jsx(material.Button, { "data-testid": `button-${deleteButton.text}`, onClick: deleteButton.submit, size: "large", sx: {
+                                return (jsxRuntime.jsx(material.Button, { "data-testid": deleteButton.dataTestid || 'deleteButton', onClick: deleteButton.submit, size: "large", sx: {
                                         mx: 1,
                                         px: 3,
                                     }, color: color, variant: "contained", children: deleteButton.text }, i));
