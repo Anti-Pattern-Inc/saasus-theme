@@ -1974,7 +1974,7 @@ function SaaSusLogo({ width, alt }) {
 
 // sidebar
 const sidebar = {
-    width: '180px',
+    width: '210px',
 };
 // common spacing base
 const spacing = 8;

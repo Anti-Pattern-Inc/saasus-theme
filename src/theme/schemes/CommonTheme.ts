@@ -1,6 +1,6 @@
 // sidebar
 export const sidebar = {
-  width: '180px',
+  width: '210px',
 }
 // common spacing base
 export const spacing = 8
