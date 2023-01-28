@@ -66,7 +66,7 @@ const ConfirmDialog = ({
     <>
       <DialogWrapper
         open={open}
-        maxWidth="sm"
+        maxWidth="md"
         fullWidth
         keepMounted
         disableEscapeKeyDown
