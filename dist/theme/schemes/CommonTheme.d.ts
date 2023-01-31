@@ -24,6 +24,7 @@ export declare const typography: {
         [x: string]: string | number | {
             fontSize: string;
         };
+        fontFamily: string;
         fontWeight: number;
         lineHeight: number;
         fontSize: string;
@@ -32,6 +33,7 @@ export declare const typography: {
         [x: string]: string | number | {
             fontSize: string;
         };
+        fontFamily: string;
         fontWeight: number;
         lineHeight: number;
         fontSize: string;
@@ -40,6 +42,7 @@ export declare const typography: {
         [x: string]: string | number | {
             fontSize: string;
         };
+        fontFamily: string;
         fontWeight: number;
         lineHeight: number;
         fontSize: string;
@@ -48,6 +51,7 @@ export declare const typography: {
         [x: string]: string | number | {
             fontSize: string;
         };
+        fontFamily: string;
         fontWeight: number;
         lineHeight: number;
         fontSize: string;
@@ -56,6 +60,7 @@ export declare const typography: {
         [x: string]: string | number | {
             fontSize: string;
         };
+        fontFamily: string;
         fontWeight: number;
         fontSize: string;
     };
@@ -63,6 +68,7 @@ export declare const typography: {
         [x: string]: string | number | {
             fontSize: string;
         };
+        fontFamily: string;
         fontWeight: number;
         lineHeight: number;
         fontSize: string;
@@ -117,6 +123,7 @@ export declare const typography: {
         [x: string]: string | number | {
             fontSize: string;
         };
+        fontFamily: string;
         fontWeight: number;
         fontSize: string;
     };

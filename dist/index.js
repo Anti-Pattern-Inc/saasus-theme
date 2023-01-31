@@ -2028,10 +2028,14 @@ const typographyBreakpoint = {
     // upper size lg(laptop)
     up: `@media (min-width: ${breakpoints.values.lg}px)`,
 };
+const typographyTitleFont = {
+    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "BIZ UDPゴシック", "Noto Sans JP", Helvetica, Arial, sans-serif !important',
+};
 const typography = {
-    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", Helvetica, Arial, sans-serif',
     // 見出し
     h1: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(24)}`,
@@ -2040,6 +2044,7 @@ const typography = {
         },
     },
     h2: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(22)}`,
@@ -2048,6 +2053,7 @@ const typography = {
         },
     },
     h3: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(20)}`,
@@ -2056,6 +2062,7 @@ const typography = {
         },
     },
     h4: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(18)}`,
@@ -2064,6 +2071,7 @@ const typography = {
         },
     },
     h5: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         fontSize: `${fontPxToRemMinim$3(16)}`,
         [typographyBreakpoint.up]: {
@@ -2071,6 +2079,7 @@ const typography = {
         },
     },
     h6: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(15)}`,
@@ -2130,6 +2139,7 @@ const typography = {
     },
     // button
     button: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.medium,
         fontSize: `${fontPxToRemMinim$3(14)}`,
         [typographyBreakpoint.up]: {
