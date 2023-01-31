@@ -2,6 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var createCache = require('@emotion/cache');
 var jsxRuntime = require('react/jsx-runtime');
 var material = require('@mui/material');
 var DeleteTwoToneIcon = require('@mui/icons-material/DeleteTwoTone');
@@ -21,6 +22,7 @@ var react = require('react');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+var createCache__default = /*#__PURE__*/_interopDefaultLegacy(createCache);
 var DeleteTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy(DeleteTwoToneIcon);
 var EditTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy(EditTwoToneIcon);
 var SearchTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy(SearchTwoToneIcon);
@@ -5956,6 +5958,14 @@ const ThemeProviderWrapper = ({ lang = 'ja', children, }) => {
     return (jsxRuntime.jsx(styles$1.StylesProvider, { injectFirst: true, children: jsxRuntime.jsx(ThemeContext.Provider, { value: { theme, setThemeName }, children: jsxRuntime.jsx(styles.ThemeProvider, { theme: theme, children: children }) }) }));
 };
 
+// emotion
+function createEmotionCache() {
+    return createCache__default["default"]({
+        key: 'css',
+        stylisPlugins: [],
+    });
+}
+
 exports.AccordionWrap = AccordionWrap;
 exports.BoxContent = BoxContent;
 exports.BoxWrap = BoxWrap;
@@ -5983,4 +5993,5 @@ exports.TableHeightSwitch = TableHeightSwitch;
 exports.Text = Text;
 exports.ThemeContext = ThemeContext;
 exports.TitleSet = TitleSet;
+exports.createEmotionCache = createEmotionCache;
 exports.themeCreator = themeCreator;
