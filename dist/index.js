@@ -499,7 +499,7 @@ const AvatarWarning = material.styled(material.Avatar)(({ theme }) => `
   `);
 const ConfirmDialog = ({ open, onClose, buttons, SubText, Text, color, }) => {
     const { t } = reactI18next.useTranslation(i18nNamespace, { i18n: i18n__default["default"] });
-    return (jsxRuntime.jsx(jsxRuntime.Fragment, { children: jsxRuntime.jsx(DialogWrapper, { open: open, maxWidth: "sm", fullWidth: true, keepMounted: true, disableEscapeKeyDown: true, children: jsxRuntime.jsxs(material.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 4, children: [{
+    return (jsxRuntime.jsx(jsxRuntime.Fragment, { children: jsxRuntime.jsx(DialogWrapper, { open: open, maxWidth: "md", keepMounted: true, disableEscapeKeyDown: true, children: jsxRuntime.jsxs(material.Box, { display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", p: 4, children: [{
                         error: (jsxRuntime.jsx(AvatarError, { children: jsxRuntime.jsx(CloseIcon__default["default"], {}) })),
                         warning: (jsxRuntime.jsx(AvatarWarning, { children: jsxRuntime.jsx(WarningAmberIcon__default["default"], {}) })),
                     }[color], jsxRuntime.jsx(material.Typography, { align: "center", sx: {
