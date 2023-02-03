@@ -496,6 +496,14 @@ export const SaaSusTheme = createTheme({
           '--swiper-theme-color': colors.primary.main,
         },
         // FIXME! Codeタグはグローバルに
+        pre: {
+          padding: `8px 16px`,
+          width: 'fit-content',
+          color: colors.info.dark,
+          border: `1px solid ${colors.info.dark}`,
+          borderRadius: 4,
+          userSelect: 'all',
+        },
         code: {
           fontFamily: 'Inter',
           fontWeight: 500,

@@ -2576,6 +2576,14 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
                     '--swiper-theme-color': colors$2.primary.main,
                     colorScheme: 'dark',
                 },
+                pre: {
+                    padding: `8px 16px`,
+                    width: 'fit-content',
+                    color: colors$2.info.dark,
+                    border: `1px solid ${colors$2.info.dark}`,
+                    borderRadius: 4,
+                    userSelect: 'all',
+                },
                 code: {
                     fontFamily: 'Inter',
                     fontWeight: 500,
@@ -3820,6 +3828,14 @@ const SaaSusDarkTheme = material.createTheme({
                 ':root': {
                     '--swiper-theme-color': colors$1.primary.main,
                     colorScheme: 'dark',
+                },
+                pre: {
+                    padding: `8px 16px`,
+                    width: 'fit-content',
+                    color: colors$1.info.dark,
+                    border: `1px solid ${colors$1.info.dark}`,
+                    borderRadius: 4,
+                    userSelect: 'all',
                 },
                 code: {
                     fontFamily: 'Inter',
@@ -5076,6 +5092,14 @@ const SaaSusTheme = material.createTheme({
                     '--swiper-theme-color': colors.primary.main,
                 },
                 // FIXME! Codeタグはグローバルに
+                pre: {
+                    padding: `8px 16px`,
+                    width: 'fit-content',
+                    color: colors.info.dark,
+                    border: `1px solid ${colors.info.dark}`,
+                    borderRadius: 4,
+                    userSelect: 'all',
+                },
                 code: {
                     fontFamily: 'Inter',
                     fontWeight: 500,
