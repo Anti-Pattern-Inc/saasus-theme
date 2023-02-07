@@ -1,1 +1,0 @@
-{"version":3,"file":"CustomTooltip.d.ts","sourceRoot":"","sources":["../../../src/components/Tooltip/CustomTooltip.tsx"],"names":[],"mappings":"AAGA,OAAO,EAAE,SAAS,EAAE,MAAM,OAAO,CAAA;AAIjC,aAAK,KAAK,GAAG;IACX,yBAAyB,CAAC,EAAE,SAAS,CAAA;IACrC,gBAAgB,CAAC,EAAE,SAAS,CAAA;CAC7B,CAAA;AAED,eAAO,MAAM,aAAa,qDAGvB,KAAK,gBAsCP,CAAA"}
