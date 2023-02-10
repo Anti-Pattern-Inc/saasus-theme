@@ -3,22 +3,6 @@ import React from 'react';
 export declare function themeCreator(theme: string): Theme;
 declare module '@mui/material/styles' {
     interface Theme {
-        breakpoints: {
-            values: {
-                xs: number;
-                sm: number;
-                md: number;
-                lg: number;
-                xl: number;
-                xxl?: number;
-                base?: number;
-                mobile?: number;
-                tablet?: number;
-                laptop?: number;
-                desktop?: number;
-                wide?: number;
-            };
-        };
         colors: {
             gradients: {
                 blue1: string;
@@ -289,6 +273,29 @@ declare module '@mui/material/styles' {
             boxShadow: React.CSSProperties['color'];
             textColor: React.CSSProperties['color'];
         };
+    }
+    interface PaletteColor {
+        lighter?: string;
+    }
+    interface SimplePaletteColorOptions {
+        lighter?: string;
+    }
+    interface FontStyle {
+        info?: string;
+    }
+    interface BreakpointOverrides {
+        xs: true;
+        sm: true;
+        md: true;
+        lg: true;
+        xl: true;
+        xxl: true;
+        base: true;
+        mobile: true;
+        tablet: true;
+        laptop: true;
+        desktop: true;
+        wide: true;
     }
 }
 //# sourceMappingURL=base.d.ts.map

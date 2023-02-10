@@ -4657,6 +4657,13 @@ const SaaSusDarkTheme = material.createTheme({
 });
 
 /***
+ * マテリアルカラー 一覧
+ *  @see: https://mui.com/material-ui/customization/color/#color-palette
+ * Example: マテリアルカラーから実数値(色番号)で設置する場合
+ *  import { blueGrey } from '@mui/material/colors';
+ *  const blueGrey100 = blueGrey[100]; など
+ */
+/***
  * @param fontPxToRem pxからrem変換計算用
  *  ユーザーのブラウザ設定に応じ、基準サイズをユーザーが意図した表示サイズに追従させ得るための対応
  *  例：fontPxToRem(24) -> fontSize:1.5rem 見た目上24pxのrem

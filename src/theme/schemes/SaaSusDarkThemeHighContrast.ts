@@ -5,39 +5,6 @@ import { alpha, createTheme, darken } from '@mui/material'
 import { sidebar, spacing, breakpoints, typography } from './CommonTheme'
 
 /***
- * lighter設置のための型拡張
- *  @see: https://mui.com/material-ui/customization/palette/
- */
-declare module '@mui/material/styles' {
-  interface PaletteColor {
-    lighter?: string
-  }
-  interface SimplePaletteColorOptions {
-    lighter?: string
-  }
-  // font
-  interface FontStyle {
-    info?: string
-  }
-  // カスタムBreakPoint
-  interface BreakpointOverrides {
-    xs: true //= base
-    sm: true //= mobile
-    md: true //= tablet
-    lg: true //= laptop
-    xl: true //= desktop
-    xxl: true //= wide
-    // target device name
-    base: true
-    mobile: true
-    tablet: true
-    laptop: true
-    desktop: true
-    wide: true
-  }
-}
-
-/***
  * @param fontPxToRem pxからrem変換計算用
  *  ユーザーのブラウザ設定に応じ、基準サイズをユーザーが意図した表示サイズに追従させ得るための対応
  *  例：fontPxToRem(24) -> fontSize:1.5rem 見た目上24pxのrem

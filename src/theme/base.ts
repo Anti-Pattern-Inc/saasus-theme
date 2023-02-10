@@ -12,23 +12,6 @@ export function themeCreator(theme: string): Theme {
 declare module '@mui/material/styles' {
   // カスタムBreakPoint
   interface Theme {
-    breakpoints: {
-      values: {
-        xs: number //= base
-        sm: number //= mobile
-        md: number //= tablet
-        lg: number //= laptop
-        xl: number //= desktop
-        xxl?: number //= wide
-        // target device name
-        base?: number
-        mobile?: number
-        tablet?: number
-        laptop?: number
-        desktop?: number
-        wide?: number
-      }
-    }
     colors: {
       gradients: {
         blue1: string
@@ -302,6 +285,36 @@ declare module '@mui/material/styles' {
       boxShadow: React.CSSProperties['color']
       textColor: React.CSSProperties['color']
     }
+  }
+
+  // lighter設置のための型拡張
+  // https://mui.com/material-ui/customization/palette/
+  interface PaletteColor {
+    lighter?: string
+  }
+  interface SimplePaletteColorOptions {
+    lighter?: string
+  }
+  // font
+  interface FontStyle {
+    info?: string
+  }
+  // カスタムBreakPoint
+  // https://mui.com/material-ui/customization/breakpoints/
+  interface BreakpointOverrides {
+    xs: true //= base
+    sm: true //= mobile
+    md: true //= tablet
+    lg: true //= laptop
+    xl: true //= desktop
+    xxl: true //= wide
+    // target device name
+    base: true
+    mobile: true
+    tablet: true
+    laptop: true
+    desktop: true
+    wide: true
   }
 }
 
