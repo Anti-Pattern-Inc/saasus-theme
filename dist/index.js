@@ -2167,6 +2167,23 @@ const typography = {
         },
     },
 };
+const codes = {
+    pre: {
+        maxWidth: `calc(100% - 24px)`,
+        margin: `16px`,
+        padding: `8px 16px`,
+        overflow: `auto`,
+        borderRadius: 4,
+        fontWeight: 700,
+    },
+    code: {
+        lineHeight: 1.5,
+        margin: '0 0.1ch',
+        padding: `1px 6px 2px`,
+        borderRadius: 4,
+        background: 'transparent',
+    },
+};
 
 /***
  * @param fontPxToRem pxからrem変換計算用
@@ -2571,6 +2588,9 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
                     cursor: 'pointer',
                     color: colors$2.primary.main,
                 },
+                li: {
+                    marginBottom: '0.5em',
+                },
                 '.child-popover .MuiPaper-root .MuiList-root': {
                     flexDirection: 'column',
                 },
@@ -2594,72 +2614,36 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
                     '--swiper-theme-color': colors$2.primary.main,
                     colorScheme: 'dark',
                 },
+                // code view
                 pre: {
-                    padding: `8px 16px`,
-                    width: 'fit-content',
-                    color: colors$2.info.dark,
-                    border: `1px solid ${colors$2.info.dark}`,
-                    borderRadius: 4,
+                    maxWidth: codes.pre.maxWidth,
+                    margin: codes.pre.margin,
+                    padding: codes.pre.padding,
+                    overflow: codes.pre.overflow,
+                    borderRadius: codes.pre.borderRadius,
+                    fontWeight: codes.pre.fontWeight,
+                    // local
+                    color: colors$2.success.lighter,
+                    border: `2px solid ${colors$2.primary.light}`,
+                    backgroundColor: material.darken(themeColors$2.black, 0.8),
+                    fontSize: `${fontPxToRemMinim$2(14)}`,
+                    [`@media (min-width: ${breakpoints.values.lg}px)`]: {
+                        fontSize: `${fontPxToRem$2(15)}`,
+                    },
                 },
                 code: {
-                    fontFamily: 'Inter',
-                    fontWeight: 500,
-                    fontSize: `${fontPxToRemMinim$2(14)}`,
-                    '@media (min-width: 960px)': {
-                        fontSize: `${fontPxToRem$2(14)}`,
-                    },
-                    lineHeight: 1.5,
-                    margin: '0 0.1ch',
-                    paddingLeft: 6,
-                    paddingRight: 6,
-                    paddingTop: 1,
-                    paddingBottom: 2,
-                    borderRadius: 4,
-                    // TODO: Set Color
-                    background: 'transparent',
-                    border: `1px solid ${colors$2.info.light}`,
-                    color: colors$2.info.dark,
-                },
-                '@keyframes pulse': {
-                    '0%': {
-                        transform: 'scale(.75)',
-                    },
-                    '20%': {
-                        transform: 'scale(1.1)',
-                    },
-                    '40%': {
-                        transform: 'scale(.75)',
-                    },
-                    '60%': {
-                        transform: 'scale(1.05)',
-                    },
-                    '80%': {
-                        transform: 'scale(.75)',
-                    },
-                    '100%': {
-                        transform: 'scale(.75)',
-                    },
-                },
-                '@keyframes ripple': {
-                    '0%': {
-                        transform: 'scale(.8)',
-                        opacity: 1,
-                    },
-                    '100%': {
-                        transform: 'scale(2.8)',
-                        opacity: 0,
-                    },
-                },
-                '@keyframes float': {
-                    '0%': {
-                        transform: 'translate(0%, 0%)',
-                    },
-                    '100%': {
-                        transform: 'translate(3%, 3%)',
-                    },
+                    lineHeight: codes.code.lineHeight,
+                    margin: codes.code.margin,
+                    padding: codes.code.padding,
+                    borderRadius: codes.code.borderRadius,
+                    background: codes.code.background,
+                    // local
+                    color: colors$2.info.lighter,
+                    border: `1px solid ${colors$2.info.main}`,
                 },
             },
         },
+        // form
         MuiSelect: {
             styleOverrides: {
                 iconOutlined: {
@@ -2964,7 +2948,7 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
         },
         MuiLink: {
             defaultProps: {
-                underline: 'hover',
+                underline: 'always',
             },
         },
         MuiLinearProgress: {
@@ -3823,6 +3807,9 @@ const SaaSusDarkTheme = material.createTheme({
                     cursor: 'pointer',
                     color: colors$1.primary.main,
                 },
+                li: {
+                    marginBottom: '0.5em',
+                },
                 '.child-popover .MuiPaper-root .MuiList-root': {
                     flexDirection: 'column',
                 },
@@ -3846,72 +3833,36 @@ const SaaSusDarkTheme = material.createTheme({
                     '--swiper-theme-color': colors$1.primary.main,
                     colorScheme: 'dark',
                 },
+                // code view
                 pre: {
-                    padding: `8px 16px`,
-                    width: 'fit-content',
-                    color: colors$1.info.dark,
-                    border: `1px solid ${colors$1.info.dark}`,
-                    borderRadius: 4,
+                    maxWidth: codes.pre.maxWidth,
+                    margin: codes.pre.margin,
+                    padding: codes.pre.padding,
+                    overflow: codes.pre.overflow,
+                    borderRadius: codes.pre.borderRadius,
+                    fontWeight: codes.pre.fontWeight,
+                    // local
+                    color: colors$1.success.lighter,
+                    border: `2px solid ${colors$1.primary.light}`,
+                    backgroundColor: material.darken(themeColors$1.black, 0.8),
+                    fontSize: `${fontPxToRemMinim$1(14)}`,
+                    [`@media (min-width: ${breakpoints.values.lg}px)`]: {
+                        fontSize: `${fontPxToRem$1(15)}`,
+                    },
                 },
                 code: {
-                    fontFamily: 'Inter',
-                    fontWeight: 500,
-                    fontSize: `${fontPxToRemMinim$1(14)}`,
-                    '@media (min-width: 960px)': {
-                        fontSize: `${fontPxToRem$1(14)}`,
-                    },
-                    lineHeight: 1.5,
-                    margin: '0 0.1ch',
-                    paddingLeft: 6,
-                    paddingRight: 6,
-                    paddingTop: 1,
-                    paddingBottom: 2,
-                    borderRadius: 4,
-                    // TODO: Set Color
-                    background: 'transparent',
-                    border: `1px solid ${colors$1.info.light}`,
-                    color: colors$1.info.dark,
-                },
-                '@keyframes pulse': {
-                    '0%': {
-                        transform: 'scale(.75)',
-                    },
-                    '20%': {
-                        transform: 'scale(1.1)',
-                    },
-                    '40%': {
-                        transform: 'scale(.75)',
-                    },
-                    '60%': {
-                        transform: 'scale(1.05)',
-                    },
-                    '80%': {
-                        transform: 'scale(.75)',
-                    },
-                    '100%': {
-                        transform: 'scale(.75)',
-                    },
-                },
-                '@keyframes ripple': {
-                    '0%': {
-                        transform: 'scale(.8)',
-                        opacity: 1,
-                    },
-                    '100%': {
-                        transform: 'scale(2.8)',
-                        opacity: 0,
-                    },
-                },
-                '@keyframes float': {
-                    '0%': {
-                        transform: 'translate(0%, 0%)',
-                    },
-                    '100%': {
-                        transform: 'translate(3%, 3%)',
-                    },
+                    lineHeight: codes.code.lineHeight,
+                    margin: codes.code.margin,
+                    padding: codes.code.padding,
+                    borderRadius: codes.code.borderRadius,
+                    background: codes.code.background,
+                    // local
+                    color: colors$1.info.lighter,
+                    border: `1px solid ${colors$1.info.main}`,
                 },
             },
         },
+        // form
         MuiSelect: {
             styleOverrides: {
                 iconOutlined: {
@@ -4216,7 +4167,7 @@ const SaaSusDarkTheme = material.createTheme({
         },
         MuiLink: {
             defaultProps: {
-                underline: 'hover',
+                underline: 'always',
             },
         },
         MuiLinearProgress: {
@@ -5092,6 +5043,12 @@ const SaaSusTheme = material.createTheme({
                     cursor: 'pointer',
                     color: colors.primary.main,
                 },
+                li: {
+                    marginBottom: '0.5em',
+                },
+                '::marker': {
+                    color: material.lighten(themeColors.black, 0.7),
+                },
                 '.child-popover .MuiPaper-root .MuiList-root': {
                     flexDirection: 'column',
                 },
@@ -5114,73 +5071,36 @@ const SaaSusTheme = material.createTheme({
                 ':root': {
                     '--swiper-theme-color': colors.primary.main,
                 },
-                // FIXME! Codeタグはグローバルに
+                // code view
                 pre: {
-                    padding: `8px 16px`,
-                    width: 'fit-content',
-                    color: colors.info.dark,
-                    border: `1px solid ${colors.info.dark}`,
-                    borderRadius: 4,
+                    maxWidth: codes.pre.maxWidth,
+                    margin: codes.pre.margin,
+                    padding: codes.pre.padding,
+                    overflow: codes.pre.overflow,
+                    borderRadius: codes.pre.borderRadius,
+                    fontWeight: codes.pre.fontWeight,
+                    // local
+                    color: colors.success.light,
+                    border: `2px solid ${colors.primary.lighter}`,
+                    backgroundColor: material.darken(themeColors.black, 0.8),
+                    fontSize: `${fontPxToRemMinim(14)}`,
+                    [`@media (min-width: ${breakpoints.values.lg}px)`]: {
+                        fontSize: `${fontPxToRem(15)}`,
+                    },
                 },
                 code: {
-                    fontFamily: 'Inter',
-                    fontWeight: 500,
-                    fontSize: `${fontPxToRemMinim(14)}`,
-                    '@media (min-width: 960px)': {
-                        fontSize: `${fontPxToRem(14)}`,
-                    },
-                    lineHeight: 1.5,
-                    margin: '0 0.1ch',
-                    paddingLeft: 6,
-                    paddingRight: 6,
-                    paddingTop: 1,
-                    paddingBottom: 2,
-                    borderRadius: 4,
-                    // background: colors.info.lighter,
-                    background: 'transparent',
-                    border: `1px solid ${colors.info.dark}`,
+                    lineHeight: codes.code.lineHeight,
+                    margin: codes.code.margin,
+                    padding: codes.code.padding,
+                    borderRadius: codes.code.borderRadius,
+                    background: codes.code.background,
+                    // local
                     color: colors.info.dark,
-                },
-                '@keyframes pulse': {
-                    '0%': {
-                        transform: 'scale(.75)',
-                    },
-                    '20%': {
-                        transform: 'scale(1.1)',
-                    },
-                    '40%': {
-                        transform: 'scale(.75)',
-                    },
-                    '60%': {
-                        transform: 'scale(1.05)',
-                    },
-                    '80%': {
-                        transform: 'scale(.75)',
-                    },
-                    '100%': {
-                        transform: 'scale(.75)',
-                    },
-                },
-                '@keyframes ripple': {
-                    '0%': {
-                        transform: 'scale(.8)',
-                        opacity: 1,
-                    },
-                    '100%': {
-                        transform: 'scale(2.8)',
-                        opacity: 0,
-                    },
-                },
-                '@keyframes float': {
-                    '0%': {
-                        transform: 'translate(0%, 0%)',
-                    },
-                    '100%': {
-                        transform: 'translate(3%, 3%)',
-                    },
+                    border: `1px solid ${colors.info.main}`,
                 },
             },
         },
+        // TODO: フォームUIカスタム
         MuiSelect: {
             styleOverrides: {
                 iconOutlined: {
@@ -5191,7 +5111,6 @@ const SaaSusTheme = material.createTheme({
                 },
             },
         },
-        // TODO: フォームUIカスタム
         MuiOutlinedInput: {
             styleOverrides: {
                 root: {
@@ -5494,7 +5413,7 @@ const SaaSusTheme = material.createTheme({
         },
         MuiLink: {
             defaultProps: {
-                underline: 'hover',
+                underline: 'always',
             },
         },
         MuiLinearProgress: {

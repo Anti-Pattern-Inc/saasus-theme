@@ -273,6 +273,23 @@ declare module '@mui/material/styles' {
             boxShadow: React.CSSProperties['color'];
             textColor: React.CSSProperties['color'];
         };
+        codes?: {
+            pre: {
+                maxWidth: string;
+                margin: string;
+                padding: string;
+                overflow: string;
+                borderRadius: string;
+                fontWeight: string;
+            };
+            code: {
+                lineHeight: string;
+                margin: string;
+                padding: string;
+                borderRadius: string;
+                background: string;
+            };
+        };
     }
     interface PaletteColor {
         lighter?: string;

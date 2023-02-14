@@ -128,4 +128,21 @@ export declare const typography: {
         fontSize: string;
     };
 };
+export declare const codes: {
+    pre: {
+        maxWidth: string;
+        margin: string;
+        padding: string;
+        overflow: string;
+        borderRadius: number;
+        fontWeight: number;
+    };
+    code: {
+        lineHeight: number;
+        margin: string;
+        padding: string;
+        borderRadius: number;
+        background: string;
+    };
+};
 //# sourceMappingURL=CommonTheme.d.ts.map

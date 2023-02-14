@@ -183,3 +183,21 @@ export const typography = {
     },
   },
 }
+
+export const codes = {
+  pre: {
+    maxWidth: `calc(100% - 24px)`,
+    margin: `16px`,
+    padding: `8px 16px`,
+    overflow: `auto`,
+    borderRadius: 4,
+    fontWeight: 700,
+  },
+  code: {
+    lineHeight: 1.5,
+    margin: '0 0.1ch',
+    padding: `1px 6px 2px`,
+    borderRadius: 4,
+    background: 'transparent',
+  },
+}
