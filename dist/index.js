@@ -368,7 +368,16 @@ divider, dividerSx, }) => {
                 boxShadow: 'none',
             },
             ...sx,
-        }, children: [jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", sx: { mb: noMargin ? 0 : 1 }, columnSpacing: 2, children: [jsxRuntime.jsxs(material.Grid, { item: true, sx: style, flex: 1, children: [jsxRuntime.jsxs(material.Typography, { variant: variant, component: component ? component : 'div', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: [headingText, jsxRuntime.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps })] }), divider && jsxRuntime.jsx(material.Divider, { sx: dividerSx })] }));
+        }, children: [jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, sx: {
+                    '.MuiGrid-root': {
+                        [theme.breakpoints.down('md')]: {
+                            minWidth: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            mb: noMargin ? 0 : 1,
+                        },
+                    },
+                }, children: [jsxRuntime.jsxs(material.Grid, { item: true, sx: style, flex: 1, children: [jsxRuntime.jsxs(material.Typography, { variant: variant, component: component ? component : 'div', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: [headingText, jsxRuntime.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps })] }), divider && jsxRuntime.jsx(material.Divider, { sx: dividerSx })] }));
 };
 
 const BoxOuter = material.styled(material.Box)(({ theme }) => `
