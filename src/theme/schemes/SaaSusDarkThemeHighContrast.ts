@@ -449,7 +449,6 @@ export const SaaSusDarkThemeHighContrast = createTheme({
           color: colors.info.dark,
           border: `1px solid ${colors.info.dark}`,
           borderRadius: 4,
-          userSelect: 'all',
         },
         code: {
           fontFamily: 'Inter',

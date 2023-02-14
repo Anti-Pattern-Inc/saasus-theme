@@ -104,8 +104,17 @@ const TitleSet = ({
         container
         justifyContent="space-between"
         alignItems="center"
-        sx={{ mb: noMargin ? 0 : 1 }}
         columnSpacing={2}
+        sx={{
+          '.MuiGrid-root': {
+            [theme.breakpoints.down('md')]: {
+              minWidth: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              mb: noMargin ? 0 : 1,
+            },
+          },
+        }}
       >
         <Grid item sx={style} flex={1}>
           {/* 見出し */}
