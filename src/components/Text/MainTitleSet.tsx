@@ -68,6 +68,16 @@ const MainTitleSet = ({
         justifyContent="space-between"
         alignItems="center"
         columnSpacing={2}
+        sx={{
+          '.MuiGrid-root': {
+            [theme.breakpoints.down('md')]: {
+              minWidth: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              mb: 1,
+            },
+          },
+        }}
       >
         <Grid item flex={1}>
           {/* 見出し */}
@@ -92,8 +102,10 @@ const MainTitleSet = ({
         </Grid>
         {/* 見出しと同じ階層内の右端に、ボタンなどのコンポーネントを置く時用
                 Example: AdditionalProps={<Button>Action</Button>}
-            */}
-        {AdditionalProps && <Grid item>{AdditionalProps}</Grid>}
+              */}
+        <Grid item>
+          {AdditionalProps && <Grid item>{AdditionalProps}</Grid>}
+        </Grid>
       </Grid>
     </Box>
   )
