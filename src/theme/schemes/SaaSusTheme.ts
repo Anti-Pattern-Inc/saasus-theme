@@ -820,7 +820,7 @@ export const SaaSusTheme = createTheme({
     },
     MuiLink: {
       defaultProps: {
-        underline: 'always',
+        underline: 'hover',
       },
     },
     MuiLinearProgress: {

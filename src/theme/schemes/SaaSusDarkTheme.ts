@@ -789,7 +789,7 @@ export const SaaSusDarkTheme = createTheme({
     },
     MuiLink: {
       defaultProps: {
-        underline: 'always',
+        underline: 'hover',
       },
     },
     MuiLinearProgress: {

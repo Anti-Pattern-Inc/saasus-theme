@@ -2948,7 +2948,7 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
         },
         MuiLink: {
             defaultProps: {
-                underline: 'always',
+                underline: 'hover',
             },
         },
         MuiLinearProgress: {
@@ -4167,7 +4167,7 @@ const SaaSusDarkTheme = material.createTheme({
         },
         MuiLink: {
             defaultProps: {
-                underline: 'always',
+                underline: 'hover',
             },
         },
         MuiLinearProgress: {
@@ -5413,7 +5413,7 @@ const SaaSusTheme = material.createTheme({
         },
         MuiLink: {
             defaultProps: {
-                underline: 'always',
+                underline: 'hover',
             },
         },
         MuiLinearProgress: {

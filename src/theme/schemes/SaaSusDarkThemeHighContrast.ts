@@ -790,7 +790,7 @@ export const SaaSusDarkThemeHighContrast = createTheme({
     },
     MuiLink: {
       defaultProps: {
-        underline: 'always',
+        underline: 'hover',
       },
     },
     MuiLinearProgress: {
