@@ -438,11 +438,15 @@ TooltipTitleIconComponent, TooltipComponent,
 // 右端オプション
 AdditionalProps, 
 // 全体sx
-sx, }) => {
+sx, 
+// shadowなし
+noShadow, }) => {
     const theme = material.useTheme();
     return (jsxRuntime.jsx(material.Box, { sx: sx, children: jsxRuntime.jsxs(BoxInner, { elevation: 1, sx: {
                 padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
                 ...boxInnerSx,
+            }, style: {
+                boxShadow: noShadow && 'none',
             }, children: [addTitle && (jsxRuntime.jsx(TitleSet
                 // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
                 , { 

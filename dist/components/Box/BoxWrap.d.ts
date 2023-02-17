@@ -37,7 +37,8 @@ declare type Props = Partial<{
     TooltipComponent?: ReactNode;
     AdditionalProps: JSX.Element;
     sx: SxProps;
+    noShadow: boolean;
 }>;
-declare const BoxWrap: ({ addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, divider, children, boxInnerSx, noMargin, mbSmall, mbLarge, TooltipTitleIconComponent, TooltipComponent, AdditionalProps, sx, }: Props) => JSX.Element;
+declare const BoxWrap: ({ addTitle, variant, component, headingText, variantSubTitle, subtitleText, titleSx, divider, children, boxInnerSx, noMargin, mbSmall, mbLarge, TooltipTitleIconComponent, TooltipComponent, AdditionalProps, sx, noShadow, }: Props) => JSX.Element;
 export default BoxWrap;
 //# sourceMappingURL=BoxWrap.d.ts.map
