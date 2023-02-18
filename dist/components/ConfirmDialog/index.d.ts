@@ -6,6 +6,7 @@ declare type Props = {
         text: string;
         dataTestid?: string;
         submit: () => void | Promise<void>;
+        isSubmitting: boolean;
     }[];
     Text: ReactNode;
     SubText?: ReactNode;

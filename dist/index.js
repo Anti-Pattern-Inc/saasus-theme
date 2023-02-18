@@ -508,11 +508,11 @@ const ConfirmDialog = ({ open, onClose, buttons, SubText, Text, color, }) => {
                             px: 4,
                         }, variant: "subtitle1", children: SubText })), jsxRuntime.jsxs(material.Box, { children: [jsxRuntime.jsx(material.Button, { "data-testid": "cancel", variant: "outlined", size: "large", sx: {
                                     mx: 1,
-                                }, onClick: onClose, color: color, children: t('cancel') }), buttons.map((deleteButton, i) => {
-                                return (jsxRuntime.jsx(material.Button, { "data-testid": deleteButton.dataTestid || 'deleteButton', onClick: deleteButton.submit, size: "large", sx: {
+                                }, onClick: onClose, color: color, children: t('cancel') }), buttons.map((button, i) => {
+                                return (jsxRuntime.jsx(material.Button, { "data-testid": button.dataTestid || 'deleteButton', onClick: button.submit, size: "large", sx: {
                                         mx: 1,
                                         px: 3,
-                                    }, color: color, variant: "contained", children: deleteButton.text }, i));
+                                    }, color: color, variant: "contained", startIcon: button.isSubmitting ? (jsxRuntime.jsx(material.CircularProgress, { size: "1rem" })) : null, disabled: button.isSubmitting, children: button.text }, i));
                             })] })] }) }) }));
 };
 
