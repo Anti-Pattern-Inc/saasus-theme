@@ -2173,7 +2173,7 @@ const typography = {
 };
 const codes = {
     pre: {
-        maxWidth: `calc(100% - 24px)`,
+        maxWidth: `calc(100% - 1em)`,
         margin: `16px`,
         padding: `8px 16px`,
         overflow: `auto`,
