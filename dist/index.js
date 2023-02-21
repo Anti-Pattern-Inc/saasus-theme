@@ -2173,7 +2173,7 @@ const typography = {
 };
 const codes = {
     pre: {
-        maxWidth: `calc(100% - 1em)`,
+        maxWidth: `calc(100% - 24px)`,
         margin: `16px`,
         padding: `8px 16px`,
         overflow: `auto`,
@@ -2183,8 +2183,8 @@ const codes = {
     code: {
         lineHeight: 1.5,
         margin: '0 0.1ch',
-        padding: `1px 6px 2px`,
-        borderRadius: 4,
+        padding: `0px 3px 1px`,
+        borderRadius: 3,
         background: 'transparent',
     },
 };
