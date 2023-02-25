@@ -187,10 +187,10 @@ export const typography = {
 export const codes = {
   pre: {
     maxWidth: `calc(100% - 24px)`,
-    margin: `16px`,
-    padding: `8px 16px`,
+    margin: `8px 0`,
+    padding: `16px 24px`,
     overflow: `auto`,
-    borderRadius: 4,
+    borderRadius: 6,
     fontWeight: 700,
   },
   code: {

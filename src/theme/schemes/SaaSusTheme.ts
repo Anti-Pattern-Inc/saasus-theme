@@ -478,8 +478,8 @@ export const SaaSusTheme = createTheme({
           fontWeight: codes.pre.fontWeight,
           // local
           color: colors.success.light,
-          border: `2px solid ${colors.primary.lighter}`,
-          backgroundColor: darken(themeColors.black, 0.8),
+          // border: `2px solid ${colors.primary.lighter}`,
+          backgroundColor: darken(themeColors.info, 0.8),
           fontSize: `${fontPxToRemMinim(14)}`,
           [`@media (min-width: ${breakpoints.values.lg}px)`]: {
             fontSize: `${fontPxToRem(15)}`,

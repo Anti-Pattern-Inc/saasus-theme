@@ -2174,10 +2174,10 @@ const typography = {
 const codes = {
     pre: {
         maxWidth: `calc(100% - 24px)`,
-        margin: `16px`,
-        padding: `8px 16px`,
+        margin: `8px 0`,
+        padding: `16px 24px`,
         overflow: `auto`,
-        borderRadius: 4,
+        borderRadius: 6,
         fontWeight: 700,
     },
     code: {
@@ -2628,8 +2628,8 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
                     fontWeight: codes.pre.fontWeight,
                     // local
                     color: colors$2.success.lighter,
-                    border: `2px solid ${colors$2.primary.light}`,
-                    backgroundColor: material.darken(themeColors$2.black, 0.8),
+                    // border: `2px solid ${colors.primary.light}`,
+                    backgroundColor: material.darken(themeColors$2.info, 0.8),
                     fontSize: `${fontPxToRemMinim$2(14)}`,
                     [`@media (min-width: ${breakpoints.values.lg}px)`]: {
                         fontSize: `${fontPxToRem$2(15)}`,
@@ -3847,8 +3847,8 @@ const SaaSusDarkTheme = material.createTheme({
                     fontWeight: codes.pre.fontWeight,
                     // local
                     color: colors$1.success.lighter,
-                    border: `2px solid ${colors$1.primary.light}`,
-                    backgroundColor: material.darken(themeColors$1.black, 0.8),
+                    // border: `2px solid ${colors.primary.light}`,
+                    backgroundColor: material.darken(themeColors$1.info, 0.8),
                     fontSize: `${fontPxToRemMinim$1(14)}`,
                     [`@media (min-width: ${breakpoints.values.lg}px)`]: {
                         fontSize: `${fontPxToRem$1(15)}`,
@@ -5085,8 +5085,8 @@ const SaaSusTheme = material.createTheme({
                     fontWeight: codes.pre.fontWeight,
                     // local
                     color: colors.success.light,
-                    border: `2px solid ${colors.primary.lighter}`,
-                    backgroundColor: material.darken(themeColors.black, 0.8),
+                    // border: `2px solid ${colors.primary.lighter}`,
+                    backgroundColor: material.darken(themeColors.info, 0.8),
                     fontSize: `${fontPxToRemMinim(14)}`,
                     [`@media (min-width: ${breakpoints.values.lg}px)`]: {
                         fontSize: `${fontPxToRem(15)}`,

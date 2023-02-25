@@ -457,8 +457,8 @@ export const SaaSusDarkThemeHighContrast = createTheme({
           fontWeight: codes.pre.fontWeight,
           // local
           color: colors.success.lighter,
-          border: `2px solid ${colors.primary.light}`,
-          backgroundColor: darken(themeColors.black, 0.8),
+          // border: `2px solid ${colors.primary.light}`,
+          backgroundColor: darken(themeColors.info, 0.8),
           fontSize: `${fontPxToRemMinim(14)}`,
           [`@media (min-width: ${breakpoints.values.lg}px)`]: {
             fontSize: `${fontPxToRem(15)}`,
