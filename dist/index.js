@@ -2173,7 +2173,7 @@ const typography = {
 };
 const codes = {
     pre: {
-        maxWidth: `calc(100% - 24px)`,
+        maxWidth: `auto`,
         margin: `8px 0`,
         padding: `16px 24px`,
         overflow: `auto`,
@@ -3425,7 +3425,6 @@ const fontPxToRemMinim$1 = (px) => {
 };
 const themeColors$1 = {
     primary: '#346bcc',
-    // primary: '#8C7CF0',
     secondary: '#9EA4C1',
     success: '#57CA22',
     warning: '#FFA319',

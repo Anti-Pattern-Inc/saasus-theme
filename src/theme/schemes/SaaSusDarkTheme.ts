@@ -22,7 +22,6 @@ const fontPxToRemMinim = (px: number) => {
 
 const themeColors = {
   primary: '#346bcc',
-  // primary: '#8C7CF0',
   secondary: '#9EA4C1',
   success: '#57CA22',
   warning: '#FFA319',

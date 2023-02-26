@@ -186,7 +186,7 @@ export const typography = {
 
 export const codes = {
   pre: {
-    maxWidth: `calc(100% - 24px)`,
+    maxWidth: `auto`,
     margin: `8px 0`,
     padding: `16px 24px`,
     overflow: `auto`,
