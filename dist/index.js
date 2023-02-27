@@ -370,7 +370,7 @@ divider, dividerSx, }) => {
             ...sx,
         }, children: [jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, sx: {
                     '.MuiGrid-root': {
-                        [theme.breakpoints.down('md')]: {
+                        [theme.breakpoints.down('tablet')]: {
                             minWidth: '100%',
                             display: 'flex',
                             flexDirection: 'column',
@@ -694,7 +694,7 @@ sxHeader, sxSubTitle, gutterBottom, mb = 2, }) => {
             },
         ], children: jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, sx: {
                 '.MuiGrid-root': {
-                    [theme.breakpoints.down('md')]: {
+                    [theme.breakpoints.down('tablet')]: {
                         minWidth: '100%',
                         display: 'flex',
                         flexDirection: 'column',

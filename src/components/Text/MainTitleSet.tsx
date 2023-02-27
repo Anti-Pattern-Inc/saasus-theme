@@ -70,7 +70,7 @@ const MainTitleSet = ({
         columnSpacing={2}
         sx={{
           '.MuiGrid-root': {
-            [theme.breakpoints.down('md')]: {
+            [theme.breakpoints.down('tablet')]: {
               minWidth: '100%',
               display: 'flex',
               flexDirection: 'column',
