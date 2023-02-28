@@ -86,7 +86,7 @@ const MainTitleSet = ({
             component={component ? component : 'h1'}
             sx={sxHeader}
             gutterBottom={gutterBottom}
-            style={{ lineHeight: 1.5 }}
+            style={{ lineHeight: 1.2 }}
           >
             {headingText}
           </Typography>
@@ -95,7 +95,7 @@ const MainTitleSet = ({
           <Typography
             variant={variantSubTitle ? variantSubTitle : 'subtitle1'}
             sx={sxSubTitle}
-            style={{ lineHeight: 1.5 }}
+            style={{ lineHeight: 1.4 }}
           >
             {subtitleText}
           </Typography>

@@ -701,7 +701,7 @@ sxHeader, sxSubTitle, gutterBottom, mb = 0, }) => {
                         mb: 0,
                     },
                 },
-            }, children: [jsxRuntime.jsxs(material.Grid, { item: true, flex: 1, children: [jsxRuntime.jsx(material.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: headingText }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.5 }, children: subtitleText })] }), jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps }) })] }) }));
+            }, children: [jsxRuntime.jsxs(material.Grid, { item: true, flex: 1, children: [jsxRuntime.jsx(material.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.2 }, children: headingText }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4 }, children: subtitleText })] }), jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps }) })] }) }));
 };
 
 function toVal(mix) {
