@@ -51,14 +51,14 @@ const MainTitleSet = ({
   sxHeader,
   sxSubTitle,
   gutterBottom,
-  mb = 2,
+  mb = 0,
 }: MainTitleSetProps) => {
   const theme = useTheme()
   return (
     <Box
       sx={[
         {
-          p: theme.spacing(3, 4),
+          p: theme.spacing(2, 4),
           mb,
         },
       ]}
@@ -74,7 +74,7 @@ const MainTitleSet = ({
               minWidth: '100%',
               display: 'flex',
               flexDirection: 'column',
-              mb: 1,
+              mb: 0,
             },
           },
         }}
@@ -86,7 +86,7 @@ const MainTitleSet = ({
             component={component ? component : 'h1'}
             sx={sxHeader}
             gutterBottom={gutterBottom}
-            style={{ lineHeight: 1.4 }}
+            style={{ lineHeight: 1.5 }}
           >
             {headingText}
           </Typography>
@@ -95,7 +95,7 @@ const MainTitleSet = ({
           <Typography
             variant={variantSubTitle ? variantSubTitle : 'subtitle1'}
             sx={sxSubTitle}
-            style={{ lineHeight: 1.4, textAlign: 'justify' }}
+            style={{ lineHeight: 1.5 }}
           >
             {subtitleText}
           </Typography>

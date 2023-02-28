@@ -685,11 +685,11 @@ const RadioButton = ({ label, value, disabled, AdditionalProps, helperText, onCl
 // 大見出しとサブタイトル
 const MainTitleSet = ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, 
 // TitleWrapNone,
-sxHeader, sxSubTitle, gutterBottom, mb = 2, }) => {
+sxHeader, sxSubTitle, gutterBottom, mb = 0, }) => {
     const theme = material.useTheme();
     return (jsxRuntime.jsx(material.Box, { sx: [
             {
-                p: theme.spacing(3, 4),
+                p: theme.spacing(2, 4),
                 mb,
             },
         ], children: jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, sx: {
@@ -698,10 +698,10 @@ sxHeader, sxSubTitle, gutterBottom, mb = 2, }) => {
                         minWidth: '100%',
                         display: 'flex',
                         flexDirection: 'column',
-                        mb: 1,
+                        mb: 0,
                     },
                 },
-            }, children: [jsxRuntime.jsxs(material.Grid, { item: true, flex: 1, children: [jsxRuntime.jsx(material.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.4 }, children: headingText }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps }) })] }) }));
+            }, children: [jsxRuntime.jsxs(material.Grid, { item: true, flex: 1, children: [jsxRuntime.jsx(material.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: headingText }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.5 }, children: subtitleText })] }), jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps }) })] }) }));
 };
 
 function toVal(mix) {
