@@ -95,7 +95,7 @@ const MainTitleSet = ({
           <Typography
             variant={variantSubTitle ? variantSubTitle : 'subtitle1'}
             sx={sxSubTitle}
-            style={{ lineHeight: 1.4 }}
+            style={{ lineHeight: 1.4, letterSpacing: '0.1px' }}
           >
             {subtitleText}
           </Typography>
