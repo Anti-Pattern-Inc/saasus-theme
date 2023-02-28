@@ -51,14 +51,14 @@ const MainTitleSet = ({
   sxHeader,
   sxSubTitle,
   gutterBottom,
-  mb = 2,
+  mb = 0,
 }: MainTitleSetProps) => {
   const theme = useTheme()
   return (
     <Box
       sx={[
         {
-          p: theme.spacing(3, 4),
+          p: theme.spacing(2, 4),
           mb,
         },
       ]}
@@ -68,6 +68,16 @@ const MainTitleSet = ({
         justifyContent="space-between"
         alignItems="center"
         columnSpacing={2}
+        sx={{
+          '.MuiGrid-root': {
+            [theme.breakpoints.down('tablet')]: {
+              minWidth: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              mb: 0,
+            },
+          },
+        }}
       >
         <Grid item flex={1}>
           {/* 見出し */}
@@ -76,7 +86,7 @@ const MainTitleSet = ({
             component={component ? component : 'h1'}
             sx={sxHeader}
             gutterBottom={gutterBottom}
-            style={{ lineHeight: 1.4 }}
+            style={{ lineHeight: 1.2 }}
           >
             {headingText}
           </Typography>
@@ -85,15 +95,17 @@ const MainTitleSet = ({
           <Typography
             variant={variantSubTitle ? variantSubTitle : 'subtitle1'}
             sx={sxSubTitle}
-            style={{ lineHeight: 1.4, textAlign: 'justify' }}
+            style={{ lineHeight: 1.4, letterSpacing: '0.1px' }}
           >
             {subtitleText}
           </Typography>
         </Grid>
         {/* 見出しと同じ階層内の右端に、ボタンなどのコンポーネントを置く時用
                 Example: AdditionalProps={<Button>Action</Button>}
-            */}
-        {AdditionalProps && <Grid item>{AdditionalProps}</Grid>}
+              */}
+        <Grid item>
+          {AdditionalProps && <Grid item>{AdditionalProps}</Grid>}
+        </Grid>
       </Grid>
     </Box>
   )

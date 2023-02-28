@@ -2,6 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var createCache = require('@emotion/cache');
 var jsxRuntime = require('react/jsx-runtime');
 var material = require('@mui/material');
 var DeleteTwoToneIcon = require('@mui/icons-material/DeleteTwoTone');
@@ -21,6 +22,7 @@ var react = require('react');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+var createCache__default = /*#__PURE__*/_interopDefaultLegacy(createCache);
 var DeleteTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy(DeleteTwoToneIcon);
 var EditTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy(EditTwoToneIcon);
 var SearchTwoToneIcon__default = /*#__PURE__*/_interopDefaultLegacy(SearchTwoToneIcon);
@@ -366,7 +368,16 @@ divider, dividerSx, }) => {
                 boxShadow: 'none',
             },
             ...sx,
-        }, children: [jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", sx: { mb: noMargin ? 0 : 1 }, columnSpacing: 2, children: [jsxRuntime.jsxs(material.Grid, { item: true, sx: style, flex: 1, children: [jsxRuntime.jsxs(material.Typography, { variant: variant, component: component ? component : 'div', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: [headingText, jsxRuntime.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps })] }), divider && jsxRuntime.jsx(material.Divider, { sx: dividerSx })] }));
+        }, children: [jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, sx: {
+                    '.MuiGrid-root': {
+                        [theme.breakpoints.down('tablet')]: {
+                            minWidth: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            mb: noMargin ? 0 : 1,
+                        },
+                    },
+                }, children: [jsxRuntime.jsxs(material.Grid, { item: true, sx: style, flex: 1, children: [jsxRuntime.jsxs(material.Typography, { variant: variant, component: component ? component : 'div', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.5 }, children: [headingText, jsxRuntime.jsx(CustomTooltip, { TooltipTitleIconComponent: TooltipTitleIconComponent, TooltipComponent: TooltipComponent })] }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle2', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps })] }), divider && jsxRuntime.jsx(material.Divider, { sx: dividerSx })] }));
 };
 
 const BoxOuter = material.styled(material.Box)(({ theme }) => `
@@ -427,11 +438,15 @@ TooltipTitleIconComponent, TooltipComponent,
 // 右端オプション
 AdditionalProps, 
 // 全体sx
-sx, }) => {
+sx, 
+// shadowなし
+noShadow, }) => {
     const theme = material.useTheme();
     return (jsxRuntime.jsx(material.Box, { sx: sx, children: jsxRuntime.jsxs(BoxInner, { elevation: 1, sx: {
                 padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
                 ...boxInnerSx,
+            }, style: {
+                boxShadow: noShadow && 'none',
             }, children: [addTitle && (jsxRuntime.jsx(TitleSet
                 // 見出しフォントサイズ htmlElement設定 デフォルト値 サブタイトル設定
                 , { 
@@ -670,14 +685,23 @@ const RadioButton = ({ label, value, disabled, AdditionalProps, helperText, onCl
 // 大見出しとサブタイトル
 const MainTitleSet = ({ variant, component, headingText, variantSubTitle, subtitleText, AdditionalProps, 
 // TitleWrapNone,
-sxHeader, sxSubTitle, gutterBottom, mb = 2, }) => {
+sxHeader, sxSubTitle, gutterBottom, mb = 0, }) => {
     const theme = material.useTheme();
     return (jsxRuntime.jsx(material.Box, { sx: [
             {
-                p: theme.spacing(3, 4),
+                p: theme.spacing(2, 4),
                 mb,
             },
-        ], children: jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, children: [jsxRuntime.jsxs(material.Grid, { item: true, flex: 1, children: [jsxRuntime.jsx(material.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.4 }, children: headingText }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4, textAlign: 'justify' }, children: subtitleText })] }), AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps })] }) }));
+        ], children: jsxRuntime.jsxs(material.Grid, { container: true, justifyContent: "space-between", alignItems: "center", columnSpacing: 2, sx: {
+                '.MuiGrid-root': {
+                    [theme.breakpoints.down('tablet')]: {
+                        minWidth: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        mb: 0,
+                    },
+                },
+            }, children: [jsxRuntime.jsxs(material.Grid, { item: true, flex: 1, children: [jsxRuntime.jsx(material.Typography, { variant: variant ? variant : 'h1', component: component ? component : 'h1', sx: sxHeader, gutterBottom: gutterBottom, style: { lineHeight: 1.2 }, children: headingText }), jsxRuntime.jsx(material.Typography, { variant: variantSubTitle ? variantSubTitle : 'subtitle1', sx: sxSubTitle, style: { lineHeight: 1.4, letterSpacing: '0.1px' }, children: subtitleText })] }), jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps && jsxRuntime.jsx(material.Grid, { item: true, children: AdditionalProps }) })] }) }));
 };
 
 function toVal(mix) {
@@ -1974,7 +1998,7 @@ function SaaSusLogo({ width, alt }) {
 
 // sidebar
 const sidebar = {
-    width: '180px',
+    width: '210px',
 };
 // common spacing base
 const spacing = 8;
@@ -2028,10 +2052,14 @@ const typographyBreakpoint = {
     // upper size lg(laptop)
     up: `@media (min-width: ${breakpoints.values.lg}px)`,
 };
+const typographyTitleFont = {
+    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "BIZ UDPゴシック", "Noto Sans JP", Helvetica, Arial, sans-serif !important',
+};
 const typography = {
-    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", Helvetica, Arial, sans-serif',
     // 見出し
     h1: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(24)}`,
@@ -2040,6 +2068,7 @@ const typography = {
         },
     },
     h2: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(22)}`,
@@ -2048,6 +2077,7 @@ const typography = {
         },
     },
     h3: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(20)}`,
@@ -2056,6 +2086,7 @@ const typography = {
         },
     },
     h4: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(18)}`,
@@ -2064,6 +2095,7 @@ const typography = {
         },
     },
     h5: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         fontSize: `${fontPxToRemMinim$3(16)}`,
         [typographyBreakpoint.up]: {
@@ -2071,6 +2103,7 @@ const typography = {
         },
     },
     h6: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.bold,
         lineHeight: lineHeight.small,
         fontSize: `${fontPxToRemMinim$3(15)}`,
@@ -2130,11 +2163,29 @@ const typography = {
     },
     // button
     button: {
+        fontFamily: typographyTitleFont.fontFamily,
         fontWeight: fontWeight.medium,
         fontSize: `${fontPxToRemMinim$3(14)}`,
         [typographyBreakpoint.up]: {
             fontSize: `${fontPxToRem$3(14)}`,
         },
+    },
+};
+const codes = {
+    pre: {
+        maxWidth: `auto`,
+        margin: `8px 0`,
+        padding: `16px 24px`,
+        overflow: `auto`,
+        borderRadius: 6,
+        fontWeight: 700,
+    },
+    code: {
+        lineHeight: 1.5,
+        margin: '0 0.1ch',
+        padding: `0px 3px 1px`,
+        borderRadius: 3,
+        background: 'transparent',
     },
 };
 
@@ -2541,6 +2592,9 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
                     cursor: 'pointer',
                     color: colors$2.primary.main,
                 },
+                li: {
+                    marginBottom: '0.5em',
+                },
                 '.child-popover .MuiPaper-root .MuiList-root': {
                     flexDirection: 'column',
                 },
@@ -2564,65 +2618,36 @@ const SaaSusDarkThemeHighContrast = material.createTheme({
                     '--swiper-theme-color': colors$2.primary.main,
                     colorScheme: 'dark',
                 },
-                code: {
-                    fontFamily: 'Inter',
-                    fontWeight: 500,
+                // code view
+                pre: {
+                    maxWidth: codes.pre.maxWidth,
+                    margin: codes.pre.margin,
+                    padding: codes.pre.padding,
+                    overflow: codes.pre.overflow,
+                    borderRadius: codes.pre.borderRadius,
+                    fontWeight: codes.pre.fontWeight,
+                    // local
+                    color: colors$2.success.lighter,
+                    // border: `2px solid ${colors.primary.light}`,
+                    backgroundColor: material.darken(themeColors$2.info, 0.8),
                     fontSize: `${fontPxToRemMinim$2(14)}`,
-                    '@media (min-width: 960px)': {
-                        fontSize: `${fontPxToRem$2(14)}`,
-                    },
-                    lineHeight: 1.5,
-                    margin: '0 0.1ch',
-                    paddingLeft: 6,
-                    paddingRight: 6,
-                    paddingTop: 1,
-                    paddingBottom: 2,
-                    borderRadius: 4,
-                    // TODO: Set Color
-                    background: 'transparent',
-                    border: `1px solid ${colors$2.info.light}`,
-                    color: colors$2.info.dark,
-                },
-                '@keyframes pulse': {
-                    '0%': {
-                        transform: 'scale(.75)',
-                    },
-                    '20%': {
-                        transform: 'scale(1.1)',
-                    },
-                    '40%': {
-                        transform: 'scale(.75)',
-                    },
-                    '60%': {
-                        transform: 'scale(1.05)',
-                    },
-                    '80%': {
-                        transform: 'scale(.75)',
-                    },
-                    '100%': {
-                        transform: 'scale(.75)',
+                    [`@media (min-width: ${breakpoints.values.lg}px)`]: {
+                        fontSize: `${fontPxToRem$2(15)}`,
                     },
                 },
-                '@keyframes ripple': {
-                    '0%': {
-                        transform: 'scale(.8)',
-                        opacity: 1,
-                    },
-                    '100%': {
-                        transform: 'scale(2.8)',
-                        opacity: 0,
-                    },
-                },
-                '@keyframes float': {
-                    '0%': {
-                        transform: 'translate(0%, 0%)',
-                    },
-                    '100%': {
-                        transform: 'translate(3%, 3%)',
-                    },
+                code: {
+                    lineHeight: codes.code.lineHeight,
+                    margin: codes.code.margin,
+                    padding: codes.code.padding,
+                    borderRadius: codes.code.borderRadius,
+                    background: codes.code.background,
+                    // local
+                    color: colors$2.info.lighter,
+                    border: `1px solid ${colors$2.info.main}`,
                 },
             },
         },
+        // form
         MuiSelect: {
             styleOverrides: {
                 iconOutlined: {
@@ -3400,7 +3425,6 @@ const fontPxToRemMinim$1 = (px) => {
 };
 const themeColors$1 = {
     primary: '#346bcc',
-    // primary: '#8C7CF0',
     secondary: '#9EA4C1',
     success: '#57CA22',
     warning: '#FFA319',
@@ -3786,6 +3810,9 @@ const SaaSusDarkTheme = material.createTheme({
                     cursor: 'pointer',
                     color: colors$1.primary.main,
                 },
+                li: {
+                    marginBottom: '0.5em',
+                },
                 '.child-popover .MuiPaper-root .MuiList-root': {
                     flexDirection: 'column',
                 },
@@ -3809,65 +3836,36 @@ const SaaSusDarkTheme = material.createTheme({
                     '--swiper-theme-color': colors$1.primary.main,
                     colorScheme: 'dark',
                 },
-                code: {
-                    fontFamily: 'Inter',
-                    fontWeight: 500,
+                // code view
+                pre: {
+                    maxWidth: codes.pre.maxWidth,
+                    margin: codes.pre.margin,
+                    padding: codes.pre.padding,
+                    overflow: codes.pre.overflow,
+                    borderRadius: codes.pre.borderRadius,
+                    fontWeight: codes.pre.fontWeight,
+                    // local
+                    color: colors$1.success.lighter,
+                    // border: `2px solid ${colors.primary.light}`,
+                    backgroundColor: material.darken(themeColors$1.info, 0.8),
                     fontSize: `${fontPxToRemMinim$1(14)}`,
-                    '@media (min-width: 960px)': {
-                        fontSize: `${fontPxToRem$1(14)}`,
-                    },
-                    lineHeight: 1.5,
-                    margin: '0 0.1ch',
-                    paddingLeft: 6,
-                    paddingRight: 6,
-                    paddingTop: 1,
-                    paddingBottom: 2,
-                    borderRadius: 4,
-                    // TODO: Set Color
-                    background: 'transparent',
-                    border: `1px solid ${colors$1.info.light}`,
-                    color: colors$1.info.dark,
-                },
-                '@keyframes pulse': {
-                    '0%': {
-                        transform: 'scale(.75)',
-                    },
-                    '20%': {
-                        transform: 'scale(1.1)',
-                    },
-                    '40%': {
-                        transform: 'scale(.75)',
-                    },
-                    '60%': {
-                        transform: 'scale(1.05)',
-                    },
-                    '80%': {
-                        transform: 'scale(.75)',
-                    },
-                    '100%': {
-                        transform: 'scale(.75)',
+                    [`@media (min-width: ${breakpoints.values.lg}px)`]: {
+                        fontSize: `${fontPxToRem$1(15)}`,
                     },
                 },
-                '@keyframes ripple': {
-                    '0%': {
-                        transform: 'scale(.8)',
-                        opacity: 1,
-                    },
-                    '100%': {
-                        transform: 'scale(2.8)',
-                        opacity: 0,
-                    },
-                },
-                '@keyframes float': {
-                    '0%': {
-                        transform: 'translate(0%, 0%)',
-                    },
-                    '100%': {
-                        transform: 'translate(3%, 3%)',
-                    },
+                code: {
+                    lineHeight: codes.code.lineHeight,
+                    margin: codes.code.margin,
+                    padding: codes.code.padding,
+                    borderRadius: codes.code.borderRadius,
+                    background: codes.code.background,
+                    // local
+                    color: colors$1.info.lighter,
+                    border: `1px solid ${colors$1.info.main}`,
                 },
             },
         },
+        // form
         MuiSelect: {
             styleOverrides: {
                 iconOutlined: {
@@ -5048,6 +5046,12 @@ const SaaSusTheme = material.createTheme({
                     cursor: 'pointer',
                     color: colors.primary.main,
                 },
+                li: {
+                    marginBottom: '0.5em',
+                },
+                '::marker': {
+                    color: material.lighten(themeColors.black, 0.7),
+                },
                 '.child-popover .MuiPaper-root .MuiList-root': {
                     flexDirection: 'column',
                 },
@@ -5070,66 +5074,36 @@ const SaaSusTheme = material.createTheme({
                 ':root': {
                     '--swiper-theme-color': colors.primary.main,
                 },
-                // FIXME! Codeタグはグローバルに
-                code: {
-                    fontFamily: 'Inter',
-                    fontWeight: 500,
+                // code view
+                pre: {
+                    maxWidth: codes.pre.maxWidth,
+                    margin: codes.pre.margin,
+                    padding: codes.pre.padding,
+                    overflow: codes.pre.overflow,
+                    borderRadius: codes.pre.borderRadius,
+                    fontWeight: codes.pre.fontWeight,
+                    // local
+                    color: colors.success.light,
+                    // border: `2px solid ${colors.primary.lighter}`,
+                    backgroundColor: material.darken(themeColors.info, 0.8),
                     fontSize: `${fontPxToRemMinim(14)}`,
-                    '@media (min-width: 960px)': {
-                        fontSize: `${fontPxToRem(14)}`,
+                    [`@media (min-width: ${breakpoints.values.lg}px)`]: {
+                        fontSize: `${fontPxToRem(15)}`,
                     },
-                    lineHeight: 1.5,
-                    margin: '0 0.1ch',
-                    paddingLeft: 6,
-                    paddingRight: 6,
-                    paddingTop: 1,
-                    paddingBottom: 2,
-                    borderRadius: 4,
-                    // background: colors.info.lighter,
-                    background: 'transparent',
-                    border: `1px solid ${colors.info.dark}`,
+                },
+                code: {
+                    lineHeight: codes.code.lineHeight,
+                    margin: codes.code.margin,
+                    padding: codes.code.padding,
+                    borderRadius: codes.code.borderRadius,
+                    background: codes.code.background,
+                    // local
                     color: colors.info.dark,
-                },
-                '@keyframes pulse': {
-                    '0%': {
-                        transform: 'scale(.75)',
-                    },
-                    '20%': {
-                        transform: 'scale(1.1)',
-                    },
-                    '40%': {
-                        transform: 'scale(.75)',
-                    },
-                    '60%': {
-                        transform: 'scale(1.05)',
-                    },
-                    '80%': {
-                        transform: 'scale(.75)',
-                    },
-                    '100%': {
-                        transform: 'scale(.75)',
-                    },
-                },
-                '@keyframes ripple': {
-                    '0%': {
-                        transform: 'scale(.8)',
-                        opacity: 1,
-                    },
-                    '100%': {
-                        transform: 'scale(2.8)',
-                        opacity: 0,
-                    },
-                },
-                '@keyframes float': {
-                    '0%': {
-                        transform: 'translate(0%, 0%)',
-                    },
-                    '100%': {
-                        transform: 'translate(3%, 3%)',
-                    },
+                    border: `1px solid ${colors.info.main}`,
                 },
             },
         },
+        // TODO: フォームUIカスタム
         MuiSelect: {
             styleOverrides: {
                 iconOutlined: {
@@ -5140,7 +5114,6 @@ const SaaSusTheme = material.createTheme({
                 },
             },
         },
-        // TODO: フォームUIカスタム
         MuiOutlinedInput: {
             styleOverrides: {
                 root: {
@@ -5953,6 +5926,14 @@ const ThemeProviderWrapper = ({ lang = 'ja', children, }) => {
     return (jsxRuntime.jsx(styles$1.StylesProvider, { injectFirst: true, children: jsxRuntime.jsx(ThemeContext.Provider, { value: { theme, setThemeName }, children: jsxRuntime.jsx(styles.ThemeProvider, { theme: theme, children: children }) }) }));
 };
 
+// emotion
+function createEmotionCache() {
+    return createCache__default["default"]({
+        key: 'css',
+        stylisPlugins: [],
+    });
+}
+
 exports.AccordionWrap = AccordionWrap;
 exports.BoxContent = BoxContent;
 exports.BoxWrap = BoxWrap;
@@ -5980,4 +5961,5 @@ exports.TableHeightSwitch = TableHeightSwitch;
 exports.Text = Text;
 exports.ThemeContext = ThemeContext;
 exports.TitleSet = TitleSet;
+exports.createEmotionCache = createEmotionCache;
 exports.themeCreator = themeCreator;

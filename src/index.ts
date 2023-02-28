@@ -1,3 +1,12 @@
+// emotion
+import createCache from '@emotion/cache'
+export function createEmotionCache() {
+  return createCache({
+    key: 'css',
+    stylisPlugins: [],
+  })
+}
+// components
 export { CustomTable } from './components/Table/CustomTable'
 export { CustomTableContainer } from './components/Table/CustomTableContainer'
 export { CustomTableHeader } from './components/Table/CustomTableHeader'
@@ -22,7 +31,9 @@ export { default as MainTitleSet } from './components/Text/MainTitleSet'
 export { default as TitleSet } from './components/Text/TitleSet'
 export { default as Text } from './components/Text'
 export { CustomTooltip } from './components/Tooltip/CustomTooltip'
+// assets
 export { default as SaaSusLogo } from './components/SaaSusLogo'
+// theme
 export { themeCreator } from './theme/base'
 export {
   default as SaaSusThemeProvider,

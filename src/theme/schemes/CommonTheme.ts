@@ -1,6 +1,6 @@
 // sidebar
 export const sidebar = {
-  width: '180px',
+  width: '210px',
 }
 // common spacing base
 export const spacing = 8
@@ -61,11 +61,17 @@ const typographyBreakpoint = {
   up: `@media (min-width: ${breakpoints.values.lg}px)`,
 }
 
+const typographyTitleFont = {
+  fontFamily:
+    '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "BIZ UDPゴシック", "Noto Sans JP", Helvetica, Arial, sans-serif !important',
+}
+
 export const typography = {
   fontFamily:
-    '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Noto Sans JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", Helvetica, Arial, sans-serif',
   // 見出し
   h1: {
+    fontFamily: typographyTitleFont.fontFamily,
     fontWeight: fontWeight.bold,
     lineHeight: lineHeight.small,
     fontSize: `${fontPxToRemMinim(24)}`,
@@ -74,6 +80,7 @@ export const typography = {
     },
   },
   h2: {
+    fontFamily: typographyTitleFont.fontFamily,
     fontWeight: fontWeight.bold,
     lineHeight: lineHeight.small,
     fontSize: `${fontPxToRemMinim(22)}`,
@@ -82,6 +89,7 @@ export const typography = {
     },
   },
   h3: {
+    fontFamily: typographyTitleFont.fontFamily,
     fontWeight: fontWeight.bold,
     lineHeight: lineHeight.small,
     fontSize: `${fontPxToRemMinim(20)}`,
@@ -90,6 +98,7 @@ export const typography = {
     },
   },
   h4: {
+    fontFamily: typographyTitleFont.fontFamily,
     fontWeight: fontWeight.bold,
     lineHeight: lineHeight.small,
     fontSize: `${fontPxToRemMinim(18)}`,
@@ -98,6 +107,7 @@ export const typography = {
     },
   },
   h5: {
+    fontFamily: typographyTitleFont.fontFamily,
     fontWeight: fontWeight.bold,
     fontSize: `${fontPxToRemMinim(16)}`,
     [typographyBreakpoint.up]: {
@@ -105,6 +115,7 @@ export const typography = {
     },
   },
   h6: {
+    fontFamily: typographyTitleFont.fontFamily,
     fontWeight: fontWeight.bold,
     lineHeight: lineHeight.small,
     fontSize: `${fontPxToRemMinim(15)}`,
@@ -164,10 +175,29 @@ export const typography = {
   },
   // button
   button: {
+    fontFamily: typographyTitleFont.fontFamily,
     fontWeight: fontWeight.medium,
     fontSize: `${fontPxToRemMinim(14)}`,
     [typographyBreakpoint.up]: {
       fontSize: `${fontPxToRem(14)}`,
     },
+  },
+}
+
+export const codes = {
+  pre: {
+    maxWidth: `auto`,
+    margin: `8px 0`,
+    padding: `16px 24px`,
+    overflow: `auto`,
+    borderRadius: 6,
+    fontWeight: 700,
+  },
+  code: {
+    lineHeight: 1.5,
+    margin: '0 0.1ch',
+    padding: `0px 3px 1px`,
+    borderRadius: 3,
+    background: 'transparent',
   },
 }

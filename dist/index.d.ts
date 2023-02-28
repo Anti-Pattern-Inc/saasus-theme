@@ -1,3 +1,4 @@
+export declare function createEmotionCache(): import("@emotion/utils").EmotionCache;
 export { CustomTable } from './components/Table/CustomTable';
 export { CustomTableContainer } from './components/Table/CustomTableContainer';
 export { CustomTableHeader } from './components/Table/CustomTableHeader';

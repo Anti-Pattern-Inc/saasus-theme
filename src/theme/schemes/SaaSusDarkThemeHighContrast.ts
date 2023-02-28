@@ -2,7 +2,7 @@ import '@mui/lab/themeAugmentation'
 import { alpha, createTheme, darken } from '@mui/material'
 
 // 全テーマ共通のutiliy object
-import { sidebar, spacing, breakpoints, typography } from './CommonTheme'
+import { sidebar, spacing, breakpoints, typography, codes } from './CommonTheme'
 
 /***
  * @param fontPxToRem pxからrem変換計算用
@@ -419,6 +419,10 @@ export const SaaSusDarkThemeHighContrast = createTheme({
           cursor: 'pointer',
           color: colors.primary.main,
         },
+        li: {
+          marginBottom: '0.5em',
+        },
+
         '.child-popover .MuiPaper-root .MuiList-root': {
           flexDirection: 'column',
         },
@@ -443,65 +447,36 @@ export const SaaSusDarkThemeHighContrast = createTheme({
           '--swiper-theme-color': colors.primary.main,
           colorScheme: 'dark',
         },
-        code: {
-          fontFamily: 'Inter',
-          fontWeight: 500,
+        // code view
+        pre: {
+          maxWidth: codes.pre.maxWidth,
+          margin: codes.pre.margin,
+          padding: codes.pre.padding,
+          overflow: codes.pre.overflow,
+          borderRadius: codes.pre.borderRadius,
+          fontWeight: codes.pre.fontWeight,
+          // local
+          color: colors.success.lighter,
+          // border: `2px solid ${colors.primary.light}`,
+          backgroundColor: darken(themeColors.info, 0.8),
           fontSize: `${fontPxToRemMinim(14)}`,
-          '@media (min-width: 960px)': {
-            fontSize: `${fontPxToRem(14)}`,
-          },
-          lineHeight: 1.5,
-          margin: '0 0.1ch',
-          paddingLeft: 6,
-          paddingRight: 6,
-          paddingTop: 1,
-          paddingBottom: 2,
-          borderRadius: 4,
-          // TODO: Set Color
-          background: 'transparent',
-          border: `1px solid ${colors.info.light}`,
-          color: colors.info.dark,
-        },
-        '@keyframes pulse': {
-          '0%': {
-            transform: 'scale(.75)',
-          },
-          '20%': {
-            transform: 'scale(1.1)',
-          },
-          '40%': {
-            transform: 'scale(.75)',
-          },
-          '60%': {
-            transform: 'scale(1.05)',
-          },
-          '80%': {
-            transform: 'scale(.75)',
-          },
-          '100%': {
-            transform: 'scale(.75)',
+          [`@media (min-width: ${breakpoints.values.lg}px)`]: {
+            fontSize: `${fontPxToRem(15)}`,
           },
         },
-        '@keyframes ripple': {
-          '0%': {
-            transform: 'scale(.8)',
-            opacity: 1,
-          },
-          '100%': {
-            transform: 'scale(2.8)',
-            opacity: 0,
-          },
-        },
-        '@keyframes float': {
-          '0%': {
-            transform: 'translate(0%, 0%)',
-          },
-          '100%': {
-            transform: 'translate(3%, 3%)',
-          },
+        code: {
+          lineHeight: codes.code.lineHeight,
+          margin: codes.code.margin,
+          padding: codes.code.padding,
+          borderRadius: codes.code.borderRadius,
+          background: codes.code.background,
+          // local
+          color: colors.info.lighter,
+          border: `1px solid ${colors.info.main}`,
         },
       },
     },
+    // form
     MuiSelect: {
       styleOverrides: {
         iconOutlined: {

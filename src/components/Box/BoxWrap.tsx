@@ -48,6 +48,8 @@ type Props = Partial<{
   AdditionalProps: JSX.Element
   // 全体sx
   sx: SxProps
+  // shadowなし
+  noShadow: boolean
 }>
 
 const BoxInner = styled(Paper)(({ theme }) => ({
@@ -79,6 +81,8 @@ const BoxWrap = ({
   AdditionalProps,
   // 全体sx
   sx,
+  // shadowなし
+  noShadow,
 }: Props) => {
   const theme = useTheme()
   return (
@@ -88,6 +92,9 @@ const BoxWrap = ({
         sx={{
           padding: divider ? theme.spacing(1.5, 3, 3) : theme.spacing(3),
           ...boxInnerSx,
+        }}
+        style={{
+          boxShadow: noShadow && 'none',
         }}
       >
         {addTitle && (
