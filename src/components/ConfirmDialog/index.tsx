@@ -1,6 +1,14 @@
 import CloseIcon from '@mui/icons-material/Close'
 import WarningAmberIcon from '@mui/icons-material/WarningAmber'
-import { Avatar, Box, Button, Dialog, styled, Typography } from '@mui/material'
+import {
+  Avatar,
+  Box,
+  Button,
+  CircularProgress,
+  Dialog,
+  styled,
+  Typography,
+} from '@mui/material'
 import i18n, { i18nNamespace } from 'i18n'
 import { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -46,6 +54,7 @@ type Props = {
     text: string
     dataTestid?: string
     submit: () => void | Promise<void>
+    isSubmitting: boolean
   }[]
   Text: ReactNode
   SubText?: ReactNode
@@ -124,12 +133,12 @@ const ConfirmDialog = ({
             >
               {t('cancel')}
             </Button>
-            {buttons.map((deleteButton, i) => {
+            {buttons.map((button, i) => {
               return (
                 <Button
                   key={i}
-                  data-testid={deleteButton.dataTestid || 'deleteButton'}
-                  onClick={deleteButton.submit}
+                  data-testid={button.dataTestid || 'deleteButton'}
+                  onClick={button.submit}
                   size="large"
                   sx={{
                     mx: 1,
@@ -137,8 +146,14 @@ const ConfirmDialog = ({
                   }}
                   color={color}
                   variant="contained"
+                  startIcon={
+                    button.isSubmitting ? (
+                      <CircularProgress size="1rem" />
+                    ) : null
+                  }
+                  disabled={button.isSubmitting}
                 >
-                  {deleteButton.text}
+                  {button.text}
                 </Button>
               )
             })}
